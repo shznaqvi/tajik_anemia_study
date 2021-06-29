@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.sections.Section03Activity"></activity>
+
         <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -27,24 +27,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".ui.sections.Section01Activity"
             android:label="@string/sech1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
+
         <activity
             android:name=".ui.sections.Section02Activity"
             android:label="@string/sech2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1" />
+
+        <activity
+            android:name=".ui.sections.Section03Activity"
+            android:label="@string/sech2title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1" />
+
+
         <activity android:name=".ui.SyncActivity" />
+
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.EndingActivity"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+
     </application>
 
 </manifest>
