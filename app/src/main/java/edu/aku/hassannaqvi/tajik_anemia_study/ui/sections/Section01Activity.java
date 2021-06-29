@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -13,15 +14,19 @@ import java.util.Date;
 import java.util.Locale;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
+import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySection01Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
 public class Section01Activity extends AppCompatActivity {
     ActivitySection01Binding bi;
+    private DatabaseHelper db;
 
 
     @Override
@@ -29,6 +34,7 @@ public class Section01Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section01);
         bi.setCallback(this);
+        setupSkips();
     }
 
 
@@ -38,12 +44,29 @@ public class Section01Activity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        return true;
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = db.addForm(form);
+        form.setId(String.valueOf(updcount));
+        if (updcount > 0) {
+            form.setUid(form.getDeviceId() + form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
     public void btnContinue() {
-
+        if (!formValidation()) return;
+        saveDraft();
+        if (updateDB()) {
+            finish();
+            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -59,7 +82,8 @@ public class Section01Activity extends AppCompatActivity {
 
 
     public void btnEnd() {
-
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
