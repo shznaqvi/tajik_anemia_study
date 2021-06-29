@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#388E3C</color>
-    <color name="colorPrimaryLight">#81C784</color>
-    <color name="colorPrimaryDark">#1B5E20</color>
-    <color name="colorAccent">#FFD600</color>
-    <color name="colorAccentLight">#FFEA00</color>
+    <color name="colorPrimary">#455A64</color>
+    <color name="colorPrimaryLight">#90A4AE</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#FF6D00</color>
+    <color name="colorAccentLight">#FF9100</color>
 
-    <color name="colorPrimaryOverlay">#7f388E3C</color>
-    <color name="colorPrimaryLightOverlay">#7f81C784</color>
-    <color name="colorPrimaryDarkOverlay">#7f1B5E20</color>
-    <color name="colorAccentOverlay">#7fFFD600</color>
-    <color name="colorAccentLightOverlay">#7fFFEA00</color>
+    <color name="colorPrimaryOverlay">#7f455A64</color>
+    <color name="colorPrimaryLightOverlay">#7f90A4AE</color>
+    <color name="colorPrimaryDarkOverlay">#7f263238</color>
+    <color name="colorAccentOverlay">#7fFF6D00</color>
+    <color name="colorAccentLightOverlay">#7fFF9100</color>
 
 
     <!-- Standard App Colors -->
-    <color name="grayDark">#5e5e5e</color>
+    <color name="grayDark">#424242</color>
     <color name="grayDark1">#696969</color>
-    <color name="grayLight">#efefff</color>
+    <color name="grayLight">#EEEEEE</color>
     <color name="greenLight">#d600ef00</color>
     <color name="redLight">#d6ef0000</color>
-    <color name="gray">#898989</color>
+    <color name="gray">#757575</color>
     <color name="green">#009900</color>
     <color name="redOverlay">#7f990000</color>
     <color name="blackOverlay">#7f000000</color>
