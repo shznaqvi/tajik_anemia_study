@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.sections.Section01Activity"></activity>
+        <activity android:name=".ui.sections.Section02Activity"></activity>
+        <activity android:name=".ui.sections.Section01Activity" />
         <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
@@ -30,11 +31,11 @@
         <activity android:name=".ui.SyncActivity" />
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.EndingActivity"
             android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>
