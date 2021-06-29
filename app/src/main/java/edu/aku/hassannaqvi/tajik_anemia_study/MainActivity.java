@@ -14,8 +14,6 @@ import java.util.Map;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.Section1Activity;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.Section2Activity;
 
 
 public class MainActivity extends AppCompatActivity {

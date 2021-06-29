@@ -15,7 +15,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityEndingBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.Section1Activity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
