@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BR;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.StoolTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
 public class Stool extends BaseObservable {
@@ -9319,22 +9319,22 @@ public class Stool extends BaseObservable {
 
 
     public Stool Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
-        this.userName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S1)));
-        s2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S2)));
-        s3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S3)));
-        s4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S4)));
-        s5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S5)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_S1)));
+        s2Hydrate(cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_S2)));
+        s3Hydrate(cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_S3)));
+        s4Hydrate(cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_S4)));
+        s5Hydrate(cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_S5)));
 
         return this;
     }
@@ -11126,22 +11126,22 @@ public class Stool extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(FormsTable.COLUMN_ID, this.id);
-            json.put(FormsTable.COLUMN_UID, this.uid);
-            json.put(FormsTable.COLUMN_USERNAME, this.userName);
-            json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-            //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
-            //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+            json.put(StoolTable.COLUMN_ID, this.id);
+            json.put(StoolTable.COLUMN_UID, this.uid);
+            json.put(StoolTable.COLUMN_USERNAME, this.userName);
+            json.put(StoolTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(StoolTable.COLUMN_DEVICEID, this.deviceId);
+            json.put(StoolTable.COLUMN_DEVICETAGID, this.deviceTag);
+            json.put(StoolTable.COLUMN_ISTATUS, this.iStatus);
+            //  json.put(StoolTable.COLUMN_SYNCED, this.synced);
+            //  json.put(StoolTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-            json.put(FormsTable.COLUMN_S1, new JSONObject(s1toString()));
+            json.put(StoolTable.COLUMN_S1, new JSONObject(s1toString()));
             //Log.d(TAG, "toJSONObject: "+new JSONObject(s2toString()));
-            json.put(FormsTable.COLUMN_S2, new JSONObject(s2toString()));
-            json.put(FormsTable.COLUMN_S3, new JSONObject(s3toString()));
-            json.put(FormsTable.COLUMN_S4, new JSONObject(s4toString()));
-            json.put(FormsTable.COLUMN_S5, new JSONObject(s5toString()));
+            json.put(StoolTable.COLUMN_S2, new JSONObject(s2toString()));
+            json.put(StoolTable.COLUMN_S3, new JSONObject(s3toString()));
+            json.put(StoolTable.COLUMN_S4, new JSONObject(s4toString()));
+            json.put(StoolTable.COLUMN_S5, new JSONObject(s5toString()));
 
 
             return json;
