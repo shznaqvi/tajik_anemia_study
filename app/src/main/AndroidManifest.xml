@@ -144,6 +144,13 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
+        <activity
+            android:name=".ui.sections.SectionC1Activity"
+            android:label="@string/secc1title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
 
         <activity android:name=".ui.SyncActivity" />
 
