@@ -27,6 +27,7 @@
         <item name="radioButtonStyle">@style/radiobutton</item>
         <item name="checkboxStyle">@style/checkbox</item>
         <item name="hintEnabled">false</item>
+        <item name="toolbarStyle">@style/topBarStyle</item>
         <item name="android:buttonStyle">@style/button</item>
         <item name="android:textColorHint">@color/grayLight</item>
         <item name="android:typeface">sans</item>
@@ -103,7 +104,7 @@
         <item name="android:paddingBottom">6dp</item>
         <item name="android:minHeight">52dp</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@drawable/grad_lable</item>
     </style>
 
     <style name="labelsHead" parent="@android:style/TextAppearance.Widget.TextView">

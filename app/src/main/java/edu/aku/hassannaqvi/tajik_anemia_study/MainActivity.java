@@ -14,6 +14,8 @@ import java.util.Map;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2aActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.openForm:
             case R.id.sec1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, Section1Activity.class));
+                startActivity(new Intent(this, SectionH1Activity.class));
                 break;
             case R.id.sec2:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, Section2Activity.class));
+                startActivity(new Intent(this, SectionH2aActivity.class));
                 break;
          /*   case R.id.sec3:
                 MainApp.form = new Form();

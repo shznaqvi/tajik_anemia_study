@@ -185,6 +185,7 @@
 
 
     <string name="modhtitle">MODULE H: HOUSEHOLD AND MEMBERS INFORMATION</string>
+    <string name="identtitle">SECTION H1: HOUSEHOLD IDENTIFICATION INFORMATION</string>
     <string name="sech1title">SECTION H1: HOUSEHOLD INFORMATION (HH)</string>
     <string name="h101t">District</string>
     <string name="h101">District</string>
@@ -215,14 +216,14 @@
     <string name="h111a">Yes</string>
     <string name="h111b">No</string>
     <string name="instr2">If written consent is not given STOP interview and move to Question H113 of this section to REFUSED on the outcome of the interview</string>
-    <string name="h112">Result of Household Questionnaire interview</string>
-    <string name="h112a">Completed</string>
-    <string name="h112b">No household member at home or no competent respondent at home at time of visit</string>
-    <string name="h112c">Entire household absent for extended period</string>
-    <string name="h112d">Refused</string>
-    <string name="h112e">Dwelling vacant or address not a dwelling</string>
-    <string name="h112f">Dwelling not found</string>
-    <string name="h11296">Other (specify)</string>
+    <string name="istatus">Result of Household Questionnaire interview</string>
+    <string name="istatusa">Completed</string>
+    <string name="istatusb">No household member at home or no competent respondent at home at time of visit</string>
+    <string name="istatusc">Entire household absent for extended period</string>
+    <string name="istatusd">Refused</string>
+    <string name="istatuse">Dwelling vacant or address not a dwelling</string>
+    <string name="istatusf">Dwelling not found</string>
+    <string name="istatus96">Other (specify)</string>
     <string name="sech2title">SECTION H2: HOUSEHOLD MEMBER INFORMATION </string>
     <string name="titleh2a">Household Head Information</string>
     <string name="instruch2a">Note: This Section will only be filled once for the Head of Household</string>
@@ -2242,7 +2243,7 @@
     <string name='Q_h109'>h109</string>
     <string name='Q_h110'>h110</string>
     <string name='Q_h111'>h111</string>
-    <string name='Q_h112'>h112</string>
+    <string name='Q_istatus'>istatus</string>
     <string name='Q_h201t'>h201t</string>
     <string name='Q_h202'>h202</string>
     <string name='Q_h203'>h203</string>
@@ -2549,18 +2550,10 @@
     <string name='Q_w409'>w409</string>
     <string name='Q_w410'>w410</string>
 
-    <string name="title_activity_section1">Section1Activity</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="hello_world">Hello Square World!</string>
-    <string name="tsf40298">Don\'t Know</string>
-    <string name="hold_child">Please hold child <b>%1$s</b> in waiting area and check temperature after 30 minutes.</string>
-    <string name="istatusb">Incomplete</string>
-    <string name="istatusa">Complete</string>
-    <string name="istatusc">On-Hold</string>
-    <string name="istatus">Interview Status</string>
     <string name="btnDownload">Download Data</string>
 
     <!--Z-Score-->
