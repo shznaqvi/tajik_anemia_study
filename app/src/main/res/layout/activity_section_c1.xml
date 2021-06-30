@@ -65,8 +65,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/modctitle" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- modcinstr  Title   -->
                 <androidx.cardview.widget.CardView
@@ -82,8 +85,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/modcinstr" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- secc1title  Title   -->
                 <androidx.cardview.widget.CardView
@@ -99,8 +105,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/secc1title" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- secinstruc  Title   -->
                 <androidx.cardview.widget.CardView
@@ -116,8 +125,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/secinstruc" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- titlec1  Title   -->
                 <androidx.cardview.widget.CardView
@@ -133,8 +145,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/titlec1" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c101  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -2570,7 +2585,9 @@
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
