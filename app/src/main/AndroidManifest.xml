@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.sections.Section04Activity"></activity>
+        <activity android:name=".ui.sections.Section05Activity"></activity>
+        <activity android:name=".ui.sections.Section04Activity" />
         <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
