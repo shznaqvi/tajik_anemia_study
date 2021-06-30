@@ -17,12 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".ui.sections.SectionH2cActivity"
-            android:label="@string/sech4title"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
 
 
         <activity
@@ -30,7 +24,6 @@
             android:label="@string/sech1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
 
@@ -69,21 +62,21 @@
 
         <activity
             android:name=".ui.sections.SectionH2cActivity"
-            android:label="@string/sech4title"
+            android:label="@string/sech2ctitle2"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.sections.SectionH2dActivity"
-            android:label="@string/sech5title"
+            android:label="@string/sech2dtitle"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.sections.SectionH3Activity"
-            android:label="@string/sech4title"
+            android:label="@string/sech3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
@@ -97,21 +90,28 @@
 
         <activity
             android:name=".ui.sections.SectionH5Activity"
-            android:label="@string/sech4title"
+            android:label="@string/sech5title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.sections.SectionH6Activity"
-            android:label="@string/sech4title"
+            android:label="@string/sech6title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".ui.sections.SectionH7Activity"
-            android:label="@string/sech4title"
+            android:label="@string/sech7title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.sections.SectionW1aActivity"
+            android:label="@string/secw1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
