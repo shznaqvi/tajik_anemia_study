@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.sections.SectionH3bActivity"></activity>
+
+
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
@@ -76,6 +77,13 @@
 
         <activity
             android:name=".ui.sections.SectionH3aActivity"
+            android:label="@string/sech3title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.sections.SectionH3bActivity"
             android:label="@string/sech3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
@@ -168,6 +176,13 @@
         <activity
             android:name=".ui.sections.SectionAnthroActivity"
             android:label="@string/moddtitle"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.sections.SectionHemoActivity"
+            android:label="@string/modetitle"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
