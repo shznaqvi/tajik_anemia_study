@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="edu.aku.hassannaqvi.tajik_anemia_study">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,9 +17,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
-        android:usesCleartextTraffic="true">
-
-
+        tools:replace="android:allowBackup">
+        <activity android:name=".ui.sections.SectionH3bActivity"></activity>
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
@@ -75,7 +75,7 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
-            android:name=".ui.sections.SectionH3Activity"
+            android:name=".ui.sections.SectionH3aActivity"
             android:label="@string/sech3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"

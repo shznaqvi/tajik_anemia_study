@@ -21,13 +21,13 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:spinnerStyle">@style/spinner</item>
-        <item name="android:actionBarStyle">@style/topBarStyle</item>
+        <item name="android:actionBarStyle">@style/ToolbarTheme</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
         <item name="radioButtonStyle">@style/radiobutton</item>
         <item name="checkboxStyle">@style/checkbox</item>
         <item name="hintEnabled">false</item>
-        <item name="toolbarStyle">@style/topBarStyle</item>
+        <item name="toolbarStyle">@style/ToolbarTheme</item>
         <item name="android:buttonStyle">@style/button</item>
         <item name="android:textColorHint">@color/grayLight</item>
         <item name="android:typeface">sans</item>
@@ -80,15 +80,7 @@
         <item name="android:padding">24dp</item>
     </style>
 
-    <style name="topBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:textColorSecondary">@color/white</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:typeface">sans</item>
-        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
-        <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-        <item name="titleTextAppearance">@style/Widget.AppCompat.Toolbar</item>
-    </style>
+
 
     <style name="labels" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:layout_width">match_parent</item>
@@ -303,6 +295,17 @@
         <item name="android:yearListSelectorColor">@color/colorAccent</item>
         <item name="android:datePickerMode">calendar</item>
         <item name="android:minDate">01/01/2000</item>
+    </style>
+
+
+    <style name="topBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="titleTextAppearance">@style/Widget.AppCompat.Toolbar</item>
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">

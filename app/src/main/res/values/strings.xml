@@ -2322,7 +2322,7 @@
     <string name='Q_h317'>h317</string>
     <string name='Q_h318'>h318</string>
     <string name='Q_h319'>h319</string>
-    <string name='Q_h320t'>h320t</string>
+    <string name='Q_h320'>h320</string>
     <string name='Q_h321'>h321</string>
     <string name='Q_h322'>h322</string>
     <string name='Q_h323'>h323</string>
@@ -2562,5 +2562,6 @@
     <string name="hlaz">HLAZ</string>
     <string name="waz">WAZ</string>
     <string name="whz">WHZ</string>
+    <string name="q_h311">H311</string>
 
 </resources>
