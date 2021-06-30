@@ -12,11 +12,9 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
@@ -83,10 +81,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_ASSESMENT_NO, form.getAssessNo());
-        values.put(FormsTable.COLUMN_MR_NUMBER, form.getMrNo());
-        values.put(FormsTable.COLUMN_INFANT_NAME, form.getInfantName());
-        values.put(FormsTable.COLUMN_TSF305, form.getTsf305());
         values.put(FormsTable.COLUMN_S1, form.getS1());
         values.put(FormsTable.COLUMN_S2, form.getS2());
         values.put(FormsTable.COLUMN_S3, form.getS3());
@@ -204,16 +198,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     // istatus examples: (1) or (1,9) or (1,3,5)
-    public Form getFormByAssessNo(String assesNo, String istatus) {
+    public Form getFormByAssessNo(String uid, String istatus) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
-        whereClause = FormsTable.COLUMN_ASSESMENT_NO + "=? AND " +
+        whereClause = FormsTable.COLUMN_UID + "=? AND " +
                 FormsTable.COLUMN_ISTATUS + " in " + istatus;
 
-        String[] whereArgs = {assesNo};
+        String[] whereArgs = {uid};
 
         String groupBy = null;
         String having = null;
@@ -297,7 +291,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
     }
 
-    public int updateTemp(String assessNo, String temp) {
+    /*public int updateTemp(String assessNo, String temp) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
@@ -315,7 +309,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values,
                 selection,
                 selectionArgs);
-    }
+    }*/
 
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase();
