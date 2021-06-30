@@ -17,22 +17,22 @@ import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySection03Binding;
+import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2aBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
-public class Section03Activity extends AppCompatActivity {
-    ActivitySection03Binding bi;
+public class SectionH2aActivity extends AppCompatActivity {
+    ActivitySectionH2aBinding bi;
     private DatabaseHelper db;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section03);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2a);
         bi.setCallback(this);
         setupSkips();
     }

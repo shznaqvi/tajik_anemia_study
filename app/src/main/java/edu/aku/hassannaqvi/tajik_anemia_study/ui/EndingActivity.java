@@ -15,6 +15,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityEndingBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
@@ -63,7 +64,7 @@ public class EndingActivity extends AppCompatActivity {
 
             cleanupProcess();
             finish();
-            Intent i = new Intent(this, Section1Activity.class);
+            Intent i = new Intent(this, SectionH1Activity.class);
             startActivity(i);
             Toast.makeText(this, "Entry Complete", Toast.LENGTH_SHORT).show();
 
