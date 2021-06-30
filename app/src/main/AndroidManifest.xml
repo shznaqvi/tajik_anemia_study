@@ -123,6 +123,27 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
+        <activity
+            android:name=".ui.sections.SectionW2Activity"
+            android:label="@string/secw2title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.sections.SectionW3Activity"
+            android:label="@string/secw3title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name=".ui.sections.SectionW4Activity"
+            android:label="@string/secw4title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
 
         <activity android:name=".ui.SyncActivity" />
 
