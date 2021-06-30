@@ -11,7 +11,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.Section05Activity" />
+            type="edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2dActivity" />
 
     </data>
 
