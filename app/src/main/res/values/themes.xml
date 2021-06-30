@@ -339,6 +339,7 @@
     <style name="Toolbar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textSize">11sp</item>
         <item name="android:textStyle">italic</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="spinnerStyle" parent="Widget.AppCompat.Spinner"></style>
