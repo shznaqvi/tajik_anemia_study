@@ -2,12 +2,14 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -41,6 +43,14 @@ public class SectionH3aActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
+        bi.h303.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVh304t1.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVh304t1);
+            if (i == bi.h303a.getId() || i == bi.h303b.getId()) {
+                bi.fldGrpCVh304t1.setVisibility(View.GONE);
+            }
+        });
+
         rgLsnr(bi.h305, bi.h305b, new ViewGroup[]{bi.fldGrpCVh306});
     }
 

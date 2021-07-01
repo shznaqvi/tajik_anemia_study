@@ -73,9 +73,11 @@ public class EndingActivity extends AppCompatActivity {
         }
     }
 
+
     private void cleanupProcess() {
         form = null;
     }
+
 
     private boolean UpdateDB() {
         int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_ISTATUS, form.getiStatus());

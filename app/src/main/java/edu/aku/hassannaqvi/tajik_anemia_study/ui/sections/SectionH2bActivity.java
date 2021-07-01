@@ -10,16 +10,11 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2bBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
@@ -50,12 +45,9 @@ public class SectionH2bActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(FormsTable.COLUMN_S1, form.s1toString());
+        if (updcount == 1) {
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -77,12 +69,51 @@ public class SectionH2bActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        form.setH209(bi.h209.getText().toString().isEmpty() ? "-1" : bi.h209.getText().toString());
+
+        form.setH210(bi.h210a.isChecked() ? "1"
+                : bi.h210b.isChecked() ? "2"
+                : "-1");
+
+        form.setH211t(bi.h211t.getText().toString().isEmpty() ? "-1" : bi.h211t.getText().toString());
+        form.setH211m(bi.h211m.getText().toString().isEmpty() ? "-1" : bi.h211m.getText().toString());
+        form.setH211f(bi.h211f.getText().toString().isEmpty() ? "-1" : bi.h211f.getText().toString());
+
+        form.setH212(bi.h212a.isChecked() ? "1"
+                : bi.h212b.isChecked() ? "2"
+                : "-1");
+
+        form.setH213t(bi.h213t.getText().toString().isEmpty() ? "-1" : bi.h213t.getText().toString());
+        form.setH213m(bi.h213m.getText().toString().isEmpty() ? "-1" : bi.h213m.getText().toString());
+        form.setH213f(bi.h213f.getText().toString().isEmpty() ? "-1" : bi.h213f.getText().toString());
+
+        form.setH214(bi.h214a.isChecked() ? "1"
+                : bi.h214b.isChecked() ? "2"
+                : "-1");
+
+        form.setH215t(bi.h215t.getText().toString().isEmpty() ? "-1" : bi.h215t.getText().toString());
+        form.setH215m(bi.h215m.getText().toString().isEmpty() ? "-1" : bi.h215m.getText().toString());
+        form.setH215f(bi.h215f.getText().toString().isEmpty() ? "-1" : bi.h215f.getText().toString());
+
+        form.setH216(bi.h216a.isChecked() ? "1"
+                : bi.h216b.isChecked() ? "2"
+                : "-1");
+
+        form.setH217t(bi.h217t.getText().toString().isEmpty() ? "-1" : bi.h217t.getText().toString());
+        form.setH217m(bi.h217m.getText().toString().isEmpty() ? "-1" : bi.h217m.getText().toString());
+        form.setH217f(bi.h217f.getText().toString().isEmpty() ? "-1" : bi.h217f.getText().toString());
+
+        form.setH218(bi.h218a.isChecked() ? "1"
+                : bi.h218b.isChecked() ? "2"
+                : "-1");
+
+        form.setH219t(bi.h219t.getText().toString().isEmpty() ? "-1" : bi.h219t.getText().toString());
+        form.setH219m(bi.h219m.getText().toString().isEmpty() ? "-1" : bi.h219m.getText().toString());
+        form.setH219f(bi.h219f.getText().toString().isEmpty() ? "-1" : bi.h219f.getText().toString());
+        form.setH220a(bi.h220a.getText().toString().isEmpty() ? "-1" : bi.h220a.getText().toString());
+        form.setH220b(bi.h220b.getText().toString().isEmpty() ? "-1" : bi.h220b.getText().toString());
+        form.setH220c(bi.h220c.getText().toString().isEmpty() ? "-1" : bi.h220c.getText().toString());
 
     }
 
