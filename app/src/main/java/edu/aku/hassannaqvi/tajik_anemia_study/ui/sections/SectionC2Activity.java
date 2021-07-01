@@ -2,14 +2,23 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -20,8 +29,10 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC2Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import kotlin.collections.unsigned.UArraysKt;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionC2Activity extends AppCompatActivity {
@@ -39,7 +50,23 @@ public class SectionC2Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
+        rgLsnr(bi.c20301a, bi.c20301ab, new ViewGroup[]{bi.c20301bcheck});
+        rgLsnr(bi.c20302a, bi.c20302ab, new ViewGroup[]{bi.c20302bcheck});
+        rgLsnr(bi.c20303a, bi.c20303ab, new ViewGroup[]{bi.c20303bcheck});
+        rgLsnr(bi.c20304a, bi.c20304ab, new ViewGroup[]{bi.c20304bcheck});
+        rgLsnr(bi.c20305a, bi.c20305ab, new ViewGroup[]{bi.c20305bcheck});
+        rgLsnr(bi.c20306a, bi.c20306ab, new ViewGroup[]{bi.c20306bcheck});
+        rgLsnr(bi.c20307a, bi.c20307ab, new ViewGroup[]{bi.c20307bcheck});
+        rgLsnr(bi.c20308a, bi.c20308ab, new ViewGroup[]{bi.c20308bcheck});
+        rgLsnr(bi.c20309a, bi.c20309ab, new ViewGroup[]{bi.c20309bcheck});
+        rgLsnr(bi.c20310a, bi.c20310ab, new ViewGroup[]{bi.c20310bcheck});
+        rgLsnr(bi.c20311a, bi.c20311ab, new ViewGroup[]{bi.c20311bcheck});
+        rgLsnr(bi.c20312a, bi.c20312ab, new ViewGroup[]{bi.c20312bcheck});
+        rgLsnr(bi.c20313a, bi.c20313ab, new ViewGroup[]{bi.c20313bcheck});
+        rgLsnr(bi.c20314a, bi.c20314ab, new ViewGroup[]{bi.c20314bcheck});
+        rgLsnr(bi.c20315a, bi.c20315ab, new ViewGroup[]{bi.c20315bcheck});
+        rgLsnr(bi.c20316a, bi.c20316ab, new ViewGroup[]{bi.c20316bcheck});
+        rgLsnr(bi.c20317a, bi.c20317ab, new ViewGroup[]{bi.c20317bcheck});
     }
 
 
