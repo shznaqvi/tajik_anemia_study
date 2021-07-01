@@ -52,6 +52,19 @@ public class SectionH3aActivity extends AppCompatActivity {
         });
 
         rgLsnr(bi.h305, bi.h305b, new ViewGroup[]{bi.fldGrpCVh306});
+
+        bi.h307.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVh308.setVisibility(View.VISIBLE);
+            bi.fldGrpCVh309title.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVh308);
+            Clear.clearAllFields(bi.fldGrpCVh309title);
+            if (i == bi.h307h.getId() || i == bi.h307i.getId()) {
+                bi.fldGrpCVh308.setVisibility(View.GONE);
+                bi.fldGrpCVh309title.setVisibility(View.GONE);
+            }
+        });
+
+        rgLsnr(bi.h308, bi.h308b, new ViewGroup[]{bi.fldGrpCVh309title});
     }
 
 
