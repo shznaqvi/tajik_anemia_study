@@ -2,11 +2,14 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -22,6 +25,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionH3bActivity extends AppCompatActivity {
@@ -40,6 +44,17 @@ public class SectionH3bActivity extends AppCompatActivity {
 
     private void setupSkips() {
 
+        bi.h315.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVh317.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVh317);
+            if (i == bi.h315b.getId() || i == bi.h315c.getId()) {
+                bi.fldGrpCVh317.setVisibility(View.GONE);
+            }
+        });
+
+        rgLsnr(bi.h321, bi.h321b, new ViewGroup[]{bi.fldGrpCVh322});
+
+        rgLsnr(bi.h323, bi.h323b, new ViewGroup[]{bi.fldGrpCVh324});
     }
 
 
