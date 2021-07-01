@@ -39,7 +39,6 @@ public class SectionH2aActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
     }
 
 

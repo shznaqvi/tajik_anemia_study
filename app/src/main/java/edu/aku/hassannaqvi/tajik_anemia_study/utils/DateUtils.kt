@@ -1,6 +1,11 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.utils
 
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import com.validatorcrawler.aliazaz.Clear
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -228,4 +233,15 @@ fun getYearsAndMonthsBack(format: String, month: Int, year: Int): String {
     cal.add(Calendar.YEAR, year)
     cal.add(Calendar.MONTH, month)
     return SimpleDateFormat(format, Locale.ENGLISH).format(cal.time)
+}
+
+
+fun rgLsnr(rg: RadioGroup, rb: RadioButton, vg: Array<ViewGroup>) {
+    rg.setOnCheckedChangeListener { radioGroup, i ->
+        vg.forEach {
+            it.visibility = View.VISIBLE
+            Clear.clearAllFields(it)
+            if (i == rb.id) it.visibility = View.GONE
+        }
+    }
 }
