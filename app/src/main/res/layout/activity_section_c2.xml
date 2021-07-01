@@ -232,12 +232,6 @@
                                 android:text="@string/instruc1" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20301t2" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -270,8 +264,16 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/c20301ab" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:id="@+id/c20301bcheck"
@@ -321,13 +323,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/c20301bg" />
+
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20302t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -361,8 +359,16 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="@string/c20302ab" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20302t2" />
 
                         <LinearLayout
                             android:id="@+id/c20302bcheck"
@@ -412,14 +418,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/c20302bg" />
+
                         </LinearLayout>
 
-
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20303t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -455,6 +456,12 @@
                                     android:text="@string/c20303ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20303t2" />
 
                         <LinearLayout
                             android:id="@+id/c20303bcheck"
@@ -506,11 +513,6 @@
                                 android:text="@string/c20303bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20304t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -546,6 +548,12 @@
                                     android:text="@string/c20304ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20304t2" />
 
                         <LinearLayout
                             android:id="@+id/c20304bcheck"
@@ -597,11 +605,6 @@
                                 android:text="@string/c20304bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20305t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -637,6 +640,12 @@
                                     android:text="@string/c20305ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20305t2" />
 
                         <LinearLayout
                             android:id="@+id/c20305bcheck"
@@ -688,11 +697,6 @@
                                 android:text="@string/c20305bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20306t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -728,6 +732,13 @@
                                     android:text="@string/c20306ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20306t2" />
 
                         <LinearLayout
                             android:id="@+id/c20306bcheck"
@@ -779,11 +790,6 @@
                                 android:text="@string/c20306bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20307t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -819,6 +825,12 @@
                                     android:text="@string/c20307ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20307t2" />
 
                         <LinearLayout
                             android:id="@+id/c20307bcheck"
@@ -870,11 +882,6 @@
                                 android:text="@string/c20307bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20308t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -910,6 +917,12 @@
                                     android:text="@string/c20308ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20308t2" />
 
                         <LinearLayout
                             android:id="@+id/c20308bcheck"
@@ -961,11 +974,6 @@
                                 android:text="@string/c20308bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1001,6 +1009,12 @@
                                     android:text="@string/c20309ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:id="@+id/c20309bcheck"
@@ -1052,11 +1066,6 @@
                                 android:text="@string/c20309bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20310t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1092,6 +1101,13 @@
                                     android:text="@string/c20310ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20310t2" />
 
                         <LinearLayout
                             android:id="@+id/c20310bcheck"
@@ -1143,11 +1159,6 @@
                                 android:text="@string/c20310bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20311t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1183,6 +1194,12 @@
                                     android:text="@string/c20311ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20311t2" />
 
                         <LinearLayout
                             android:id="@+id/c20311bcheck"
@@ -1234,11 +1251,6 @@
                                 android:text="@string/c20311bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20312t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1274,6 +1286,12 @@
                                     android:text="@string/c20312ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20312t2" />
 
                         <LinearLayout
                             android:id="@+id/c20312bcheck"
@@ -1325,11 +1343,6 @@
                                 android:text="@string/c20312bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1365,6 +1378,12 @@
                                     android:text="@string/c20313ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:id="@+id/c20313bcheck"
@@ -1416,11 +1435,6 @@
                                 android:text="@string/c20313bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20314t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1456,6 +1470,12 @@
                                     android:text="@string/c20314ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20314t2" />
 
                         <LinearLayout
                             android:id="@+id/c20314bcheck"
@@ -1507,11 +1527,6 @@
                                 android:text="@string/c20314bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1547,6 +1562,12 @@
                                     android:text="@string/c20315ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:id="@+id/c20315bcheck"
@@ -1598,11 +1619,6 @@
                                 android:text="@string/c20315bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20316t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1638,6 +1654,12 @@
                                     android:text="@string/c20316ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20316t2" />
 
                         <LinearLayout
                             android:id="@+id/c20316bcheck"
@@ -1689,11 +1711,6 @@
                                 android:text="@string/c20316bg" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1729,6 +1746,12 @@
                                     android:text="@string/c20317ab" />
                             </RadioGroup>
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/c20301t2" />
 
                         <LinearLayout
                             android:id="@+id/c20317bcheck"
