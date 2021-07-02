@@ -2,23 +2,15 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -29,7 +21,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC2Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
-import kotlin.collections.unsigned.UArraysKt;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
