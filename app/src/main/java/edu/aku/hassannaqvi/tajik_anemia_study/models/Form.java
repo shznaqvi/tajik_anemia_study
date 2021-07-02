@@ -27,6 +27,8 @@ public class Form extends BaseObservable {
     private String uid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
+    private String cluster = StringUtils.EMPTY;
+    private String hhid = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
@@ -933,6 +935,28 @@ public class Form extends BaseObservable {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+    @Bindable
+    public String getHhid() {
+        return hhid;
+    }
+
+    public void setHhid(String hhid) {
+        this.hhid = hhid;
+        notifyPropertyChanged(BR.hhid);
+    }
+
 
     public String getUserName() {
         return userName;
@@ -9322,6 +9346,8 @@ public class Form extends BaseObservable {
     public Form Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
+        this.cluster = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
@@ -9339,6 +9365,7 @@ public class Form extends BaseObservable {
 
         return this;
     }
+
 
     public void s1Hydrate(String string) {
 
@@ -11129,6 +11156,8 @@ public class Form extends BaseObservable {
         try {
             json.put(FormsTable.COLUMN_ID, this.id);
             json.put(FormsTable.COLUMN_UID, this.uid);
+            json.put(FormsTable.COLUMN_CLUSTER, this.cluster);
+            json.put(FormsTable.COLUMN_HHID, this.hhid);
             json.put(FormsTable.COLUMN_USERNAME, this.userName);
             json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
             json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);

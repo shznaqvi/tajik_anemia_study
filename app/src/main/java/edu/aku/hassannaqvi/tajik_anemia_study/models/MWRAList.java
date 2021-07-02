@@ -25,6 +25,8 @@ public class MWRAList extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String cluster = StringUtils.EMPTY;
+    private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
 
@@ -83,6 +85,28 @@ public class MWRAList extends BaseObservable {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+
+    @Bindable
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
+        notifyPropertyChanged(BR.cluster);
+    }
+
+    @Bindable
+    public String getHhid() {
+        return hhid;
+    }
+
+    public void setHhid(String hhid) {
+        this.hhid = hhid;
+        notifyPropertyChanged(BR.hhid);
+    }
+
 
     public String getUserName() {
         return userName;
@@ -291,6 +315,8 @@ public class MWRAList extends BaseObservable {
     public MWRAList Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UID));
+        this.cluster = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_DEVICEID));
@@ -360,6 +386,8 @@ public class MWRAList extends BaseObservable {
         try {
             json.put(MWRAListTable.COLUMN_ID, this.id);
             json.put(MWRAListTable.COLUMN_UID, this.uid);
+            json.put(MWRAListTable.COLUMN_CLUSTER, this.cluster);
+            json.put(MWRAListTable.COLUMN_HHID, this.hhid);
             json.put(MWRAListTable.COLUMN_USERNAME, this.userName);
             json.put(MWRAListTable.COLUMN_SYSDATE, this.sysDate);
             json.put(MWRAListTable.COLUMN_DEVICEID, this.deviceId);
