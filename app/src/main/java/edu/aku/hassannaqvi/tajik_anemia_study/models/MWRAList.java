@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BR;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
 public class MWRAList extends BaseObservable {
@@ -289,18 +289,18 @@ public class MWRAList extends BaseObservable {
 
 
     public MWRAList Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
-        this.userName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UID));
+        this.userName = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S1)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_S1)));
 
         return this;
     }
@@ -358,17 +358,17 @@ public class MWRAList extends BaseObservable {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(FormsTable.COLUMN_ID, this.id);
-            json.put(FormsTable.COLUMN_UID, this.uid);
-            json.put(FormsTable.COLUMN_USERNAME, this.userName);
-            json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
-            //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
-            //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+            json.put(MWRAListTable.COLUMN_ID, this.id);
+            json.put(MWRAListTable.COLUMN_UID, this.uid);
+            json.put(MWRAListTable.COLUMN_USERNAME, this.userName);
+            json.put(MWRAListTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(MWRAListTable.COLUMN_DEVICEID, this.deviceId);
+            json.put(MWRAListTable.COLUMN_DEVICETAGID, this.deviceTag);
+            json.put(MWRAListTable.COLUMN_ISTATUS, this.iStatus);
+            //  json.put(MWRAListTable.COLUMN_SYNCED, this.synced);
+            //  json.put(MWRAListTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-            json.put(FormsTable.COLUMN_S1, new JSONObject(s1toString()));
+            json.put(MWRAListTable.COLUMN_S1, new JSONObject(s1toString()));
             return json;
         } catch (JSONException e) {
             e.printStackTrace();
