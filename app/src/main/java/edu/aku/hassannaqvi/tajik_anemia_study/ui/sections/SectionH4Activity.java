@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,15 +54,17 @@ public class SectionH4Activity extends AppCompatActivity {
             }
         });
 
-/*        chLsnr(bi.h403a);
-        chLsnr(bi.h403b);
-        chLsnr(bi.h403c);*/
+        bi.h403d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h403check, !b));
+
+        chLsnr(bi.h403a, bi.h403b, bi.h403c);
+        chLsnr(bi.h403b, bi.h403a, bi.h403c);
+        chLsnr(bi.h403c, bi.h403a, bi.h403b);
 
     }
 
-/*    private void chLsnr(CheckBox cb) {
-        cb.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
+    private void chLsnr(CheckBox cb1, CheckBox cb2, CheckBox cb3) {
+        cb1.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b || cb2.isChecked() || cb3.isChecked()) {
                 Clear.clearAllFields(bi.fldGrpCVh404);
                 Clear.clearAllFields(bi.fldGrpCVh405);
                 bi.fldGrpCVh404.setVisibility(View.GONE);
@@ -69,10 +72,9 @@ public class SectionH4Activity extends AppCompatActivity {
             } else {
                 bi.fldGrpCVh404.setVisibility(View.VISIBLE);
                 bi.fldGrpCVh405.setVisibility(View.VISIBLE);
-
             }
         });
-    }*/
+    }
 
 
     private boolean updateDB() {

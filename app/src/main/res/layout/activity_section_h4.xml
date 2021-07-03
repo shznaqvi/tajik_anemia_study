@@ -215,12 +215,15 @@
                             android:layout_height="wrap_content"
                             android:text="@string/h403c" />
 
-                        <CheckBox
-                            android:id="@+id/h403d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/h403d" />
                     </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/h403d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:tag="-1"
+                        android:text="@string/h403d" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
