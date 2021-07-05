@@ -112,8 +112,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
     // Form Validator
@@ -136,10 +136,10 @@ dependencies {
     implementation "androidx.work:work-runtime:$work_version"
 
     //Image Compressor
-    implementation 'id.zelory:compressor:2.1.0'
+    implementation 'id.zelory:compressor:3.0.1'
 
     // Permissions Handeling
-    implementation 'com.karumi:dexter:6.2.2'
+    implementation 'com.karumi:dexter:6.2.3'
 }
 repositories {
     mavenCentral()
