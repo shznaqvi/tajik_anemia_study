@@ -42,7 +42,9 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -157,8 +159,9 @@ public class SyncActivity extends AppCompatActivity {
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra("login", false);
                 if (sync_flag) {
-
                     downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(ClustersTable.TABLE_NAME));
+                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
                     downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
                 } else {
                     // Set tables to DOWNLOAD
@@ -242,6 +245,14 @@ public class SyncActivity extends AppCompatActivity {
                                     case UsersTable.TABLE_NAME:
                                         jsonArray = new JSONArray(result);
                                         insertCount = db.syncUser(jsonArray);
+                                        break;
+                                    case ClustersTable.TABLE_NAME:
+                                        jsonArray = new JSONArray(result);
+                                        insertCount = db.syncClusters(jsonArray);
+                                        break;
+                                    case RandomTable.TABLE_NAME:
+                                        jsonArray = new JSONArray(result);
+                                        insertCount = db.syncRandom(jsonArray);
                                         break;
                                     case VersionTable.TABLE_NAME:
                                         insertCount = db.syncVersionApp(new JSONObject(result));

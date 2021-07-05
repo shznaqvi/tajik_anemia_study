@@ -139,9 +139,8 @@ public class TableContracts {
     }
 
     public static abstract class UsersTable implements BaseColumns {
-
-        public static final String TABLE_NAME = "users";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "users";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
@@ -150,11 +149,31 @@ public class TableContracts {
 
     }
 
-    public static abstract class VersionTable implements BaseColumns {
-
-
+    public static abstract class ClustersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "clusters";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_DISTRICT_NAME = "district_name";
+        public static final String COLUMN_DISTRICT_CODE = "dist_code";
+        public static final String COLUMN_CITY_NAME = "city_name";
+        public static final String COLUMN_CITY_CODE = "city_code";
+        public static final String COLUMN_CLUSTER_NO = "cluster_no";
 
+    }
+
+    public static abstract class RandomTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String TABLE_NAME = "random";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_SNO = "sno";
+        public static final String COLUMN_CLUSTER_NO = "cluster_no";
+        public static final String COLUMN_HEAD_HH = "head_hh";
+        public static final String COLUMN_HH_NO = "hh_no";
+
+    }
+
+    public static abstract class VersionTable implements BaseColumns {
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String TABLE_NAME = "version";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_VERSION_PATH = "elements";
@@ -166,9 +185,7 @@ public class TableContracts {
     }
 
     public static abstract class ZScoreTable implements BaseColumns {
-
         public static final String TABLE_NAME = "zstandards";
-
         public static final String _ID = "_id";
         public static final String COLUMN_SEX = "sex";
         public static final String COLUMN_AGE = "age";

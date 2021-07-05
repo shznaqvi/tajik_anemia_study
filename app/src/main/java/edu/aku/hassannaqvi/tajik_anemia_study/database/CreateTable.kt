@@ -39,6 +39,27 @@ object CreateTable {
             + " );"
             )
 
+
+    const val SQL_CREATE_CLUSTERS = ("CREATE TABLE " + ClustersTable.TABLE_NAME + "("
+            + ClustersTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ClustersTable.COLUMN_DISTRICT_NAME + " TEXT,"
+            + ClustersTable.COLUMN_DISTRICT_CODE + " TEXT,"
+            + ClustersTable.COLUMN_CITY_NAME + " TEXT,"
+            + ClustersTable.COLUMN_CITY_CODE + " TEXT,"
+            + ClustersTable.COLUMN_CLUSTER_NO + " TEXT"
+            + " );"
+            )
+
+
+    const val SQL_CREATE_RANDOM = ("CREATE TABLE " + RandomTable.TABLE_NAME + "("
+            + RandomTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + RandomTable.COLUMN_SNO + " TEXT,"
+            + RandomTable.COLUMN_CLUSTER_NO + " TEXT,"
+            + RandomTable.COLUMN_HH_NO + " TEXT,"
+            + RandomTable.COLUMN_HEAD_HH + " TEXT"
+            + " );"
+            )
+
     const val SQL_CREATE_VERSIONAPP = ("CREATE TABLE " + VersionTable.TABLE_NAME + " ("
             + VersionTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + VersionTable.COLUMN_VERSION_CODE + " TEXT, "

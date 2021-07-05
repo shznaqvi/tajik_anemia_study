@@ -16,12 +16,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ZScoreTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.VersionApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
@@ -372,6 +376,67 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(UsersTable.COLUMN_PASSWORD, user.getPassword());
                 values.put(UsersTable.COLUMN_FULLNAME, user.getFullname());
                 long rowID = db.insert(UsersTable.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncClusters(JSONArray clusterList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(ClustersTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < clusterList.length(); i++) {
+
+                JSONObject json = clusterList.getJSONObject(i);
+
+                Clusters cluster = new Clusters();
+                cluster.sync(json);
+                ContentValues values = new ContentValues();
+
+                values.put(ClustersTable.COLUMN_DISTRICT_NAME, cluster.getDistrictName());
+                values.put(ClustersTable.COLUMN_DISTRICT_CODE, cluster.getDistrictCode());
+                values.put(ClustersTable.COLUMN_CITY_NAME, cluster.getCityName());
+                values.put(ClustersTable.COLUMN_CITY_CODE, cluster.getCityCode());
+                values.put(ClustersTable.COLUMN_CLUSTER_NO, cluster.getClusterNo());
+                long rowID = db.insert(ClustersTable.TABLE_NAME, null, values);
+                if (rowID != -1) insertCount++;
+            }
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+            db.close();
+        } finally {
+            db.close();
+        }
+        return insertCount;
+    }
+
+    public int syncRandom(JSONArray list) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(RandomTable.TABLE_NAME, null, null);
+        int insertCount = 0;
+        try {
+            for (int i = 0; i < list.length(); i++) {
+
+                JSONObject json = list.getJSONObject(i);
+
+                Random ran = new Random();
+                ran.sync(json);
+                ContentValues values = new ContentValues();
+
+                values.put(RandomTable.COLUMN_SNO, ran.getSno());
+                values.put(RandomTable.COLUMN_CLUSTER_NO, ran.getClusterNo());
+                values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
+                values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
+                long rowID = db.insert(ClustersTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
