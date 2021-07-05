@@ -86,12 +86,14 @@ public class SectionH1Activity extends AppCompatActivity {
         form.setH104(bi.h104.getSelectedItem().toString());*/
         form.setH105(bi.h105.getText().toString().isEmpty() ? "-1" : bi.h105.getText().toString());
 
-        form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
+       /* form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
         form.setH106m(bi.h106m.getText().toString().isEmpty() ? "-1" : bi.h106m.getText().toString());
         form.setH106y(bi.h106y.getText().toString().isEmpty() ? "-1" : bi.h106y.getText().toString());
         form.setH107h(bi.h107h.getText().toString().isEmpty() ? "-1" : bi.h107h.getText().toString());
-        form.setH107m(bi.h107m.getText().toString().isEmpty() ? "-1" : bi.h107m.getText().toString());
+        form.setH107m(bi.h107m.getText().toString().isEmpty() ? "-1" : bi.h107m.getText().toString());*/
 
+        form.setH108(bi.h106.getText().toString().isEmpty() ? "-1" : bi.h106.getText().toString());
+        form.setH108(bi.h107.getText().toString().isEmpty() ? "-1" : bi.h107.getText().toString());
         form.setH108(bi.h108.getText().toString().isEmpty() ? "-1" : bi.h108.getText().toString());
         form.setH109(bi.h109.getText().toString().isEmpty() ? "-1" : bi.h109.getText().toString());
 
