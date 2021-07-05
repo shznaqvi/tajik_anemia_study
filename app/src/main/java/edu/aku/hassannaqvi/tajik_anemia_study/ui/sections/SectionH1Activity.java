@@ -34,6 +34,7 @@ public class SectionH1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1);
         bi.setCallback(this);
+        bi.h105.setText(MainApp.user.getUserName());
         setupSkips();
     }
 
@@ -79,11 +80,11 @@ public class SectionH1Activity extends AppCompatActivity {
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
 
-        //form.setH101(bi.h101.getText().toString().isEmpty() ? "-1" : bi.h101.getText().toString());
-        //form.setH102(bi.h102.getText().toString().isEmpty() ? "-1" : bi.h102.getText().toString());
-        //form.setH103(bi.h103.getText().toString().isEmpty() ? "-1" : bi.h103.getText().toString());
-        //form.setH104(bi.h104.getText().toString().isEmpty() ? "-1" : bi.h104.getText().toString());
-        //form.setH105(bi.h105.getText().toString().isEmpty() ? "-1" : bi.h105.getText().toString());
+        form.setH101(bi.h101.getSelectedItem().toString());
+        form.setH102(bi.h102.getSelectedItem().toString());
+        form.setH103(bi.h103.getSelectedItem().toString());
+        form.setH104(bi.h104.getSelectedItem().toString());
+        form.setH105(bi.h105.getText().toString().isEmpty() ? "-1" : bi.h105.getText().toString());
 
         form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
         form.setH106m(bi.h106m.getText().toString().isEmpty() ? "-1" : bi.h106m.getText().toString());
@@ -101,18 +102,6 @@ public class SectionH1Activity extends AppCompatActivity {
         form.setH111(bi.h111a.isChecked() ? "1"
                 : bi.h111b.isChecked() ? "2"
                 : "-1");
-
-        /*form.setH112( bi.h112a.isChecked() ? "1"
-                : bi.h112b.isChecked() ? "2"
-                : bi.h112c.isChecked() ? "3"
-                : bi.h112d.isChecked() ? "4"
-                : bi.h112e.isChecked() ? "5"
-                : bi.h112f.isChecked() ? "6"
-                : bi.h11296.isChecked() ? "96"
-                :  "-1");
-
-        form.setH11296x(bi.h11296x.getText().toString());*/
-
 
     }
 
