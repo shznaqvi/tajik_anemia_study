@@ -32,7 +32,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
@@ -56,6 +58,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_USERS);
+        db.execSQL(SQL_CREATE_CLUSTERS);
+        db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(SQL_CREATE_FORMS);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ZSTANDARD);
@@ -411,7 +415,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
+            Log.d(TAG, "syncClusters(e): " + e);
             db.close();
         } finally {
             db.close();
@@ -431,17 +435,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Random ran = new Random();
                 ran.sync(json);
                 ContentValues values = new ContentValues();
-
                 values.put(RandomTable.COLUMN_SNO, ran.getSno());
                 values.put(RandomTable.COLUMN_CLUSTER_NO, ran.getClusterNo());
                 values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
                 values.put(RandomTable.COLUMN_HEAD_HH, ran.getHeadhh());
-                long rowID = db.insert(ClustersTable.TABLE_NAME, null, values);
+                long rowID = db.insert(RandomTable.TABLE_NAME, null, values);
                 if (rowID != -1) insertCount++;
             }
 
         } catch (Exception e) {
-            Log.d(TAG, "syncUser(e): " + e);
+            Log.d(TAG, "syncRandom(e): " + e);
             db.close();
         } finally {
             db.close();

@@ -17,6 +17,7 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.main"
+        android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
 
 
@@ -30,6 +31,8 @@
 
         <activity
             android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -188,7 +191,11 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
 
-        <activity android:name=".ui.SyncActivity" />
+        <activity
+            android:name=".ui.SyncActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name=".MainActivity"

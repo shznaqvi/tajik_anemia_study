@@ -163,7 +163,7 @@ public class TableContracts {
 
     public static abstract class RandomTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "random";
+        public static final String TABLE_NAME = "rand_hh";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_CLUSTER_NO = "cluster_no";
@@ -174,7 +174,7 @@ public class TableContracts {
 
     public static abstract class VersionTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "version";
+        public static final String TABLE_NAME = "versionApp";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_VERSION_PATH = "elements";
         public static final String COLUMN_VERSION_CODE = "versionCode";

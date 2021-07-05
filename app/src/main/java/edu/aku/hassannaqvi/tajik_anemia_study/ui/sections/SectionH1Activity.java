@@ -80,10 +80,10 @@ public class SectionH1Activity extends AppCompatActivity {
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
 
-        form.setH101(bi.h101.getSelectedItem().toString());
+       /* form.setH101(bi.h101.getSelectedItem().toString());
         form.setH102(bi.h102.getSelectedItem().toString());
         form.setH103(bi.h103.getSelectedItem().toString());
-        form.setH104(bi.h104.getSelectedItem().toString());
+        form.setH104(bi.h104.getSelectedItem().toString());*/
         form.setH105(bi.h105.getText().toString().isEmpty() ? "-1" : bi.h105.getText().toString());
 
         form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
