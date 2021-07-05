@@ -3,6 +3,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionH4Activity extends AppCompatActivity {
@@ -59,6 +61,8 @@ public class SectionH4Activity extends AppCompatActivity {
         chLsnr(bi.h403a, bi.h403b, bi.h403c);
         chLsnr(bi.h403b, bi.h403a, bi.h403c);
         chLsnr(bi.h403c, bi.h403a, bi.h403b);
+
+        rgLsnr(bi.h404, bi.h404b, new ViewGroup[]{bi.fldGrpCVh405});
 
     }
 
