@@ -271,6 +271,7 @@ public class Anthro extends BaseObservable {
     public Anthro Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_USERNAME));
@@ -333,6 +334,7 @@ public class Anthro extends BaseObservable {
         try {
             json.put(AnthroTable.COLUMN_ID, this.id);
             json.put(AnthroTable.COLUMN_UID, this.uid);
+            json.put(AnthroTable.COLUMN_UUID, this.uuid);
             json.put(AnthroTable.COLUMN_CLUSTER, this.cluster);
             json.put(AnthroTable.COLUMN_HHID, this.hhid);
             json.put(AnthroTable.COLUMN_USERNAME, this.userName);
