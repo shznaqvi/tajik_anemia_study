@@ -1175,8 +1175,7 @@
     <string name="w310b">No</string>
     <string name="w31098">Don’t know/ Don’t remember</string>
     <string name="w311">How long after the birth was (name) bathed for the first time?</string>
-    <string name="w311t1">If “immediately” or less than 1 hour, record ‘00’.</string>
-    <string name="w311t2">If less than 24 hours, record hours. If “1 day” or “next day”, probe: About how many hours after the delivery? If “24 hours”, probe to ensure best estimate of less than 24 hours or 1 day. If 24 hours or more, record days.</string>
+    <string name="w311t1">If “immediately” or less than 1 hour, record ‘00’. \r\n If less than 24 hours, record hours. If “1 day” or “next day”, probe: About how many hours after the delivery? If “24 hours”, probe to ensure best estimate of less than 24 hours or 1 day. If 24 hours or more, record days.</string>
     <string name="w311a">Immediately/less than 1 hour</string>
     <string name="w311h">Hours</string>
     <string name="w311d">Days</string>
@@ -1221,8 +1220,8 @@
     <string name="w317d">Days</string>
     <string name="w317w">Weeks</string>
     <string name="w31798">Don’t know/ Don’t Remember</string>
-    <string name="w318t">How many times such check happen?</string>
-    <string name="w318">Times</string>
+    <string name="w318">How many times such check happen?</string>
+    <string name="w318t">Times</string>
     <string name="w319">Purpose of this check</string>
     <string name="w319a">Counselling on nutrition</string>
     <string name="w319b">Counselling on IYCF &amp; breast feeding</string>
@@ -1252,8 +1251,8 @@
     <string name="w322d">Days</string>
     <string name="w322w">Weeks</string>
     <string name="w32298">Don’t know/ Don’t Remember</string>
-    <string name="w323t">How many times such check happen?</string>
-    <string name="w323">Times</string>
+    <string name="w323">How many times such check happen?</string>
+    <string name="w323t">Times</string>
     <string name="w324">Purpose of this check</string>
     <string name="w324a">Vaccination</string>
     <string name="w324b">Polio drops</string>
@@ -2529,12 +2528,12 @@
     <string name='Q_w315'>w315</string>
     <string name='Q_w316'>w316</string>
     <string name='Q_w317'>w317</string>
-    <string name='Q_w318t'>w318t</string>
+    <string name='Q_w318'>w318</string>
     <string name='Q_w319'>w319</string>
     <string name='Q_w320'>w320</string>
     <string name='Q_w321'>w321</string>
     <string name='Q_w322'>w322</string>
-    <string name='Q_w323t'>w323t</string>
+    <string name='Q_w323'>w323</string>
     <string name='Q_w324'>w324</string>
     <string name='Q_w325'>w325</string>
     <string name='Q_w326'>w326</string>
