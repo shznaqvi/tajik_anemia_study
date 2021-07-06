@@ -14,9 +14,10 @@
     <string name="splashText"> </string>
     <string name="splashText2">  </string>
     <string name="check_pending_forms">CHECK PENDING FORMS</string>
-    <string name="open_surveillance_form">OPEN SURVEILLANCE FORM</string>
-    <string name="open_onhold_form">UPDATE ONHOLD FORM</string>
-    <string name="open_followup_form">OPEN FOLLOW-UP FORM</string>
+    <string name="open_household_form">OPEN HOUSEHOLD FORM</string>
+    <string name="open_anthro_form">UPDATE ANTHRO FORM</string>
+    <string name="open_blood_form">UPDATE BLOOD INFORMANTION</string>
+    <string name="open_stool_form">UPDATE STOOL INFORMANTION</string>
     <string name="records_summary">Records Summary</string>
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
@@ -312,7 +313,7 @@
     <string name="h218b">No</string>
     <string name="h219">If Yes, Numbers of members greater than 49 years  </string>
     <string name="h219_info">TOTAL NUMBERS WILL BE AUTO CALCULATED</string>
-    <string name="h219t">Total Number of Members greater than 49</string>
+    <string name="h219t">Total Number of Members</string>
     <string name="h219m">Number of Male Members</string>
     <string name="h219f">Number of Female Members</string>
     <string name="h220">Number of Women of Reproductive Age (WRA) living in the household who are aged between 15 to 49 years?</string>
@@ -766,7 +767,7 @@
     <string name="h618a">Rarely (once or twice in the past four weeks) </string>
     <string name="h618b">Sometimes (three to ten times in the past four weeks) </string>
     <string name="h618c">Often (more than ten times in the past four weeks)</string>
-    <string name="sech7title">SECTION H7. ASSISTANCE/EXPOSURE TO INTERVENTIONS</string>
+    <string name="sech7title">SECTION H7. ASSISTANCE &amp; EXPOSURE TO INTERVENTIONS</string>
     <string name="noteh7">Note: Interviewer will show the Food Products during the interview</string>
     <string name="ques">In past 30 days, did anyone in your household receive the following assistance? </string>
     <string name="h701">Achamum (RUSF)</string>
@@ -2563,5 +2564,8 @@
     <string name="waz">WAZ</string>
     <string name="whz">WHZ</string>
     <string name="q_h311">H311</string>
+    <string name="title_activity_mwradetail_host">MWRA Detail Host Activity</string>
+    <string name="title_mwra_list">MWRAS</string>
+    <string name="title_mwra_detail">MWRA Detail</string>
 
 </resources>
