@@ -932,6 +932,7 @@
                                 android:text='@{w311h.checked ? w311hx.getText().toString() : ""}'
 
                                 android:visibility='@{w311h.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="1"
                                 app:maxValue="23"
                                 app:type="range" />
 

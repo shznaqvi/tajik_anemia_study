@@ -491,9 +491,9 @@
                                 android:maxLength="2"
                                 android:tag="w205a"
                                 android:text='@{w20598.checked ? "" : w205ax.getText().toString() }'
-
                                 android:visibility='@{w20598.checked? View.GONE : View.VISIBLE}'
                                 app:maxValue="10"
+                                app:minValue="1"
                                 app:type="range" />
 
                             <CheckBox

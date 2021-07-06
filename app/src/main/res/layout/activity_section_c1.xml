@@ -631,8 +631,9 @@
                             android:hint="@string/c106ca"
                             android:inputType="number"
                             android:maxLength="2"
+                            app:defaultValue="99"
                             app:maxValue="10"
-
+                            app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -720,7 +721,8 @@
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="10"
-
+                            app:defaultValue="99"
+                            app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -863,7 +865,8 @@
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="10"
-
+                            app:defaultValue="99"
+                            app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
