@@ -32,9 +32,15 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ANTHRO;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_BLOOD;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CHILDLIST;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_MWRALIST;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_PREGNANCY;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_STOOL;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
@@ -61,6 +67,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_CLUSTERS);
         db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(SQL_CREATE_FORMS);
+        db.execSQL(SQL_CREATE_MWRALIST);
+        db.execSQL(SQL_CREATE_CHILDLIST);
+        db.execSQL(SQL_CREATE_ANTHRO);
+        db.execSQL(SQL_CREATE_BLOOD);
+        db.execSQL(SQL_CREATE_STOOL);
+        db.execSQL(SQL_CREATE_PREGNANCY);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ZSTANDARD);
 
