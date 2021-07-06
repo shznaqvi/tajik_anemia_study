@@ -414,6 +414,7 @@ public class Blood extends BaseObservable {
     public Blood Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_USERNAME));
@@ -502,6 +503,7 @@ public class Blood extends BaseObservable {
         try {
             json.put(BloodTable.COLUMN_ID, this.id);
             json.put(BloodTable.COLUMN_UID, this.uid);
+            json.put(BloodTable.COLUMN_UUID, this.uuid);
             json.put(BloodTable.COLUMN_CLUSTER, this.cluster);
             json.put(BloodTable.COLUMN_HHID, this.hhid);
             json.put(BloodTable.COLUMN_USERNAME, this.userName);
