@@ -1285,8 +1285,7 @@
     <string name="w32796">Other (Specify)</string>
     <string name="secw4title">SECTION: W4 MINIMUM DIETARY DIVERSITY FOR WOMEN (15-49 YEARS)</string>
     <string name="instrc1">Instructions:  Only one WRA will be selected for this section </string>
-    <string name="instrc2">Ask the women about her diet which she has taken yesterday after she wake up till, she went to bed for sleep</string>
-    <string name="instrc3">Refer to the Food Group Booklet to identify and elaborate the food item and record its utilization in the table below</string>
+    <string name="instrc2">Ask the women about her diet which she has taken yesterday after she wake up till, she went to bed for sleep. Refer to the Food Group Booklet to identify and elaborate the food item and record its utilization in the table below</string>
     <string name="title">Food Group</string>
     <string name="w401">Grains, White Roots and Tubers, and Plantains</string>
     <string name="w401t">Barley, Millet, Oats, Rice, Sorghum, Wheat, Arracacha, Bananas, Cassava, Lotus Root, Potatoes (all skin colors), Rutabaga, Sweet Potato (White, pale yellow fleshed), arbi/arvi</string>
