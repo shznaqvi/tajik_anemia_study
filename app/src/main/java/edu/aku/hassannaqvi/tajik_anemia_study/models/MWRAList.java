@@ -25,6 +25,7 @@ public class MWRAList extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String uuid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -84,6 +85,14 @@ public class MWRAList extends BaseObservable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -315,6 +324,7 @@ public class MWRAList extends BaseObservable {
     public MWRAList Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_USERNAME));
@@ -386,6 +396,7 @@ public class MWRAList extends BaseObservable {
         try {
             json.put(MWRAListTable.COLUMN_ID, this.id);
             json.put(MWRAListTable.COLUMN_UID, this.uid);
+            json.put(MWRAListTable.COLUMN_UUID, this.uuid);
             json.put(MWRAListTable.COLUMN_CLUSTER, this.cluster);
             json.put(MWRAListTable.COLUMN_HHID, this.hhid);
             json.put(MWRAListTable.COLUMN_USERNAME, this.userName);
