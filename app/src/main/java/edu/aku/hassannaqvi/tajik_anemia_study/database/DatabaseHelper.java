@@ -935,6 +935,84 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public JSONArray getUnsyncedStool() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = StoolTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = StoolTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    StoolTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedStool: " + c.getCount());
+                Stool stool = new Stool();
+                all.put(stool.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedStool: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedStool: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedPreg() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = PregnancyTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    PregnancyTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedPreg: " + c.getCount());
+                Pregnancy preg = new Pregnancy();
+                all.put(preg.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedPreg: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedPreg: " + all);
+        return all;
+    }
+
 
     //update SyncedTables
     public void updateSyncedforms(String id) {
@@ -951,6 +1029,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 FormsTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedMWRAList(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(MWRAListTable.COLUMN_SYNCED, true);
+        values.put(MWRAListTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = MWRAListTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                MWRAListTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);
