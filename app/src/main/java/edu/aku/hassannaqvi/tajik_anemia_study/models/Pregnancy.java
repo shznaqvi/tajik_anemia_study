@@ -25,6 +25,7 @@ public class Pregnancy extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String uuid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -86,6 +87,14 @@ public class Pregnancy extends BaseObservable {
         this.uid = uid;
     }
 
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     @Bindable
     public String getCluster() {
@@ -323,6 +332,7 @@ public class Pregnancy extends BaseObservable {
     public Pregnancy Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_USERNAME));
@@ -397,6 +407,7 @@ public class Pregnancy extends BaseObservable {
         try {
             json.put(PregnancyTable.COLUMN_ID, this.id);
             json.put(PregnancyTable.COLUMN_UID, this.uid);
+            json.put(PregnancyTable.COLUMN_UUID, this.uuid);
             json.put(PregnancyTable.COLUMN_CLUSTER, this.cluster);
             json.put(PregnancyTable.COLUMN_HHID, this.hhid);
             json.put(PregnancyTable.COLUMN_USERNAME, this.userName);

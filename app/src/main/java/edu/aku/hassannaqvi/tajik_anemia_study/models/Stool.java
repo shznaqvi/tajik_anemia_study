@@ -25,6 +25,7 @@ public class Stool extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String uuid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -91,6 +92,14 @@ public class Stool extends BaseObservable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 

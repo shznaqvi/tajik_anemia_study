@@ -25,6 +25,7 @@ public class Anthro extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String uuid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -52,33 +53,9 @@ public class Anthro extends BaseObservable {
 
 
     public Anthro() {
-
     }
 
 
-/*
-    private synchronized void notifyChange(int propertyId) {
-        if (propertyChangeRegistry == null) {
-            propertyChangeRegistry = new PropertyChangeRegistry();
-        }
-        propertyChangeRegistry.notifyChange(this, propertyId);
-    }
-
-    @Override
-    public synchronized void addOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry == null) {
-            propertyChangeRegistry = new PropertyChangeRegistry();
-        }
-        propertyChangeRegistry.add(callback);
-
-    }
-
-    @Override
-    public synchronized void removeOnPropertyChangedCallback(OnPropertyChangedCallback callback) {
-        if (propertyChangeRegistry != null) {
-            propertyChangeRegistry.remove(callback);
-        }
-    }*/
 
     public String getProjectName() {
         return projectName;
@@ -88,13 +65,6 @@ public class Anthro extends BaseObservable {
         this.projectName = projectName;
     }
 
-/*    public PropertyChangeRegistry getPropertyChangeRegistry() {
-        return propertyChangeRegistry;
-    }
-
-    public void setPropertyChangeRegistry(PropertyChangeRegistry propertyChangeRegistry) {
-        this.propertyChangeRegistry = propertyChangeRegistry;
-    }*/
 
     public String getId() {
         return id;
@@ -110,6 +80,14 @@ public class Anthro extends BaseObservable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 
