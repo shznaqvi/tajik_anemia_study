@@ -2,11 +2,15 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -22,6 +26,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionW3Activity extends AppCompatActivity {
@@ -40,6 +45,32 @@ public class SectionW3Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
+        bi.w306.setOnCheckedChangeListener((radioGroup, i) -> {
+            bi.fldGrpCVw307.setVisibility(View.VISIBLE);
+            bi.fldGrpCVw308.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVw307);
+            Clear.clearAllFields(bi.fldGrpCVw308);
+            if (i == bi.w306b.getId() || i == bi.w30698.getId()) {
+                bi.fldGrpCVw307.setVisibility(View.GONE);
+                bi.fldGrpCVw308.setVisibility(View.GONE);
+            }
+        });
+
+        chLsnr(bi.w31398);
+
+        rgLsnr(bi.w315, bi.w315b, new ViewGroup[]{bi.fldGrpCVw316, bi.fldGrpCVw317, bi.fldGrpCVw318t, bi.fldGrpCVw319});
+        rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});
+    }
+
+    private void chLsnr(CheckBox cb1) {
+        cb1.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                Clear.clearAllFields(bi.fldGrpCVw314);
+                bi.fldGrpCVw314.setVisibility(View.GONE);
+            } else {
+                bi.fldGrpCVw314.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 
