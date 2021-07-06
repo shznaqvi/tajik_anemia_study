@@ -50,66 +50,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- instrc2  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVinstrc2"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/instrc2" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- instrc3  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVinstrc3"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/instrc3" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- title  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVtitle"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/title" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instrc2" />
 
                 <!-- w401  CheckBox   -->
                 <androidx.cardview.widget.CardView
@@ -245,9 +190,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w402t" />
 
                             <CheckBox
@@ -342,9 +287,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w403t" />
 
                             <CheckBox
@@ -435,9 +380,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w404t" />
 
                             <CheckBox
@@ -528,9 +473,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w405t" />
 
                             <CheckBox
@@ -621,9 +566,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w406t" />
 
                             <CheckBox
@@ -714,9 +659,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w407t" />
 
                             <CheckBox
@@ -807,9 +752,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w408t" />
 
                             <CheckBox
@@ -900,9 +845,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w409t" />
 
                             <CheckBox
@@ -993,9 +938,9 @@
                             android:tag="0">
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/w410t" />
 
                             <CheckBox
