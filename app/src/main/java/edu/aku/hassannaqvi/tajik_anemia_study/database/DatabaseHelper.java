@@ -1110,6 +1110,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
+    public void updateSyncedStool(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(StoolTable.COLUMN_SYNCED, true);
+        values.put(StoolTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+        String where = StoolTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                StoolTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
