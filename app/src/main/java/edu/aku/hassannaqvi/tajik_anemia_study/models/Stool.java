@@ -413,6 +413,7 @@ public class Stool extends BaseObservable {
     public Stool Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(StoolTable.COLUMN_USERNAME));
@@ -501,6 +502,7 @@ public class Stool extends BaseObservable {
         try {
             json.put(StoolTable.COLUMN_ID, this.id);
             json.put(StoolTable.COLUMN_UID, this.uid);
+            json.put(StoolTable.COLUMN_UUID, this.uuid);
             json.put(StoolTable.COLUMN_CLUSTER, this.cluster);
             json.put(StoolTable.COLUMN_HHID, this.hhid);
             json.put(StoolTable.COLUMN_USERNAME, this.userName);
