@@ -44,6 +44,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
@@ -144,6 +145,11 @@ public class SyncActivity extends AppCompatActivity {
                 // Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms());
+
+                // MWRAList
+                uploadTables.add(new SyncModel(MWRAListTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedMWRAList());
+
                 MainApp.downloadData = new String[uploadData.size()];
 
                 setAdapter(uploadTables);
