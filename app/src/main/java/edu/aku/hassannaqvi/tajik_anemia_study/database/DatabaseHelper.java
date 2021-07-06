@@ -18,6 +18,7 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
@@ -25,6 +26,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ZScoreTab
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.VersionApp;
@@ -32,9 +34,15 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ANTHRO;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_BLOOD;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CHILDLIST;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_MWRALIST;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_PREGNANCY;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_STOOL;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
@@ -61,6 +69,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_CLUSTERS);
         db.execSQL(SQL_CREATE_RANDOM);
         db.execSQL(SQL_CREATE_FORMS);
+        db.execSQL(SQL_CREATE_MWRALIST);
+        db.execSQL(SQL_CREATE_CHILDLIST);
+        db.execSQL(SQL_CREATE_ANTHRO);
+        db.execSQL(SQL_CREATE_BLOOD);
+        db.execSQL(SQL_CREATE_STOOL);
+        db.execSQL(SQL_CREATE_PREGNANCY);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ZSTANDARD);
 
@@ -106,6 +120,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insert(
                 FormsTable.TABLE_NAME,
                 FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+
+    public Long addMWRAList(MWRAList mwra) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(MWRAListTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
+        values.put(MWRAListTable.COLUMN_UID, mwra.getUid());
+        values.put(MWRAListTable.COLUMN_UUID, mwra.getUuid());
+        values.put(MWRAListTable.COLUMN_CLUSTER, mwra.getCluster());
+        values.put(MWRAListTable.COLUMN_HHID, mwra.getHhid());
+        values.put(MWRAListTable.COLUMN_USERNAME, mwra.getUserName());
+        values.put(MWRAListTable.COLUMN_SYSDATE, mwra.getSysDate());
+        values.put(MWRAListTable.COLUMN_S1, mwra.getS1());
+
+        values.put(MWRAListTable.COLUMN_DEVICEID, mwra.getDeviceId());
+        values.put(MWRAListTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
+        values.put(MWRAListTable.COLUMN_APPVERSION, mwra.getAppver());
+        values.put(MWRAListTable.COLUMN_ISTATUS, mwra.getiStatus());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                MWRAListTable.TABLE_NAME,
+                MWRAListTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }

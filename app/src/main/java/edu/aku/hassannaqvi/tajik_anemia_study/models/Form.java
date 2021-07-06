@@ -279,18 +279,6 @@ public class Form extends BaseObservable {
     private String w110 = StringUtils.EMPTY;
     private String w111 = StringUtils.EMPTY;
     private String w112 = StringUtils.EMPTY;
-    private String w113 = StringUtils.EMPTY;
-    private String w114d = StringUtils.EMPTY;
-    private String w114m = StringUtils.EMPTY;
-    private String w114y = StringUtils.EMPTY;
-    private String w115 = StringUtils.EMPTY;
-    private String w116 = StringUtils.EMPTY;
-    private String w117y = StringUtils.EMPTY;
-    private String w117m = StringUtils.EMPTY;
-    private String w117d = StringUtils.EMPTY;
-    private String w118y = StringUtils.EMPTY;
-    private String w118m = StringUtils.EMPTY;
-    private String w118d = StringUtils.EMPTY;
     private String w201 = StringUtils.EMPTY;
     private String w202 = StringUtils.EMPTY;
     private String w202a = StringUtils.EMPTY;
@@ -3356,126 +3344,6 @@ public class Form extends BaseObservable {
     public void setW112(String w112) {
         this.w112 = w112;
         notifyPropertyChanged(BR.w112);
-    }
-
-    @Bindable
-    public String getW113() {
-        return w113;
-    }
-
-    public void setW113(String w113) {
-        this.w113 = w113;
-        notifyPropertyChanged(BR.w113);
-    }
-
-    @Bindable
-    public String getW114d() {
-        return w114d;
-    }
-
-    public void setW114d(String w114d) {
-        this.w114d = w114d;
-        notifyPropertyChanged(BR.w114d);
-    }
-
-    @Bindable
-    public String getW114m() {
-        return w114m;
-    }
-
-    public void setW114m(String w114m) {
-        this.w114m = w114m;
-        notifyPropertyChanged(BR.w114m);
-    }
-
-    @Bindable
-    public String getW114y() {
-        return w114y;
-    }
-
-    public void setW114y(String w114y) {
-        this.w114y = w114y;
-        notifyPropertyChanged(BR.w114y);
-    }
-
-    @Bindable
-    public String getW115() {
-        return w115;
-    }
-
-    public void setW115(String w115) {
-        this.w115 = w115;
-        notifyPropertyChanged(BR.w115);
-    }
-
-    @Bindable
-    public String getW116() {
-        return w116;
-    }
-
-    public void setW116(String w116) {
-        this.w116 = w116;
-        notifyPropertyChanged(BR.w116);
-    }
-
-    @Bindable
-    public String getW117y() {
-        return w117y;
-    }
-
-    public void setW117y(String w117y) {
-        this.w117y = w117y;
-        notifyPropertyChanged(BR.w117y);
-    }
-
-    @Bindable
-    public String getW117m() {
-        return w117m;
-    }
-
-    public void setW117m(String w117m) {
-        this.w117m = w117m;
-        notifyPropertyChanged(BR.w117m);
-    }
-
-    @Bindable
-    public String getW117d() {
-        return w117d;
-    }
-
-    public void setW117d(String w117d) {
-        this.w117d = w117d;
-        notifyPropertyChanged(BR.w117d);
-    }
-
-    @Bindable
-    public String getW118y() {
-        return w118y;
-    }
-
-    public void setW118y(String w118y) {
-        this.w118y = w118y;
-        notifyPropertyChanged(BR.w118y);
-    }
-
-    @Bindable
-    public String getW118m() {
-        return w118m;
-    }
-
-    public void setW118m(String w118m) {
-        this.w118m = w118m;
-        notifyPropertyChanged(BR.w118m);
-    }
-
-    @Bindable
-    public String getW118d() {
-        return w118d;
-    }
-
-    public void setW118d(String w118d) {
-        this.w118d = w118d;
-        notifyPropertyChanged(BR.w118d);
     }
 
     @Bindable
@@ -9118,18 +8986,6 @@ public class Form extends BaseObservable {
                 this.w110 = json.getString("w110");
                 this.w111 = json.getString("w111");
                 this.w112 = json.getString("w112");
-                this.w113 = json.getString("w113");
-                this.w114d = json.getString("w114d");
-                this.w114m = json.getString("w114m");
-                this.w114y = json.getString("w114y");
-                this.w115 = json.getString("w115");
-                this.w116 = json.getString("w116");
-                this.w117y = json.getString("w117y");
-                this.w117m = json.getString("w117m");
-                this.w117d = json.getString("w117d");
-                this.w118y = json.getString("w118y");
-                this.w118m = json.getString("w118m");
-                this.w118d = json.getString("w118d");
                 this.w201 = json.getString("w201");
                 this.w202 = json.getString("w202");
                 this.w202a = json.getString("w202a");
@@ -9988,18 +9844,6 @@ public class Form extends BaseObservable {
                     .put("w110", w110)
                     .put("w111", w111)
                     .put("w112", w112)
-                    .put("w113", w113)
-                    .put("w114d", w114d)
-                    .put("w114m", w114m)
-                    .put("w114y", w114y)
-                    .put("w115", w115)
-                    .put("w116", w116)
-                    .put("w117y", w117y)
-                    .put("w117m", w117m)
-                    .put("w117d", w117d)
-                    .put("w118y", w118y)
-                    .put("w118m", w118m)
-                    .put("w118d", w118d)
                     .put("w201", w201)
                     .put("w202", w202)
                     .put("w202a", w202a)

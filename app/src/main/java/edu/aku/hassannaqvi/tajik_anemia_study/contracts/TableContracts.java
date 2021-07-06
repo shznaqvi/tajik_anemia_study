@@ -36,6 +36,7 @@ public class TableContracts {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_CLUSTER = "cluster";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
@@ -57,6 +58,7 @@ public class TableContracts {
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_CLUSTER = "cluster";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
@@ -73,7 +75,7 @@ public class TableContracts {
 
 
     public static abstract class AnthroTable implements BaseColumns {
-        public static final String TABLE_NAME = "anthro";
+        public static final String TABLE_NAME = "Anthro";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -95,7 +97,7 @@ public class TableContracts {
     }
 
     public static abstract class BloodTable implements BaseColumns {
-        public static final String TABLE_NAME = "blood";
+        public static final String TABLE_NAME = "Blood";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -117,7 +119,29 @@ public class TableContracts {
     }
 
     public static abstract class StoolTable implements BaseColumns {
-        public static final String TABLE_NAME = "stool";
+        public static final String TABLE_NAME = "Stool";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_CLUSTER = "cluster";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_S1 = "s1";
+
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+    public static abstract class PregnancyTable implements BaseColumns {
+        public static final String TABLE_NAME = "Pregnancy";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
