@@ -1034,6 +1034,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
+    public void updateSyncedMWRAList(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(MWRAListTable.COLUMN_SYNCED, true);
+        values.put(MWRAListTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = MWRAListTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                MWRAListTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
