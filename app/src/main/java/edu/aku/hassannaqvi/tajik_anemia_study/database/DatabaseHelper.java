@@ -1126,6 +1126,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
+    public void updateSyncedPreg(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(PregnancyTable.COLUMN_SYNCED, true);
+        values.put(PregnancyTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+        String where = PregnancyTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                PregnancyTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
 
     public ArrayList<Cursor> getData(String Query) {
         //get writable database
