@@ -779,6 +779,162 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
+    public JSONArray getUnsyncedMWRAList() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = MWRAListTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = MWRAListTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    MWRAListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedMWRAList: " + c.getCount());
+                MWRAList mwra = new MWRAList();
+                all.put(mwra.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedMWRAList: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedMWRAList: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedChildList() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = ChildListTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = ChildListTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    ChildListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedChildList: " + c.getCount());
+                ChildList child = new ChildList();
+                all.put(child.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedChildList: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedChildList: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedAnthro() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = AnthroTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = AnthroTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    AnthroTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedAnthro: " + c.getCount());
+                Anthro anthro = new Anthro();
+                all.put(anthro.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedAnthro: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedAnthro: " + all);
+        return all;
+    }
+
+    public JSONArray getUnsyncedBlood() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = BloodTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = BloodTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    BloodTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedBlood: " + c.getCount());
+                Blood blood = new Blood();
+                all.put(blood.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedBlood: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedBlood: " + all);
+        return all;
+    }
+
 
     //update SyncedTables
     public void updateSyncedforms(String id) {
