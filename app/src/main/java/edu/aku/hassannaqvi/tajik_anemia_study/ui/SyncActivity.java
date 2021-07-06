@@ -42,10 +42,15 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.AnthroTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.BloodTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ChildListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ClustersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.StoolTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -149,6 +154,26 @@ public class SyncActivity extends AppCompatActivity {
                 // MWRAList
                 uploadTables.add(new SyncModel(MWRAListTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedMWRAList());
+
+                // ChildList
+                uploadTables.add(new SyncModel(ChildListTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedChildList());
+
+                // Anthro
+                uploadTables.add(new SyncModel(AnthroTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedAnthro());
+
+                // Blood
+                uploadTables.add(new SyncModel(BloodTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedBlood());
+
+                // Stool
+                uploadTables.add(new SyncModel(StoolTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedStool());
+
+                // Pregnancy
+                uploadTables.add(new SyncModel(PregnancyTable.TABLE_NAME));
+                MainApp.uploadData.add(db.getUnsyncedPreg());
 
                 MainApp.downloadData = new String[uploadData.size()];
 

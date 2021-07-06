@@ -191,12 +191,10 @@
 
                         <TextView
                             android:id="@+id/activityTitle"
-                            style="@style/labels"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="12dp"
                             android:layout_marginBottom="1dp"
-
                             android:background="@color/whiteOverlay"
                             android:elevation="1dp"
                             android:gravity="center_horizontal"
@@ -225,10 +223,16 @@
                             android:text="No Activty"
                             android:textColor="@color/redLight"
                             android:visibility="gone" />
+
                     </LinearLayout>
+
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
+
     </ScrollView>
+
 </layout>
 
