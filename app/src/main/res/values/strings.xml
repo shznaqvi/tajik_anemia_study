@@ -944,8 +944,7 @@
     <string name="w201a">Yes</string>
     <string name="w201b">No</string>
     <string name="w202">Whom did you see?</string>
-    <string name="w202t1">Probe: Anyone else?</string>
-    <string name="w202t2">Probe for the type of person seen and record all answers given.</string>
+    <string name="w202t1">Probe: Anyone else? Probe for the type of person seen and record all answers given.</string>
     <string name="w202a">Gynaecologist</string>
     <string name="w202b">Other doctor</string>
     <string name="w202c">Nurse</string>
