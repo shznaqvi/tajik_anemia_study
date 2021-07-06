@@ -25,6 +25,7 @@ public class ChildList extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String uuid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -82,6 +83,15 @@ public class ChildList extends BaseObservable {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 
@@ -306,6 +316,7 @@ public class ChildList extends BaseObservable {
     public ChildList Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_USERNAME));
@@ -375,6 +386,7 @@ public class ChildList extends BaseObservable {
         try {
             json.put(ChildListTable.COLUMN_ID, this.id);
             json.put(ChildListTable.COLUMN_UID, this.uid);
+            json.put(ChildListTable.COLUMN_UUID, this.uuid);
             json.put(ChildListTable.COLUMN_CLUSTER, this.cluster);
             json.put(ChildListTable.COLUMN_HHID, this.hhid);
             json.put(ChildListTable.COLUMN_USERNAME, this.userName);

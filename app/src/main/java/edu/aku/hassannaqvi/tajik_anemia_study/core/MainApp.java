@@ -14,7 +14,13 @@ import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BuildConfig;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 
 
@@ -34,6 +40,12 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
+    public static MWRAList mwraList;
+    public static ChildList childList;
+    public static Anthro anthro;
+    public static Blood blood;
+    public static Stool stool;
+    public static Pregnancy preg;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;

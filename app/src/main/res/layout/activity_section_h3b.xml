@@ -101,10 +101,10 @@
                                 android:text="@string/Q_h313" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h313" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -165,8 +165,11 @@
                                 android:tag="h31396"
                                 android:text='@{h31396.checked ? h31396x.getText().toString() : ""}'
                                 android:visibility='@{h31396.checked? View.VISIBLE : View.GONE}' />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -193,10 +196,10 @@
                                 android:text="@string/Q_h314" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h314" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -285,8 +288,11 @@
                                 android:tag="h31496"
                                 android:text='@{h31496.checked ? h31496x.getText().toString() : ""}'
                                 android:visibility='@{h31496.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -313,10 +319,10 @@
                                 android:text="@string/Q_h315" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h315" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -357,8 +363,11 @@
                                 android:tag="h31596"
                                 android:text='@{h31596.checked ? h31596x.getText().toString() : ""}'
                                 android:visibility='@{h31596.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -385,10 +394,10 @@
                                 android:text="@string/Q_h316" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h316" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -410,8 +419,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/h316b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -438,10 +450,10 @@
                                 android:text="@string/Q_h317" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h317" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -539,8 +551,11 @@
                                 android:tag="h31796"
                                 android:text='@{h31796.checked ? h31796x.getText().toString() : ""}'
                                 android:visibility='@{h31796.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -567,10 +582,10 @@
                                 android:text="@string/Q_h318" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h318" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -680,8 +695,11 @@
                                 android:tag="h31896"
                                 android:text='@{h31896.checked ? h31896x.getText().toString() : ""}'
                                 android:visibility='@{h31896.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -708,10 +726,10 @@
                                 android:text="@string/Q_h319" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h319" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -839,8 +857,11 @@
                                 android:tag="h31996"
                                 android:text='@{h31996.checked ? h31996x.getText().toString() : ""}'
                                 android:visibility='@{h31996.checked? View.VISIBLE : View.GONE}' />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -867,23 +888,26 @@
                                 android:text="@string/Q_h320" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h320" />
+
                         </LinearLayout>
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/h320"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/h320"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="15"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -910,10 +934,10 @@
                                 android:text="@string/Q_h321" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h321" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -935,8 +959,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/h321b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -963,10 +990,10 @@
                                 android:text="@string/Q_h322" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h322" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -989,8 +1016,8 @@
                                 android:maxLength="3"
                                 android:tag="h322a"
                                 android:text='@{h322a.checked ? h322ax.getText().toString() : ""}'
-
                                 android:visibility='@{h322a.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1009,8 +1036,8 @@
                                 android:maxLength="3"
                                 android:tag="h322b"
                                 android:text='@{h322b.checked ? h322bx.getText().toString() : ""}'
-
                                 android:visibility='@{h322b.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1019,8 +1046,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/h32298" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1047,10 +1077,10 @@
                                 android:text="@string/Q_h323" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h323" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -1072,8 +1102,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/h323b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1100,10 +1133,10 @@
                                 android:text="@string/Q_h324" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/h324" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -1128,8 +1161,8 @@
                                 android:maxLength="3"
                                 android:tag="h3241"
                                 android:text='@{h3241.checked ? h3241x.getText().toString() : ""}'
-
                                 android:visibility='@{h3241.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1148,8 +1181,8 @@
                                 android:maxLength="3"
                                 android:tag="h3242"
                                 android:text='@{h3242.checked ? h3242x.getText().toString() : ""}'
-
                                 android:visibility='@{h3242.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1168,8 +1201,8 @@
                                 android:maxLength="3"
                                 android:tag="h3243"
                                 android:text='@{h3243.checked ? h3243x.getText().toString() : ""}'
-
                                 android:visibility='@{h3243.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1188,8 +1221,8 @@
                                 android:maxLength="3"
                                 android:tag="h3244"
                                 android:text='@{h3244.checked ? h3244x.getText().toString() : ""}'
-
                                 android:visibility='@{h3244.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1208,8 +1241,8 @@
                                 android:maxLength="3"
                                 android:tag="h3245"
                                 android:text='@{h3245.checked ? h3245x.getText().toString() : ""}'
-
                                 android:visibility='@{h3245.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1228,8 +1261,8 @@
                                 android:maxLength="3"
                                 android:tag="h3246"
                                 android:text='@{h3246.checked ? h3246x.getText().toString() : ""}'
-
                                 android:visibility='@{h3246.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
 
@@ -1248,12 +1281,15 @@
                                 android:maxLength="3"
                                 android:tag="h3247"
                                 android:text='@{h3247.checked ? h3247x.getText().toString() : ""}'
-
                                 android:visibility='@{h3247.checked? View.VISIBLE : View.GONE}'
+                                app:minValue="0"
                                 app:maxValue="999"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1301,4 +1337,5 @@
         </ScrollView>
 
     </LinearLayout>
+
 </layout>

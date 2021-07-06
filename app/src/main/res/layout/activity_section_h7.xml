@@ -118,53 +118,59 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh701t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h701t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h701q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h701q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h701t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h701q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h701q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h701s" />
 
-                            <EditText
-                                android:id="@+id/h701s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h701s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h701s" />
+
+                                <EditText
+                                    android:id="@+id/h701s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h701s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -201,52 +207,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh702t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h702t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h702q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h702q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h702t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h702q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h702q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h702s" />
 
-                            <EditText
-                                android:id="@+id/h702s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h702s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h702s" />
+
+                                <EditText
+                                    android:id="@+id/h702s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h702s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -283,52 +295,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh703t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h703t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h703q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h703q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h703t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h703q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h703q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h703s" />
 
-                            <EditText
-                                android:id="@+id/h703s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h703s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h703s" />
+
+                                <EditText
+                                    android:id="@+id/h703s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h703s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -365,52 +383,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh704t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h704t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h704q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h704q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h704t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h704q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h704q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h704s" />
 
-                            <EditText
-                                android:id="@+id/h704s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h704s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h704s" />
+
+                                <EditText
+                                    android:id="@+id/h704s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h704s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -447,52 +471,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh705t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h705t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h705q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h705q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h705t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h705q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h705q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h705s" />
 
-                            <EditText
-                                android:id="@+id/h705s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h705s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h705s" />
+
+                                <EditText
+                                    android:id="@+id/h705s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h705s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -529,52 +559,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh706t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h706t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h706q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h706q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h706t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h706q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h706q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h706s" />
 
-                            <EditText
-                                android:id="@+id/h706s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h706s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h706s" />
+
+                                <EditText
+                                    android:id="@+id/h706s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h706s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -611,52 +647,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh707t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h707t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h707q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h707q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h707t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h707q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h707q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h707s" />
 
-                            <EditText
-                                android:id="@+id/h707s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h707s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h707s" />
+
+                                <EditText
+                                    android:id="@+id/h707s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h707s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -693,52 +735,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh708t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h708t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h708q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h708q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h708t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h708q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h708q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h708s" />
 
-                            <EditText
-                                android:id="@+id/h708s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h708s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h708s" />
+
+                                <EditText
+                                    android:id="@+id/h708s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h708s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -775,52 +823,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh709t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h709t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h709q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h709q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h709t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h709q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h709q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h709s" />
 
-                            <EditText
-                                android:id="@+id/h709s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h709s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h709s" />
+
+                                <EditText
+                                    android:id="@+id/h709s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h709s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -857,52 +911,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh710t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h710t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h710q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h710q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h710t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h710q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h710q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h710s" />
 
-                            <EditText
-                                android:id="@+id/h710s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h710s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h710s" />
+
+                                <EditText
+                                    android:id="@+id/h710s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h710s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -939,52 +999,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh711t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h711t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h711q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h711q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h711t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h711q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h711q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h711s" />
 
-                            <EditText
-                                android:id="@+id/h711s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h711s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h711s" />
+
+                                <EditText
+                                    android:id="@+id/h711s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h711s" />
+                            </LinearLayout>
                         </LinearLayout>
 
 
@@ -1021,52 +1087,58 @@
                             </RadioGroup>
                         </LinearLayout>
 
-
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh712t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h712t1" />
-
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h712q"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h712q"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:orientation="horizontal">
 
-                                app:type="range" />
-                        </LinearLayout>
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h712t1" />
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h712q"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h712q"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/h712s" />
 
-                            <EditText
-                                android:id="@+id/h712s"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="@string/h712s" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/h712s" />
+
+                                <EditText
+                                    android:id="@+id/h712s"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h712s" />
+                            </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1130,69 +1202,77 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh713t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/h713bt" />
-
-                            <EditText
-                                android:id="@+id/h713b"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h713b" />
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/h713bt" />
+
+                                <EditText
+                                    android:id="@+id/h713b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h713b" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+
+                                    android:layout_weight="1"
+                                    android:text="@string/h713ct" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h713c"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h713c"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/h713d" />
+
+                                <EditText
+                                    android:id="@+id/h713d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h713d" />
+
+                            </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-
-                                android:layout_weight="1"
-                                android:text="@string/h713ct" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h713c"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h713c"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
-
-                                app:type="range" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/h713d" />
-
-                            <EditText
-                                android:id="@+id/h713d"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h713d" />
-
-                        </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -1255,69 +1335,77 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/fldGrpCVh714t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/h713bt" />
-
-                            <EditText
-                                android:id="@+id/h714b"
-                                android:layout_width="0dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h714b" />
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/h713bt" />
+
+                                <EditText
+                                    android:id="@+id/h714b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h714b" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+
+                                    android:layout_weight="1"
+                                    android:text="@string/h714ct" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/h714c"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h714c"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    app:maxValue="100"
+                                    app:minValue="0"
+                                    app:type="range" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/h714d" />
+
+                                <EditText
+                                    android:id="@+id/h714d"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:hint="@string/h714d" />
+
+                            </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-
-                                android:layout_weight="1"
-                                android:text="@string/h714ct" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h714c"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h714c"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
-
-                                app:type="range" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/h714d" />
-
-                            <EditText
-                                android:id="@+id/h714d"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:hint="@string/h714d" />
-
-                        </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

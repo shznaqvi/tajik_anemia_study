@@ -44,14 +44,11 @@ public class SectionH5Activity extends AppCompatActivity {
 
         bi.h501.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVh502.setVisibility(View.VISIBLE);
-            bi.fldGrpCVh502inst.setVisibility(View.VISIBLE);
             bi.fldGrpCVh503.setVisibility(View.VISIBLE);
             Clear.clearAllFields(bi.fldGrpCVh502);
-            Clear.clearAllFields(bi.fldGrpCVh502inst);
             Clear.clearAllFields(bi.fldGrpCVh503);
             if (i == bi.h501d.getId() || i == bi.h50196.getId()) {
                 bi.fldGrpCVh502.setVisibility(View.GONE);
-                bi.fldGrpCVh502inst.setVisibility(View.GONE);
                 bi.fldGrpCVh503.setVisibility(View.GONE);
             }
         });
