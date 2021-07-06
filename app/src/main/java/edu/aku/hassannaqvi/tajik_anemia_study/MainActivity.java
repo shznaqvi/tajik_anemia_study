@@ -42,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
-        sp = getSharedPreferences("onhold", MODE_PRIVATE);
-        bi.btnOnHold.setText("UPDATE ONHOLD FORM -- (" + sp.getAll().size() + ")");
-
         bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
         bi.username.setText("Welcome, " + MainApp.user.getFullname() + "!");
     }
@@ -54,10 +51,18 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.openForm:
+                MainApp.idType = 1;
+            case R.id.openAnthro:
+                MainApp.idType = 2;
+            case R.id.updateBlood:
+                MainApp.idType = 3;
+            case R.id.updateStool:
+                MainApp.idType = 4;
             case R.id.sech1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionH1Activity.class));
                 break;
+
             case R.id.sech2a:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionH2aActivity.class));

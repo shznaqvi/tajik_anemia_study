@@ -81,7 +81,6 @@
     </style>
 
 
-
     <style name="labels" parent="@android:style/TextAppearance.Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -357,6 +356,15 @@
     <style name="SpinnerDropDownItem" parent="Widget.AppCompat.DropDownItem.Spinner">
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+    <style name="Theme.main.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.main.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.main.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

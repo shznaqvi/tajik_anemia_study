@@ -20,7 +20,6 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
 
-
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
@@ -189,14 +188,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-
         <activity
             android:name=".ui.SyncActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
