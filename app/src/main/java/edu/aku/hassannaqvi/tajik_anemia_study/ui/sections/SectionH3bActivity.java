@@ -53,7 +53,6 @@ public class SectionH3bActivity extends AppCompatActivity {
         });
 
         rgLsnr(bi.h321, bi.h321b, new ViewGroup[]{bi.fldGrpCVh322});
-
         rgLsnr(bi.h323, bi.h323b, new ViewGroup[]{bi.fldGrpCVh324});
     }
 
@@ -73,7 +72,7 @@ public class SectionH3bActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue() {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
@@ -96,7 +95,7 @@ public class SectionH3bActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd() {
+    public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
