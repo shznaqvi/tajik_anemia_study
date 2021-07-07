@@ -1631,6 +1631,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- c320t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc320t"
@@ -1641,24 +1642,42 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/c320t" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_c320t" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/c320t" />
+
+                        </LinearLayout>
 
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/c320"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/c320"
+                            android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             app:maxValue="10"
                             app:minValue="1"
                             app:type="range" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c321  Radio   -->
                 <androidx.cardview.widget.CardView
