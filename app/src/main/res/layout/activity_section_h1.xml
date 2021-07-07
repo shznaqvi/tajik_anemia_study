@@ -83,7 +83,7 @@
                                 android:id="@+id/h106"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
                                 app:dateFormat="yyyy-MM-dd"
@@ -130,7 +130,7 @@
                                 android:id="@+id/h107"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:gravity="center"
                                 android:hint="HH:mm"
                                 app:timeFormat="HH:mm" />
@@ -147,11 +147,6 @@
                     android:id="@+id/fldGrpCVh108"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -165,19 +160,20 @@
                                 android:text="@string/Q_h108" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/h108" />
 
+                            <EditText
+                                android:id="@+id/h108"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:hint="@string/h108" />
+
                         </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/h108"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/h108" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -186,11 +182,6 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh109"
                     style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -205,23 +196,26 @@
                                 android:text="@string/Q_h109" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/h109" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h109"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                app:maxValue="100"
+                                app:minValue="0"
+                                app:type="range" />
+
                         </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/h109"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/h109"
-                            android:inputType="number"
-                            android:maxLength="2"
-
-                            />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
