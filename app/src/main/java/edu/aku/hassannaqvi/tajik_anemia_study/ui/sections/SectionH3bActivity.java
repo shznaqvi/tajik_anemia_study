@@ -45,10 +45,10 @@ public class SectionH3bActivity extends AppCompatActivity {
     private void setupSkips() {
 
         bi.h315.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVh317.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVh317);
-            if (i == bi.h315b.getId() || i == bi.h315c.getId()) {
-                bi.fldGrpCVh317.setVisibility(View.GONE);
+            bi.fldGrpCVh316.setVisibility(View.VISIBLE);
+            Clear.clearAllFields(bi.fldGrpCVh316);
+            if (i == bi.h315b.getId() || i == bi.h315c.getId()|| i == bi.h31596.getId()) {
+                bi.fldGrpCVh316.setVisibility(View.GONE);
             }
         });
 

@@ -59,7 +59,7 @@ public class SectionH7Activity extends AppCompatActivity {
 
     }
 
-
+                         
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.addForm(form);
