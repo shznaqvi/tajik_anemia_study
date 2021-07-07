@@ -22,6 +22,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:spinnerStyle">@style/spinner</item>
         <item name="android:actionBarStyle">@style/ToolbarTheme</item>
+        <item name="android:toolbarStyle">@style/CustomToolbarTheme</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
         <item name="radioButtonStyle">@style/radiobutton</item>
@@ -320,7 +321,14 @@
         <item name="colorControlActivated">@color/colorAccentLight</item>
         <!-- Applied to framework control highlights (i.e ripples or list selectors) -->
         <item name="colorControlHighlight">@color/colorAccent</item>
-
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/urdu_nastaleeq</item>
+        <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="titleTextAppearance">@style/Toolbar.TitleText</item>
+        <item name="subtitleTextAppearance">@style/Toolbar.SubtitleText</item>
         <!-- Enable these below if you want clicking icons to trigger a ripple effect -->
         <!--
         <item name="selectableItemBackground">?android:selectableItemBackground</item>
@@ -330,15 +338,15 @@
 
     <!-- This configures the styles for the title within the Toolbar  -->
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:background">@null</item>
     </style>
 
     <style name="Toolbar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textSize">11sp</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@null</item>
     </style>
 
     <style name="spinnerStyle" parent="Widget.AppCompat.Spinner"></style>
@@ -366,5 +374,17 @@
 
     <style name="Theme.main.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="CustomToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/colorAccentLightOverlay</item>
+    </style>
 
+    <style name="CustomPopupTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textSize">20dp</item>
+    </style>
 </resources>
