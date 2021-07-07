@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionW1aActivity extends AppCompatActivity {
@@ -39,6 +41,8 @@ public class SectionW1aActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
+        /*rgLsnr(bi.h701, bi.h701b, new ViewGroup[]{bi.fldGrpCVh701t1, bi.fldGrpCVh701t2});*/
+        rgLsnr(bi.w103, bi.w103b, new ViewGroup[]{bi.fldGrpCVw104, bi.fldGrpCVw105t, bi.fldGrpCVw106,bi.fldGrpCVw107t,bi.fldGrpCVw108t,bi.fldGrpCVw109t,bi.fldGrpCVw110t,bi.fldGrpCVw111t,bi.fldGrpCVw112});
 
     }
 
