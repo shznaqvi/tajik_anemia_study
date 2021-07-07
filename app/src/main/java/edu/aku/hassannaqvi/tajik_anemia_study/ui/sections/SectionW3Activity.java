@@ -47,12 +47,10 @@ public class SectionW3Activity extends AppCompatActivity {
 
         bi.w306.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVw307.setVisibility(View.VISIBLE);
-            bi.fldGrpCVw308.setVisibility(View.VISIBLE);
             Clear.clearAllFields(bi.fldGrpCVw307);
-            Clear.clearAllFields(bi.fldGrpCVw308);
             if (i == bi.w306b.getId() || i == bi.w30698.getId()) {
                 bi.fldGrpCVw307.setVisibility(View.GONE);
-                bi.fldGrpCVw308.setVisibility(View.GONE);
+
             }
         });
 
