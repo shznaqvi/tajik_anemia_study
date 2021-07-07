@@ -54,15 +54,18 @@ public class SectionW3Activity extends AppCompatActivity {
             }
         });
 
-        chLsnr(bi.w31398);
+        chLsnr(bi.w313c, bi.w313d, bi.w313e, bi.w31398);
+        chLsnr(bi.w313d, bi.w313c, bi.w313e, bi.w31398);
+        chLsnr(bi.w313d, bi.w313e, bi.w313c, bi.w31398);
+        chLsnr(bi.w313d, bi.w313e, bi.w31398, bi.w313c);
 
         rgLsnr(bi.w315, bi.w315b, new ViewGroup[]{bi.fldGrpCVw316, bi.fldGrpCVw317, bi.fldGrpCVw318t, bi.fldGrpCVw319});
         rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});
     }
 
-    private void chLsnr(CheckBox cb1) {
+    private void chLsnr(CheckBox cb1, CheckBox cb2, CheckBox cb3, CheckBox cb4) {
         cb1.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
+            if (b || cb2.isChecked() || cb3.isChecked() || cb4.isChecked()) {
                 Clear.clearAllFields(bi.fldGrpCVw314);
                 bi.fldGrpCVw314.setVisibility(View.GONE);
             } else {
