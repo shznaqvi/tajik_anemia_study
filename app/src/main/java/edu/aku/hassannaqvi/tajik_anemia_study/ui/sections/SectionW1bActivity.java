@@ -42,7 +42,7 @@ public class SectionW1bActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        rgLsnr(bi.w116, bi.w116b, new ViewGroup[]{bi.fldGrpCVw117t});
+      /*  rgLsnr(bi.w116, bi.w116b, new ViewGroup[]{bi.fldGrpCVw117t});*/
         /* rgLsnr(bi.w116, bi.w116b, new ViewGroup[]{bi.fldGrpCVh602});*/
     }
 
