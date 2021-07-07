@@ -118,7 +118,7 @@ public class SectionC1Activity extends AppCompatActivity {
     }
 
 
-    public void btnContinue() {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
@@ -152,6 +152,8 @@ public class SectionC1Activity extends AppCompatActivity {
             return false;
 
         if (bi.c108a.isChecked() && (!bi.c107aa.isChecked() || !bi.c107ra.isChecked())) {
+            bi.fldGrpCVc107a.setFocusable(true);
+            bi.fldGrpCVc107r.setFocusable(true);
             Toast.makeText(this, "Invalid Response", Toast.LENGTH_SHORT).show();
             return false;
         }

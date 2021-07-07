@@ -96,7 +96,7 @@ public class SectionH4Activity extends AppCompatActivity {
     }
 
 
-    public void btnContinue() {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {

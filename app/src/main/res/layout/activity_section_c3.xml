@@ -22,7 +22,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -31,10 +30,10 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ToolbarTheme"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
             app:title="@string/secc3title"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
