@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -710,6 +711,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Random ran = new Random();
                 ran.sync(json);
                 ContentValues values = new ContentValues();
+                values.put(RandomTable.COLUMN_ID, ran.getID());
                 values.put(RandomTable.COLUMN_SNO, ran.getSno());
                 values.put(RandomTable.COLUMN_CLUSTER_NO, ran.getClusterNo());
                 values.put(RandomTable.COLUMN_HH_NO, ran.getHhno());
@@ -1268,5 +1270,134 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return insertCount;
+    }
+
+    //get Distinct Districts
+    public Collection<Clusters> getAllDistricts() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {ClustersTable.COLUMN_DISTRICT_CODE, ClustersTable.COLUMN_DISTRICT_NAME};
+
+        String orderBy = ClustersTable.COLUMN_DISTRICT_NAME + " ASC";
+
+        Collection<Clusters> allDistricts = new ArrayList<>();
+        try {
+            c = db.query(
+                    true,
+                    ClustersTable.TABLE_NAME,  // The table to query
+                    columns,
+                    null,
+                    null,
+                    null,
+                    null,
+                    orderBy,
+                    "5000"
+
+                    // The sort order
+            );
+            while (c.moveToNext()) {
+
+
+                Log.d(TAG, "getUnsyncedPreg: " + c.getCount());
+                Clusters cluster = new Clusters();
+                cluster.setDistrictCode(c.getString(c.getColumnIndex(ClustersTable.COLUMN_DISTRICT_CODE)));
+                cluster.setDistrictName(c.getString(c.getColumnIndex(ClustersTable.COLUMN_DISTRICT_NAME)));
+                allDistricts.add(cluster);
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+
+        return allDistricts;
+    }
+
+    //get Distinct cities
+    public Collection<Clusters> getCitiesByDistrict(String dist_code) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {ClustersTable.COLUMN_CITY_CODE, ClustersTable.COLUMN_CITY_NAME};
+        String selection = ClustersTable.COLUMN_DISTRICT_CODE + "= ?";
+        String[] selectionArgs = {dist_code};
+        String orderBy = ClustersTable.COLUMN_CITY_NAME + " ASC";
+
+        Collection<Clusters> allCities = new ArrayList<>();
+        try {
+            c = db.query(
+                    true,
+                    ClustersTable.TABLE_NAME,  // The table to query
+                    columns,
+                    selection,
+                    selectionArgs,
+                    null,
+                    null,
+                    orderBy,
+                    "5000"
+
+                    // The sort order
+            );
+            while (c.moveToNext()) {
+
+                Log.d(TAG, "getUnsyncedPreg: " + c.getCount());
+                Clusters cluster = new Clusters();
+                cluster.setCityCode(c.getString(c.getColumnIndex(ClustersTable.COLUMN_CITY_CODE)));
+                cluster.setCityName(c.getString(c.getColumnIndex(ClustersTable.COLUMN_CITY_NAME)));
+                allCities.add(cluster);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+
+        return allCities;
+    }
+
+    public Random checkHousehold(String cluster_no, String hh_no) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {RandomTable.COLUMN_ID, RandomTable.COLUMN_HEAD_HH};
+        String selection = RandomTable.COLUMN_CLUSTER_NO + "= ? AND "
+                + RandomTable.COLUMN_HH_NO + "= ? ";
+        String[] selectionArgs = {cluster_no, hh_no};
+
+        int cCount;
+        Random hh = null;
+        try {
+            c = db.query(
+                    RandomTable.TABLE_NAME,
+                    columns,
+                    selection,
+                    selectionArgs,
+                    null,
+                    null,
+                    null
+            );
+            while (c.moveToNext()) {
+
+                Random random = new Random();
+                random.setHeadhh(c.getString(c.getColumnIndex(RandomTable.COLUMN_HEAD_HH)));
+
+                hh = random;
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+
+        return hh;
+
     }
 }

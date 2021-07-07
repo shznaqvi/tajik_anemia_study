@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC1Activity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC2Activity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC3Activity;
@@ -49,15 +50,35 @@ public class MainActivity extends AppCompatActivity {
     public void sectionPress(View view) {
 
         switch (view.getId()) {
-
             case R.id.openForm:
                 MainApp.idType = 1;
+                break;
             case R.id.openAnthro:
                 MainApp.idType = 2;
+                break;
+
             case R.id.updateBlood:
                 MainApp.idType = 3;
+                break;
+
             case R.id.updateStool:
                 MainApp.idType = 4;
+                break;
+            default:
+                MainApp.idType = 0;
+
+        }
+
+
+        switch (view.getId()) {
+
+            case R.id.openForm:
+            case R.id.openAnthro:
+            case R.id.updateBlood:
+            case R.id.updateStool:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, IdentificationActivity.class));
+                break;
             case R.id.sech1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionH1Activity.class));

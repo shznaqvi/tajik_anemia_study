@@ -22,6 +22,7 @@ class Random {
 
     @Throws(JSONException::class)
     fun sync(jsonObject: JSONObject): Random {
+        ID = jsonObject.getLong(RandomTable.COLUMN_ID)
         sno = jsonObject.getString(RandomTable.COLUMN_SNO)
         clusterNo = jsonObject.getString(RandomTable.COLUMN_CLUSTER_NO)
         hhno = jsonObject.getString(RandomTable.COLUMN_HH_NO)

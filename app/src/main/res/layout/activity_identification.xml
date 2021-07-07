@@ -58,146 +58,154 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh101"
                     style="@style/cardView">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+
+        android:background="@drawable/bottom"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/h101" />
+
+        <Spinner
+            android:id="@+id/h101"
+            style="@style/spinner"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/h101" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bottom"
+
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/h102" />
+
+        <Spinner
+            android:id="@+id/h102"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/h102" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bottom"
+
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/h103" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/h103"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/h103" />
+
+    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bottom"
+                        android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h101" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="166dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/h101" />
-
-                        <Spinner
-                            android:id="@+id/h101"
-                            style="@style/spinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:hint="@string/h101" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- h102  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh102"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h102" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/h102" />
-
-                        <Spinner
-                            android:id="@+id/h102"
-                            style="@style/spinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:hint="@string/h102" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- h103  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh103"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h103" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="@string/h103" />
-
-                        <Spinner
-                            android:id="@+id/h103"
-                            style="@style/spinner"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:hint="@string/h103" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- h104  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh104"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_h104" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
                             android:gravity="center"
                             android:text="@string/h104" />
 
-                        <Spinner
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/h104"
-                            style="@style/spinner"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="2"
+                            android:layout_weight="1"
                             android:hint="@string/h104" />
 
+                        <ImageButton
+                            android:id="@+id/checkHousehold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:minWidth="56dp"
+                            android:onClick="checkHousehold"
+                            android:src="@drawable/search" />
+
                     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bottom"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="Head of Household" />
+
+        <com.edittextpicker.aliazaz.EditTextPicker
+            android:id="@+id/hhhead"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/h103" />
+
+    </LinearLayout>
+</LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -211,31 +219,29 @@
                     android:orientation="horizontal"
                     android:padding="24dp">
 
-                    <Button
-                        android:id="@+id/btn_End"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:onClick="btnEnd"
-                        android:text="Cancel"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
 
+                    <!--
+                             <enum name="src_over" value="3" />
+                                <enum name="src_in" value="5" />
+                                <enum name="src_atop" value="9" />
+                                <enum name="multiply" value="14" />
+                                <enum name="screen" value="15" />
+                                <enum name="add" value="16" />
+                    -->
                     <Button
                         android:id="@+id/btn_Continue"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTint="@color/gray"
                         android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold"
+                        android:enabled="false"
                         tools:ignore="OnClick" />
 
                 </LinearLayout>

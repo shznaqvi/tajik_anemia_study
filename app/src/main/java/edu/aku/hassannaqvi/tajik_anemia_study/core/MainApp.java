@@ -26,7 +26,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "PSBI TRIAL";
+    public static final String PROJECT_NAME = "Tajik_Anemia_Study";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     //public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server

@@ -181,7 +181,7 @@ object CreateTable {
 
     const val SQL_CREATE_RANDOM = ("CREATE TABLE "
             + RandomTable.TABLE_NAME + "("
-            + RandomTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + RandomTable.COLUMN_ID + " INTEGER PRIMARY KEY,"
             + RandomTable.COLUMN_SNO + " TEXT,"
             + RandomTable.COLUMN_CLUSTER_NO + " TEXT,"
             + RandomTable.COLUMN_HH_NO + " TEXT,"
