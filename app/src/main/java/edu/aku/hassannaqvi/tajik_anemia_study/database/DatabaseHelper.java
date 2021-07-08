@@ -25,6 +25,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTabl
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.RandomTable;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.SamplesTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.StoolTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.UsersTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.VersionTable;
@@ -38,6 +39,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.VersionApp;
@@ -46,14 +48,13 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ANTHRO;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_BLOOD;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CHILDLIST;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_MWRALIST;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_PREGNANCY;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_STOOL;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_SAMPLES;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
@@ -83,9 +84,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_MWRALIST);
         db.execSQL(SQL_CREATE_CHILDLIST);
         db.execSQL(SQL_CREATE_ANTHRO);
-        db.execSQL(SQL_CREATE_BLOOD);
-        db.execSQL(SQL_CREATE_STOOL);
+       /* db.execSQL(SQL_CREATE_BLOOD);
+        db.execSQL(SQL_CREATE_STOOL);*/
         db.execSQL(SQL_CREATE_PREGNANCY);
+        db.execSQL(SQL_CREATE_SAMPLES);
         db.execSQL(SQL_CREATE_VERSIONAPP);
         db.execSQL(SQL_CREATE_ZSTANDARD);
 
@@ -114,7 +116,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SH1, form.getsH1());
 
-        values.put(FormsTable.COLUMN_SH2A, form.getsH2a());
+        /* values.put(FormsTable.COLUMN_SH2A, form.getsH2a());*/
         values.put(FormsTable.COLUMN_SH2B, form.getsH2b());
 /*
         values.put(FormsTable.COLUMN_SH2d, form.getsH2d());
@@ -128,7 +130,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SH7, form.getsH7());
 
         values.put(FormsTable.COLUMN_SW1A, form.getsW1a());
-        values.put(FormsTable.COLUMN_SW1B, form.getsW1b());
+        /*values.put(FormsTable.COLUMN_SW1B, form.getsW1b());*/
         values.put(FormsTable.COLUMN_SW2, form.getsW2());
         values.put(FormsTable.COLUMN_SW3, form.getsW3());
         values.put(FormsTable.COLUMN_SW4, form.getsW4());
@@ -316,6 +318,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public Long addSamples(Samples sam) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(SamplesTable.COLUMN_PROJECT_NAME, sam.getProjectName());
+        values.put(SamplesTable.COLUMN_UID, sam.getUid());
+        values.put(SamplesTable.COLUMN_UUID, sam.getUuid());
+        values.put(SamplesTable.COLUMN_CLUSTER, sam.getCluster());
+        values.put(SamplesTable.COLUMN_HHID, sam.getHhid());
+        values.put(SamplesTable.COLUMN_USERNAME, sam.getUserName());
+        values.put(SamplesTable.COLUMN_SYSDATE, sam.getSysDate());
+        values.put(SamplesTable.COLUMN_S1, sam.getS1());
+
+        values.put(SamplesTable.COLUMN_DEVICEID, sam.getDeviceId());
+        values.put(SamplesTable.COLUMN_DEVICETAGID, sam.getDeviceTag());
+        values.put(SamplesTable.COLUMN_APPVERSION, sam.getAppver());
+        values.put(SamplesTable.COLUMN_ISTATUS, sam.getiStatus());
+
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId;
+        newRowId = db.insert(
+                SamplesTable.TABLE_NAME,
+                SamplesTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
 
     //UPDATE in DB
     public int updatesFormColumn(String column, String value) {
@@ -435,6 +464,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {String.valueOf(MainApp.preg.getId())};
 
         return db.update(PregnancyTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+    }
+
+    public int updatesSampColumn(String column, String value) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(column, value);
+
+        String selection = SamplesTable._ID + " =? ";
+        String[] selectionArgs = {String.valueOf(MainApp.samp.getId())};
+
+        return db.update(SamplesTable.TABLE_NAME,
                 values,
                 selection,
                 selectionArgs);
@@ -1036,6 +1080,45 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
+    public JSONArray getUnsyncedSamp() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause;
+        whereClause = SamplesTable.COLUMN_SYNCED + " is null ";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = SamplesTable.COLUMN_ID + " ASC";
+        JSONArray all = new JSONArray();
+        try {
+            c = db.query(
+                    SamplesTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Log.d(TAG, "getUnsyncedSamp: " + c.getCount());
+                Samples samp = new Samples();
+                all.put(samp.Hydrate(c).toJSONObject());
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        Log.d(TAG, "getUnsyncedSamp: " + all.toString().length());
+        Log.d(TAG, "getUnsyncedSamp: " + all);
+        return all;
+    }
+
 
     //update SyncedTables
     public void updateSyncedforms(String id) {
@@ -1160,6 +1243,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         int count = db.update(
                 PregnancyTable.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
+    public void updateSyncedSamp(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(SamplesTable.COLUMN_SYNCED, true);
+        values.put(SamplesTable.COLUMN_SYNCED_DATE, new Date().toString());
+
+        String where = SamplesTable.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                SamplesTable.TABLE_NAME,
                 values,
                 where,
                 whereArgs);

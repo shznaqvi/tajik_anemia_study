@@ -19,21 +19,7 @@ public class Form extends BaseObservable {
 
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-    /*    private String sH2c = StringUtils.EMPTY;
-        private String sH2d = StringUtils.EMPTY;
-        */
-    private final String sH4 = StringUtils.EMPTY;
-    private final String sH5 = StringUtils.EMPTY;
-    private final String sH6 = StringUtils.EMPTY;
-    private final String sH7 = StringUtils.EMPTY;
-    private final String sW1a = StringUtils.EMPTY;
-    private final String sW1b = StringUtils.EMPTY;
-    private final String sW2 = StringUtils.EMPTY;
-    private final String sW3 = StringUtils.EMPTY;
-    private final String sW4 = StringUtils.EMPTY;
-    private final String sC1 = StringUtils.EMPTY;
-    private final String sC2 = StringUtils.EMPTY;
-    private final String sC3 = StringUtils.EMPTY;
+
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
     // APP VARIABLES
@@ -43,6 +29,7 @@ public class Form extends BaseObservable {
     private String sysDate = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
+
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
     private String appver = StringUtils.EMPTY;
@@ -51,12 +38,28 @@ public class Form extends BaseObservable {
     private String iStatus96x = StringUtils.EMPTY;
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
+
+
     // SECTION VARIABLES
     private String sH1 = StringUtils.EMPTY;
-    private String sH2a = StringUtils.EMPTY;
+    //private String sH2a = StringUtils.EMPTY;
     private String sH2b = StringUtils.EMPTY;
+    /*    private String sH2c = StringUtils.EMPTY;
+        private String sH2d = StringUtils.EMPTY;*/
     private String sH3a = StringUtils.EMPTY;
     private String sH3b = StringUtils.EMPTY;
+    private String sH4 = StringUtils.EMPTY;
+    private String sH5 = StringUtils.EMPTY;
+    private String sH6 = StringUtils.EMPTY;
+    private String sH7 = StringUtils.EMPTY;
+    private String sW1a = StringUtils.EMPTY;
+    //private String sW1b = StringUtils.EMPTY;
+    private String sW2 = StringUtils.EMPTY;
+    private String sW3 = StringUtils.EMPTY;
+    private String sW4 = StringUtils.EMPTY;
+    private String sC1 = StringUtils.EMPTY;
+    private String sC2 = StringUtils.EMPTY;
+    private String sC3 = StringUtils.EMPTY;
 
     // FIELD VARIABLES
     private String h101 = StringUtils.EMPTY;
@@ -929,6 +932,7 @@ public class Form extends BaseObservable {
     }
 
 
+
     public String getDeviceId() {
         return deviceId;
     }
@@ -1001,13 +1005,13 @@ public class Form extends BaseObservable {
         this.sH1 = sH1;
     }
 
-    public String getsH2a() {
+   /* public String getsH2a() {
         return sH2a;
     }
 
     public void setsH2a(String sH2a) {
         this.sH2a = sH2a;
-    }
+    }*/
 
     public String getsH2b() {
         return sH2b;
@@ -1031,6 +1035,105 @@ public class Form extends BaseObservable {
 
     public void setsH3b(String sH3b) {
         this.sH3b = sH3b;
+    }
+
+    public String getsH4() {
+        return sH4;
+    }
+
+    public void setsH4(String sH4) {
+        this.sH4 = sH4;
+    }
+
+    public String getsH5() {
+        return sH5;
+    }
+
+    public void setsH5(String sH5) {
+        this.sH5 = sH5;
+    }
+
+    public String getsH6() {
+        return sH6;
+    }
+
+    public void setsH6(String sH6) {
+        this.sH6 = sH6;
+    }
+
+    public String getsH7() {
+        return sH7;
+    }
+
+    public void setsH7(String sH7) {
+        this.sH7 = sH7;
+    }
+
+    public String getsW1a() {
+        return sW1a;
+    }
+
+    public void setsW1a(String sW1a) {
+        this.sW1a = sW1a;
+    }
+
+
+
+   /* public String getsW1b() {
+        return sW1b;
+    }
+
+    public void setsW1b(String sW1b) {
+        this.sW1b = sW1b;
+    }*/
+
+
+    public String getsW2() {
+        return sW2;
+    }
+
+    public void setsW2(String sW2) {
+        this.sW2 = sW2;
+    }
+
+    public String getsW3() {
+        return sW3;
+    }
+
+    public void setsW3(String sW3) {
+        this.sW3 = sW3;
+    }
+
+    public String getsW4() {
+        return sW4;
+    }
+
+    public void setsW4(String sW4) {
+        this.sW4 = sW4;
+    }
+
+    public String getsC1() {
+        return sC1;
+    }
+
+    public void setsC1(String sC1) {
+        this.sC1 = sC1;
+    }
+
+    public String getsC2() {
+        return sC2;
+    }
+
+    public void setsC2(String sC2) {
+        this.sC2 = sC2;
+    }
+
+    public String getsC3() {
+        return sC3;
+    }
+
+    public void setsC3(String sC3) {
+        this.sC3 = sC3;
     }
 
 
@@ -1533,6 +1636,7 @@ public class Form extends BaseObservable {
         this.h220c = h220c;
         notifyPropertyChanged(BR.h220c);
     }
+
 
 
     @Bindable
@@ -8731,7 +8835,6 @@ public class Form extends BaseObservable {
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
 
         sH1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH1)));
-        sH2aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2A)));
         sH2bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2B)));
 
         /*sH2cHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2c)));
@@ -8743,9 +8846,10 @@ public class Form extends BaseObservable {
         sH4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4)));
         sH5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH5)));
         sH6Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH6)));
+        sH7Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH7)));
 
         sW1aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1A)));
-        sW1bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1B)));
+        /*sW1bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1B)));*/
         sW2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW2)));
         sW3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW3)));
         sW4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW4)));
@@ -8759,9 +8863,8 @@ public class Form extends BaseObservable {
 
 
     public void sH1Hydrate(String string) {
-
+        Log.d(TAG, "sH1Hydrate: " + string);
         if (string != null) {
-
             try {
                 JSONObject json = null;
                 json = new JSONObject(string);
@@ -8791,6 +8894,19 @@ public class Form extends BaseObservable {
                 this.h206 = json.getString("h206");
                 this.h207 = json.getString("h207");
                 this.h208 = json.getString("h208");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH2bHydrate(String string) {
+        Log.d(TAG, "sH2bHydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h209 = json.getString("h209");
                 this.h210 = json.getString("h210");
                 this.h211t = json.getString("h211t");
@@ -8815,6 +8931,19 @@ public class Form extends BaseObservable {
                 this.h220a = json.getString("h220a");
                 this.h220b = json.getString("h220b");
                 this.h220c = json.getString("h220c");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH3aHydrate(String string) {
+        Log.d(TAG, "sH3aHydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h301 = json.getString("h301");
                 this.h30196x = json.getString("h30196x");
                 this.h302 = json.getString("h302");
@@ -8857,6 +8986,19 @@ public class Form extends BaseObservable {
                 this.h312e = json.getString("h312e");
                 this.h312f = json.getString("h312f");
                 this.h312g = json.getString("h312g");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH3bHydrate(String string) {
+        Log.d(TAG, "sH3bHydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h313 = json.getString("h313");
                 this.h313a = json.getString("h313a");
                 this.h313b = json.getString("h313b");
@@ -8898,6 +9040,19 @@ public class Form extends BaseObservable {
                 this.h3246x = json.getString("h3246x");
                 this.h3247 = json.getString("h3247");
                 this.h3247x = json.getString("h3247x");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH4Hydrate(String string) {
+        Log.d(TAG, "sH4Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h401 = json.getString("h401");
                 this.h402 = json.getString("h402");
                 this.h403 = json.getString("h403");
@@ -8917,10 +9072,36 @@ public class Form extends BaseObservable {
                 this.h406c = json.getString("h406c");
                 this.h406d = json.getString("h406d");
                 this.h406e = json.getString("h406e");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH5Hydrate(String string) {
+        Log.d(TAG, "sH5Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h501 = json.getString("h501");
                 this.h50196x = json.getString("h50196x");
                 this.h502 = json.getString("h502");
                 this.h503 = json.getString("h503");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH6Hydrate(String string) {
+        Log.d(TAG, "sH6Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h601 = json.getString("h601");
                 this.h602 = json.getString("h602");
                 this.h603 = json.getString("h603");
@@ -8939,6 +9120,19 @@ public class Form extends BaseObservable {
                 this.h616 = json.getString("h616");
                 this.h617 = json.getString("h617");
                 this.h618 = json.getString("h618");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sH7Hydrate(String string) {
+        Log.d(TAG, "sH7Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.h701 = json.getString("h701");
                 this.h701q = json.getString("h701q");
                 this.h701s = json.getString("h701s");
@@ -8990,10 +9184,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public void sH2aHydrate(String string) {
-        Log.d(TAG, "s2Hydrate: " + string);
+    public void sW1aHydrate(String string) {
+        Log.d(TAG, "sW1aHydrate: " + string);
         if (string != null) {
-
             try {
                 JSONObject json = null;
                 json = new JSONObject(string);
@@ -9011,6 +9204,19 @@ public class Form extends BaseObservable {
                 this.w110 = json.getString("w110");
                 this.w111 = json.getString("w111");
                 this.w112 = json.getString("w112");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sW2Hydrate(String string) {
+        Log.d(TAG, "sW2Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.w201 = json.getString("w201");
                 this.w202 = json.getString("w202");
                 this.w202a = json.getString("w202a");
@@ -9091,6 +9297,19 @@ public class Form extends BaseObservable {
                 this.w224 = json.getString("w224");
                 this.w225 = json.getString("w225");
                 this.w226 = json.getString("w226");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sW3Hydrate(String string) {
+        Log.d(TAG, "sW3Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.w301 = json.getString("w301");
                 this.w30196x = json.getString("w30196x");
                 this.w302 = json.getString("w302");
@@ -9190,6 +9409,19 @@ public class Form extends BaseObservable {
                 this.w326 = json.getString("w326");
                 this.w327 = json.getString("w327");
                 this.w32796x = json.getString("w32796x");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sW4Hydrate(String string) {
+        Log.d(TAG, "sW4Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.w401 = json.getString("w401");
                 this.w401a = json.getString("w401a");
                 this.w401b = json.getString("w401b");
@@ -9287,10 +9519,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public void sH2bHydrate(String string) {
-
+    public void sC1Hydrate(String string) {
+        Log.d(TAG, "sC1Hydrate: " + string);
         if (string != null) {
-
             try {
                 JSONObject json = null;
                 json = new JSONObject(string);
@@ -9337,6 +9568,19 @@ public class Form extends BaseObservable {
                 this.c107s = json.getString("c107s");
                 this.c108 = json.getString("c108");
                 this.c109 = json.getString("c109");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sC2Hydrate(String string) {
+        Log.d(TAG, "sC2Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.c201 = json.getString("c201");
                 this.c202 = json.getString("c202");
                 this.c20301a = json.getString("c20301a");
@@ -9493,6 +9737,19 @@ public class Form extends BaseObservable {
                 this.c20317bf = json.getString("c20317bf");
                 this.c20317bg = json.getString("c20317bg");
                 this.c204 = json.getString("c204");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void sC3Hydrate(String string) {
+        Log.d(TAG, "sC3Hydrate: " + string);
+        if (string != null) {
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
                 this.c301 = json.getString("c301");
                 this.c302 = json.getString("c302");
                 this.c303 = json.getString("c303");
@@ -9568,62 +9825,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public void sH3aHydrate(String string) {
-
-        if (string != null) {
-
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                /*this.d101 = json.getString("d101");
-                this.d102 = json.getString("d102");
-                this.d103 = json.getString("d103");
-                this.d104 = json.getString("d104");
-                this.d105 = json.getString("d105");
-                this.d106 = json.getString("d106");*/
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
-    public void sH3bHydrate(String string) {
-
-        if (string != null) {
-
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                /*this.e101 = json.getString("e101");
-                this.e102 = json.getString("e102");
-                this.e103 = json.getString("e103");
-                this.e104 = json.getString("e104");
-                this.e105 = json.getString("e105");
-                this.e106 = json.getString("e106");
-                this.e107 = json.getString("e107");
-                this.e018 = json.getString("e018");
-                this.e109 = json.getString("e109");
-                this.e110 = json.getString("e110");
-                this.e111 = json.getString("e111");
-                this.e112 = json.getString("e112");
-                this.e113 = json.getString("e113");
-                this.e114 = json.getString("e114");
-                this.e115 = json.getString("e115");
-                this.e116 = json.getString("e116");
-                this.e117 = json.getString("e117");
-                this.e118 = json.getString("e118");
-                this.e119 = json.getString("e119");*/
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
-    public String s1toString() {
+    public String sH1toString() {
+        Log.d(TAG, "sH1toString: ");
         JSONObject json = new JSONObject();
-
         try {
             json.put("h101", h101)
                     .put("h102", h102)
@@ -9650,8 +9854,20 @@ public class Form extends BaseObservable {
                     .put("h205", h205)
                     .put("h206", h206)
                     .put("h207", h207)
-                    .put("h208", h208)
-                    .put("h209", h209)
+                    .put("h208", h208);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH2btoString() {
+        Log.d(TAG, "sH2btoString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h209", h209)
                     .put("h210", h210)
                     .put("h211t", h211t)
                     .put("h211m", h211m)
@@ -9674,8 +9890,20 @@ public class Form extends BaseObservable {
                     .put("h219f", h219f)
                     .put("h220a", h220a)
                     .put("h220b", h220b)
-                    .put("h220c", h220c)
-                    .put("h301", h301)
+                    .put("h220c", h220c);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH3atoString() {
+        Log.d(TAG, "sH3atoString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h301", h301)
                     .put("h30196x", h30196x)
                     .put("h302", h302)
                     .put("h30296x", h30296x)
@@ -9716,8 +9944,20 @@ public class Form extends BaseObservable {
                     .put("h312d", h312d)
                     .put("h312e", h312e)
                     .put("h312f", h312f)
-                    .put("h312g", h312g)
-                    .put("h313", h313)
+                    .put("h312g", h312g);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH3btoString() {
+        Log.d(TAG, "sH3btoString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h313", h313)
                     .put("h313a", h313a)
                     .put("h313b", h313b)
                     .put("h313c", h313c)
@@ -9757,8 +9997,20 @@ public class Form extends BaseObservable {
                     .put("h3246", h3246)
                     .put("h3246x", h3246x)
                     .put("h3247", h3247)
-                    .put("h3247x", h3247x)
-                    .put("h401", h401)
+                    .put("h3247x", h3247x);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH4toString() {
+        Log.d(TAG, "sH4toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h401", h401)
                     .put("h402", h402)
                     .put("h403", h403)
                     .put("h403a", h403a)
@@ -9776,12 +10028,36 @@ public class Form extends BaseObservable {
                     .put("h406b", h406b)
                     .put("h406c", h406c)
                     .put("h406d", h406d)
-                    .put("h406e", h406e)
-                    .put("h501", h501)
+                    .put("h406e", h406e);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH5toString() {
+        Log.d(TAG, "sH5toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h501", h501)
                     .put("h50196x", h50196x)
                     .put("h502", h502)
-                    .put("h503", h503)
-                    .put("h601", h601)
+                    .put("h503", h503);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH6toString() {
+        Log.d(TAG, "sH6toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h601", h601)
                     .put("h602", h602)
                     .put("h603", h603)
                     .put("h604", h604)
@@ -9798,8 +10074,20 @@ public class Form extends BaseObservable {
                     .put("h615", h615)
                     .put("h616", h616)
                     .put("h617", h617)
-                    .put("h618", h618)
-                    .put("h701", h701)
+                    .put("h618", h618);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sH7toString() {
+        Log.d(TAG, "sH7toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("h701", h701)
                     .put("h701q", h701q)
                     .put("h701s", h701s)
                     .put("h702", h702)
@@ -9851,9 +10139,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public String s2toString() {
+    public String sW1atoString() {
+        Log.d(TAG, "sW1atoString: ");
         JSONObject json = new JSONObject();
-
         try {
             json.put("w101d", w101d)
                     .put("w101m", w101m)
@@ -9868,8 +10156,20 @@ public class Form extends BaseObservable {
                     .put("w109", w109)
                     .put("w110", w110)
                     .put("w111", w111)
-                    .put("w112", w112)
-                    .put("w201", w201)
+                    .put("w112", w112);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sW2toString() {
+        Log.d(TAG, "sW2toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("w201", w201)
                     .put("w202", w202)
                     .put("w202a", w202a)
                     .put("w202b", w202b)
@@ -9948,8 +10248,20 @@ public class Form extends BaseObservable {
                     .put("w223h", w223h)
                     .put("w224", w224)
                     .put("w225", w225)
-                    .put("w226", w226)
-                    .put("w301", w301)
+                    .put("w226", w226);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sW3toString() {
+        Log.d(TAG, "sW3toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("w301", w301)
                     .put("w30196x", w30196x)
                     .put("w302", w302)
                     .put("w302a", w302a)
@@ -10047,8 +10359,20 @@ public class Form extends BaseObservable {
                     .put("w325", w325)
                     .put("w326", w326)
                     .put("w327", w327)
-                    .put("w32796x", w32796x)
-                    .put("w401", w401)
+                    .put("w32796x", w32796x);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sW4toString() {
+        Log.d(TAG, "sW4toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("w401", w401)
                     .put("w401a", w401a)
                     .put("w401b", w401b)
                     .put("w401c", w401c)
@@ -10146,9 +10470,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public String s3toString() {
+    public String sC1toString() {
+        Log.d(TAG, "sC1toString: ");
         JSONObject json = new JSONObject();
-
         try {
             json.put("c101", c101)
                     .put("c102", c102)
@@ -10192,8 +10516,20 @@ public class Form extends BaseObservable {
                     .put("c107r", c107r)
                     .put("c107s", c107s)
                     .put("c108", c108)
-                    .put("c109", c109)
-                    .put("c201", c201)
+                    .put("c109", c109);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sC2toString() {
+        Log.d(TAG, "sC2toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("c201", c201)
                     .put("c202", c202)
                     .put("c20301a", c20301a)
                     .put("c20301b", c20301b)
@@ -10348,8 +10684,20 @@ public class Form extends BaseObservable {
                     .put("c20317be", c20317be)
                     .put("c20317bf", c20317bf)
                     .put("c20317bg", c20317bg)
-                    .put("c204", c204)
-                    .put("c301", c301)
+                    .put("c204", c204);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return "\"error\":, \"" + e.getMessage() + "\"";
+        }
+        return json.toString();
+    }
+
+
+    public String sC3toString() {
+        Log.d(TAG, "sC3toString: ");
+        JSONObject json = new JSONObject();
+        try {
+            json.put("c301", c301)
                     .put("c302", c302)
                     .put("c303", c303)
                     .put("c30396x", c30396x)
@@ -10425,59 +10773,9 @@ public class Form extends BaseObservable {
     }
 
 
-    public String s4toString() {
-        JSONObject json = new JSONObject();
-
-       /* try {
-            json.put("d101", d101)
-                    .put("d102", d102)
-                    .put("d103", d103)
-                    .put("d104", d104)
-                    .put("d105", d105)
-                    .put("d106", d106);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }*/
-        return json.toString();
-    }
-
-
-    public String s5toString() {
-        JSONObject json = new JSONObject();
-
-        /*try {
-            json.put("e101", e101)
-                    .put("e102", e102)
-                    .put("e103", e103)
-                    .put("e104", e104)
-                    .put("e105", e105)
-                    .put("e106", e106)
-                    .put("e107", e107)
-                    .put("e018", e018)
-                    .put("e109", e109)
-                    .put("e110", e110)
-                    .put("e111", e111)
-                    .put("e112", e112)
-                    .put("e113", e113)
-                    .put("e114", e114)
-                    .put("e115", e115)
-                    .put("e116", e116)
-                    .put("e117", e117)
-                    .put("e118", e118)
-                    .put("e119", e119);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }*/
-        return json.toString();
-    }
-
 
     public JSONObject toJSONObject() {
-
         JSONObject json = new JSONObject();
-
         try {
             json.put(FormsTable.COLUMN_ID, this.id);
             json.put(FormsTable.COLUMN_UID, this.uid);
@@ -10493,7 +10791,6 @@ public class Form extends BaseObservable {
 
             // Household
             json.put(FormsTable.COLUMN_SH1, new JSONObject(sH1toString()));
-            json.put(FormsTable.COLUMN_SH2A, new JSONObject(sH2atoString()));
             json.put(FormsTable.COLUMN_SH2B, new JSONObject(sH2btoString()));
             /*
             json.put(FormsTable.COLUMN_SH2c, new JSONObject(sH2ctoString()));
@@ -10508,7 +10805,6 @@ public class Form extends BaseObservable {
 
             // MWRA
             json.put(FormsTable.COLUMN_SW1A, new JSONObject(sW1atoString()));
-            json.put(FormsTable.COLUMN_SW1B, new JSONObject(sW1btoString()));
             json.put(FormsTable.COLUMN_SW2, new JSONObject(sW2toString()));
             json.put(FormsTable.COLUMN_SW3, new JSONObject(sW3toString()));
             json.put(FormsTable.COLUMN_SW4, new JSONObject(sW4toString()));

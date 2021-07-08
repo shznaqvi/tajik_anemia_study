@@ -14,25 +14,25 @@ public class TableContracts {
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_SH1 = "sh1";
-        public static final String COLUMN_SH2A = "sh2a";
-        public static final String COLUMN_SH2B = "sh2b";
+        public static final String COLUMN_SH1 = "sH1";
+        //public static final String COLUMN_SH2A = "sH2a";
+        public static final String COLUMN_SH2B = "sH2b";
         // public static final String COLUMN_SH2b = "sh2c";
         // public static final String COLUMN_SH2b = "sh2d";
-        public static final String COLUMN_SH3A = "sh3a";
-        public static final String COLUMN_SH3B = "sh3b";
-        public static final String COLUMN_SH4 = "sh4";
-        public static final String COLUMN_SH5 = "sh5";
-        public static final String COLUMN_SH6 = "sh6";
-        public static final String COLUMN_SH7 = "sh7";
-        public static final String COLUMN_SW1A = "sw1a";
-        public static final String COLUMN_SW1B = "sw1b";
-        public static final String COLUMN_SW2 = "sw2";
-        public static final String COLUMN_SW3 = "sw3";
-        public static final String COLUMN_SW4 = "sw4";
-        public static final String COLUMN_SC1 = "sc1";
-        public static final String COLUMN_SC2 = "sc2";
-        public static final String COLUMN_SC3 = "sc3";
+        public static final String COLUMN_SH3A = "sH3a";
+        public static final String COLUMN_SH3B = "sH3b";
+        public static final String COLUMN_SH4 = "sH4";
+        public static final String COLUMN_SH5 = "sH5";
+        public static final String COLUMN_SH6 = "sH6";
+        public static final String COLUMN_SH7 = "sH7";
+        public static final String COLUMN_SW1A = "sW1a";
+        /*public static final String COLUMN_SW1B = "sW1b";*/
+        public static final String COLUMN_SW2 = "sW2";
+        public static final String COLUMN_SW3 = "sW3";
+        public static final String COLUMN_SW4 = "sW4";
+        public static final String COLUMN_SC1 = "sC1";
+        public static final String COLUMN_SC2 = "sC2";
+        public static final String COLUMN_SC3 = "sC3";
 
 
         public static final String COLUMN_DEVICEID = "deviceid";
@@ -156,6 +156,28 @@ public class TableContracts {
 
     public static abstract class PregnancyTable implements BaseColumns {
         public static final String TABLE_NAME = "Pregnancy";
+        public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
+        public static final String COLUMN_PROJECT_NAME = "projectName";
+        public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_UID = "_uid";
+        public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_CLUSTER = "cluster";
+        public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_SYSDATE = "sysdate";
+        public static final String COLUMN_S1 = "s1";
+
+
+        public static final String COLUMN_DEVICEID = "deviceid";
+        public static final String COLUMN_DEVICETAGID = "devicetagid";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNCED_DATE = "synced_date";
+        public static final String COLUMN_APPVERSION = "appversion";
+        public static final String COLUMN_ISTATUS = "istatus";
+    }
+
+    public static abstract class SamplesTable implements BaseColumns {
+        public static final String TABLE_NAME = "Samples";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";

@@ -20,6 +20,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 
@@ -47,6 +48,7 @@ public class MainApp extends Application {
     //public static Samples samples;
     public static Stool stool;
     public static Pregnancy preg;
+    public static Samples samp;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;

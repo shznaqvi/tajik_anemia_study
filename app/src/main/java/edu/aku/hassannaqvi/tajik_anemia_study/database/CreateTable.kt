@@ -23,7 +23,6 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
             + FormsTable.COLUMN_SH1 + " TEXT,"
-            + FormsTable.COLUMN_SH2A + " TEXT,"
             + FormsTable.COLUMN_SH2B + " TEXT,"
             /*
             + FormsTable.COLUMN_SH2c + " TEXT,"
@@ -38,14 +37,12 @@ object CreateTable {
 
             // MWRA
             + FormsTable.COLUMN_SW1A + " TEXT,"
-            + FormsTable.COLUMN_SW1B + " TEXT,"
             + FormsTable.COLUMN_SW2 + " TEXT,"
             + FormsTable.COLUMN_SW3 + " TEXT,"
             + FormsTable.COLUMN_SW4 + " TEXT,"
             + FormsTable.COLUMN_SC1 + " TEXT,"
             + FormsTable.COLUMN_SC2 + " TEXT,"
-            + FormsTable.COLUMN_SC3 + " TEXT,"
-
+            + FormsTable.COLUMN_SC3 + " TEXT"
             + " );"
             )
 
@@ -172,6 +169,27 @@ object CreateTable {
             + PregnancyTable.COLUMN_SYNCED_DATE + " TEXT,"
             + PregnancyTable.COLUMN_APPVERSION + " TEXT,"
             + PregnancyTable.COLUMN_S1 + " TEXT"
+            + " );"
+            )
+
+
+    const val SQL_CREATE_SAMPLES = ("CREATE TABLE "
+            + SamplesTable.TABLE_NAME + "("
+            + SamplesTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + SamplesTable.COLUMN_PROJECT_NAME + " TEXT,"
+            + SamplesTable.COLUMN_UID + " TEXT,"
+            + SamplesTable.COLUMN_UUID + " TEXT,"
+            + SamplesTable.COLUMN_CLUSTER + " TEXT,"
+            + SamplesTable.COLUMN_HHID + " TEXT,"
+            + SamplesTable.COLUMN_USERNAME + " TEXT,"
+            + SamplesTable.COLUMN_SYSDATE + " TEXT,"
+            + SamplesTable.COLUMN_ISTATUS + " TEXT,"
+            + SamplesTable.COLUMN_DEVICEID + " TEXT,"
+            + SamplesTable.COLUMN_DEVICETAGID + " TEXT,"
+            + SamplesTable.COLUMN_SYNCED + " TEXT,"
+            + SamplesTable.COLUMN_SYNCED_DATE + " TEXT,"
+            + SamplesTable.COLUMN_APPVERSION + " TEXT,"
+            + SamplesTable.COLUMN_S1 + " TEXT"
             + " );"
             )
 

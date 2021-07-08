@@ -74,35 +74,27 @@
                                 android:text="@string/Q_c201t" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/c201t" />
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/c201"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/c201"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                app:maxValue="10"
-                                app:minValue="1"
-                                app:type="range" />
-
-                        </LinearLayout>
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="10"
+                            app:minValue="1"
+                            app:type="range" />
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- c202  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -127,10 +119,10 @@
                                 android:text="@string/Q_c202" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/c202" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -159,9 +151,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/c202c" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--                &lt;!&ndash; instruc1  Title   &ndash;&gt;
                                 <androidx.cardview.widget.CardView
@@ -183,6 +179,7 @@
                                     </LinearLayout>
                                 </androidx.cardview.widget.CardView>-->
 
+
                 <!-- &lt;!&ndash; c20301t2  Title   &ndash;&gt;
                  <androidx.cardview.widget.CardView
                      android:id="@+id/fldGrpCVc20301t2"
@@ -203,6 +200,8 @@
                      </LinearLayout>
                  </androidx.cardview.widget.CardView>
  -->
+
+
                 <!-- c20301a  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc20301a"
@@ -223,13 +222,13 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_c202" />
+                                android:text="@string/Q_c301" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/instruc1" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -1806,7 +1805,6 @@
 
                     </LinearLayout>
 
-
                 </androidx.cardview.widget.CardView>
 
 
@@ -1833,17 +1831,17 @@
                                 android:text="@string/Q_c204" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/c204" />
+
                         </LinearLayout>
 
                         <RadioGroup
                             android:id="@+id/c204"
                             android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/c204a"
@@ -1858,8 +1856,11 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/c204b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
