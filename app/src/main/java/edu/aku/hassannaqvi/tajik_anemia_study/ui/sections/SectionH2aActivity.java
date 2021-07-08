@@ -40,7 +40,7 @@ public class SectionH2aActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_S1, form.s1toString());
+        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.s1toString());
         if (updcount == 1) {
             return true;
         } else {

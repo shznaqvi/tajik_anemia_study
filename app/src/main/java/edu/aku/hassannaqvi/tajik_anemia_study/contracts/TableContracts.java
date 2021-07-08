@@ -14,11 +14,25 @@ public class TableContracts {
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
-        public static final String COLUMN_S1 = "s1";
-        public static final String COLUMN_S2 = "s2";
-        public static final String COLUMN_S3 = "s3";
-        public static final String COLUMN_S4 = "s4";
-        public static final String COLUMN_S5 = "s5";
+        public static final String COLUMN_SH1 = "sh1";
+        public static final String COLUMN_SH2a = "sh2a";
+        public static final String COLUMN_SH2b = "sh2b";
+        // public static final String COLUMN_SH2b = "sh2c";
+        // public static final String COLUMN_SH2b = "sh2d";
+        public static final String COLUMN_SH3a = "sh3a";
+        public static final String COLUMN_SH3b = "sh3b";
+        public static final String COLUMN_SH4 = "sh4";
+        public static final String COLUMN_SH5 = "sh5";
+        public static final String COLUMN_SH6 = "sh6";
+        public static final String COLUMN_SH7 = "sh7";
+        public static final String COLUMN_SW1A = "sw1a";
+        public static final String COLUMN_SW1B = "sw1b";
+        public static final String COLUMN_SW2 = "sw2";
+        public static final String COLUMN_SW3 = "sw3";
+        public static final String COLUMN_SW4 = "sw4";
+        public static final String COLUMN_SC1 = "sc1";
+        public static final String COLUMN_SC2 = "sc2";
+        public static final String COLUMN_SC3 = "sc3";
 
 
         public static final String COLUMN_DEVICEID = "deviceid";

@@ -44,11 +44,11 @@ public class SectionH1Activity extends AppCompatActivity {
     }
 
 
-    private boolean updateDB() {
+    private boolean insertNewRecord() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
-        if (updcount > 0) {
+        long rowId = db.addForm(form);
+        form.setId(String.valueOf(rowId));
+        if (rowId > 0) {
             form.setUid(form.getDeviceId() + form.getId());
             db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
@@ -58,9 +58,20 @@ public class SectionH1Activity extends AppCompatActivity {
         }
     }
 
+    private boolean updateDB() {
+        DatabaseHelper db = MainApp.appInfo.getDbHelper();
+        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.s1toString());
+        if (updcount == 1) {
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
             finish();

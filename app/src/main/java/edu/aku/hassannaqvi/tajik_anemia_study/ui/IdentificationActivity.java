@@ -33,7 +33,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionAnthroActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionSamplesActivity;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.anthro;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.idType;
 
 public class IdentificationActivity extends AppCompatActivity {
 
@@ -44,7 +46,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> districtCodes;
     private ArrayList<String> cityNames;
     private ArrayList<String> cityCodes;
-    private Intent openFormIntent;
+    private Intent openIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,29 +56,29 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         populateSpinner();
 
-        openFormIntent = new Intent();
+        openIntent = new Intent();
         switch (MainApp.idType) {
             case 1:
                 bi.btnContinue.setText("Open Household Form");
                 MainApp.form = new Form();
-                openFormIntent = new Intent(this, SectionH1Activity.class);
+                openIntent = new Intent(this, SectionH1Activity.class);
                 break;
             case 2:
                 bi.btnContinue.setText("Open Anthro Form");
-                MainApp.anthro = new Anthro();
-                openFormIntent = new Intent(this, SectionAnthroActivity.class);
+                anthro = new Anthro();
+                openIntent = new Intent(this, SectionAnthroActivity.class);
                 break;
             case 3:
                 bi.btnContinue.setText("Open Blood Form");
                 //     MainApp.sample = new Sample();
-                openFormIntent = new Intent(this, SectionSamplesActivity.class);
-                openFormIntent.putExtra("type", "1"); // BLOOD - 1
+                openIntent = new Intent(this, SectionSamplesActivity.class);
+                openIntent.putExtra("type", "1"); // BLOOD - 1
                 break;
             case 4:
                 bi.btnContinue.setText("Open Stool Form");
                 //    MainApp.sample = new Sample();
-                openFormIntent = new Intent(this, SectionSamplesActivity.class);
-                openFormIntent.putExtra("type", "2"); // STOOL - 2
+                openIntent = new Intent(this, SectionSamplesActivity.class);
+                openIntent.putExtra("type", "2"); // STOOL - 2
                 break;
 
         }
@@ -210,23 +212,57 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
-        //  if (updateDB()) {
+        switch (idType) {
+            case 1:
+                if (!hhExists())
+                    saveDraftForm();
+                break;
+            case 2:
+                if (!hhExists())
+                    saveDraftAnthro();
+                break;
+            case 3:
+            case 4:
+                if (!hhExists())
+                    saveDraftSamples();
+                break;
+
+        }
         finish();
-        startActivity(openFormIntent);
-        // } else {
-        //     Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        // }
+        startActivity(openIntent);
+
     }
 
 
-    private void saveDraft() {
+    private void saveDraftForm() {
         MainApp.form = new Form();
 
         form.setUserName(MainApp.user.getUserName());
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
+    }
+
+    private void saveDraftAnthro() {
+        anthro = new Anthro();
+
+        anthro.setUserName(MainApp.user.getUserName());
+        anthro.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        anthro.setDeviceId(MainApp.deviceid);
+        anthro.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
+    }
+
+    private void saveDraftSamples() {
+
+        //TODO:
+     /*   MainApp.samples = new Samples();
+
+        samples.setUserName(MainApp.user.getUserName());
+        samples.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        samples.setDeviceId(MainApp.deviceid);
+        samples.setAppver(MainApp.versionName + "." + MainApp.versionCode);*/
 
     }
 
@@ -260,6 +296,29 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
             bi.btnContinue.setEnabled(false);
 
+
+        }
+    }
+
+    private boolean hhExists() {
+
+        switch (idType) {
+            case 1:
+                form = new Form();
+                form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
+                return form != null;
+
+            //TODO: Antro & Samples will be multiple. Different logic will be required
+        /*    case 2:
+                anthro = new Anthro();
+                anthro = db.getAnthroByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
+                return anthro != null;
+            case 2:
+                samples = new Samples();
+                anthro = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
+                return anthro != null;*/
+            default:
+                return false;
 
         }
     }

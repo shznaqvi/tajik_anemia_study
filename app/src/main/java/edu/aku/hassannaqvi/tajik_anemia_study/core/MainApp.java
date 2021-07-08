@@ -44,6 +44,7 @@ public class MainApp extends Application {
     public static ChildList childList;
     public static Anthro anthro;
     public static Blood blood;
+    //public static Samples samples;
     public static Stool stool;
     public static Pregnancy preg;
     public static String DeviceURL = "devices.php";

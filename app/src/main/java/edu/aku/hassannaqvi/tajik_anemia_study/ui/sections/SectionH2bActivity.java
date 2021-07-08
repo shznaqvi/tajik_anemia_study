@@ -47,7 +47,7 @@ public class SectionH2bActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsTable.COLUMN_S1, form.s1toString());
+        int updcount = db.updatesFormColumn(FormsTable.COLUMN_SH1, form.s1toString());
         if (updcount == 1) {
             return true;
         } else {

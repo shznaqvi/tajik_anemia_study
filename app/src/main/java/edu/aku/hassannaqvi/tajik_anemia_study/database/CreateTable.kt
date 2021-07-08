@@ -22,11 +22,11 @@ object CreateTable {
             + FormsTable.COLUMN_SYNCED + " TEXT,"
             + FormsTable.COLUMN_SYNCED_DATE + " TEXT,"
             + FormsTable.COLUMN_APPVERSION + " TEXT,"
-            + FormsTable.COLUMN_S1 + " TEXT,"
-            + FormsTable.COLUMN_S2 + " TEXT,"
-            + FormsTable.COLUMN_S3 + " TEXT,"
-            + FormsTable.COLUMN_S4 + " TEXT,"
-            + FormsTable.COLUMN_S5 + " TEXT"
+            + FormsTable.COLUMN_SH1 + " TEXT,"
+            + FormsTable.COLUMN_SH2a + " TEXT,"
+            + FormsTable.COLUMN_SH2b + " TEXT,"
+            + FormsTable.COLUMN_SH3a + " TEXT,"
+            + FormsTable.COLUMN_SH3b + " TEXT"
             + " );"
             )
 

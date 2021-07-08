@@ -112,11 +112,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_UID, form.getUid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_S1, form.getS1());
-        values.put(FormsTable.COLUMN_S2, form.getS2());
-        values.put(FormsTable.COLUMN_S3, form.getS3());
-        values.put(FormsTable.COLUMN_S4, form.getS4());
-        values.put(FormsTable.COLUMN_S5, form.getS5());
+        values.put(FormsTable.COLUMN_SH1, form.getsH1());
+        values.put(FormsTable.COLUMN_SH2a, form.getsH2a());
+        values.put(FormsTable.COLUMN_SH2b, form.getsH2b());
+        values.put(FormsTable.COLUMN_SH3a, form.getsH2c());
+        values.put(FormsTable.COLUMN_SH3b, form.getsH2d());
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
 
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
@@ -1383,10 +1383,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
 
-                Random random = new Random();
-                random.setHeadhh(c.getString(c.getColumnIndex(RandomTable.COLUMN_HEAD_HH)));
+                hh = new Random().hydrate(c);
 
-                hh = random;
             }
         } finally {
             if (c != null) {
@@ -1399,5 +1397,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return hh;
 
+    }
+
+    public Form getFormByClusterHHNo(String cluster_no, String hh_no) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = FormsTable.COLUMN_CLUSTER + "=? AND " +
+                FormsTable.COLUMN_HHID + " =? ";
+
+        String[] whereArgs = {cluster_no, hh_no};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Form form = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                form = new Form().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return form;
     }
 }

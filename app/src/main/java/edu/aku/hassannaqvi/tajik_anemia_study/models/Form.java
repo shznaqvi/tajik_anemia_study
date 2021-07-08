@@ -39,12 +39,26 @@ public class Form extends BaseObservable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
 
+    private final String sH3a = StringUtils.EMPTY;
+    private final String sH3b = StringUtils.EMPTY;
+    private final String sH4 = StringUtils.EMPTY;
+    private final String sH5 = StringUtils.EMPTY;
+    private final String sH6 = StringUtils.EMPTY;
+    private final String sH7 = StringUtils.EMPTY;
+    private final String sW1a = StringUtils.EMPTY;
+    private final String sW1b = StringUtils.EMPTY;
+    private final String sW2 = StringUtils.EMPTY;
+    private final String sW3 = StringUtils.EMPTY;
+    private final String sW4 = StringUtils.EMPTY;
+    private final String sC1 = StringUtils.EMPTY;
+    private final String sC2 = StringUtils.EMPTY;
+    private final String sC3 = StringUtils.EMPTY;
     // SECTION VARIABLES
-    private String s1 = StringUtils.EMPTY;
-    private String s2 = StringUtils.EMPTY;
-    private String s3 = StringUtils.EMPTY;
-    private String s4 = StringUtils.EMPTY;
-    private String s5 = StringUtils.EMPTY;
+    private String sH1 = StringUtils.EMPTY;
+    private String sH2a = StringUtils.EMPTY;
+    private String sH2b = StringUtils.EMPTY;
+    private String sH2c = StringUtils.EMPTY;
+    private String sH2d = StringUtils.EMPTY;
 
     // FIELD VARIABLES
     private String h101 = StringUtils.EMPTY;
@@ -982,45 +996,44 @@ public class Form extends BaseObservable {
         this.syncDate = syncDate;
     }
 
-
-    public String getS1() {
-        return s1;
+    public String getsH1() {
+        return sH1;
     }
 
-    public void setS1(String s1) {
-        this.s1 = s1;
+    public void setsH1(String sH1) {
+        this.sH1 = sH1;
     }
 
-    public String getS2() {
-        return s2;
+    public String getsH2a() {
+        return sH2a;
     }
 
-    public void setS2(String s2) {
-        this.s2 = s2;
+    public void setsH2a(String sH2a) {
+        this.sH2a = sH2a;
     }
 
-    public String getS3() {
-        return s3;
+    public String getsH2b() {
+        return sH2b;
     }
 
-    public void setS3(String s3) {
-        this.s3 = s3;
+    public void setsH2b(String sH2b) {
+        this.sH2b = sH2b;
     }
 
-    public String getS4() {
-        return s4;
+    public String getsH2c() {
+        return sH2c;
     }
 
-    public void setS4(String s4) {
-        this.s4 = s4;
+    public void setsH2c(String sH2c) {
+        this.sH2c = sH2c;
     }
 
-    public String getS5() {
-        return s5;
+    public String getsH2d() {
+        return sH2d;
     }
 
-    public void setS5(String s5) {
-        this.s5 = s5;
+    public void setsH2d(String sH2d) {
+        this.sH2d = sH2d;
     }
 
 
@@ -8723,11 +8736,11 @@ public class Form extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S1)));
-        s2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S2)));
-        s3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S3)));
-        s4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S4)));
-        s5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_S5)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH1)));
+        s2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2a)));
+        s3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2b)));
+        s4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3a)));
+        s5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3b)));
 
         return this;
     }
@@ -10466,12 +10479,32 @@ public class Form extends BaseObservable {
             //  json.put(FormsTable.COLUMN_SYNCED, this.synced);
             //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-            json.put(FormsTable.COLUMN_S1, new JSONObject(s1toString()));
-            //Log.d(TAG, "toJSONObject: "+new JSONObject(s2toString()));
-            json.put(FormsTable.COLUMN_S2, new JSONObject(s2toString()));
-            json.put(FormsTable.COLUMN_S3, new JSONObject(s3toString()));
-            json.put(FormsTable.COLUMN_S4, new JSONObject(s4toString()));
-            json.put(FormsTable.COLUMN_S5, new JSONObject(s5toString()));
+            // Household
+            json.put(FormsTable.COLUMN_SH1, new JSONObject(sH1toString()));
+            json.put(FormsTable.COLUMN_SH2a, new JSONObject(sH2atoString()));
+            json.put(FormsTable.COLUMN_SH2b, new JSONObject(sH2btoString()));
+            /*
+            json.put(FormsTable.COLUMN_SH2c, new JSONObject(sH2ctoString()));
+            json.put(FormsTable.COLUMN_SH2d, new JSONObject(sH2dtoString()));
+            */
+            json.put(FormsTable.COLUMN_SH3a, new JSONObject(sH3atoString()));
+            json.put(FormsTable.COLUMN_SH3b, new JSONObject(sH3btoString()));
+            json.put(FormsTable.COLUMN_SH4, new JSONObject(sH4toString()));
+            json.put(FormsTable.COLUMN_SH5, new JSONObject(sH5toString()));
+            json.put(FormsTable.COLUMN_SH6, new JSONObject(sH6toString()));
+            json.put(FormsTable.COLUMN_SH7, new JSONObject(sH7toString()));
+
+            // MWRA
+            json.put(FormsTable.COLUMN_SW1A, new JSONObject(sW1atoString()));
+            json.put(FormsTable.COLUMN_SW1B, new JSONObject(sW1btoString()));
+            json.put(FormsTable.COLUMN_SW2, new JSONObject(sW2toString()));
+            json.put(FormsTable.COLUMN_SW3, new JSONObject(sW3toString()));
+            json.put(FormsTable.COLUMN_SW4, new JSONObject(sW4toString()));
+
+            // Children
+            json.put(FormsTable.COLUMN_SC1, new JSONObject(sC1toString()));
+            json.put(FormsTable.COLUMN_SC2, new JSONObject(sC2toString()));
+            json.put(FormsTable.COLUMN_SC3, new JSONObject(sC3toString()));
 
 
             return json;
