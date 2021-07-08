@@ -39,8 +39,13 @@ public class Form extends BaseObservable {
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
 
-    private final String sH3a = StringUtils.EMPTY;
-    private final String sH3b = StringUtils.EMPTY;
+
+    // SECTION VARIABLES
+    private String sH1 = StringUtils.EMPTY;
+    private String sH2a = StringUtils.EMPTY;
+    private String sH2b = StringUtils.EMPTY;
+    /*    private String sH2c = StringUtils.EMPTY;
+        private String sH2d = StringUtils.EMPTY;*/
     private final String sH4 = StringUtils.EMPTY;
     private final String sH5 = StringUtils.EMPTY;
     private final String sH6 = StringUtils.EMPTY;
@@ -53,12 +58,8 @@ public class Form extends BaseObservable {
     private final String sC1 = StringUtils.EMPTY;
     private final String sC2 = StringUtils.EMPTY;
     private final String sC3 = StringUtils.EMPTY;
-    // SECTION VARIABLES
-    private String sH1 = StringUtils.EMPTY;
-    private String sH2a = StringUtils.EMPTY;
-    private String sH2b = StringUtils.EMPTY;
-    private String sH2c = StringUtils.EMPTY;
-    private String sH2d = StringUtils.EMPTY;
+    private String sH3a = StringUtils.EMPTY;
+    private String sH3b = StringUtils.EMPTY;
 
     // FIELD VARIABLES
     private String h101 = StringUtils.EMPTY;
@@ -1020,20 +1021,20 @@ public class Form extends BaseObservable {
         this.sH2b = sH2b;
     }
 
-    public String getsH2c() {
-        return sH2c;
+    public String getsH3a() {
+        return sH3a;
     }
 
-    public void setsH2c(String sH2c) {
-        this.sH2c = sH2c;
+    public void setsH3a(String sH3a) {
+        this.sH3a = sH3a;
     }
 
-    public String getsH2d() {
-        return sH2d;
+    public String getsH3b() {
+        return sH3b;
     }
 
-    public void setsH2d(String sH2d) {
-        this.sH2d = sH2d;
+    public void setsH3b(String sH3b) {
+        this.sH3b = sH3b;
     }
 
 
