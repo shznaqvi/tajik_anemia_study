@@ -19,33 +19,9 @@ public class Form extends BaseObservable {
 
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
-
-    // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
-    // APP VARIABLES
-    private String id = StringUtils.EMPTY;
-    private String uid = StringUtils.EMPTY;
-    private String userName = StringUtils.EMPTY;
-    private String sysDate = StringUtils.EMPTY;
-    private String cluster = StringUtils.EMPTY;
-    private String hhid = StringUtils.EMPTY;
-
-    private String deviceId = StringUtils.EMPTY;
-    private String deviceTag = StringUtils.EMPTY;
-    private String appver = StringUtils.EMPTY;
-    private String endTime = StringUtils.EMPTY;
-    private String iStatus = StringUtils.EMPTY;
-    private String iStatus96x = StringUtils.EMPTY;
-    private String synced = StringUtils.EMPTY;
-    private String syncDate = StringUtils.EMPTY;
-
-
-    // SECTION VARIABLES
-    private String sH1 = StringUtils.EMPTY;
-    private String sH2a = StringUtils.EMPTY;
-    private String sH2b = StringUtils.EMPTY;
     /*    private String sH2c = StringUtils.EMPTY;
-        private String sH2d = StringUtils.EMPTY;*/
+        private String sH2d = StringUtils.EMPTY;
+        */
     private final String sH4 = StringUtils.EMPTY;
     private final String sH5 = StringUtils.EMPTY;
     private final String sH6 = StringUtils.EMPTY;
@@ -58,6 +34,27 @@ public class Form extends BaseObservable {
     private final String sC1 = StringUtils.EMPTY;
     private final String sC2 = StringUtils.EMPTY;
     private final String sC3 = StringUtils.EMPTY;
+    // APP VARIABLES
+    private String projectName = MainApp.PROJECT_NAME;
+    // APP VARIABLES
+    private String id = StringUtils.EMPTY;
+    private String uid = StringUtils.EMPTY;
+    private String userName = StringUtils.EMPTY;
+    private String sysDate = StringUtils.EMPTY;
+    private String cluster = StringUtils.EMPTY;
+    private String hhid = StringUtils.EMPTY;
+    private String deviceId = StringUtils.EMPTY;
+    private String deviceTag = StringUtils.EMPTY;
+    private String appver = StringUtils.EMPTY;
+    private String endTime = StringUtils.EMPTY;
+    private String iStatus = StringUtils.EMPTY;
+    private String iStatus96x = StringUtils.EMPTY;
+    private String synced = StringUtils.EMPTY;
+    private String syncDate = StringUtils.EMPTY;
+    // SECTION VARIABLES
+    private String sH1 = StringUtils.EMPTY;
+    private String sH2a = StringUtils.EMPTY;
+    private String sH2b = StringUtils.EMPTY;
     private String sH3a = StringUtils.EMPTY;
     private String sH3b = StringUtils.EMPTY;
 
@@ -932,7 +929,6 @@ public class Form extends BaseObservable {
     }
 
 
-
     public String getDeviceId() {
         return deviceId;
     }
@@ -1537,7 +1533,6 @@ public class Form extends BaseObservable {
         this.h220c = h220c;
         notifyPropertyChanged(BR.h220c);
     }
-
 
 
     @Bindable
@@ -8719,8 +8714,6 @@ public class Form extends BaseObservable {
         this.c323dx = c323dx;
         notifyPropertyChanged(BR.c323dx);
     }
-
-
 
 
     public Form Hydrate(Cursor cursor) {
