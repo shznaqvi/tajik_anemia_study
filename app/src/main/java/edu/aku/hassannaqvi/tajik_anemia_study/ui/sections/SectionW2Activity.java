@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -43,13 +44,17 @@ public class SectionW2Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        rgLsnr(bi.w201, bi.w201b, new ViewGroup[]{bi.fldGrpCVw202, bi.fldGrpCVw203, bi.fldGrpCVw204, bi.fldGrpCVw205, bi.fldGrpCVw206,bi.fldGrpCVw20601});
+        rgLsnr(bi.w201, bi.w201b, new ViewGroup[]{bi.fldGrpCVw202, bi.fldGrpCVw203, bi.fldGrpCVw204, bi.fldGrpCVw205, bi.fldGrpCVw206, bi.fldGrpCVw20601});
         rgLsnr(bi.w207, bi.w207b, new ViewGroup[]{bi.fldGrpCVw208, bi.fldGrpCVw209, bi.fldGrpCVw210, bi.fldGrpCVw211, bi.fldGrpCVw212,});
-        rgLsnr(bi.w213, bi.w213b, new ViewGroup[]{bi.fldGrpCVw214,bi.fldGrpCVw215,bi.fldGrpCVw216,bi.fldGrpCVw217});
+        rgLsnr(bi.w213, bi.w213b, new ViewGroup[]{bi.fldGrpCVw214, bi.fldGrpCVw215, bi.fldGrpCVw216, bi.fldGrpCVw217});
         rgLsnr(bi.w218, bi.w218b, new ViewGroup[]{bi.fldGrpCVw219});
         rgLsnr(bi.w221, bi.w22198, new ViewGroup[]{bi.fldGrpCVw222, bi.fldGrpCVw223});
         rgLsnr(bi.w224, bi.w224d, new ViewGroup[]{bi.fldGrpCVw225, bi.fldGrpCVw226});
         rgLsnr(bi.w225, bi.w225b, new ViewGroup[]{bi.fldGrpCVw226});
+
+        bi.w206.setOnCheckedChangeListener((radioGroup, i) -> {
+            Clear.clearAllFields(bi.fldGrpCVw20601, i != bi.w20697.getId());
+        });
 
 
     }
