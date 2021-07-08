@@ -82,7 +82,7 @@ public class SectionW4Activity extends AppCompatActivity {
     }
 
 
-    public void btnEnd() {
+    public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }

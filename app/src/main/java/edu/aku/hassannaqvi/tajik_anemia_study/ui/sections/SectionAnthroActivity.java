@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -58,7 +59,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue() {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
@@ -81,7 +82,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd() {
+    public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
