@@ -113,10 +113,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SH1, form.getsH1());
-        values.put(FormsTable.COLUMN_SH2a, form.getsH2a());
-        values.put(FormsTable.COLUMN_SH2b, form.getsH2b());
-        values.put(FormsTable.COLUMN_SH3a, form.getsH2c());
-        values.put(FormsTable.COLUMN_SH3b, form.getsH2d());
+
+        values.put(FormsTable.COLUMN_SH2A, form.getsH2a());
+        values.put(FormsTable.COLUMN_SH2B, form.getsH2b());
+/*
+        values.put(FormsTable.COLUMN_SH2d, form.getsH2d());
+        values.put(FormsTable.COLUMN_SH2c, form.getsH2c());
+*/
+        values.put(FormsTable.COLUMN_SH3A, form.getsH3a());
+        values.put(FormsTable.COLUMN_SH3B, form.getsH3b());
+        values.put(FormsTable.COLUMN_SH4, form.getsH4());
+        values.put(FormsTable.COLUMN_SH5, form.getsH5());
+        values.put(FormsTable.COLUMN_SH6, form.getsH6());
+        values.put(FormsTable.COLUMN_SH7, form.getsH7());
+
+        values.put(FormsTable.COLUMN_SW1A, form.getsW1a());
+        values.put(FormsTable.COLUMN_SW1B, form.getsW1b());
+        values.put(FormsTable.COLUMN_SW2, form.getsW2());
+        values.put(FormsTable.COLUMN_SW3, form.getsW3());
+        values.put(FormsTable.COLUMN_SW4, form.getsW4());
+
+        values.put(FormsTable.COLUMN_SC1, form.getsC1());
+        values.put(FormsTable.COLUMN_SC2, form.getsC2());
+        values.put(FormsTable.COLUMN_SC3, form.getsC3());
+
+
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
 
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());

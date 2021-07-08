@@ -15,12 +15,12 @@ public class TableContracts {
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SH1 = "sh1";
-        public static final String COLUMN_SH2a = "sh2a";
-        public static final String COLUMN_SH2b = "sh2b";
+        public static final String COLUMN_SH2A = "sh2a";
+        public static final String COLUMN_SH2B = "sh2b";
         // public static final String COLUMN_SH2b = "sh2c";
         // public static final String COLUMN_SH2b = "sh2d";
-        public static final String COLUMN_SH3a = "sh3a";
-        public static final String COLUMN_SH3b = "sh3b";
+        public static final String COLUMN_SH3A = "sh3a";
+        public static final String COLUMN_SH3B = "sh3b";
         public static final String COLUMN_SH4 = "sh4";
         public static final String COLUMN_SH5 = "sh5";
         public static final String COLUMN_SH6 = "sh6";

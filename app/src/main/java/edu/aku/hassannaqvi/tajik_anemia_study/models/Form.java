@@ -8736,17 +8736,35 @@ public class Form extends BaseObservable {
         this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH1)));
-        s2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2a)));
-        s3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2b)));
-        s4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3a)));
-        s5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3b)));
+        sH1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH1)));
+        sH2aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2A)));
+        sH2bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2B)));
+
+        /*sH2cHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2c)));
+        sH2dHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2d)));
+        */
+
+        sH3aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3A)));
+        sH3bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3B)));
+        sH4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4)));
+        sH5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH5)));
+        sH6Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH6)));
+
+        sW1aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1A)));
+        sW1bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1B)));
+        sW2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW2)));
+        sW3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW3)));
+        sW4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW4)));
+
+        sC1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1)));
+        sC2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2)));
+        sC3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3)));
 
         return this;
     }
 
 
-    public void s1Hydrate(String string) {
+    public void sH1Hydrate(String string) {
 
         if (string != null) {
 
@@ -8978,7 +8996,7 @@ public class Form extends BaseObservable {
     }
 
 
-    public void s2Hydrate(String string) {
+    public void sH2aHydrate(String string) {
         Log.d(TAG, "s2Hydrate: " + string);
         if (string != null) {
 
@@ -9275,7 +9293,7 @@ public class Form extends BaseObservable {
     }
 
 
-    public void s3Hydrate(String string) {
+    public void sH2bHydrate(String string) {
 
         if (string != null) {
 
@@ -9556,7 +9574,7 @@ public class Form extends BaseObservable {
     }
 
 
-    public void s4Hydrate(String string) {
+    public void sH3aHydrate(String string) {
 
         if (string != null) {
 
@@ -9576,7 +9594,7 @@ public class Form extends BaseObservable {
     }
 
 
-    public void s5Hydrate(String string) {
+    public void sH3bHydrate(String string) {
 
         if (string != null) {
 
@@ -10481,14 +10499,14 @@ public class Form extends BaseObservable {
 
             // Household
             json.put(FormsTable.COLUMN_SH1, new JSONObject(sH1toString()));
-            json.put(FormsTable.COLUMN_SH2a, new JSONObject(sH2atoString()));
-            json.put(FormsTable.COLUMN_SH2b, new JSONObject(sH2btoString()));
+            json.put(FormsTable.COLUMN_SH2A, new JSONObject(sH2atoString()));
+            json.put(FormsTable.COLUMN_SH2B, new JSONObject(sH2btoString()));
             /*
             json.put(FormsTable.COLUMN_SH2c, new JSONObject(sH2ctoString()));
             json.put(FormsTable.COLUMN_SH2d, new JSONObject(sH2dtoString()));
             */
-            json.put(FormsTable.COLUMN_SH3a, new JSONObject(sH3atoString()));
-            json.put(FormsTable.COLUMN_SH3b, new JSONObject(sH3btoString()));
+            json.put(FormsTable.COLUMN_SH3A, new JSONObject(sH3atoString()));
+            json.put(FormsTable.COLUMN_SH3B, new JSONObject(sH3btoString()));
             json.put(FormsTable.COLUMN_SH4, new JSONObject(sH4toString()));
             json.put(FormsTable.COLUMN_SH5, new JSONObject(sH5toString()));
             json.put(FormsTable.COLUMN_SH6, new JSONObject(sH6toString()));
