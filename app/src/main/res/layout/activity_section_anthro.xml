@@ -74,23 +74,26 @@
                                 android:text="@string/Q_d101t" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/d101t" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/d101"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                app:maxValue="200"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/d101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="200"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -120,23 +123,26 @@
                                 android:text="@string/Q_d102t" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/d102" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/d102"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                app:maxValue="100"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/d102"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -166,23 +172,26 @@
                                 android:text="@string/Q_d103t" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="@string/d103" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/d103"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="3"
+                                app:maxValue="100"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/d103"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
