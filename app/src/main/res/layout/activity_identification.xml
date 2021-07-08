@@ -170,14 +170,20 @@
                             android:layout_weight="1"
                             android:hint="@string/h104" />
 
-                        <ImageButton
+                        <Button
                             android:id="@+id/checkHousehold"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
+                            android:background="@color/colorAccent"
+                            android:drawableEnd="@drawable/search"
                             android:minWidth="56dp"
+                            android:drawablePadding="8dp"
+                            android:elevation="1dp"
                             android:onClick="checkHousehold"
-                            android:src="@drawable/search" />
+                            android:padding="8dp"
+                            android:radius="2dp"
+                            android:text="Check Household"
+                            android:textColor="@color/colorPrimaryDark" />
 
                     </LinearLayout>
 
@@ -190,6 +196,7 @@
 
 
         <TextView
+            style="@style/sub_labels"
             android:layout_width="166dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -197,12 +204,13 @@
             android:paddingEnd="12dp"
             android:text="Head of Household" />
 
-        <com.edittextpicker.aliazaz.EditTextPicker
+        <TextView
             android:id="@+id/hhhead"
             android:layout_width="0dp"
+            android:layout_weight="2"
+            android:background="@color/white"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/h103" />
+            android:textColor="@color/black" />
 
     </LinearLayout>
 </LinearLayout>
@@ -238,7 +246,7 @@
                         android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
                         android:text="Save"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:enabled="false"

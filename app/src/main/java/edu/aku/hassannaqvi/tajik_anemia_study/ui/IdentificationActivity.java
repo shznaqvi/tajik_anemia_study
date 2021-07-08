@@ -2,6 +2,8 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,12 +25,13 @@ import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityIdentificationBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionAnthroActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionHemoActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionSamplesActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
@@ -41,6 +44,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> districtCodes;
     private ArrayList<String> cityNames;
     private ArrayList<String> cityCodes;
+    private Intent openFormIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,28 +54,78 @@ public class IdentificationActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         populateSpinner();
 
-        String formName = "";
-        Intent openFormIntent = new Intent();
+        openFormIntent = new Intent();
         switch (MainApp.idType) {
             case 1:
                 bi.btnContinue.setText("Open Household Form");
+                MainApp.form = new Form();
                 openFormIntent = new Intent(this, SectionH1Activity.class);
                 break;
             case 2:
                 bi.btnContinue.setText("Open Anthro Form");
+                MainApp.anthro = new Anthro();
                 openFormIntent = new Intent(this, SectionAnthroActivity.class);
                 break;
             case 3:
                 bi.btnContinue.setText("Open Blood Form");
-                openFormIntent = new Intent(this, SectionHemoActivity.class);
-
+                //     MainApp.sample = new Sample();
+                openFormIntent = new Intent(this, SectionSamplesActivity.class);
+                openFormIntent.putExtra("type", "1"); // BLOOD - 1
                 break;
             case 4:
                 bi.btnContinue.setText("Open Stool Form");
-                openFormIntent = new Intent(this, SectionHemoActivity.class);
+                //    MainApp.sample = new Sample();
+                openFormIntent = new Intent(this, SectionSamplesActivity.class);
+                openFormIntent.putExtra("type", "2"); // STOOL - 2
                 break;
 
         }
+
+        bi.h103.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                bi.h104.setText(null);
+                bi.hhhead.setText(null);
+                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+                bi.btnContinue.setEnabled(false);
+                bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                bi.checkHousehold.setEnabled(true);
+            }
+        });
+
+        bi.h104.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                bi.hhhead.setText(null);
+                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+                bi.btnContinue.setEnabled(false);
+                bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                bi.checkHousehold.setEnabled(true);
+            }
+        });
+
     }
 
     private void populateSpinner() {
@@ -97,10 +151,13 @@ public class IdentificationActivity extends AppCompatActivity {
                 bi.h102.setAdapter(null);
                 bi.h103.setText(null);
                 bi.h104.setText(null);
+                bi.hhhead.setText(null);
                 bi.h103.setEnabled(false);
                 bi.h104.setEnabled(false);
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
+                bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                bi.checkHousehold.setEnabled(true);
                 if (position == 0) return;
                 Collection<Clusters> city = db.getCitiesByDistrict(districtCodes.get(position));
                 cityNames = new ArrayList<>();
@@ -129,8 +186,12 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 bi.h103.setText(null);
                 bi.h104.setText(null);
+                bi.hhhead.setText(null);
+
                 bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
+                bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+                bi.checkHousehold.setEnabled(true);
                 bi.h103.setEnabled(false);
                 bi.h104.setEnabled(false);
                 if (position == 0) return;
@@ -147,12 +208,12 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    public void btnContinue() {
+    public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
         //  if (updateDB()) {
         finish();
-        startActivity(new Intent(this, SectionH1Activity.class));
+        startActivity(openFormIntent);
         // } else {
         //     Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         // }
@@ -170,7 +231,7 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    public void btnEnd() {
+    public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
@@ -186,6 +247,9 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.black));
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
+            bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
+            bi.checkHousehold.setEnabled(false);
+
             bi.hhhead.setText(hhFound.getHeadhh());
             Toast.makeText(this, hhFound.getHeadhh(), Toast.LENGTH_SHORT).show();
 
