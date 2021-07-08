@@ -158,6 +158,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- w302  CheckBox   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw302"
@@ -181,10 +182,10 @@
                                 android:text="@string/Q_w302" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w302" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -273,14 +274,19 @@
                                 android:text='@{w30296.checked ? w30296x.getText().toString() : ""}'
                                 android:visibility='@{w30296.checked? View.VISIBLE : View.GONE}' />
 
-                            <CheckBox
-                                android:id="@+id/w30299"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/w30299" />
                         </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/w30299"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:tag="-1"
+                            android:text="@string/w30299" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- w303  Radio   -->
                 <androidx.cardview.widget.CardView

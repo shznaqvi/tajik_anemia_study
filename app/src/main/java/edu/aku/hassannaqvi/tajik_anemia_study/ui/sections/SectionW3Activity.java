@@ -44,6 +44,7 @@ public class SectionW3Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+        bi.w30299.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w302check, !b));
 
         bi.w306.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVw307.setVisibility(View.VISIBLE);

@@ -47,6 +47,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+
                 <!-- w113t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw113t"
@@ -224,10 +226,10 @@
                                 android:text="@string/Q_w115" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w115" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -301,10 +303,10 @@
                                 android:text="@string/Q_w116" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w116" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -326,8 +328,11 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/w116b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

@@ -118,17 +118,17 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/w101d"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                app:maxValue="31"
-                                app:minValue="1"
+                             <com.edittextpicker.aliazaz.EditTextPicker
+                                 android:id="@+id/w101d"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:gravity="center"
+                                 android:hint="##"
+                                 android:inputType="number"
+                                 android:maxLength="2"
+                                 app:maxValue="31"
+                                 app:minValue="1"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -305,10 +305,10 @@
                                 android:text="@string/Q_w104" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w104" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -330,8 +330,11 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/w104b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -420,10 +423,10 @@
                                 android:text="@string/Q_w106" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w106" />
+
                         </LinearLayout>
 
                         <RadioGroup
@@ -445,8 +448,11 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:text="@string/w106b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -479,10 +485,6 @@
 
                         </LinearLayout>
 
-
-
-
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w107"
                                 android:layout_width="0dp"
@@ -495,7 +497,6 @@
                                 app:maxValue="10"
                                 app:minValue="1"
                                 app:type="range" />
-
 
                     </LinearLayout>
 
@@ -531,7 +532,6 @@
 
                         </LinearLayout>
 
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w108"
                                 android:layout_width="0dp"
@@ -544,8 +544,6 @@
                                 app:maxValue="10"
                                 app:minValue="1"
                                 app:type="range" />
-
-
 
                     </LinearLayout>
 
@@ -581,7 +579,6 @@
 
                         </LinearLayout>
 
-
                         <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w109"
                                 android:layout_width="0dp"
@@ -594,7 +591,6 @@
                                 app:maxValue="49"
                                 app:minValue="15"
                                 app:type="range" />
-
 
                     </LinearLayout>
 
@@ -630,8 +626,6 @@
 
                         </LinearLayout>
 
-
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w110"
                                 android:layout_width="0dp"
@@ -644,7 +638,6 @@
                                 app:maxValue="10"
                                 app:minValue="1"
                                 app:type="range" />
-
 
                     </LinearLayout>
 
@@ -680,7 +673,6 @@
 
                         </LinearLayout>
 
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w111"
                                 android:layout_width="0dp"
@@ -693,7 +685,6 @@
                                 app:maxValue="10"
                                 app:minValue="1"
                                 app:type="range" />
-
 
                     </LinearLayout>
 
@@ -723,9 +714,8 @@
                                 android:text="@string/Q_w112" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/w112" />
 
                         </LinearLayout>
