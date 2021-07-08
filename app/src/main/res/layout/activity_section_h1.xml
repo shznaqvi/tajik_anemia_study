@@ -355,8 +355,8 @@
                     android:id="@+id/fldGrpHhHead"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="@{h110b.checked?View.VISIBLE:View.GONE}"
-                    android:visibility="gone">
+                    android:orientation="vertical"
+                    android:visibility="@{h110b.checked?View.VISIBLE:View.GONE}">
 
                     <!-- h201t  Title   -->
                     <androidx.cardview.widget.CardView
