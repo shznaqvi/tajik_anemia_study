@@ -245,3 +245,14 @@ fun rgLsnr(rg: RadioGroup, rb: RadioButton, vg: Array<ViewGroup>) {
         }
     }
 }
+
+
+fun rgLsnr(rg: RadioGroup, rb1: RadioButton, rb2: RadioButton, vg: Array<ViewGroup>) {
+    rg.setOnCheckedChangeListener { radioGroup, i ->
+        vg.forEach {
+            it.visibility = View.VISIBLE
+            Clear.clearAllFields(it)
+            if (i == rb1.id || i == rb2.id) it.visibility = View.GONE
+        }
+    }
+}

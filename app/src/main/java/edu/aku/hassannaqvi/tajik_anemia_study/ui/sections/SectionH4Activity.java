@@ -57,6 +57,7 @@ public class SectionH4Activity extends AppCompatActivity {
         });
 
         bi.h403d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h403check, !b));
+        bi.h405d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h405check, !b));
 
         chLsnr(bi.h403a, bi.h403b, bi.h403c);
         chLsnr(bi.h403b, bi.h403a, bi.h403c);

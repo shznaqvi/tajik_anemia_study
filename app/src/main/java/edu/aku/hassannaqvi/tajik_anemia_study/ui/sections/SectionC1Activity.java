@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.text.SimpleDateFormat;
@@ -43,63 +42,13 @@ public class SectionC1Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
         rgLsnr(bi.c101, bi.c101b, new ViewGroup[]{bi.fldGrpCVc102});
-
-        bi.c106b.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc106c.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc106c);
-            if (i == bi.c106bb.getId() || i == bi.c106b98.getId()) {
-                bi.fldGrpCVc106c.setVisibility(View.GONE);
-            }
-        });
-
-        bi.c106d.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc106e.setVisibility(View.VISIBLE);
-            bi.fldGrpCVc106f.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc106e);
-            Clear.clearAllFields(bi.fldGrpCVc106f);
-            if (i == bi.c106db.getId() || i == bi.c106d98.getId()) {
-                bi.fldGrpCVc106e.setVisibility(View.GONE);
-                bi.fldGrpCVc106f.setVisibility(View.GONE);
-            }
-        });
-
-        bi.c106g.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc106h.setVisibility(View.VISIBLE);
-            bi.fldGrpCVc106i.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc106h);
-            Clear.clearAllFields(bi.fldGrpCVc106i);
-            if (i == bi.c106gb.getId() || i == bi.c106g98.getId()) {
-                bi.fldGrpCVc106h.setVisibility(View.GONE);
-                bi.fldGrpCVc106i.setVisibility(View.GONE);
-            }
-        });
-
-        bi.c106m.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc106n.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc106n);
-            if (i == bi.c106mb.getId() || i == bi.c106m98.getId()) {
-                bi.fldGrpCVc106n.setVisibility(View.GONE);
-            }
-        });
-
-        bi.c106p.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc106q.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc106q);
-            if (i == bi.c106pb.getId() || i == bi.c106p98.getId()) {
-                bi.fldGrpCVc106q.setVisibility(View.GONE);
-            }
-        });
-
-        bi.c107a.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVc107bt.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVc107bt);
-            if (i == bi.c107ab.getId() || i == bi.c107a98.getId()) {
-                bi.fldGrpCVc107bt.setVisibility(View.GONE);
-            }
-        });
-
+        rgLsnr(bi.c106b, bi.c106bb, bi.c106b98, new ViewGroup[]{bi.fldGrpCVc106c});
+        rgLsnr(bi.c106d, bi.c106db, bi.c106d98, new ViewGroup[]{bi.fldGrpCVc106e, bi.fldGrpCVc106f});
+        rgLsnr(bi.c106g, bi.c106gb, bi.c106g98, new ViewGroup[]{bi.fldGrpCVc106h, bi.fldGrpCVc106i});
+        rgLsnr(bi.c106m, bi.c106mb, bi.c106m98, new ViewGroup[]{bi.fldGrpCVc106n});
+        rgLsnr(bi.c106p, bi.c106pb, bi.c106p98, new ViewGroup[]{bi.fldGrpCVc106q});
+        rgLsnr(bi.c107a, bi.c107ab, bi.c107a98, new ViewGroup[]{bi.fldGrpCVc107bt});
     }
 
 
