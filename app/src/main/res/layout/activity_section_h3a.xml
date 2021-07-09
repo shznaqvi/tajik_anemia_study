@@ -971,761 +971,584 @@
 
                         </LinearLayout>
 
-
-                        <LinearLayout
+                        <!--h311a-->
+                        <RadioGroup
+                            android:id="@+id/h311a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311a" />
 
-                            <RadioGroup
-                                android:id="@+id/h311a"
+                            <RadioButton
+                                android:id="@+id/h311aa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311aa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311aa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311aa" />
+                            <RadioButton
+                                android:id="@+id/h311ab"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311ab" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ab"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ab" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-
-                        <LinearLayout
+                        <!--h311b-->
+                        <RadioGroup
+                            android:id="@+id/h311b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311b" />
 
-                            <RadioGroup
-                                android:id="@+id/h311b"
+                            <RadioButton
+                                android:id="@+id/h311ba"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ba" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ba"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ba" />
+                            <RadioButton
+                                android:id="@+id/h311bb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311bb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311bb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311bb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311c-->
+                        <RadioGroup
+                            android:id="@+id/h311c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311c" />
 
-                            <RadioGroup
-                                android:id="@+id/h311c"
+                            <RadioButton
+                                android:id="@+id/h311ca"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ca" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ca"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ca" />
+                            <RadioButton
+                                android:id="@+id/h311cb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311cb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311cb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311cb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-
-                        <LinearLayout
+                        <!--h311d-->
+                        <RadioGroup
+                            android:id="@+id/h311d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311d" />
 
-                            <RadioGroup
-                                android:id="@+id/h311d"
+                            <RadioButton
+                                android:id="@+id/h311da"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311da" />
 
-                                <RadioButton
-                                    android:id="@+id/h311da"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311da" />
+                            <RadioButton
+                                android:id="@+id/h311db"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311db" />
 
-                                <RadioButton
-                                    android:id="@+id/h311db"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311db" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-
-                        <LinearLayout
+                        <!--h311e-->
+                        <RadioGroup
+                            android:id="@+id/h311e"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311e" />
 
-                            <RadioGroup
-                                android:id="@+id/h311e"
+                            <RadioButton
+                                android:id="@+id/h311ea"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ea" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ea"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ea" />
+                            <RadioButton
+                                android:id="@+id/h311eb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311eb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311eb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311eb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311f-->
+                        <RadioGroup
+                            android:id="@+id/h311f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311f" />
 
-                            <RadioGroup
-                                android:id="@+id/h311f"
+                            <RadioButton
+                                android:id="@+id/h311fa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311fa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311fa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311fa" />
+                            <RadioButton
+                                android:id="@+id/h311fb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311fb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311fb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311fb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311g-->
+                        <RadioGroup
+                            android:id="@+id/h311g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311g" />
 
-                            <RadioGroup
-                                android:id="@+id/h311g"
+                            <RadioButton
+                                android:id="@+id/h311ga"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ga" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ga"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ga" />
+                            <RadioButton
+                                android:id="@+id/h311gb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311gb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311gb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311gb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311h-->
+                        <RadioGroup
+                            android:id="@+id/h311h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311h" />
 
-                            <RadioGroup
-                                android:id="@+id/h311h"
+                            <RadioButton
+                                android:id="@+id/h311ha"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ha" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ha"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ha" />
+                            <RadioButton
+                                android:id="@+id/h311hb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311hb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311hb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311hb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311i-->
+                        <RadioGroup
+                            android:id="@+id/h311i"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311i" />
 
-                            <RadioGroup
-                                android:id="@+id/h311i"
+                            <RadioButton
+                                android:id="@+id/h311ia"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ia" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ia"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ia" />
+                            <RadioButton
+                                android:id="@+id/h311ib"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311ib" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ib"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ib" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311j-->
+                        <RadioGroup
+                            android:id="@+id/h311j"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311j" />
 
-                            <RadioGroup
-                                android:id="@+id/h311j"
+                            <RadioButton
+                                android:id="@+id/h311ja"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ja" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ja"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ja" />
+                            <RadioButton
+                                android:id="@+id/h311jb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311jb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311jb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311jb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311k-->
+                        <RadioGroup
+                            android:id="@+id/h311k"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311k" />
 
-                            <RadioGroup
-                                android:id="@+id/h311k"
+                            <RadioButton
+                                android:id="@+id/h311ka"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ka" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ka"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ka" />
+                            <RadioButton
+                                android:id="@+id/h311kb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311kb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311kb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311kb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311l-->
+                        <RadioGroup
+                            android:id="@+id/h311l"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311l" />
 
-                            <RadioGroup
-                                android:id="@+id/h311l"
+                            <RadioButton
+                                android:id="@+id/h311la"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311la" />
 
-                                <RadioButton
-                                    android:id="@+id/h311la"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311la" />
+                            <RadioButton
+                                android:id="@+id/h311lb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311lb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311lb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311lb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311m-->
+                        <RadioGroup
+                            android:id="@+id/h311m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311m" />
 
-                            <RadioGroup
-                                android:id="@+id/h311m"
+                            <RadioButton
+                                android:id="@+id/h311ma"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ma" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ma"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ma" />
+                            <RadioButton
+                                android:id="@+id/h311mb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311mb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311mb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311mb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311n-->
+                        <RadioGroup
+                            android:id="@+id/h311n"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311n" />
 
-                            <RadioGroup
-                                android:id="@+id/h311n"
+                            <RadioButton
+                                android:id="@+id/h311na"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311na" />
 
-                                <RadioButton
-                                    android:id="@+id/h311na"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311na" />
+                            <RadioButton
+                                android:id="@+id/h311nb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311nb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311nb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311nb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311o-->
+                        <RadioGroup
+                            android:id="@+id/h311o"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311o" />
 
-                            <RadioGroup
-                                android:id="@+id/h311o"
+                            <RadioButton
+                                android:id="@+id/h311oa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311oa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311oa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311oa" />
+                            <RadioButton
+                                android:id="@+id/h311ob"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311ob" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ob"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ob" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311p-->
+                        <RadioGroup
+                            android:id="@+id/h311p"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311p" />
 
-                            <RadioGroup
-                                android:id="@+id/h311p"
+                            <RadioButton
+                                android:id="@+id/h311pa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311pa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311pa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311pa" />
+                            <RadioButton
+                                android:id="@+id/h311pb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311pb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311pb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311pb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311q-->
+                        <RadioGroup
+                            android:id="@+id/h311q"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311q" />
 
-                            <RadioGroup
-                                android:id="@+id/h311q"
+                            <RadioButton
+                                android:id="@+id/h311qa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311qa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311qa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311qa" />
+                            <RadioButton
+                                android:id="@+id/h311qb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311qb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311qb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311qb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311r-->
+                        <RadioGroup
+                            android:id="@+id/h311r"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311r" />
 
-                            <RadioGroup
-                                android:id="@+id/h311r"
+                            <RadioButton
+                                android:id="@+id/h311ra"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311ra" />
 
-                                <RadioButton
-                                    android:id="@+id/h311ra"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311ra" />
+                            <RadioButton
+                                android:id="@+id/h311rb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311rb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311rb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311rb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h311s-->
+                        <RadioGroup
+                            android:id="@+id/h311s"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h311s" />
 
-                            <RadioGroup
-                                android:id="@+id/h311s"
+                            <RadioButton
+                                android:id="@+id/h311sa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h311sa" />
 
-                                <RadioButton
-                                    android:id="@+id/h311sa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311sa" />
+                            <RadioButton
+                                android:id="@+id/h311sb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h311sb" />
 
-                                <RadioButton
-                                    android:id="@+id/h311sb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h311sb" />
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
+                        </RadioGroup>
 
                     </LinearLayout>
-
 
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- h312c  Radio   -->
+                <!-- h312title  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVh312c"
+                    android:id="@+id/fldGrpCVh312title"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1752,282 +1575,218 @@
 
                         </LinearLayout>
 
-
-                        <LinearLayout
+                        <!--h312a-->
+                        <RadioGroup
+                            android:id="@+id/h312a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312a" />
 
-                            <RadioGroup
-                                android:id="@+id/h312a"
+                            <RadioButton
+                                android:id="@+id/h312aa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312aa" />
 
-                                <RadioButton
-                                    android:id="@+id/h312aa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312aa" />
+                            <RadioButton
+                                android:id="@+id/h312ab"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312ab" />
 
-                                <RadioButton
-                                    android:id="@+id/h312ab"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312ab" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312b-->
+                        <RadioGroup
+                            android:id="@+id/h312b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312b" />
 
-                            <RadioGroup
-                                android:id="@+id/h312b"
+                            <RadioButton
+                                android:id="@+id/h312ba"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312ba" />
 
-                                <RadioButton
-                                    android:id="@+id/h312ba"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312ba" />
+                            <RadioButton
+                                android:id="@+id/h312bb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312bb" />
 
-                                <RadioButton
-                                    android:id="@+id/h312bb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312bb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312c-->
+                        <RadioGroup
+                            android:id="@+id/h312c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312c" />
 
-                            <RadioGroup
-                                android:id="@+id/h312c"
+                            <RadioButton
+                                android:id="@+id/h312ca"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312ca" />
 
-                                <RadioButton
-                                    android:id="@+id/h312ca"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312ca" />
+                            <RadioButton
+                                android:id="@+id/h312cb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312cb" />
 
-                                <RadioButton
-                                    android:id="@+id/h312cb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312cb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312d-->
+                        <RadioGroup
+                            android:id="@+id/h312d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312d" />
 
-                            <RadioGroup
-                                android:id="@+id/h312d"
+                            <RadioButton
+                                android:id="@+id/h312da"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312da" />
 
-                                <RadioButton
-                                    android:id="@+id/h312da"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312da" />
+                            <RadioButton
+                                android:id="@+id/h312db"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312db" />
 
-                                <RadioButton
-                                    android:id="@+id/h312db"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312db" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312e-->
+                        <RadioGroup
+                            android:id="@+id/h312e"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312e" />
 
-                            <RadioGroup
-                                android:id="@+id/h312e"
+                            <RadioButton
+                                android:id="@+id/h312ea"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312ea" />
 
-                                <RadioButton
-                                    android:id="@+id/h312ea"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312ea" />
+                            <RadioButton
+                                android:id="@+id/h312eb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312eb" />
 
-                                <RadioButton
-                                    android:id="@+id/h312eb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312eb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312f-->
+                        <RadioGroup
+                            android:id="@+id/h312f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312f" />
 
-                            <RadioGroup
-                                android:id="@+id/h312f"
+                            <RadioButton
+                                android:id="@+id/h312fa"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312fa" />
 
-                                <RadioButton
-                                    android:id="@+id/h312fa"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312fa" />
+                            <RadioButton
+                                android:id="@+id/h312fb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312fb" />
 
-                                <RadioButton
-                                    android:id="@+id/h312fb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312fb" />
+                        </RadioGroup>
 
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                        <LinearLayout
+                        <!--h312g-->
+                        <RadioGroup
+                            android:id="@+id/h312g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2"
+                                android:layout_weight="4"
                                 android:text="@string/h312g" />
 
-                            <RadioGroup
-                                android:id="@+id/h312g"
+                            <RadioButton
+                                android:id="@+id/h312ga"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:text="@string/h312ga" />
 
-                                <RadioButton
-                                    android:id="@+id/h312ga"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312ga" />
+                            <RadioButton
+                                android:id="@+id/h312gb"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/h312gb" />
 
-                                <RadioButton
-                                    android:id="@+id/h312gb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:text="@string/h312gb" />
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
+                        </RadioGroup>
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
