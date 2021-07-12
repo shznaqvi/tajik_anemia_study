@@ -42,7 +42,6 @@ public class SectionH6Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
         rgLsnr(bi.h601, bi.h601b, new ViewGroup[]{bi.fldGrpCVh602});
         rgLsnr(bi.h603, bi.h603b, new ViewGroup[]{bi.fldGrpCVh604});
         rgLsnr(bi.h605, bi.h605b, new ViewGroup[]{bi.fldGrpCVh606});
@@ -52,7 +51,6 @@ public class SectionH6Activity extends AppCompatActivity {
         rgLsnr(bi.h613, bi.h613b, new ViewGroup[]{bi.fldGrpCVh614});
         rgLsnr(bi.h615, bi.h615b, new ViewGroup[]{bi.fldGrpCVh616});
         rgLsnr(bi.h617, bi.h617b, new ViewGroup[]{bi.fldGrpCVh618});
-
     }
 
 
