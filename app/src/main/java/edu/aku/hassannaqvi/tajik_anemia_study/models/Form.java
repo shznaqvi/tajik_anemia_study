@@ -1164,6 +1164,7 @@ public class Form extends BaseObservable {
 
     public void setH103(String h103) {
         this.h103 = h103;
+        this.cluster = h103;
         notifyPropertyChanged(BR.h103);
     }
 
@@ -1174,6 +1175,7 @@ public class Form extends BaseObservable {
 
     public void setH104(String h104) {
         this.h104 = h104;
+        this.hhid = h104;
         notifyPropertyChanged(BR.h104);
     }
 
@@ -2075,6 +2077,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313a(String h313a) {
+        if (this.h313a == h313a) return; // for all checkboxes
         this.h313a = h313a;
         notifyPropertyChanged(BR.h313a);
     }
@@ -2085,6 +2088,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313b(String h313b) {
+        if (this.h313b == h313b) return; // for all checkboxes
         this.h313b = h313b;
         notifyPropertyChanged(BR.h313b);
     }
@@ -2095,6 +2099,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH313c(String h313c) {
+        if (this.h313b == h313b) return; // for all checkboxes
+
         this.h313c = h313c;
         notifyPropertyChanged(BR.h313c);
     }
@@ -2105,6 +2111,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH313d(String h313d) {
+        if (this.h313b == h313b) return; // for all checkboxes
+
         this.h313d = h313d;
         notifyPropertyChanged(BR.h313d);
     }
@@ -2115,6 +2123,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH313e(String h313e) {
+        if (this.h313b == h313b) return; // for all checkboxes
+
         this.h313e = h313e;
         notifyPropertyChanged(BR.h313e);
     }
@@ -2125,6 +2135,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH313f(String h313f) {
+        if (this.h313b == h313b) return; // for all checkboxes
+
         this.h313f = h313f;
         notifyPropertyChanged(BR.h313f);
     }
@@ -2135,7 +2147,9 @@ public class Form extends BaseObservable {
     }
 
     public void setH31396(String h31396) {
+        if (this.h313b == h313b) return; // for all checkboxes
         this.h31396 = h31396;
+        setH31396x(h31396.equals("96") ? this.h31396x : "");
         notifyPropertyChanged(BR.h31396);
     }
 
@@ -2156,6 +2170,7 @@ public class Form extends BaseObservable {
 
     public void setH314(String h314) {
         this.h314 = h314;
+        setH31496x(h314.equals("96") ? this.h31496x : "");
         notifyPropertyChanged(BR.h314);
     }
 
@@ -2176,6 +2191,7 @@ public class Form extends BaseObservable {
 
     public void setH315(String h315) {
         this.h315 = h315;
+        setH31596x(h315.equals("96") ? this.h31596x : "");
         notifyPropertyChanged(BR.h315);
     }
 
@@ -2206,6 +2222,8 @@ public class Form extends BaseObservable {
 
     public void setH317(String h317) {
         this.h317 = h317;
+        setH31796x(h318.equals("96") ? this.h31796x : "");
+
         notifyPropertyChanged(BR.h317);
     }
 
@@ -2226,6 +2244,7 @@ public class Form extends BaseObservable {
 
     public void setH318(String h318) {
         this.h318 = h318;
+        setH31896x(h318.equals("96") ? this.h31896x : "");
         notifyPropertyChanged(BR.h318);
     }
 
@@ -2246,6 +2265,7 @@ public class Form extends BaseObservable {
 
     public void setH319(String h319) {
         this.h319 = h319;
+        setH31996x(h319.equals("96") ? this.h31996x : "");
         notifyPropertyChanged(BR.h319);
     }
 
@@ -2286,6 +2306,8 @@ public class Form extends BaseObservable {
 
     public void setH322(String h322) {
         this.h322 = h322;
+        setH322ax(h322.equals("1") ? this.h322ax : "");
+        setH322bx(h322.equals("2") ? this.h322bx : "");
         notifyPropertyChanged(BR.h322);
     }
 
@@ -2316,6 +2338,16 @@ public class Form extends BaseObservable {
 
     public void setH323(String h323) {
         this.h323 = h323;
+
+        if (h323.equals("2")) {
+            setH3241("");
+            setH3242("");
+            setH3243("");
+            setH3244("");
+            setH3245("");
+            setH3246("");
+            setH3247("");
+        }
         notifyPropertyChanged(BR.h323);
     }
 
@@ -2335,7 +2367,9 @@ public class Form extends BaseObservable {
     }
 
     public void setH3241(String h3241) {
+        if (this.h3241 == h3241) return;
         this.h3241 = h3241;
+        setH3241x(h3241.equals("1") ? this.h3241x : "");
         notifyPropertyChanged(BR.h3241);
     }
 
@@ -2355,7 +2389,9 @@ public class Form extends BaseObservable {
     }
 
     public void setH3242(String h3242) {
+        if (this.h3242 == h3242) return;
         this.h3242 = h3242;
+        setH3242x(h3242.equals("2") ? this.h3242x : "");
         notifyPropertyChanged(BR.h3242);
     }
 
@@ -2375,7 +2411,9 @@ public class Form extends BaseObservable {
     }
 
     public void setH3243(String h3243) {
+        if (this.h3243 == h3243) return;
         this.h3243 = h3243;
+        setH3243x(h3243.equals("3") ? this.h3243x : "");
         notifyPropertyChanged(BR.h3243);
     }
 
@@ -2395,7 +2433,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH3244(String h3244) {
+        if (this.h3244 == h3244) return;
         this.h3244 = h3244;
+        setH3244x(h3244.equals("4") ? this.h3244x : "");
+
         notifyPropertyChanged(BR.h3244);
     }
 
@@ -2415,7 +2456,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH3245(String h3245) {
+        if (this.h3245 == h3245) return;
+
         this.h3245 = h3245;
+        setH3245x(h3245.equals("5") ? this.h3245x : "");
         notifyPropertyChanged(BR.h3245);
     }
 
@@ -2435,7 +2479,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH3246(String h3246) {
+        if (this.h3246 == h3246) return;
+
         this.h3246 = h3246;
+        setH3246x(h3246.equals("6") ? this.h3246x : "");
         notifyPropertyChanged(BR.h3246);
     }
 
@@ -2445,6 +2492,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3246x(String h3246x) {
+
         this.h3246x = h3246x;
         notifyPropertyChanged(BR.h3246x);
     }
@@ -2455,7 +2503,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH3247(String h3247) {
+        if (this.h3247 == h3247) return;
+
         this.h3247 = h3247;
+        setH3247x(h3247.equals("7") ? this.h3247x : "");
         notifyPropertyChanged(BR.h3247);
     }
 
@@ -9825,17 +9876,17 @@ public class Form extends BaseObservable {
     }
 
 
-    public String sH1toString() {
+    public String sH1toString() throws JSONException {
         Log.d(TAG, "sH1toString: ");
         JSONObject json = new JSONObject();
-        try {
-            json.put("h101", h101)
-                    .put("h102", h102)
-                    .put("h103", h103)
-                    .put("h104", h104)
-                    .put("h105", h105)
-                    .put("h106d", h106d)
-                    .put("h106m", h106m)
+
+        json.put("h101", h101)
+                .put("h102", h102)
+                .put("h103", h103)
+                .put("h104", h104)
+                .put("h105", h105)
+                .put("h106d", h106d)
+                .put("h106m", h106m)
                     .put("h106y", h106y)
                     .put("h107h", h107h)
                     .put("h107m", h107m)
@@ -9855,10 +9906,7 @@ public class Form extends BaseObservable {
                     .put("h206", h206)
                     .put("h207", h207)
                     .put("h208", h208);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
         return json.toString();
     }
 
@@ -10773,8 +10821,7 @@ public class Form extends BaseObservable {
     }
 
 
-
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
         try {
             json.put(FormsTable.COLUMN_ID, this.id);
@@ -10790,6 +10837,7 @@ public class Form extends BaseObservable {
             //  json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 
             // Household
+
             json.put(FormsTable.COLUMN_SH1, new JSONObject(sH1toString()));
             json.put(FormsTable.COLUMN_SH2B, new JSONObject(sH2btoString()));
             /*

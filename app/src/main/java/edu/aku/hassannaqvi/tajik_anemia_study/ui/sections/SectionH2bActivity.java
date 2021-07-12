@@ -17,6 +17,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2bBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
@@ -47,7 +48,7 @@ public class SectionH2bActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(FormsTable.COLUMN_SH1, form.sH1toString());
+        int updcount = db.updatesFormColumn(FormsTable.COLUMN_SH2B, form.sH2btoString());
         if (updcount == 1) {
             return true;
         } else {
@@ -62,7 +63,7 @@ public class SectionH2bActivity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, MwraListActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
