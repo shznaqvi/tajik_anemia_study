@@ -242,6 +242,11 @@ public class IdentificationActivity extends AppCompatActivity {
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
+        form.setH101(districtCodes.get(bi.h101.getSelectedItemPosition()));
+        form.setH102(cityCodes.get(bi.h102.getSelectedItemPosition()));
+        form.setH103(bi.h103.getText().toString());
+        form.setH104(bi.h104.getText().toString());
+
     }
 
     private void saveDraftAnthro() {

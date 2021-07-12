@@ -53,167 +53,167 @@
                 android:orientation="vertical">
 
 
-
                 <!-- h101  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh101"
                     style="@style/cardView">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-
-        android:background="@drawable/bottom"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="166dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="@string/h101" />
-
-        <Spinner
-            android:id="@+id/h101"
-            style="@style/spinner"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-
-            android:layout_weight="1"
-            android:background="@null"
-            android:hint="@string/h101" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/bottom"
-
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="166dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="@string/h102" />
-
-        <Spinner
-            android:id="@+id/h102"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/h102" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/bottom"
-
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:layout_width="166dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="@string/h103" />
-
-        <com.edittextpicker.aliazaz.EditTextPicker
-            android:id="@+id/h103"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="@string/h103" />
-
-    </LinearLayout>
-
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bottom"
-                        android:layout_marginBottom="4dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
 
-                        <TextView
-                            android:layout_width="166dp"
-                            android:layout_height="match_parent"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="12dp"
-                            android:gravity="center"
-                            android:text="@string/h104" />
+                            <TextView
+                                android:layout_width="166dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="@string/h101" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/h104"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:hint="@string/h104" />
+                            <Spinner
+                                android:id="@+id/h101"
+                                style="@style/spinner"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
 
-                        <Button
-                            android:id="@+id/checkHousehold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorAccent"
-                            android:drawableEnd="@drawable/search"
-                            android:minWidth="56dp"
-                            android:drawablePadding="8dp"
-                            android:elevation="1dp"
-                            android:onClick="checkHousehold"
-                            android:padding="8dp"
-                            android:radius="2dp"
-                            android:text="Check Household"
-                            android:textColor="@color/colorPrimaryDark" />
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:hint="@string/h101" />
 
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bottom"
+
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="166dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="@string/h102" />
+
+                            <Spinner
+                                android:id="@+id/h102"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/h102" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bottom"
+
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="166dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="@string/h103" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h103"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/h103" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="166dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="@string/h104" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h104"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:hint="@string/h104" />
+
+                            <Button
+                                android:id="@+id/checkHousehold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorAccent"
+                                android:drawableEnd="@drawable/search"
+                                android:drawablePadding="8dp"
+                                android:elevation="1dp"
+                                android:minWidth="56dp"
+                                android:onClick="checkHousehold"
+                                android:padding="8dp"
+                                android:radius="2dp"
+                                android:text="Check Household"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="166dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp"
+                                android:text="Head of Household" />
+
+                            <TextView
+                                android:id="@+id/hhhead"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="@color/white"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
                     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/bottom"
-        android:orientation="horizontal">
-
-
-        <TextView
-            style="@style/sub_labels"
-            android:layout_width="166dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:text="Head of Household" />
-
-        <TextView
-            android:id="@+id/hhhead"
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:background="@color/white"
-            android:layout_height="match_parent"
-            android:textColor="@color/black" />
-
-    </LinearLayout>
-</LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -244,12 +244,12 @@
                         android:background="@drawable/capsule"
                         android:backgroundTint="@color/gray"
                         android:backgroundTintMode="src_atop"
+                        android:enabled="false"
                         android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:enabled="false"
                         tools:ignore="OnClick" />
 
                 </LinearLayout>

@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
@@ -156,7 +157,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMWRAList(MWRAList mwra) {
+    public Long addMWRAList(MWRA mwra) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(MWRAListTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
@@ -386,7 +387,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = MWRAListTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.mwraList.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.mwra.getId())};
 
         return db.update(MWRAListTable.TABLE_NAME,
                 values,
@@ -833,6 +834,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, "getUnsyncedForms: getUnsyncedForms " + e.getMessage()
+            );
         } finally {
             if (c != null) {
                 c.close();
@@ -869,7 +874,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 Log.d(TAG, "getUnsyncedMWRAList: " + c.getCount());
-                MWRAList mwra = new MWRAList();
+                MWRA mwra = new MWRA();
                 all.put(mwra.Hydrate(c).toJSONObject());
             }
         } finally {
@@ -1484,7 +1489,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Random checkHousehold(String cluster_no, String hh_no) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = {RandomTable.COLUMN_ID, RandomTable.COLUMN_HEAD_HH};
+        String[] columns = null;
         String selection = RandomTable.COLUMN_CLUSTER_NO + "= ? AND "
                 + RandomTable.COLUMN_HH_NO + "= ? ";
         String[] selectionArgs = {cluster_no, hh_no};
@@ -1558,5 +1563,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return form;
+    }
+
+    public List<MWRA> getMWRABYUID(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = MWRAListTable.COLUMN_UID + "=?";
+
+        String[] whereArgs = {uid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MWRAListTable.COLUMN_ID + " ASC";
+
+        ArrayList<MWRA> mwraByUID = new ArrayList<>();
+        try {
+            c = db.query(
+                    MWRAListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                MWRA mwra = new MWRA().Hydrate(c);
+
+                mwraByUID.add(mwra);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return mwraByUID;
     }
 }

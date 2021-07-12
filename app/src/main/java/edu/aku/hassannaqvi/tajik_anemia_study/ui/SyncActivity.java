@@ -150,7 +150,7 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedForms());
 
-                // MWRAList
+                // MWRA
                 uploadTables.add(new SyncModel(MWRAListTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedMWRAList());
 

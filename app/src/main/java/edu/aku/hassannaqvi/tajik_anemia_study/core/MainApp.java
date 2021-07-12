@@ -18,7 +18,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRAList;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
@@ -41,7 +41,7 @@ public class MainApp extends Application {
     public static File sdDir;
     public static String[] downloadData;
     public static Form form;
-    public static MWRAList mwraList;
+    public static MWRA mwra;
     public static ChildList childList;
     public static Anthro anthro;
     public static Blood blood;
@@ -63,6 +63,12 @@ public class MainApp extends Application {
     public static long TWO_MINUTES = 1000 * 60 * 2;
     public static boolean permissionCheck = false;
     public static int idType = 0;
+    public static boolean mwraComplete;
+    public static List<MWRA> mwraList;
+    public static int mwraCount = 0;
+    public static int selectedFemale;
+    public static int mwraCountComplete = 0;
+
 
     public static void hideSystemUI(View decorView) {
         // Enables regular immersive mode.

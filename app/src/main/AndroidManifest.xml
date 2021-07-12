@@ -19,15 +19,13 @@
         android:theme="@style/Theme.main"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
-
+        <activity android:name=".ui.lists.MwraListActivity"></activity>
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
@@ -39,149 +37,126 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".ui.sections.SectionH1Activity"
             android:label="@string/sech1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-
         <activity
             android:name=".ui.sections.SectionH2aActivity"
             android:label="@string/sech2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH2bActivity"
             android:label="@string/sech2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH2cActivity"
             android:label="@string/sech2ctitle2"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH2dActivity"
             android:label="@string/sech2dtitle"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH3aActivity"
             android:label="@string/sech3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH3bActivity"
             android:label="@string/sech3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH4Activity"
             android:label="@string/sech4title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH5Activity"
             android:label="@string/sech5title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH6Activity"
             android:label="@string/sech6title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionH7Activity"
             android:label="@string/sech7title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionW1aActivity"
             android:label="@string/secw1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionW1bActivity"
             android:label="@string/secw1atitle"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionW2Activity"
             android:label="@string/secw2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionW3Activity"
             android:label="@string/secw3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionW4Activity"
             android:label="@string/secw4title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionC1Activity"
             android:label="@string/secc1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionC2Activity"
             android:label="@string/secc2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionC3Activity"
             android:label="@string/secc3title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionAnthroActivity"
             android:label="@string/moddtitle"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.sections.SectionHemoActivity"
             android:label="@string/modetitle"
@@ -196,15 +171,12 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
         <activity
             android:name=".ui.EndingActivity"
             android:label="@string/istatus"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-
-
     </application>
 
 </manifest>

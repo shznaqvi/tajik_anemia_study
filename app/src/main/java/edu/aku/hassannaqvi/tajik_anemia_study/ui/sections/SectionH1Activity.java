@@ -10,6 +10,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -19,7 +21,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH1Binding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
@@ -60,7 +61,12 @@ public class SectionH1Activity extends AppCompatActivity {
 
     private boolean updateDB() {
         DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.sH1toString());
+        int updcount = 0;
+        try {
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.sH1toString());
+        } catch (JSONException e) {
+            Toast.makeText(this, "Updating Database... " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         if (updcount == 1) {
             return true;
         } else {
@@ -83,7 +89,7 @@ public class SectionH1Activity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
+        //    MainApp.form = new Form();
 
         form.setUserName(MainApp.user.getUserName());
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));

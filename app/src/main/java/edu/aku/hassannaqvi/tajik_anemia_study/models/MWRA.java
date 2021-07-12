@@ -15,9 +15,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
-public class MWRAList extends BaseObservable {
+public class MWRA extends BaseObservable {
 
-    private final String TAG = "MWRAList";
+    private final String TAG = "MWRA";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
@@ -57,7 +57,7 @@ public class MWRAList extends BaseObservable {
     private String h227 = StringUtils.EMPTY;
 
 
-    public MWRAList() {
+    public MWRA() {
     }
 
 
@@ -320,8 +320,7 @@ public class MWRAList extends BaseObservable {
     }
 
 
-
-    public MWRAList Hydrate(Cursor cursor) {
+    public MWRA Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_UUID));

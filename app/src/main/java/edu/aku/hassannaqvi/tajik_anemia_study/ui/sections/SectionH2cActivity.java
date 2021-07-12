@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -10,19 +9,14 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2cBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
 
 
 public class SectionH2cActivity extends AppCompatActivity {
@@ -35,6 +29,8 @@ public class SectionH2cActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2c);
         bi.setCallback(this);
+        bi.setMwra(MainApp.mwra);
+
         setupSkips();
     }
 
@@ -44,13 +40,13 @@ public class SectionH2cActivity extends AppCompatActivity {
     }
 
 
-    private boolean updateDB() {
+    private boolean insertNewRecord() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
-        if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+        long rowID = db.addMWRAList(mwra);
+        mwra.setId(String.valueOf(rowID));
+        if (rowID > 0) {
+            mwra.setUid(mwra.getDeviceId() + mwra.getId());
+            db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_UID, mwra.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -62,9 +58,9 @@ public class SectionH2cActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
-        if (updateDB()) {
+        if (insertNewRecord()) {
+            setResult(RESULT_OK);
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
@@ -72,19 +68,37 @@ public class SectionH2cActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        // After databinding this can be moved to onCreate() function.
+        mwra.setUuid(MainApp.form.getUid());
+        mwra.setCluster(MainApp.form.getCluster());
+        mwra.setHhid(MainApp.form.getHhid());
+        mwra.setUserName(MainApp.user.getUserName());
+        mwra.setSysDate(form.getSysDate());
+        mwra.setDeviceId(MainApp.deviceid);
+        mwra.setiStatus("1");
+        mwra.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
+        // No need for this part after databinding
+/*      mwra.setH221(bi.h221.getText().toString());
+        mwra.setH222d(bi.h222d.getText().toString());
+        mwra.setH222m(bi.h222m.getText().toString());
+        mwra.setH222y(bi.h222y.getText().toString());
+        mwra.setH223(bi.h223.getText().toString());
+        .
+        .
+        .
+        */
+
 
     }
 
 
     public void btnEnd(View view) {
+        setResult(RESULT_CANCELED);
+
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        //    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -93,12 +107,12 @@ public class SectionH2cActivity extends AppCompatActivity {
     }
 
 
-/*
+
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        setResult(RESULT_CANCELED);
     }
-*/
 
 
 }
