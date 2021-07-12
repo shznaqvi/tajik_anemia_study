@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
-import edu.aku.hassannaqvi.tajik_anemia_study.adapters.MembersAdapter;
+import edu.aku.hassannaqvi.tajik_anemia_study.adapters.MWRAAdapter;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMwraListBinding;
@@ -37,7 +37,7 @@ public class MwraListActivity extends AppCompatActivity {
     private static final String TAG = "MwraActivity";
     ActivityMwraListBinding bi;
     DatabaseHelper db;
-    private MembersAdapter fmAdapter;
+    private MWRAAdapter fmAdapter;
     ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -90,7 +90,7 @@ public class MwraListActivity extends AppCompatActivity {
         MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
         MainApp.mwraCount = Math.round(MainApp.mwraList.size());
 
-        fmAdapter = new MembersAdapter(this, MainApp.mwraList);
+        fmAdapter = new MWRAAdapter(this, MainApp.mwraList);
         bi.rvMembers.setAdapter(fmAdapter);
         bi.rvMembers.setLayoutManager(new LinearLayoutManager(this));
 

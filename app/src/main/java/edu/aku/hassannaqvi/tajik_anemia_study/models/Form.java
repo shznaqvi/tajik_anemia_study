@@ -2147,7 +2147,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH31396(String h31396) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h31396 == h31396) return; // for all checkboxes
         this.h31396 = h31396;
         setH31396x(h31396.equals("96") ? this.h31396x : "");
         notifyPropertyChanged(BR.h31396);

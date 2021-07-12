@@ -17,7 +17,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 
 
-public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.ViewHolder> {
+public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
     private static final String TAG = "CustomAdapter";
     private final Context mContext;
     private final List<MWRA> mwra;
@@ -29,7 +29,7 @@ public class MembersAdapter extends RecyclerView.Adapter<MembersAdapter.ViewHold
      *
      * @param mwra List<FemaleMembersModel> containing the data to populate views to be used by RecyclerView.
      */
-    public MembersAdapter(Context mContext, List<MWRA> mwra) {
+    public MWRAAdapter(Context mContext, List<MWRA> mwra) {
         this.mwra = mwra;
         this.mContext = mContext;
         completeCount = 0;
