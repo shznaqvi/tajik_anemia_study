@@ -2077,7 +2077,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313a(String h313a) {
-        if (this.h313a == h313a) return; // for all checkboxes
+        if (this.h313a.equals(h313a)) return; // for all checkboxes
         this.h313a = h313a;
         notifyPropertyChanged(BR.h313a);
     }
@@ -2088,7 +2088,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313b(String h313b) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h313b.equals(h313b)) return; // for all checkboxes
         this.h313b = h313b;
         notifyPropertyChanged(BR.h313b);
     }
@@ -2099,7 +2099,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313c(String h313c) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h313c.equals(h313c)) return; // for all checkboxes
 
         this.h313c = h313c;
         notifyPropertyChanged(BR.h313c);
@@ -2111,7 +2111,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313d(String h313d) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h313d.equals(h313d)) return; // for all checkboxes
 
         this.h313d = h313d;
         notifyPropertyChanged(BR.h313d);
@@ -2123,7 +2123,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313e(String h313e) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h313e.equals(h313e)) return; // for all checkboxes
 
         this.h313e = h313e;
         notifyPropertyChanged(BR.h313e);
@@ -2135,7 +2135,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH313f(String h313f) {
-        if (this.h313b == h313b) return; // for all checkboxes
+        if (this.h313f.equals(h313f)) return; // for all checkboxes
 
         this.h313f = h313f;
         notifyPropertyChanged(BR.h313f);
@@ -2147,7 +2147,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH31396(String h31396) {
-        if (this.h31396 == h31396) return; // for all checkboxes
+        if (this.h31396.equals(h31396)) return; // for all checkboxes
         this.h31396 = h31396;
         setH31396x(h31396.equals("96") ? this.h31396x : "");
         notifyPropertyChanged(BR.h31396);
@@ -2389,7 +2389,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3242(String h3242) {
-        if (this.h3242 == h3242) return;
+        if (this.h3242.equals(h3242)) return;
         this.h3242 = h3242;
         setH3242x(h3242.equals("2") ? this.h3242x : "");
         notifyPropertyChanged(BR.h3242);
@@ -2411,7 +2411,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3243(String h3243) {
-        if (this.h3243 == h3243) return;
+        if (this.h3243.equals(h3243)) return;
         this.h3243 = h3243;
         setH3243x(h3243.equals("3") ? this.h3243x : "");
         notifyPropertyChanged(BR.h3243);
@@ -2433,7 +2433,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3244(String h3244) {
-        if (this.h3244 == h3244) return;
+        if (this.h3244.equals(h3244)) return;
         this.h3244 = h3244;
         setH3244x(h3244.equals("4") ? this.h3244x : "");
 
@@ -2456,7 +2456,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3245(String h3245) {
-        if (this.h3245 == h3245) return;
+        if (this.h3245.equals(h3245)) return;
 
         this.h3245 = h3245;
         setH3245x(h3245.equals("5") ? this.h3245x : "");
@@ -2479,7 +2479,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3246(String h3246) {
-        if (this.h3246 == h3246) return;
+        if (this.h3246.equals(h3246)) return;
 
         this.h3246 = h3246;
         setH3246x(h3246.equals("6") ? this.h3246x : "");
@@ -2503,7 +2503,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH3247(String h3247) {
-        if (this.h3247 == h3247) return;
+        if (this.h3247.equals(h3247)) return;
 
         this.h3247 = h3247;
         setH3247x(h3247.equals("7") ? this.h3247x : "");
