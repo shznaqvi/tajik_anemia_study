@@ -32,6 +32,7 @@ public class MWRA extends BaseObservable {
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
+    private String indexed = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
@@ -224,6 +225,15 @@ public class MWRA extends BaseObservable {
     }
 
 
+    @Bindable
+    public String getIndexed() {
+        return indexed;
+    }
+
+    public void setIndexed(String Indexed) {
+        this.indexed = Indexed;
+        notifyPropertyChanged(BR.indexed);
+    }
 
     @Bindable
     public String getH221() {
@@ -344,6 +354,7 @@ public class MWRA extends BaseObservable {
         this.hhid = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_SYSDATE));
+        this.indexed = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_INDEXED));
         this.deviceId = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(MWRAListTable.COLUMN_APPVERSION));
@@ -413,6 +424,7 @@ public class MWRA extends BaseObservable {
             json.put(MWRAListTable.COLUMN_HHID, this.hhid);
             json.put(MWRAListTable.COLUMN_USERNAME, this.userName);
             json.put(MWRAListTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(MWRAListTable.COLUMN_INDEXED, this.indexed);
             json.put(MWRAListTable.COLUMN_DEVICEID, this.deviceId);
             json.put(MWRAListTable.COLUMN_DEVICETAGID, this.deviceTag);
             json.put(MWRAListTable.COLUMN_ISTATUS, this.iStatus);

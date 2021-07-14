@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+        <variable
+            name="child"
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Child" />
 
         <variable
             name="callback"
@@ -79,7 +79,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="1dp"
                             android:layout_weight="1"
-                            android:text="@string/h228" />
+
+                            android:text="@{child.h228}" />
 
                     </LinearLayout>
 
@@ -121,6 +122,7 @@
                             android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/h229"
+                            android:text="@{child.h229}"
                             android:maxLength="20" />
 
                     </LinearLayout>
@@ -201,6 +203,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                android:text="@{child.h230d}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -214,6 +217,7 @@
                                 android:maxLength="2"
                                 app:maxValue="12"
                                 app:minValue="1"
+                                android:text="@{child.h230m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -227,6 +231,7 @@
                                 android:maxLength="4"
                                 app:maxValue="2021"
                                 app:minValue="2015"
+                                android:text="@{child.h230y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -309,6 +314,7 @@
                                 android:maxLength="1"
                                 app:maxValue="4"
                                 app:minValue="0"
+                                android:text="@{child.h231y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -321,6 +327,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="11"
+                                android:text="@{child.h231m}"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -332,6 +339,7 @@
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
+                                android:text="@{child.h231d}"
                                 android:maxLength="2"
                                 app:maxValue="29"
                                 app:minValue="0"
@@ -384,12 +392,16 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{child.h232.equals("1")?true:false}'
+                                android:onClick='@{()->child.setH232("1")}'
                                 android:text="@string/h232m" />
 
                             <RadioButton
                                 android:id="@+id/h232f"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
+                                android:checked='@{child.h232.equals("2")?true:false}'
+                                android:onClick='@{()->child.setH232("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h232f" />
 
@@ -439,6 +451,8 @@
                                 android:id="@+id/h233a"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
+                                android:checked='@{child.h233.equals("1")?true:false}'
+                                android:onClick='@{()->child.setH233("1")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h233a" />
 
@@ -446,6 +460,8 @@
                                 android:id="@+id/h233b"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
+                                android:checked='@{child.h233.equals("2")?true:false}'
+                                android:onClick='@{()->child.setH233("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h233b" />
 

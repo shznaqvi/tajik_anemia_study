@@ -169,6 +169,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MWRAListTable.COLUMN_HHID, mwra.getHhid());
         values.put(MWRAListTable.COLUMN_USERNAME, mwra.getUserName());
         values.put(MWRAListTable.COLUMN_SYSDATE, mwra.getSysDate());
+        values.put(MWRAListTable.COLUMN_INDEXED, mwra.getIndexed());
 
         values.put(MWRAListTable.COLUMN_S1, mwra.s1toString()); // all JSON, get from toString
 
@@ -1617,7 +1618,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildListTable.COLUMN_MUID + "=?";
+        whereClause = ChildListTable.COLUMN_UUID + "=?";
 
         String[] whereArgs = {uid};
 
