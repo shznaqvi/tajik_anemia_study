@@ -36,6 +36,7 @@ public class SectionC1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c1);
         bi.setCallback(this);
+        bi.setForm(form);
         setupSkips();
     }
 
@@ -82,6 +83,8 @@ public class SectionC1Activity extends AppCompatActivity {
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
+        //form.setsC1(form.sC1toString());
 
     }
 
