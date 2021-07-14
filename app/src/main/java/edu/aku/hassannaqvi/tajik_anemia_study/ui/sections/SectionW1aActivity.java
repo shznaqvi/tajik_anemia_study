@@ -19,7 +19,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1aBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
@@ -48,11 +47,8 @@ public class SectionW1aActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
+        long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW1A, form.sW1atoString());
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -74,7 +70,7 @@ public class SectionW1aActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
+        //  MainApp.form = new Form();
 
         form.setUserName(MainApp.user.getUserName());
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));

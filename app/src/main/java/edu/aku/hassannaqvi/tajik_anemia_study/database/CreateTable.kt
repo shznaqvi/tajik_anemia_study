@@ -76,6 +76,7 @@ object CreateTable {
             + ChildListTable.COLUMN_PROJECT_NAME + " TEXT,"
             + ChildListTable.COLUMN_UID + " TEXT,"
             + ChildListTable.COLUMN_UUID + " TEXT,"
+            + ChildListTable.COLUMN_MUID + " TEXT,"
             + ChildListTable.COLUMN_CLUSTER + " TEXT,"
             + ChildListTable.COLUMN_HHID + " TEXT,"
             + ChildListTable.COLUMN_USERNAME + " TEXT,"

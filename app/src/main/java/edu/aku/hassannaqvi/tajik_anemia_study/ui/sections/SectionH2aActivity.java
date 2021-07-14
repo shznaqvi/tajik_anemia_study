@@ -37,10 +37,8 @@ public class SectionH2aActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-       /* DatabaseHelper db = MainApp.appInfo.getDbHelper();
-        int updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH2c, form.sH2ctoString());
-
-        if (updcount == 1) {
+      /*  long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH2A, form.sH2atoString()toString());
+        if (updcount > 0) {
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

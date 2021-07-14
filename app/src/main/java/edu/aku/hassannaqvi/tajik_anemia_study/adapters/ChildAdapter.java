@@ -1,52 +1,39 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.adapters;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
-import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2dActivity;
 
 
-public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
-    private static final String TAG = "MWRAAdapter";
+public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> {
+    private static final String TAG = "ChildAdapter";
     private final Context mContext;
-    private final List<MWRA> mwraList;
+    private final List<Child> childList;
     private final int mExpandedPosition = -1;
     private final int completeCount;
-    private final DatabaseHelper db;
 
     /**
      * Initialize the dataset of the Adapter.
      *
-     * @param mwras List<FemaleMembersModel> containing the data to populate views to be used by RecyclerView.
+     * @param childList List<FemaleMembersModel> containing the data to populate views to be used by RecyclerView.
      */
-    public MWRAAdapter(Context mContext, List<MWRA> mwras) {
-        this.mwraList = mwras;
+    public ChildAdapter(Context mContext, List<Child> childList) {
+        this.childList = childList;
         this.mContext = mContext;
         completeCount = 0;
-        MainApp.mwraComplete = false;
-
-        db = MainApp.appInfo.dbHelper;
+        MainApp.childComplete = false;
 
 
     }
@@ -57,38 +44,22 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Log.d(TAG, "Element " + position + " set.");
-        MWRA mwra = this.mwraList.get(position);        // Get element from your dataset at this position and replace the contents of the view
+        Child child = this.childList.get(position);        // Get element from your dataset at this position and replace the contents of the view
         // with that element
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
-        viewHolder.mrvChild.setLayoutManager(layoutManager);
-        viewHolder.mrvChild.setHasFixedSize(true);
 
         TextView fName = viewHolder.fName;
         TextView fAge = viewHolder.fAge;
-        LinearLayout subItem = viewHolder.subItem;
+        // LinearLayout subItem = viewHolder.subItem;
         ImageView fmRow = viewHolder.fmRow;
-        TextView addSec = viewHolder.addSec;
+        // TextView addSec = viewHolder.addSec;
         TextView fMaritalStatus = viewHolder.fMatitalStatus;
         TextView secStatus = viewHolder.secStatus;
-        View indicator = viewHolder.indicator;
-
-
-        List<Child> childList = new ArrayList<>();
-        Log.d(TAG, "onCreate: childlist " + MainApp.childList.size());
-        childList = db.getChildBYUID(mwra.getUid());
-        MainApp.childCount.add(Math.round(childList.size()));
-
-        ChildAdapter childAdapter = new ChildAdapter(viewHolder.mrvChild.getContext(), childList);
-
-
-        viewHolder.mrvChild.setAdapter(childAdapter);
-        viewHolder.mrvChild.setLayoutManager(new LinearLayoutManager(mContext));
+        // View indicator = viewHolder.indicator;
 
         //int mStatus = Integer.parseInt(mwra.getHh06());
         // int age = Integer.parseInt(mwra.getH223());
         //int mCate = 0;  // 1 = MWRA : 2 = AdolFeMale : 3 = AdolMale
-        //int gender = Integer.parseInt(mwra.getHh03());
+        //int gender = Integer.parseInt(child.getH232());
         // Set MWRA
 /*        if (mStatus != 2 && age >= MainApp.MIN_MWRA && age < MainApp.MAX_MWRA && gender == 2) {
             mCate = 1;
@@ -109,7 +80,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
                 : "< Pending! >");
         completeCount += (mwra.getStatus().equals("1") || mCate == 0 ? 1 : 0);
         //MainApp.fmCountComplete = completeCount;*/
-        MainApp.mwraComplete = completeCount == MainApp.mwraCount;
+        MainApp.childComplete = completeCount == MainApp.childCount.get(position);
        /* secStatus.setBackgroundColor(mwra.getStatus().equals("1") || mCate == 0 ? mContext.getResources().getColor(R.color.redDark) : mContext.getResources().getColor(R.color.green));
         addSec.setClickable((!mwra.getStatus().equals("1") || mCate == 0) && mPresent);*/
 
@@ -118,8 +89,10 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
             fmRow.setImageResource(R.drawable.ic_check_circle_big);
         }*/
 
-        fName.setText(mwra.getH221());
-        fAge.setText(mwra.getH223());
+        fName.setText(child.getH229());
+        fAge.setText(child.getH231y() + " | " + (child.getH232().equals("1") ? "Boy" : "Girl"));
+
+
         //  indicator.setBackgroundColor(mCate == 1 ? mContext.getResources().getColor(R.color.redDark) : mCate == 2 ? mContext.getResources().getColor(R.color.colorPink) : mCate == 3 ? mContext.getResources().getColor(R.color.colorPrimary) : mContext.getResources().getColor(R.color.gray));
         //   indicator.setBackgroundColor(mwra.getStatus().equals("1") || mCate == 0 ? mContext.getResources().getColor(R.color.gray):indicator.getDrawingCacheBackgroundColor());
 
@@ -142,24 +115,24 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
                 break;
         }*/
 
-        fMaritalStatus.setText("Reported Children: " + mwra.getH226m() + " boy(s), " + mwra.getH226f() + "girl(s)");
+        // fMaritalStatus.setText("Reported Children: " + mwra.getH226m() + " boy(s), " + mwra.getH226f() + "girl(s)");
         //addSec.setClickable(mCate != 0);
-        addSec.setText("+ Add Children");
+        // addSec.setText("+ Add Children");
 
 
-        AtomicBoolean expanded = new AtomicBoolean(mwra.isExpanded());
+        //  AtomicBoolean expanded = new AtomicBoolean(child.isExpanded());
         // Set the visibility based on state
-        subItem.setVisibility(expanded.get() ? View.VISIBLE : View.GONE);
+        //    subItem.setVisibility(expanded.get() ? View.VISIBLE : View.GONE);
 
         viewHolder.itemView.setOnClickListener(v -> {
-
-            expanded.set(mwra.isExpanded());
+/*
+            expanded.set(child.isExpanded());
             // Change the state
-            mwra.setExpanded(!expanded.get());
+            child.setExpanded(!expanded.get());
             // Notify the adapter that item has changed
             notifyItemChanged(position);
             // Get the current state of the item
-       /*     if (!mwra.getStatus().equals("1")) {
+       *//*     if (!mwra.getStatus().equals("1")) {
                 expanded.set(mwra.isExpanded());
                 // Change the state
                 mwra.setExpanded(!expanded.get());
@@ -171,12 +144,12 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
         });
 
         //int finalMCate = mCate;
-        viewHolder.addSec.setOnClickListener(v -> {
+/*        viewHolder.addSec.setOnClickListener(v -> {
             // Get the current state of the item
             Intent intent = null;
             intent = new Intent(mContext, SectionH2dActivity.class);
             intent.putExtra("position", position);
-           /* switch (finalMCate) {
+           *//* switch (finalMCate) {
                 case 1: // MWRA
 
                     break;
@@ -186,7 +159,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
                     intent.putExtra("position", position);
                     break;
 
-            }*/
+            }*//*
             MainApp.selectedFemale = position;
             if (intent != null) {
                 //   ((Activity)mContext).finish();
@@ -197,7 +170,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
             } else {
                 Toast.makeText(mContext, "No Additional Information Required!", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
 
@@ -207,7 +180,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
     // BEGIN_INCLUDE(recyclerViewOnCreateViewHolder)
     // Create new views (invoked by the layout manager)
     @Override
-    public MWRAAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ChildAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view.
         // Context context = parent.getContext();
         View v = LayoutInflater.from(viewGroup.getContext())
@@ -220,7 +193,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
-        return mwraList.size();
+        return childList.size();
     }
     // END_INCLUDE(recyclerViewOnBindViewHolder)
 
@@ -232,25 +205,22 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
         private final TextView fAge;
         private final TextView fMatitalStatus;
         private final TextView secStatus;
-        private final TextView addSec;
-        private final LinearLayout subItem;
+        //private final TextView addSec;
+        //private final LinearLayout subItem;
         private final ImageView fmRow;
-        private final View indicator;
-        public RecyclerView mrvChild;
+        // private final View indicator;
 
 
         public ViewHolder(View v) {
             super(v);
-            fName = v.findViewById(R.id.mhh02);
-            fAge = v.findViewById(R.id.mhh05);
-            fMatitalStatus = v.findViewById(R.id.mhh06);
-            secStatus = v.findViewById(R.id.msecStatus);
-            addSec = v.findViewById(R.id.madd_section);
-            subItem = v.findViewById(R.id.msubitem);
-            fmRow = v.findViewById(R.id.mfmRow);
-            indicator = v.findViewById(R.id.mindicator);
-            mrvChild = itemView.findViewById(R.id.mrvChild);
-
+            fName = v.findViewById(R.id.chh02);
+            fAge = v.findViewById(R.id.chh05);
+            fMatitalStatus = v.findViewById(R.id.chh06);
+            secStatus = v.findViewById(R.id.csecStatus);
+            //  addSec = v.findViewById(R.id.cadd_section);
+            //  subItem = v.findViewById(R.id.csubitem);
+            fmRow = v.findViewById(R.id.cfmRow);
+            // indicator = v.findViewById(R.id.cindicator);
             // Define click listener for the ViewHolder's View.
 
             v.setOnClickListener(new View.OnClickListener() {
@@ -265,12 +235,12 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
                 }
             });
 
-            v.findViewById(R.id.madd_section).setOnClickListener(new View.OnClickListener() {
+/*            v.findViewById(R.id.cadd_section).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                 }
-            });
+            });*/
 
         }
 

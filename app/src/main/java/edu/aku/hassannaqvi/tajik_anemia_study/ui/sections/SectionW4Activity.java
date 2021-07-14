@@ -56,11 +56,8 @@ public class SectionW4Activity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
+        long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW4, form.sW4toString());
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

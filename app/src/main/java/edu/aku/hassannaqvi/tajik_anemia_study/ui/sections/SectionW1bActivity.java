@@ -19,10 +19,10 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1bBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
 
 
 public class SectionW1bActivity extends AppCompatActivity {
@@ -48,19 +48,17 @@ public class SectionW1bActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
+        long updcount = db.addPregnancy(preg);
+        preg.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            preg.setUid(preg.getDeviceId() + preg.getId());
+            db.updatesPregColumn(TableContracts.PregnancyTable.COLUMN_UID, preg.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
     }
-
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
@@ -75,12 +73,12 @@ public class SectionW1bActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
+        preg = new Pregnancy();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        preg.setUserName(MainApp.user.getUserName());
+        preg.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        preg.setDeviceId(MainApp.deviceid);
+        preg.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
     }
 

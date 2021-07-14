@@ -34,7 +34,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ZScoreTab
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
@@ -104,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //ADDITION in DB
-    public Long addForm(Form form) {
+    public Long addForm(Form form) throws JSONException {
 
         // Gets the data repository in write mode
         SQLiteDatabase db = this.getWritableDatabase();
@@ -117,30 +117,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
-        values.put(FormsTable.COLUMN_SH1, form.getsH1());
+        values.put(FormsTable.COLUMN_SH1, form.sH1toString());
 
         /* values.put(FormsTable.COLUMN_SH2A, form.getsH2a());*/
-        values.put(FormsTable.COLUMN_SH2B, form.getsH2b());
+        values.put(FormsTable.COLUMN_SH2B, form.sH2btoString());
 /*
         values.put(FormsTable.COLUMN_SH2d, form.getsH2d());
         values.put(FormsTable.COLUMN_SH2c, form.getsH2c());
 */
-        values.put(FormsTable.COLUMN_SH3A, form.getsH3a());
-        values.put(FormsTable.COLUMN_SH3B, form.getsH3b());
-        values.put(FormsTable.COLUMN_SH4, form.getsH4());
-        values.put(FormsTable.COLUMN_SH5, form.getsH5());
-        values.put(FormsTable.COLUMN_SH6, form.getsH6());
-        values.put(FormsTable.COLUMN_SH7, form.getsH7());
+        values.put(FormsTable.COLUMN_SH3A, form.sH3atoString());
+        values.put(FormsTable.COLUMN_SH3B, form.sH3btoString());
+        values.put(FormsTable.COLUMN_SH4, form.sH4toString());
+        values.put(FormsTable.COLUMN_SH5, form.sH5toString());
+        values.put(FormsTable.COLUMN_SH6, form.sH6toString());
+        values.put(FormsTable.COLUMN_SH7, form.sH7toString());
 
-        values.put(FormsTable.COLUMN_SW1A, form.getsW1a());
-        /*values.put(FormsTable.COLUMN_SW1B, form.getsW1b());*/
-        values.put(FormsTable.COLUMN_SW2, form.getsW2());
-        values.put(FormsTable.COLUMN_SW3, form.getsW3());
-        values.put(FormsTable.COLUMN_SW4, form.getsW4());
+        values.put(FormsTable.COLUMN_SW1A, form.sW1atoString());
+        /*values.put(FormsTable.COLUMN_SW1B, form.sW1b());*/
+        values.put(FormsTable.COLUMN_SW2, form.sW2toString());
+        values.put(FormsTable.COLUMN_SW3, form.sW3toString());
+        values.put(FormsTable.COLUMN_SW4, form.sW4toString());
 
-        values.put(FormsTable.COLUMN_SC1, form.getsC1());
-        values.put(FormsTable.COLUMN_SC2, form.getsC2());
-        values.put(FormsTable.COLUMN_SC3, form.getsC3());
+        values.put(FormsTable.COLUMN_SC1, form.sC1toString());
+        values.put(FormsTable.COLUMN_SC2, form.sC2toString());
+        values.put(FormsTable.COLUMN_SC3, form.sC3toString());
 
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
@@ -159,7 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addMWRAList(MWRA mwra) {
+    public Long addMWRAList(MWRA mwra) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(MWRAListTable.COLUMN_PROJECT_NAME, mwra.getProjectName());
@@ -187,17 +187,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addChildList(ChildList child) {
+    public Long addChildList(Child child) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(ChildListTable.COLUMN_PROJECT_NAME, child.getProjectName());
         values.put(ChildListTable.COLUMN_UID, child.getUid());
         values.put(ChildListTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildListTable.COLUMN_MUID, child.getMuid());
         values.put(ChildListTable.COLUMN_CLUSTER, child.getCluster());
         values.put(ChildListTable.COLUMN_HHID, child.getHhid());
         values.put(ChildListTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildListTable.COLUMN_SYSDATE, child.getSysDate());
-        values.put(ChildListTable.COLUMN_S1, child.getS1());
+        values.put(ChildListTable.COLUMN_S1, child.s1toString());
 
         values.put(MWRAListTable.COLUMN_DEVICEID, child.getDeviceId());
         values.put(MWRAListTable.COLUMN_DEVICETAGID, child.getDeviceTag());
@@ -405,7 +406,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = ChildListTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.childList.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.child.getId())};
 
         return db.update(ChildListTable.TABLE_NAME,
                 values,
@@ -480,7 +481,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(column, value);
 
         String selection = SamplesTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.samp.getId())};
+        String[] selectionArgs = {String.valueOf(MainApp.samples.getId())};
 
         return db.update(SamplesTable.TABLE_NAME,
                 values,
@@ -916,7 +917,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 Log.d(TAG, "getUnsyncedChildList: " + c.getCount());
-                ChildList child = new ChildList();
+                Child child = new Child();
                 all.put(child.Hydrate(c).toJSONObject());
             }
         } finally {
@@ -1608,5 +1609,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return mwraByUID;
+    }
+
+    public List<Child> getChildBYUID(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildListTable.COLUMN_MUID + "=?";
+
+        String[] whereArgs = {uid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildListTable.COLUMN_ID + " ASC";
+
+        ArrayList<Child> childByUID = new ArrayList<>();
+        try {
+            c = db.query(
+                    ChildListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Child child = new Child().Hydrate(c);
+
+                childByUID.add(child);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return childByUID;
     }
 }

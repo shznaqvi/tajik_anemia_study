@@ -9,18 +9,16 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import org.json.JSONException;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2dBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.child;
 
 
 public class SectionH2dActivity extends AppCompatActivity {
@@ -33,6 +31,9 @@ public class SectionH2dActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2d);
         bi.setCallback(this);
+
+        db = MainApp.appInfo.dbHelper;
+
         setupSkips();
     }
 
@@ -43,12 +44,18 @@ public class SectionH2dActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
+        long updcount = 0;
+        try {
+            updcount = db.addChildList(MainApp.child);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.child.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
+            db.updatesChildListColumn(TableContracts.ChildListTable.COLUMN_UID, MainApp.child.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -71,12 +78,17 @@ public class SectionH2dActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.form = new Form();
+        MainApp.child = new Child();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        child.setUserName(MainApp.user.getUserName());
+        child.setSysDate(MainApp.form.getSysDate());
+        child.setDeviceId(MainApp.deviceid);
+        child.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        child.setUuid(MainApp.form.getUid());
+        child.setMuid(MainApp.mwraList.get(MainApp.selectedFemale).getUid());
+        child.setCluster(MainApp.form.getCluster());
+        child.setHhid(MainApp.form.getHhid());
+        child.setiStatus("1");
 
     }
 

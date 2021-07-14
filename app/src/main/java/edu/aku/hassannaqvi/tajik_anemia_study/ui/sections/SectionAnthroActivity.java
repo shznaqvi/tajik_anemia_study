@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionAnthroB
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.anthro;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
@@ -46,7 +47,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
+        long updcount = db.addAnthro(anthro);
         form.setId(String.valueOf(updcount));
         if (updcount > 0) {
             form.setUid(form.getDeviceId() + form.getId());

@@ -381,25 +381,22 @@ public class MWRA extends BaseObservable {
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("h221", h221)
-                    .put("h222d", h222d)
-                    .put("h222m", h222m)
-                    .put("h222y", h222y)
-                    .put("h223", h223)
-                    .put("h224", h224)
-                    .put("h225", h225)
+
+        json.put("h221", h221)
+                .put("h222d", h222d)
+                .put("h222m", h222m)
+                .put("h222y", h222y)
+                .put("h223", h223)
+                .put("h224", h224)
+                .put("h225", h225)
                     .put("h226t", h226t)
                     .put("h226m", h226m)
                     .put("h226f", h226f)
                     .put("h227", h227);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
         return json.toString();
     }
 

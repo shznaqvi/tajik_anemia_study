@@ -50,7 +50,14 @@ public class SectionH1Activity extends AppCompatActivity {
 
     private boolean insertNewRecord() {
         if (!form.getUid().equals("")) return true;
-        long rowId = db.addForm(form);
+        long rowId = 0;
+        try {
+            rowId = db.addForm(form);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         form.setId(String.valueOf(rowId));
         if (rowId > 0) {
             form.setUid(form.getDeviceId() + form.getId());

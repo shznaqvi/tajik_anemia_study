@@ -67,12 +67,13 @@ public class TableContracts {
 
 
     public static abstract class ChildListTable implements BaseColumns {
-        public static final String TABLE_NAME = "ChildList";
+        public static final String TABLE_NAME = "Child";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
+        public static final String COLUMN_MUID = "_muid";
         public static final String COLUMN_CLUSTER = "cluster";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";

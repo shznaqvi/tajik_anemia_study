@@ -25,6 +25,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.adapters.MWRAAdapter;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMwraListBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2cActivity;
@@ -86,13 +87,15 @@ public class MwraListActivity extends AppCompatActivity {
 
         db = MainApp.appInfo.dbHelper;
         MainApp.mwraList = new ArrayList<>();
+        MainApp.childList = new ArrayList<>();
+        MainApp.childCount = new ArrayList<>();
         Log.d(TAG, "onCreate: mwralist " + MainApp.mwraList.size());
         MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
         MainApp.mwraCount = Math.round(MainApp.mwraList.size());
 
         mwraAdapter = new MWRAAdapter(this, MainApp.mwraList);
-        bi.rvMembers.setAdapter(mwraAdapter);
-        bi.rvMembers.setLayoutManager(new LinearLayoutManager(this));
+        bi.rvMwra.setAdapter(mwraAdapter);
+        bi.rvMwra.setLayoutManager(new LinearLayoutManager(this));
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -118,7 +121,8 @@ public class MwraListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
         MainApp.mwra = new MWRA();
-        if (MainApp.mwraList.size() > 0) {
+        MainApp.child = new Child();
+        if (MainApp.mwraList.size() > 0 || MainApp.childList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
             mwraAdapter.notifyItemChanged(Integer.parseInt(String.valueOf(selectedFemale)));
         }

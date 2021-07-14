@@ -15,9 +15,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ChildListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
-public class ChildList extends BaseObservable {
+public class Child extends BaseObservable {
 
-    private final String TAG = "ChildList";
+    private final String TAG = "Child";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
@@ -26,6 +26,7 @@ public class ChildList extends BaseObservable {
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
     private String uuid = StringUtils.EMPTY;
+    private String muid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -56,7 +57,7 @@ public class ChildList extends BaseObservable {
     private String h233 = StringUtils.EMPTY;
 
 
-    public ChildList() {
+    public Child() {
     }
 
 
@@ -92,6 +93,14 @@ public class ChildList extends BaseObservable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 
 
@@ -207,9 +216,6 @@ public class ChildList extends BaseObservable {
     }
 
 
-
-
-
     @Bindable
     public String getH228() {
         return h228;
@@ -311,12 +317,11 @@ public class ChildList extends BaseObservable {
     }
 
 
-
-
-    public ChildList Hydrate(Cursor cursor) {
+    public Child Hydrate(Cursor cursor) {
         this.id = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_MUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_USERNAME));
@@ -357,24 +362,21 @@ public class ChildList extends BaseObservable {
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("h228", h228)
-                    .put("h229", h229)
-                    .put("h230d", h230d)
-                    .put("h230m", h230m)
-                    .put("h230y", h230y)
-                    .put("h231y", h231y)
-                    .put("h231m", h231m)
+
+        json.put("h228", h228)
+                .put("h229", h229)
+                .put("h230d", h230d)
+                .put("h230m", h230m)
+                .put("h230y", h230y)
+                .put("h231y", h231y)
+                .put("h231m", h231m)
                     .put("h231d", h231d)
                     .put("h232", h232)
                     .put("h233", h233);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
         return json.toString();
     }
 
@@ -387,6 +389,7 @@ public class ChildList extends BaseObservable {
             json.put(ChildListTable.COLUMN_ID, this.id);
             json.put(ChildListTable.COLUMN_UID, this.uid);
             json.put(ChildListTable.COLUMN_UUID, this.uuid);
+            json.put(ChildListTable.COLUMN_MUID, this.muid);
             json.put(ChildListTable.COLUMN_CLUSTER, this.cluster);
             json.put(ChildListTable.COLUMN_HHID, this.hhid);
             json.put(ChildListTable.COLUMN_USERNAME, this.userName);

@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -42,7 +44,14 @@ public class SectionH2cActivity extends AppCompatActivity {
 
     private boolean insertNewRecord() {
         db = MainApp.appInfo.getDbHelper();
-        long rowID = db.addMWRAList(mwra);
+        long rowID = 0;
+        try {
+            rowID = db.addMWRAList(mwra);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         mwra.setId(String.valueOf(rowID));
         if (rowID > 0) {
             mwra.setUid(mwra.getDeviceId() + mwra.getId());

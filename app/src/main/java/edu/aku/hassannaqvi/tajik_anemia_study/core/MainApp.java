@@ -10,13 +10,14 @@ import android.view.View;
 import org.json.JSONArray;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BuildConfig;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.ChildList;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
@@ -42,13 +43,13 @@ public class MainApp extends Application {
     public static String[] downloadData;
     public static Form form;
     public static MWRA mwra;
-    public static ChildList childList;
+    public static Child child;
     public static Anthro anthro;
     public static Blood blood;
     //public static Samples samples;
     public static Stool stool;
     public static Pregnancy preg;
-    public static Samples samp;
+    public static Samples samples;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;
     public static Users user;
@@ -64,10 +65,14 @@ public class MainApp extends Application {
     public static boolean permissionCheck = false;
     public static int idType = 0;
     public static boolean mwraComplete;
+    public static boolean childComplete;
     public static List<MWRA> mwraList;
+    public static List<Child> childList;
     public static int mwraCount = 0;
+    public static ArrayList<Integer> childCount = new ArrayList<>();
     public static int selectedFemale;
     public static int mwraCountComplete = 0;
+    public static int childCountComplete = 0;
 
 
     public static void hideSystemUI(View decorView) {

@@ -55,6 +55,7 @@ public class SectionH3bActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
+        db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH3B, form.sH3btoString());
         if (updcount > 0) {
             return true;

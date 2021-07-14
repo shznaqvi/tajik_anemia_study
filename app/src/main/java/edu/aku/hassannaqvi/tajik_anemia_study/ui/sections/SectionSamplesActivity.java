@@ -19,10 +19,10 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionSamplesBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.samples;
 
 
 public class SectionSamplesActivity extends AppCompatActivity {
@@ -46,11 +46,11 @@ public class SectionSamplesActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addForm(form);
-        form.setId(String.valueOf(updcount));
+        long updcount = db.addSamples(samples);
+        samples.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            samples.setUid(samples.getDeviceId() + samples.getId());
+            db.updatesFormColumn(TableContracts.SamplesTable.COLUMN_UID, samples.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -71,16 +71,16 @@ public class SectionSamplesActivity extends AppCompatActivity {
     }
 
 
-    private void saveDraft() {
-        MainApp.form = new Form();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+    private void saveDraft() {
+        MainApp.samples = new Samples();
+
+        samples.setUserName(MainApp.user.getUserName());
+        samples.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        samples.setDeviceId(MainApp.deviceid);
+        samples.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
     }
-
 
     public void btnEnd(View view) {
         finish();

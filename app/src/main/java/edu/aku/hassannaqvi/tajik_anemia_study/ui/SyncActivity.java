@@ -154,7 +154,7 @@ public class SyncActivity extends AppCompatActivity {
                 uploadTables.add(new SyncModel(MWRAListTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedMWRAList());
 
-                // ChildList
+                // Child
                 uploadTables.add(new SyncModel(ChildListTable.TABLE_NAME));
                 MainApp.uploadData.add(db.getUnsyncedChildList());
 
