@@ -9631,6 +9631,7 @@ public class Form extends BaseObservable {
                 this.c107r = json.getString("c107r");
                 this.c107s = json.getString("c107s");
                 this.c108 = json.getString("c108");
+                this.c108t1 = json.getString("c108t1");
                 this.c109 = json.getString("c109");
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -10577,6 +10578,7 @@ public class Form extends BaseObservable {
                     .put("c107r", c107r)
                     .put("c107s", c107s)
                     .put("c108", c108)
+                    .put("c108t1", c108t1)
                     .put("c109", c109);
         } catch (JSONException e) {
             e.printStackTrace();
