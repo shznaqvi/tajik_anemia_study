@@ -742,6 +742,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={form.c106ea}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -942,6 +943,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={form.c106ha}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -1732,6 +1734,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={form.c107b}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -2898,6 +2901,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="2"
                                 android:hint="@string/c107s"
+                                android:text="@={form.c107s}"
                                 android:maxLength="15" />
 
                         </LinearLayout>
@@ -3014,6 +3018,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="2"
                                 android:hint="Name / Kind of Food"
+                                android:text="@={form.c108t1}"
                                 android:maxLength="15" />
 
                         </LinearLayout>
@@ -3077,6 +3082,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:text="@={form.c109}"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:defaultValue="99"

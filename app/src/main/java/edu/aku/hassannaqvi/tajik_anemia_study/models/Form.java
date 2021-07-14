@@ -607,6 +607,7 @@ public class Form extends BaseObservable {
     private String c107r = StringUtils.EMPTY;
     private String c107s = StringUtils.EMPTY;
     private String c108 = StringUtils.EMPTY;
+    private String c108t1 = StringUtils.EMPTY;
     private String c109 = StringUtils.EMPTY;
     private String c201 = StringUtils.EMPTY;
     private String c202 = StringUtils.EMPTY;
@@ -6620,6 +6621,16 @@ public class Form extends BaseObservable {
     public void setC108(String c108) {
         this.c108 = c108;
         notifyPropertyChanged(BR.c108);
+    }
+
+    @Bindable
+    public String getC108t1() {
+        return c108t1;
+    }
+
+    public void setC108t1(String c108t1) {
+        this.c108t1 = c108t1;
+        notifyPropertyChanged(BR.c108t1);
     }
 
     @Bindable

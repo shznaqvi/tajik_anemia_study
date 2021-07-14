@@ -84,6 +84,199 @@ public class SectionC1Activity extends AppCompatActivity {
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
+
+        form.setC101(bi.c101a.isChecked() ? "1"
+                : bi.c101b.isChecked() ? "2"
+                : "-1");
+
+        form.setC102(bi.c102h.isChecked() ? "1"
+                : bi.c102d.isChecked() ? "2"
+                : bi.c102a.isChecked() ? "000"
+                : "-1");
+
+        form.setC103(bi.c103a.isChecked() ? "1"
+                : bi.c103b.isChecked() ? "2"
+                : "-1");
+
+        form.setC104(bi.c104a.isChecked() ? "1"
+                : bi.c104b.isChecked() ? "2"
+                : bi.c10498.isChecked() ? "98"
+                : "-1");
+
+        form.setC105(bi.c105a.isChecked() ? "1"
+                : bi.c105b.isChecked() ? "2"
+                : bi.c10598.isChecked() ? "98"
+                : "-1");
+
+        form.setC106a(bi.c106aa.isChecked() ? "1"
+                : bi.c106ab.isChecked() ? "2"
+                : bi.c106a98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106b(bi.c106ba.isChecked() ? "1"
+                : bi.c106bb.isChecked() ? "2"
+                : bi.c106b98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106ca(bi.c106ca.getText().toString());
+        form.setC106d(bi.c106da.isChecked() ? "1"
+                : bi.c106db.isChecked() ? "2"
+                : bi.c106d98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106ea(bi.c106ea.getText().toString());
+        form.setC106f(bi.c106fa.isChecked() ? "1"
+                : bi.c106fb.isChecked() ? "2"
+                : bi.c106f98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106g(bi.c106ga.isChecked() ? "1"
+                : bi.c106gb.isChecked() ? "2"
+                : bi.c106g98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106ha(bi.c106ha.getText().toString());
+        form.setC106i(bi.c106ia.isChecked() ? "1"
+                : bi.c106ib.isChecked() ? "2"
+                : bi.c106i98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106j(bi.c106ja.isChecked() ? "1"
+                : bi.c106jb.isChecked() ? "2"
+                : bi.c106j98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106k(bi.c106ka.isChecked() ? "1"
+                : bi.c106kb.isChecked() ? "2"
+                : bi.c106k98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106l(bi.c106la.isChecked() ? "1"
+                : bi.c106lb.isChecked() ? "2"
+                : bi.c106l98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106m(bi.c106ma.isChecked() ? "1"
+                : bi.c106mb.isChecked() ? "2"
+                : bi.c106m98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106n(bi.c106na.isChecked() ? "1"
+                : bi.c106nb.isChecked() ? "2"
+                : bi.c106n98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106o(bi.c106oa.isChecked() ? "1"
+                : bi.c106ob.isChecked() ? "2"
+                : bi.c106o98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106p(bi.c106pa.isChecked() ? "1"
+                : bi.c106pb.isChecked() ? "2"
+                : bi.c106p98.isChecked() ? "98"
+                : "-1");
+
+        form.setC106q(bi.c106qa.isChecked() ? "1"
+                : bi.c106qb.isChecked() ? "2"
+                : bi.c106q98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107a(bi.c107aa.isChecked() ? "1"
+                : bi.c107ab.isChecked() ? "2"
+                : bi.c107a98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107b(bi.c107b.getText().toString());
+        form.setC107c(bi.c107ca.isChecked() ? "1"
+                : bi.c107cb.isChecked() ? "2"
+                : bi.c107c98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107d(bi.c107da.isChecked() ? "1"
+                : bi.c107db.isChecked() ? "2"
+                : bi.c107d98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107e(bi.c107ea.isChecked() ? "1"
+                : bi.c107eb.isChecked() ? "2"
+                : bi.c107e98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107f(bi.c107fa.isChecked() ? "1"
+                : bi.c107fb.isChecked() ? "2"
+                : bi.c107f98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107g(bi.c107ga.isChecked() ? "1"
+                : bi.c107gb.isChecked() ? "2"
+                : bi.c107g98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107h(bi.c107ha.isChecked() ? "1"
+                : bi.c107hb.isChecked() ? "2"
+                : bi.c107h98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107j(bi.c107ja.isChecked() ? "1"
+                : bi.c107jb.isChecked() ? "2"
+                : bi.c107j98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107i(bi.c107ia.isChecked() ? "1"
+                : bi.c107ib.isChecked() ? "2"
+                : bi.c107i98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107k(bi.c107ka.isChecked() ? "1"
+                : bi.c107kb.isChecked() ? "2"
+                : bi.c107k98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107l(bi.c107la.isChecked() ? "1"
+                : bi.c107lb.isChecked() ? "2"
+                : bi.c107l98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107m(bi.c107ma.isChecked() ? "1"
+                : bi.c107mb.isChecked() ? "2"
+                : bi.c107m98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107n(bi.c107na.isChecked() ? "1"
+                : bi.c107nb.isChecked() ? "2"
+                : bi.c107n98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107o(bi.c107oa.isChecked() ? "1"
+                : bi.c107ob.isChecked() ? "2"
+                : bi.c107o98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107p(bi.c107pa.isChecked() ? "1"
+                : bi.c107pb.isChecked() ? "2"
+                : bi.c107p98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107q(bi.c107qa.isChecked() ? "1"
+                : bi.c107qb.isChecked() ? "2"
+                : bi.c107q98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107r(bi.c107ra.isChecked() ? "1"
+                : bi.c107rb.isChecked() ? "2"
+                : bi.c107r98.isChecked() ? "98"
+                : "-1");
+
+        form.setC107s(bi.c107s.getText().toString());
+        form.setC108(bi.c108a.isChecked() ? "1"
+                : bi.c108b.isChecked() ? "2"
+                : "-1");
+
+        form.setC108t1(bi.c108t1.getText().toString());
+
+        form.setC109(bi.c109.getText().toString());
+
+
         //form.setsC1(form.sC1toString());
 
     }
