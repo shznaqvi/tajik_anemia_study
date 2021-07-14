@@ -37,7 +37,7 @@ public class MwraListActivity extends AppCompatActivity {
     private static final String TAG = "MwraActivity";
     ActivityMwraListBinding bi;
     DatabaseHelper db;
-    private MWRAAdapter fmAdapter;
+    private MWRAAdapter mwraAdapter;
     ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -62,7 +62,7 @@ public class MwraListActivity extends AppCompatActivity {
 
                         MainApp.mwraCount++;
 
-                        fmAdapter.notifyItemInserted(MainApp.mwraList.size() - 1);
+                        mwraAdapter.notifyItemInserted(MainApp.mwraList.size() - 1);
                         //  Collections.sort(MainApp.fm, new SortByStatus());
                         //fmAdapter.notifyDataSetChanged();
 
@@ -90,8 +90,8 @@ public class MwraListActivity extends AppCompatActivity {
         MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
         MainApp.mwraCount = Math.round(MainApp.mwraList.size());
 
-        fmAdapter = new MWRAAdapter(this, MainApp.mwraList);
-        bi.rvMembers.setAdapter(fmAdapter);
+        mwraAdapter = new MWRAAdapter(this, MainApp.mwraList);
+        bi.rvMembers.setAdapter(mwraAdapter);
         bi.rvMembers.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -120,7 +120,7 @@ public class MwraListActivity extends AppCompatActivity {
         MainApp.mwra = new MWRA();
         if (MainApp.mwraList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
-            fmAdapter.notifyItemChanged(Integer.parseInt(String.valueOf(selectedFemale)));
+            mwraAdapter.notifyItemChanged(Integer.parseInt(String.valueOf(selectedFemale)));
         }
         checkCompleteFm();
         // bi.fab.setClickable(!MainApp.form.getiStatus().equals("1"));
@@ -172,11 +172,11 @@ public class MwraListActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 //   mwra.get(selectedFemale).setExpanded(false);
                 checkCompleteFm();
-                fmAdapter.notifyItemChanged(MainApp.selectedFemale);
+                mwraAdapter.notifyItemChanged(MainApp.selectedFemale);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 // Write your code if there's no result
-                Toast.makeText(this, "Information for " + MainApp.mwraList.get(MainApp.selectedFemale).getH221() + " was not saved.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Child for " + MainApp.mwraList.get(MainApp.selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
             }
         }
     }

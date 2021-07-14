@@ -36,7 +36,10 @@ public class SectionH1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1);
         bi.setCallback(this);
+        bi.setForm(form);
         setupSkips();
+
+        db = MainApp.appInfo.dbHelper;
     }
 
 
@@ -46,7 +49,7 @@ public class SectionH1Activity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        db = MainApp.appInfo.getDbHelper();
+        if (!form.getUid().equals("")) return true;
         long rowId = db.addForm(form);
         form.setId(String.valueOf(rowId));
         if (rowId > 0) {

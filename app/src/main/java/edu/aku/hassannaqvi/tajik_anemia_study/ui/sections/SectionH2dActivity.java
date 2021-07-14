@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -20,7 +19,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2dBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
@@ -63,8 +61,9 @@ public class SectionH2dActivity extends AppCompatActivity {
         if (!formValidation()) return;
         saveDraft();
         if (updateDB()) {
+            setResult(RESULT_OK);
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            //  startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
@@ -83,8 +82,9 @@ public class SectionH2dActivity extends AppCompatActivity {
 
 
     public void btnEnd(View view) {
+        setResult(RESULT_CANCELED);
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        // startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 

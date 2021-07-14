@@ -142,7 +142,7 @@
                     android:background="@drawable/ic_person_add"
                     android:elevation="8dp"
                     android:foreground="@drawable/ic_person_add"
-                    android:foregroundTint="@color/colorAccent" />
+             />
             </RelativeLayout>
 
             <LinearLayout

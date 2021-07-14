@@ -28,7 +28,7 @@ import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
 
 public class ReadJSONWorker extends Worker {
 
-    private final String TAG = "DataWorkerEN()";
+    private final String TAG = "ReadJSONWorker()";
     HttpURLConnection urlConnection;
     private int length;
     private DatabaseHelper db;
@@ -132,7 +132,7 @@ public class ReadJSONWorker extends Worker {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "1")
                 .setContentTitle(title)
                 .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.drawable.app_icon);
 
         final int maxProgress = 100;
         int curProgress = 0;

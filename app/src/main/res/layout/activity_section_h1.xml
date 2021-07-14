@@ -5,9 +5,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+      <variable
+          name="form"
+          type="edu.aku.hassannaqvi.tajik_anemia_study.models.Form" />
 
         <variable
             name="callback"
@@ -85,6 +85,7 @@
                                 android:layout_weight="2"
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
+                                android:text="@={form.h106}"
                                 app:dateFormat="yyyy-MM-dd"
                                 app:maxDate="CR_DATE"
                                 app:minDate="CR_DATE" />
@@ -131,6 +132,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
                                 android:gravity="center"
+                                android:text="@={form.h107}"
                                 android:hint="HH:mm"
                                 app:timeFormat="HH:mm" />
 
@@ -170,6 +172,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:text="@={form.h108}"
                             android:hint="@string/h108" />
 
                     </LinearLayout>
@@ -211,6 +214,7 @@
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
+                            android:text="@={form.h109}"
                             app:minValue="0"
                             app:type="range" />
 
@@ -259,12 +263,16 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked='@{form.h110.equals("1")?true:false}'
+                                android:onClick='@{()->form.setH110("1")}'
                                 android:text="@string/h110a" />
 
                             <RadioButton
                                 android:id="@+id/h110b"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.h110.equals("2")?true:false}'
+                                android:onClick='@{()->form.setH110("2")}'
                                 android:layout_weight="1"
                                 android:text="@string/h110b" />
 
@@ -335,6 +343,8 @@
                                 android:id="@+id/h111a"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.h111.equals("1")?true:false}'
+                                android:onClick='@{()->form.setH111("1")}'
                                 android:layout_weight="1"
                                 android:text="@string/h111a" />
 
@@ -342,6 +352,8 @@
                                 android:id="@+id/h111b"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.h111.equals("2")?true:false}'
+                                android:onClick='@{()->form.setH111("2")}'
                                 android:layout_weight="1"
                                 android:text="@string/h111b" />
 
@@ -525,6 +537,7 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     app:maxValue="31"
+                                    android:text="@={form.h203d}"
                                     app:minValue="1"
                                     app:type="range" />
 
@@ -539,6 +552,7 @@
                                     android:maxLength="2"
                                     app:maxValue="12"
                                     app:minValue="1"
+                                    android:text="@={form.h203m}"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -552,6 +566,7 @@
                                     android:maxLength="4"
                                     app:maxValue="1990"
                                     app:minValue="1900"
+                                    android:text="@={form.h203y}"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -612,6 +627,7 @@
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
+                                    android:text="@={form.h204}"
                                     app:maxValue="99"
                                     app:minValue="18"
                                     app:type="range" />

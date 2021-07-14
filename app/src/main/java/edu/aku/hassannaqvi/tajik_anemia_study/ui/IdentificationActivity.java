@@ -310,7 +310,7 @@ public class IdentificationActivity extends AppCompatActivity {
         switch (idType) {
             case 1:
                 form = new Form();
-                form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
+                form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
                 return form != null;
 
             //TODO: Antro & Samples will be multiple. Different logic will be required

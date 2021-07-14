@@ -113,6 +113,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(FormsTable.COLUMN_PROJECT_NAME, form.getProjectName());
         values.put(FormsTable.COLUMN_UID, form.getUid());
+        values.put(FormsTable.COLUMN_CLUSTER, form.getCluster());
+        values.put(FormsTable.COLUMN_HHID, form.getHhid());
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
         values.put(FormsTable.COLUMN_SH1, form.getsH1());
@@ -167,7 +169,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MWRAListTable.COLUMN_HHID, mwra.getHhid());
         values.put(MWRAListTable.COLUMN_USERNAME, mwra.getUserName());
         values.put(MWRAListTable.COLUMN_SYSDATE, mwra.getSysDate());
-        values.put(MWRAListTable.COLUMN_S1, mwra.getS1());
+
+        values.put(MWRAListTable.COLUMN_S1, mwra.s1toString()); // all JSON, get from toString
 
         values.put(MWRAListTable.COLUMN_DEVICEID, mwra.getDeviceId());
         values.put(MWRAListTable.COLUMN_DEVICETAGID, mwra.getDeviceTag());
@@ -1571,7 +1574,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = MWRAListTable.COLUMN_UID + "=?";
+        whereClause = MWRAListTable.COLUMN_UUID + "=?";
 
         String[] whereArgs = {uid};
 

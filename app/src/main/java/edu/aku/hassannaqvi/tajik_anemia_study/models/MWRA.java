@@ -11,6 +11,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
+
 import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.MWRAListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -55,6 +57,10 @@ public class MWRA extends BaseObservable {
     private String h226m = StringUtils.EMPTY;
     private String h226f = StringUtils.EMPTY;
     private String h227 = StringUtils.EMPTY;
+    //Not saving in DB
+    private final LocalDate localDate = null;
+    private final boolean exist = false;
+    private boolean expanded;
 
 
     public MWRA() {
@@ -114,6 +120,16 @@ public class MWRA extends BaseObservable {
     public void setHhid(String hhid) {
         this.hhid = hhid;
         notifyPropertyChanged(BR.hhid);
+    }
+
+    @Bindable
+    public boolean isExpanded() {
+        return expanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        this.expanded = expanded;
+        notifyPropertyChanged(BR.expanded);
     }
 
 

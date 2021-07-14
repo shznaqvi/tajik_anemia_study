@@ -67,11 +67,13 @@ public class Form extends BaseObservable {
     private String h103 = StringUtils.EMPTY;
     private String h104 = StringUtils.EMPTY;
     private String h105 = StringUtils.EMPTY;
-    private String h106d = StringUtils.EMPTY;
+    private String h106 = StringUtils.EMPTY;
+    private String h107 = StringUtils.EMPTY;
+    /*
     private String h106m = StringUtils.EMPTY;
     private String h106y = StringUtils.EMPTY;
     private String h107h = StringUtils.EMPTY;
-    private String h107m = StringUtils.EMPTY;
+    private String h107m = StringUtils.EMPTY;*/
     private String h108 = StringUtils.EMPTY;
     private String h109 = StringUtils.EMPTY;
     private String h110 = StringUtils.EMPTY;
@@ -1164,7 +1166,7 @@ public class Form extends BaseObservable {
 
     public void setH103(String h103) {
         this.h103 = h103;
-        this.cluster = h103;
+        setCluster(h103);
         notifyPropertyChanged(BR.h103);
     }
 
@@ -1175,7 +1177,7 @@ public class Form extends BaseObservable {
 
     public void setH104(String h104) {
         this.h104 = h104;
-        this.hhid = h104;
+        setHhid(h104);
         notifyPropertyChanged(BR.h104);
     }
 
@@ -1190,46 +1192,46 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getH106d() {
-        return h106d;
+    public String getH106() {
+        return h106;
     }
 
-    public void setH106d(String h106d) {
-        this.h106d = h106d;
-        notifyPropertyChanged(BR.h106d);
+    public void setH106(String h106) {
+        this.h106 = h106;
+        notifyPropertyChanged(BR.h106);
     }
 
+    /*  @Bindable
+      public String getH106m() {
+          return h106m;
+      }
+
+      public void setH106m(String h106m) {
+          this.h106m = h106m;
+          notifyPropertyChanged(BR.h106m);
+      }
+
+      @Bindable
+      public String getH106y() {
+          return h106y;
+      }
+
+      public void setH106y(String h106y) {
+          this.h106y = h106y;
+          notifyPropertyChanged(BR.h106y);
+      }
+  */
     @Bindable
-    public String getH106m() {
-        return h106m;
+    public String getH107() {
+        return h107;
     }
 
-    public void setH106m(String h106m) {
-        this.h106m = h106m;
-        notifyPropertyChanged(BR.h106m);
+    public void setH107(String h107) {
+        this.h107 = h107;
+        notifyPropertyChanged(BR.h107);
     }
 
-    @Bindable
-    public String getH106y() {
-        return h106y;
-    }
-
-    public void setH106y(String h106y) {
-        this.h106y = h106y;
-        notifyPropertyChanged(BR.h106y);
-    }
-
-    @Bindable
-    public String getH107h() {
-        return h107h;
-    }
-
-    public void setH107h(String h107h) {
-        this.h107h = h107h;
-        notifyPropertyChanged(BR.h107h);
-    }
-
-    @Bindable
+/*    @Bindable
     public String getH107m() {
         return h107m;
     }
@@ -1237,7 +1239,7 @@ public class Form extends BaseObservable {
     public void setH107m(String h107m) {
         this.h107m = h107m;
         notifyPropertyChanged(BR.h107m);
-    }
+    }*/
 
     @Bindable
     public String getH108() {
@@ -8924,11 +8926,11 @@ public class Form extends BaseObservable {
                 this.h103 = json.getString("h103");
                 this.h104 = json.getString("h104");
                 this.h105 = json.getString("h105");
-                this.h106d = json.getString("h106d");
-                this.h106m = json.getString("h106m");
-                this.h106y = json.getString("h106y");
-                this.h107h = json.getString("h107h");
-                this.h107m = json.getString("h107m");
+                this.h106 = json.getString("h106d");
+             /*   this.h106m = json.getString("h106m");
+                this.h106y = json.getString("h106y");*/
+                this.h107 = json.getString("h107");
+                /*  this.h107m = json.getString("h107m");*/
                 this.h108 = json.getString("h108");
                 this.h109 = json.getString("h109");
                 this.h110 = json.getString("h110");
@@ -9885,12 +9887,12 @@ public class Form extends BaseObservable {
                 .put("h103", h103)
                 .put("h104", h104)
                 .put("h105", h105)
-                .put("h106d", h106d)
-                .put("h106m", h106m)
-                    .put("h106y", h106y)
-                    .put("h107h", h107h)
-                    .put("h107m", h107m)
-                    .put("h108", h108)
+                .put("h106d", h106)
+                /*   .put("h106m", h106m)
+                       .put("h106y", h106y)*/
+                .put("h107", h107)
+                /*    .put("h107m", h107m)*/
+                .put("h108", h108)
                     .put("h109", h109)
                     .put("h110", h110)
                     .put("h111", h111)
