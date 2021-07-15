@@ -194,10 +194,22 @@ public class MwraListActivity extends AppCompatActivity {
 
     public void btnRand(View view) {
 
+        for (int i = 0; i < mwraList.size(); i++) {
+
+            MainApp.mwra = mwraList.get(i);
+
+            db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_INDEXED, "");
+
+            mwraList.get(i).setIndexed("");
+            mwraAdapter.notifyItemChanged(i);
+
+        }
+
         Random r = new Random();
         int totalMwra = MainApp.mwraList.size();
 
         int indx = r.nextInt(totalMwra);
+        MainApp.selectedFemale = indx;
 
         // Updating database to mark indexed mother
         MainApp.mwra = mwraList.get(indx);

@@ -49,6 +49,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
         TextView fAge = viewHolder.fAge;
         TextView fMaritalStatus = viewHolder.fMatitalStatus;
         View indicator = viewHolder.indicator;
+        View cloaked = viewHolder.cloaked;
 
         //String pregStatus = mwra.getRb07().equals("1") ? "Pregnant" : "Not Pregnant";
 
@@ -74,6 +75,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
 
 */
         indicator.setBackgroundColor(mwra.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : mContext.getResources().getColor(R.color.gray));
+        cloaked.setVisibility(mwra.getIndexed().equals("1") ? View.GONE : View.VISIBLE);
 
         fMaritalStatus.setText("Children: " + mwra.getH226m() + " boy(s), " + mwra.getH226f() + " girl(s)");
       /*  viewHolder.itemView.setOnClickListener(v -> {
@@ -119,6 +121,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
         private final TextView secStatus;
         private final ImageView fmRow;
         private final View indicator;
+        private final View cloaked;
 
 
         public ViewHolder(View v) {
@@ -129,6 +132,7 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
             secStatus = v.findViewById(R.id.secStatus);
             fmRow = v.findViewById(R.id.fmRow);
             indicator = v.findViewById(R.id.indicator);
+            cloaked = v.findViewById(R.id.cloaked);
 
         }
 
