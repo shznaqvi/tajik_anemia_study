@@ -59,6 +59,7 @@ object CreateTable {
             + MWRAListTable.COLUMN_HHID + " TEXT,"
             + MWRAListTable.COLUMN_USERNAME + " TEXT,"
             + MWRAListTable.COLUMN_SYSDATE + " TEXT,"
+            + MWRAListTable.COLUMN_INDEXED + " TEXT,"
             + MWRAListTable.COLUMN_ISTATUS + " TEXT,"
             + MWRAListTable.COLUMN_DEVICEID + " TEXT,"
             + MWRAListTable.COLUMN_DEVICETAGID + " TEXT,"

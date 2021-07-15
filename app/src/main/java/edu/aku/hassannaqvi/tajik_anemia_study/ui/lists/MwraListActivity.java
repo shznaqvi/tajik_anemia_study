@@ -18,10 +18,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.adapters.MWRAAdapter;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMwraListBinding;
@@ -30,7 +32,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2cActivity;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwraList;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.selectedFemale;
+
 
 public class MwraListActivity extends AppCompatActivity {
 
@@ -91,7 +95,10 @@ public class MwraListActivity extends AppCompatActivity {
         MainApp.childCount = new ArrayList<>();
         Log.d(TAG, "onCreate: mwralist " + MainApp.mwraList.size());
         MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
+        MainApp.childList = db.getChildBYUID(MainApp.form.getUid());
+
         MainApp.mwraCount = Math.round(MainApp.mwraList.size());
+        MainApp.childCount.add(Math.round(MainApp.childList.size()));
 
         mwraAdapter = new MWRAAdapter(this, MainApp.mwraList);
         bi.rvMwra.setAdapter(mwraAdapter);
@@ -159,7 +166,7 @@ public class MwraListActivity extends AppCompatActivity {
 
     }
 
-    public void BtnEnd(View view) {
+    public void btnEnd(View view) {
 
         finish();
         startActivity(new Intent(this, MainActivity.class));
@@ -176,12 +183,42 @@ public class MwraListActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_OK) {
                 //   mwra.get(selectedFemale).setExpanded(false);
                 checkCompleteFm();
-                mwraAdapter.notifyItemChanged(MainApp.selectedFemale);
+                mwraAdapter.notifyItemChanged(selectedFemale);
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 // Write your code if there's no result
-                Toast.makeText(this, "Child for " + MainApp.mwraList.get(MainApp.selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Child for " + MainApp.mwraList.get(selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void btnRand(View view) {
+
+        for (int i = 0; i < mwraList.size(); i++) {
+
+            MainApp.mwra = mwraList.get(i);
+
+            db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_INDEXED, "");
+
+            mwraList.get(i).setIndexed("");
+            mwraAdapter.notifyItemChanged(i);
+
+        }
+
+        Random r = new Random();
+        int totalMwra = MainApp.mwraList.size();
+
+        int indx = r.nextInt(totalMwra);
+        MainApp.selectedFemale = indx;
+
+        // Updating database to mark indexed mother
+        MainApp.mwra = mwraList.get(indx);
+        db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_INDEXED, "1");
+
+        // Updating adapter
+        mwraList.get(indx).setIndexed("1");
+        mwraAdapter.notifyItemChanged(indx);
+
+
     }
 }

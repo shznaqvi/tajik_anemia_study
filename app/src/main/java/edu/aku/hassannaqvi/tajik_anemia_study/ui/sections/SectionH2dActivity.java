@@ -30,6 +30,7 @@ public class SectionH2dActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2d);
+        bi.setChild(child);
         bi.setCallback(this);
 
         db = MainApp.appInfo.dbHelper;
