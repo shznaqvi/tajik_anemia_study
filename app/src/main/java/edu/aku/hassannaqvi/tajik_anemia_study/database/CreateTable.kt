@@ -82,6 +82,8 @@ object CreateTable {
             + ChildListTable.COLUMN_HHID + " TEXT,"
             + ChildListTable.COLUMN_USERNAME + " TEXT,"
             + ChildListTable.COLUMN_SYSDATE + " TEXT,"
+            + ChildListTable.COLUMN_AGE + " TEXT,"
+            + ChildListTable.COLUMN_INDEX + " TEXT,"
             + ChildListTable.COLUMN_ISTATUS + " TEXT,"
             + ChildListTable.COLUMN_DEVICEID + " TEXT,"
             + ChildListTable.COLUMN_DEVICETAGID + " TEXT,"

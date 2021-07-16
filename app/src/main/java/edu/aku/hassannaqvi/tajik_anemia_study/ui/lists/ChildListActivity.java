@@ -18,28 +18,25 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
-import edu.aku.hassannaqvi.tajik_anemia_study.adapters.MWRAAdapter;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
+import edu.aku.hassannaqvi.tajik_anemia_study.adapters.ChildAdapter;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMwraListBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2cActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityChildListBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2dActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH3aActivity;
 
 
-
-public class MwraListActivity extends AppCompatActivity {
+public class ChildListActivity extends AppCompatActivity {
 
 
     private static final String TAG = "MwraActivity";
-    ActivityMwraListBinding bi;
+    ActivityChildListBinding bi;
     DatabaseHelper db;
-    private MWRAAdapter mwraAdapter;
+    private ChildAdapter childAdapter;
     ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -48,7 +45,7 @@ public class MwraListActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK) {
                         // There are no request codes
                         //Intent data = result.getData();
-                        Intent data = result.getData();
+                        // Intent data = result.getData();
                       /*  int age = Integer.parseInt(femalemembers.getHh05y());
                         boolean isFemale = femalemembers.getHh03().equals("2");
                         boolean notMarried = femalemembers.getHh06().equals("2");
@@ -60,10 +57,10 @@ public class MwraListActivity extends AppCompatActivity {
                                         (age >= 14 && age < 50 && !notMarried && isFemale )
 
                         ) {*/
-                        MainApp.mwraList.add(MainApp.mwra);
+                        MainApp.childList.add(MainApp.child);
 
-                        MainApp.mwraCount++;
-                        mwraAdapter.notifyItemInserted(MainApp.mwraList.size() - 1);
+                        MainApp.childCount++;
+                        childAdapter.notifyItemInserted(MainApp.childList.size() - 1);
                         //  Collections.sort(MainApp.fm, new SortByStatus());
                         //fmAdapter.notifyDataSetChanged();
 
@@ -72,7 +69,7 @@ public class MwraListActivity extends AppCompatActivity {
                         checkCompleteFm();
                     }
                     if (result.getResultCode() == Activity.RESULT_CANCELED) {
-                        Toast.makeText(MwraListActivity.this, "No mwra added.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ChildListActivity.this, "No child added.", Toast.LENGTH_SHORT).show();
                     }
 
                 }
@@ -82,45 +79,40 @@ public class MwraListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_mwra);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_mwra_list);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_child_list);
         bi.setCallback(this);
+        bi.setMwra(MainApp.mwra);
 
         db = MainApp.appInfo.dbHelper;
-        MainApp.mwraList = new ArrayList<>();
-        Log.d(TAG, "onCreate: mwralist " + MainApp.mwraList.size());
-        MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
+        MainApp.childList = new ArrayList<>();
+        Log.d(TAG, "onCreate: childlist " + MainApp.childList.size());
+        MainApp.childList = db.getChildBYMUID(MainApp.mwra.getUid());
 
-        // Set Selected MWRA
-        for (int i = 0; i < MainApp.mwraList.size(); i++) {
-            if (MainApp.mwraList.get(i).getIndexed().equals("1")) {
-                MainApp.selectedFemale = String.valueOf(i);
+        // Set Selected Child
+        for (int i = 0; i < MainApp.childList.size(); i++) {
+            if (MainApp.childList.get(i).getIndexed().equals("1")) {
+                MainApp.selectedChild = String.valueOf(i);
                 break;
             }
         }
+        MainApp.childCount = Math.round(MainApp.childList.size());
 
-        bi.btnContinue.setEnabled(!MainApp.selectedFemale.equals(""));
-        bi.btnContinue.setVisibility(!MainApp.selectedFemale.equals("") ? View.VISIBLE : View.INVISIBLE);
-        MainApp.mwraCount = Math.round(MainApp.mwraList.size());
-
-        mwraAdapter = new MWRAAdapter(this, MainApp.mwraList);
-        bi.rvMwra.setAdapter(mwraAdapter);
-        bi.rvMwra.setLayoutManager(new LinearLayoutManager(this));
+        childAdapter = new ChildAdapter(this, MainApp.childList);
+        bi.rvChild.setAdapter(childAdapter);
+        bi.rvChild.setLayoutManager(new LinearLayoutManager(this));
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (MainApp.form.getiStatus().equals("")) {
-                    //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
-                    MainApp.mwra = new MWRA();
-                    addFemale();
-                } else {
-                    Toast.makeText(MwraListActivity.this, "This form has been locked. You cannot add new MWRA to locked forms", Toast.LENGTH_LONG).show();
-                }
+
+        fab.setOnClickListener(view -> {
+            if (MainApp.form.getiStatus().equals("")) {
+                //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
+                MainApp.child = new Child();
+                addChild();
+            } else {
+                Toast.makeText(ChildListActivity.this, "This form has been locked. You cannot add new children to locked forms", Toast.LENGTH_LONG).show();
             }
         });
-
 
     }
 
@@ -131,9 +123,12 @@ public class MwraListActivity extends AppCompatActivity {
 
         //MainApp.mwra = new MWRA();
         //MainApp.child = new Child();
-        if (MainApp.mwraList.size() > 0) {
+        if (MainApp.childList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
+            bi.btnContinue.setVisibility(View.VISIBLE);
+            bi.btnContinue.setEnabled(true);
             bi.btnRand.setVisibility(View.VISIBLE);
+
         }
         checkCompleteFm();
 
@@ -157,19 +152,18 @@ public class MwraListActivity extends AppCompatActivity {
         //   }
     }
 
-    public void addFemale() {
-        Intent intent = new Intent(this, SectionH2cActivity.class);
+    public void addChild() {
+        Intent intent = new Intent(this, SectionH2dActivity.class);
         //   finish();
         MemberInfoLauncher.launch(intent);
     }
 
     public void btnContinue(View view) {
 
-        //MainApp.mwra = MainApp.mwraList.get(Integer.parseInt(MainApp.selectedFemale));
-        MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
-        MainApp.mwraList = new ArrayList<>();
+        MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
+        MainApp.childList = new ArrayList<>();
         finish();
-        startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
+        startActivity(new Intent(this, SectionH3aActivity.class).putExtra("complete", true));
 
     }
 
@@ -180,6 +174,28 @@ public class MwraListActivity extends AppCompatActivity {
         /*   } else {
                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
            }*/
+    }
+
+
+    public void btnRand(View view) {
+        int aCount = 0;
+
+        String childUid = db.getYoungestChildByMUID(MainApp.mwra.getUid()).getUid();
+        for (int i = 0; i < MainApp.childList.size(); i++) {
+
+            // Get MWRA from list
+            String curChildUid = MainApp.childList.get(i).getUid();
+
+            // Unselect and Disable if MWRA has been previously selected and refused
+            if (childUid.equals(curChildUid)) {
+                MainApp.selectedChild = String.valueOf(i);
+                MainApp.childList.get(i).setIndexed("1");
+                childAdapter.notifyDataSetChanged();
+            }
+
+        }
+
+
     }
 
 /*    @Override
@@ -199,59 +215,4 @@ public class MwraListActivity extends AppCompatActivity {
         }
     }*/
 
-    public void btnRand(View view) {
-
-        int aCount = 0;
-        for (int i = 0; i < MainApp.mwraList.size(); i++) {
-
-            // Get MWRA from list
-            MainApp.mwra = MainApp.mwraList.get(i);
-
-            // Unselect and Disable if MWRA has been previously selected and refused
-            if (MainApp.mwra.getIndexed().equals("1")) {
-                db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_INDEXED, "-1");
-                MainApp.mwraList.get(i).setIndexed("-1");
-                mwraAdapter.notifyItemChanged(i);
-            }
-
-            // Count not refused and available mwra
-            if (MainApp.mwra.getIndexed().equals("") && MainApp.mwra.getH227().equals("1")) {
-                aCount++;
-            }
-        }
-
-        if (aCount < 1) {
-            Toast.makeText(this, "No MWRA available for selection.", Toast.LENGTH_LONG).show();
-            MainApp.selectedFemale = "";
-            bi.btnRand.setVisibility(View.INVISIBLE);
-            //bi.btnContinue.setVisibility(View.VISIBLE);
-            return;
-
-        }
-
-        Random r = new Random();
-        int indx = r.nextInt(MainApp.mwraCount);
-
-        MainApp.mwra = MainApp.mwraList.get(indx);
-        if (MainApp.mwra.getIndexed().equals("-1") || MainApp.mwra.getH227().equals("2")) {
-
-            // No MWRA selected because randomised and refused is already indexed or not available.
-            Toast.makeText(this, "No MWRA was selected.", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, MainApp.mwra.getH221() + " has been selected. Please continue.", Toast.LENGTH_LONG).show();
-            MainApp.selectedFemale = String.valueOf(indx);
-
-            // Updating database to mark indexed mother
-            db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_INDEXED, "1");
-
-            // Updating adapter
-            MainApp.mwraList.get(indx).setIndexed("1");
-            mwraAdapter.notifyItemChanged(indx);
-            bi.btnRand.setVisibility(View.INVISIBLE);
-            bi.btnContinue.setVisibility(View.VISIBLE);
-            bi.btnContinue.setEnabled(true);
-        }
-
-
-    }
 }

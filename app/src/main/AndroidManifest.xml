@@ -20,6 +20,7 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity android:name=".ui.lists.MwraListActivity"></activity>
+        <activity android:name=".ui.lists.ChildListActivity"></activity>
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
@@ -29,7 +30,7 @@
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/Theme.splashscreen"
             android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

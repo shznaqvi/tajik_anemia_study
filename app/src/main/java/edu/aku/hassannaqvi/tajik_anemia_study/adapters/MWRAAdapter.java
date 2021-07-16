@@ -74,9 +74,12 @@ public class MWRAAdapter extends RecyclerView.Adapter<MWRAAdapter.ViewHolder> {
 
 
 */
-        indicator.setBackgroundColor(mwra.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : mContext.getResources().getColor(R.color.gray));
-        cloaked.setVisibility(mwra.getIndexed().equals("1") ? View.GONE : View.VISIBLE);
 
+        cloaked.setVisibility(mwra.getH227().equals("1") ? View.GONE : View.VISIBLE);
+        indicator.setBackgroundColor(mwra.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : mContext.getResources().getColor(R.color.gray));
+        if (!MainApp.selectedFemale.equals("")) {
+            cloaked.setVisibility(mwra.getIndexed().equals("1") ? View.GONE : View.VISIBLE);
+        }
         fMaritalStatus.setText("Children: " + mwra.getH226m() + " boy(s), " + mwra.getH226f() + " girl(s)");
       /*  viewHolder.itemView.setOnClickListener(v -> {
             // Get the current state of the item

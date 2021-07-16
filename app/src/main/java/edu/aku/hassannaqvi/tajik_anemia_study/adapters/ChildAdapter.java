@@ -51,10 +51,11 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         TextView fAge = viewHolder.fAge;
         // LinearLayout subItem = viewHolder.subItem;
         ImageView fmRow = viewHolder.fmRow;
+        ImageView mainIcon = viewHolder.mainIcon;
         // TextView addSec = viewHolder.addSec;
         TextView fMaritalStatus = viewHolder.fMatitalStatus;
         TextView secStatus = viewHolder.secStatus;
-        // View indicator = viewHolder.indicator;
+        View cloak = viewHolder.cloak;
 
         //int mStatus = Integer.parseInt(mwra.getHh06());
         // int age = Integer.parseInt(mwra.getH223());
@@ -80,7 +81,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
                 : "< Pending! >");
         completeCount += (mwra.getStatus().equals("1") || mCate == 0 ? 1 : 0);
         //MainApp.fmCountComplete = completeCount;*/
-        MainApp.childComplete = completeCount == MainApp.childCount.get(position);
+        MainApp.childComplete = completeCount == MainApp.childCount;
        /* secStatus.setBackgroundColor(mwra.getStatus().equals("1") || mCate == 0 ? mContext.getResources().getColor(R.color.redDark) : mContext.getResources().getColor(R.color.green));
         addSec.setClickable((!mwra.getStatus().equals("1") || mCate == 0) && mPresent);*/
 
@@ -91,7 +92,12 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
 
         fName.setText(child.getH229());
         fAge.setText(child.getH231y() + " | " + (child.getH232().equals("1") ? "Boy" : "Girl"));
-
+        mainIcon.setImageResource((child.getH232().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
+        mainIcon.setBackgroundColor(child.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : (child.getH232().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)));
+        cloak.setVisibility(View.GONE);
+        if (!MainApp.selectedChild.equals("")) {
+            cloak.setVisibility(child.getIndexed().equals("1") ? View.GONE : View.VISIBLE);
+        }
 
         //  indicator.setBackgroundColor(mCate == 1 ? mContext.getResources().getColor(R.color.redDark) : mCate == 2 ? mContext.getResources().getColor(R.color.colorPink) : mCate == 3 ? mContext.getResources().getColor(R.color.colorPrimary) : mContext.getResources().getColor(R.color.gray));
         //   indicator.setBackgroundColor(mwra.getStatus().equals("1") || mCate == 0 ? mContext.getResources().getColor(R.color.gray):indicator.getDrawingCacheBackgroundColor());
@@ -184,7 +190,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         // Create a new view.
         // Context context = parent.getContext();
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.mother_row, viewGroup, false);
+                .inflate(R.layout.child_row, viewGroup, false);
 
         return new ViewHolder(v);
     }
@@ -208,7 +214,8 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         //private final TextView addSec;
         //private final LinearLayout subItem;
         private final ImageView fmRow;
-        // private final View indicator;
+        private final ImageView mainIcon;
+        private final View cloak;
 
 
         public ViewHolder(View v) {
@@ -220,7 +227,8 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             //  addSec = v.findViewById(R.id.cadd_section);
             //  subItem = v.findViewById(R.id.csubitem);
             fmRow = v.findViewById(R.id.cfmRow);
-            // indicator = v.findViewById(R.id.cindicator);
+            mainIcon = v.findViewById(R.id.mainIcon);
+            cloak = v.findViewById(R.id.cloaked);
             // Define click listener for the ViewHolder's View.
 
             v.setOnClickListener(new View.OnClickListener() {

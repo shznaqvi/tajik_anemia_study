@@ -10,7 +10,6 @@ import android.view.View;
 import org.json.JSONArray;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BuildConfig;
@@ -69,8 +68,9 @@ public class MainApp extends Application {
     public static List<MWRA> mwraList;
     public static List<Child> childList;
     public static int mwraCount = 0;
-    public static ArrayList<Integer> childCount = new ArrayList<>();
-    public static int selectedFemale;
+    public static int childCount = 0;
+    public static String selectedFemale = "";
+    public static String selectedChild = "";
     public static int mwraCountComplete = 0;
     public static int childCountComplete = 0;
 

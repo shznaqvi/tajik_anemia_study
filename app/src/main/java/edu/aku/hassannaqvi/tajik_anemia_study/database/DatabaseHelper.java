@@ -199,6 +199,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildListTable.COLUMN_HHID, child.getHhid());
         values.put(ChildListTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildListTable.COLUMN_SYSDATE, child.getSysDate());
+        values.put(ChildListTable.COLUMN_AGE, child.getAge());
+        values.put(ChildListTable.COLUMN_INDEX, child.getIndexed());
         values.put(ChildListTable.COLUMN_S1, child.s1toString());
 
         values.put(MWRAListTable.COLUMN_DEVICEID, child.getDeviceId());
@@ -1612,15 +1614,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mwraByUID;
     }
 
-    public List<Child> getChildBYUID(String uid) {
+    public List<Child> getChildBYMUID(String muid) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
 
         String whereClause;
-        whereClause = ChildListTable.COLUMN_UUID + "=?";
+        whereClause = ChildListTable.COLUMN_MUID + "=?";
 
-        String[] whereArgs = {uid};
+        String[] whereArgs = {muid};
 
         String groupBy = null;
         String having = null;
@@ -1652,5 +1654,88 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return childByUID;
+    }
+
+    public Child getYoungestChildByMUID(String muid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildListTable.COLUMN_MUID + "=?";
+
+        String[] whereArgs = {muid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildListTable.COLUMN_AGE + " ASC";
+        String limit = "1";
+
+        Child child = new Child();
+        try {
+            c = db.query(
+                    ChildListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy,
+                    limit// The sort order
+            );
+            while (c.moveToNext()) {
+                child = new Child().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return child;
+    }
+
+    public MWRA getSelectedMwraBYUID(String uid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = MWRAListTable.COLUMN_UUID + "=? AND "
+                + MWRAListTable.COLUMN_INDEXED + "=?";
+
+        String[] whereArgs = {uid, "1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = MWRAListTable.COLUMN_ID + " ASC";
+
+        MWRA mwraByUID = new MWRA();
+        try {
+            c = db.query(
+                    MWRAListTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                mwraByUID = new MWRA().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return mwraByUID;
     }
 }

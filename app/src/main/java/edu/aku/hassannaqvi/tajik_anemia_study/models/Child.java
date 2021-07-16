@@ -31,6 +31,7 @@ public class Child extends BaseObservable {
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
+    private String age = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
@@ -55,6 +56,7 @@ public class Child extends BaseObservable {
     private String h231d = StringUtils.EMPTY;
     private String h232 = StringUtils.EMPTY;
     private String h233 = StringUtils.EMPTY;
+    private String indexed = StringUtils.EMPTY;
 
 
     public Child() {
@@ -141,6 +143,13 @@ public class Child extends BaseObservable {
         this.sysDate = sysDate;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public String getDeviceId() {
         return deviceId;
@@ -215,6 +224,15 @@ public class Child extends BaseObservable {
         this.s1 = s1;
     }
 
+    @Bindable
+    public String getIndexed() {
+        return indexed;
+    }
+
+    public void setIndexed(String Indexed) {
+        this.indexed = Indexed;
+        notifyPropertyChanged(BR.indexed);
+    }
 
     @Bindable
     public String getH228() {
@@ -326,6 +344,8 @@ public class Child extends BaseObservable {
         this.hhid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_SYSDATE));
+        this.age = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_AGE));
+        this.indexed = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_INDEX));
         this.deviceId = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_APPVERSION));
@@ -394,6 +414,8 @@ public class Child extends BaseObservable {
             json.put(ChildListTable.COLUMN_HHID, this.hhid);
             json.put(ChildListTable.COLUMN_USERNAME, this.userName);
             json.put(ChildListTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(ChildListTable.COLUMN_AGE, this.age);
+            json.put(ChildListTable.COLUMN_INDEX, this.indexed);
             json.put(ChildListTable.COLUMN_DEVICEID, this.deviceId);
             json.put(ChildListTable.COLUMN_DEVICETAGID, this.deviceTag);
             json.put(ChildListTable.COLUMN_ISTATUS, this.iStatus);

@@ -10,12 +10,16 @@
         <item name="cardViewStyle">@style/CardView.Light</item>
         <item name="colorSecondaryVariant">@color/colorAccentLight</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowFullscreen">true</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
 
     <style name="AppThemeEnglish1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+
         <item name="fontFamily">@font/roboto</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -45,12 +49,15 @@
     </style>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+
         <item name="fontFamily">@font/roboto</item>
         <item name="android:layoutDirection">ltr</item>
         <item name="android:actionBarStyle">@style/topBarStyle</item>
     </style>
 
     <style name="AppThemeUrdu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
 
         <item name="android:fontFamily">@font/urdu_nastaleeq</item>
         <item name="android:textSize">16sp</item>
@@ -433,5 +440,10 @@
     <style name="CustomPopupTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorPrimary">@color/colorPrimary</item>
         <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="Theme.splashscreen" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowAnimationStyle">@drawable/splash_screen</item>
     </style>
 </resources>
