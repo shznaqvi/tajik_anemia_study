@@ -16,9 +16,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2dBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.child;
 
 
 public class SectionH2dActivity extends AppCompatActivity {
@@ -30,9 +28,8 @@ public class SectionH2dActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2d);
-        bi.setChild(child);
         bi.setCallback(this);
-
+        bi.setChild(MainApp.child);
         db = MainApp.appInfo.dbHelper;
 
         setupSkips();
@@ -79,17 +76,18 @@ public class SectionH2dActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
-        MainApp.child = new Child();
 
-        child.setUserName(MainApp.user.getUserName());
-        child.setSysDate(MainApp.form.getSysDate());
-        child.setDeviceId(MainApp.deviceid);
-        child.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-        child.setUuid(MainApp.form.getUid());
-        child.setMuid(MainApp.mwraList.get(MainApp.selectedFemale).getUid());
-        child.setCluster(MainApp.form.getCluster());
-        child.setHhid(MainApp.form.getHhid());
-        child.setiStatus("1");
+
+        MainApp.child.setUserName(MainApp.user.getUserName());
+        MainApp.child.setSysDate(MainApp.form.getSysDate());
+        MainApp.child.setAge(MainApp.child.getAge());
+        MainApp.child.setDeviceId(MainApp.deviceid);
+        MainApp.child.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+        MainApp.child.setUuid(MainApp.form.getUid());
+        MainApp.child.setMuid(MainApp.mwra.getUid());
+        MainApp.child.setCluster(MainApp.form.getCluster());
+        MainApp.child.setHhid(MainApp.form.getHhid());
+        //MainApp.child.setiStatus("1");
 
     }
 

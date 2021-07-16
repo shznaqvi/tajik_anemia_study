@@ -33,6 +33,7 @@ public class SectionH2bActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2b);
         bi.setCallback(this);
+        bi.setForm(form);
         setupSkips();
     }
 

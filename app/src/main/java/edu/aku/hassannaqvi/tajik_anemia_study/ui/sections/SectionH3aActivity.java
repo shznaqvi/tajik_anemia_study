@@ -37,6 +37,7 @@ public class SectionH3aActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h3a);
         bi.setCallback(this);
+        bi.setForm(form);
         setupSkips();
     }
 

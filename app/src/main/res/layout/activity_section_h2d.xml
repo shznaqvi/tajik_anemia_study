@@ -122,7 +122,7 @@
                             android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/h229"
-                            android:text="@{child.h229}"
+                            android:text="@={child.h229}"
                             android:maxLength="20" />
 
                     </LinearLayout>
@@ -203,7 +203,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
-                                android:text="@{child.h230d}"
+                                android:text="@={child.h230d}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -217,7 +217,7 @@
                                 android:maxLength="2"
                                 app:maxValue="12"
                                 app:minValue="1"
-                                android:text="@{child.h230m}"
+                                android:text="@={child.h230m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -231,7 +231,7 @@
                                 android:maxLength="4"
                                 app:maxValue="2021"
                                 app:minValue="2015"
-                                android:text="@{child.h230y}"
+                                android:text="@={child.h230y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -314,7 +314,7 @@
                                 android:maxLength="1"
                                 app:maxValue="4"
                                 app:minValue="0"
-                                android:text="@{child.h231y}"
+                                android:text="@={child.h231y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -327,7 +327,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="11"
-                                android:text="@{child.h231m}"
+                                android:text="@={child.h231m}"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -339,7 +339,7 @@
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
-                                android:text="@{child.h231d}"
+                                android:text="@={child.h231d}"
                                 android:maxLength="2"
                                 app:maxValue="29"
                                 app:minValue="0"

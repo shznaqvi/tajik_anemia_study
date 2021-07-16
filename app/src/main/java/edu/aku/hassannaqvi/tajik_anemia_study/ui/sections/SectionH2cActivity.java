@@ -85,7 +85,7 @@ public class SectionH2cActivity extends AppCompatActivity {
         mwra.setUserName(MainApp.user.getUserName());
         mwra.setSysDate(form.getSysDate());
         mwra.setDeviceId(MainApp.deviceid);
-        mwra.setiStatus("1");
+        // mwra.setiStatus("1");
         mwra.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
         // No need for this part after databinding
