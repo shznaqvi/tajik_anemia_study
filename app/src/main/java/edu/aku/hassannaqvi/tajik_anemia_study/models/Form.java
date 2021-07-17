@@ -8752,6 +8752,7 @@ public class Form extends BaseObservable {
 
     public void setC308(String c308) {
         this.c308 = c308;
+        setC30896x(c308.equals("96") ? this.c30896x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c308);
     }
 
@@ -8772,6 +8773,9 @@ public class Form extends BaseObservable {
 
     public void setC309(String c309) {
         this.c309 = c309;
+        setC309961x(c309.equals("961") ? this.c309961x : ""); // for all skips, mention all skipped questions
+        setC309962x(c309.equals("962") ? this.c309962x : ""); // for all skips, mention all skipped questions
+        setC309963x(c309.equals("963") ? this.c309963x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c309);
     }
 
