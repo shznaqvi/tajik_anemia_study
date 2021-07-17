@@ -11,10 +11,6 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -22,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH5Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
@@ -36,6 +31,7 @@ public class SectionH5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h5);
         bi.setCallback(this);
+        bi.setForm(MainApp.form);
         setupSkips();
     }
 
@@ -47,7 +43,7 @@ public class SectionH5Activity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH5, form.sH5toString());
+        long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH5, MainApp.form.sH5toString());
         if (updcount > 0) {
             return true;
         } else {
@@ -72,10 +68,10 @@ public class SectionH5Activity extends AppCompatActivity {
     private void saveDraft() {
         // MainApp.form = new Form();
 
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+/*        MainApp.form.setUserName(MainApp.user.getUserName());
+        MainApp.form.setSysDate(MainApp.form.getSysDate());
+        MainApp.form.setDeviceId(MainApp.deviceid);
+        MainApp.form.setAppver(MainApp.versionName + "." + MainApp.versionCode);*/
 
     }
 

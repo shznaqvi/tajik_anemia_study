@@ -2756,6 +2756,7 @@ public class Form extends BaseObservable {
 
     public void setH501(String h501) {
         this.h501 = h501;
+        setH50196x(h501.equals("96") ? this.h50196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h501);
     }
 

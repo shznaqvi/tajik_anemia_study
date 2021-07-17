@@ -12,10 +12,6 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -96,11 +92,11 @@ public class SectionH3aActivity extends AppCompatActivity {
     private void saveDraft() {
         //   MainApp.form = new Form();
 
-        form.setUserName(MainApp.user.getUserName());
+    /*    form.setUserName(MainApp.user.getUserName());
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-
+*/
     }
 
 

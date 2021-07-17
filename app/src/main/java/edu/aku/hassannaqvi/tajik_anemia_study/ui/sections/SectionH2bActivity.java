@@ -73,7 +73,7 @@ public class SectionH2bActivity extends AppCompatActivity {
 
     private void saveDraft() {
 
-        form.setH209(bi.h209.getText().toString().isEmpty() ? "-1" : bi.h209.getText().toString());
+     /*   form.setH209(bi.h209.getText().toString().isEmpty() ? "-1" : bi.h209.getText().toString());
 
         form.setH210(bi.h210a.isChecked() ? "1"
                 : bi.h210b.isChecked() ? "2"
@@ -116,7 +116,7 @@ public class SectionH2bActivity extends AppCompatActivity {
         form.setH219f(bi.h219f.getText().toString().isEmpty() ? "-1" : bi.h219f.getText().toString());
         form.setH220a(bi.h220a.getText().toString().isEmpty() ? "-1" : bi.h220a.getText().toString());
         form.setH220b(bi.h220b.getText().toString().isEmpty() ? "-1" : bi.h220b.getText().toString());
-        form.setH220c(bi.h220c.getText().toString().isEmpty() ? "-1" : bi.h220c.getText().toString());
+        form.setH220c(bi.h220c.getText().toString().isEmpty() ? "-1" : bi.h220c.getText().toString());*/
 
     }
 
