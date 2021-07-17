@@ -2154,10 +2154,12 @@ public class Form extends BaseObservable {
     }
 
     public void setH31396(String h31396) {
+
         if (this.h31396.equals(h31396)) return; // for all checkboxes
         this.h31396 = h31396;
         setH31396x(h31396.equals("96") ? this.h31396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h31396);
+        Log.d(TAG, "setH31396: " + this.h31396);
     }
 
     @Bindable
@@ -2753,6 +2755,7 @@ public class Form extends BaseObservable {
 
     public void setH501(String h501) {
         this.h501 = h501;
+        setH50196x(h501.equals("96") ? this.h50196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h501);
     }
 

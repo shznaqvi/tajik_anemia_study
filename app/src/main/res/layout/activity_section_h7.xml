@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Form" />
 
         <variable
             name="callback"
