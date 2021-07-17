@@ -16,7 +16,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2dBinding;
-
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
 
 
 public class SectionH2dActivity extends AppCompatActivity {
@@ -29,7 +29,11 @@ public class SectionH2dActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2d);
         bi.setCallback(this);
+
+        MainApp.child = new Child();  // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
         bi.setChild(MainApp.child);
+
+        // Always declair db in onCreate()
         db = MainApp.appInfo.dbHelper;
 
         setupSkips();
@@ -41,17 +45,17 @@ public class SectionH2dActivity extends AppCompatActivity {
     }
 
 
-    private boolean updateDB() {
-        long updcount = 0;
+    private boolean insertNewRecord() {
+        long rowId = 0;
         try {
-            updcount = db.addChildList(MainApp.child);
+            rowId = db.addChildList(MainApp.child);
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-        MainApp.child.setId(String.valueOf(updcount));
-        if (updcount > 0) {
+        MainApp.child.setId(String.valueOf(rowId));
+        if (rowId > 0) {
             MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
             db.updatesChildListColumn(TableContracts.ChildListTable.COLUMN_UID, MainApp.child.getUid());
             return true;
@@ -65,7 +69,7 @@ public class SectionH2dActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
-        if (updateDB()) {
+        if (insertNewRecord()) {
             setResult(RESULT_OK);
             finish();
             //  startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
@@ -77,6 +81,8 @@ public class SectionH2dActivity extends AppCompatActivity {
 
     private void saveDraft() {
 
+        // NEVER USE IT IN SAVEDRAFT()
+        // MainApp.child = new Child();
 
         MainApp.child.setUserName(MainApp.user.getUserName());
         MainApp.child.setSysDate(MainApp.form.getSysDate());

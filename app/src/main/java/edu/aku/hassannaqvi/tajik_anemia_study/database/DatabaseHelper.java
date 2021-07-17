@@ -299,17 +299,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addPregnancy(Pregnancy preg) {
+    public Long addPregnancy(Pregnancy preg) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(PregnancyTable.COLUMN_PROJECT_NAME, preg.getProjectName());
         values.put(PregnancyTable.COLUMN_UID, preg.getUid());
         values.put(PregnancyTable.COLUMN_UUID, preg.getUuid());
+        values.put(PregnancyTable.COLUMN_MUID, preg.getMuid());
         values.put(PregnancyTable.COLUMN_CLUSTER, preg.getCluster());
         values.put(PregnancyTable.COLUMN_HHID, preg.getHhid());
         values.put(PregnancyTable.COLUMN_USERNAME, preg.getUserName());
         values.put(PregnancyTable.COLUMN_SYSDATE, preg.getSysDate());
-        values.put(PregnancyTable.COLUMN_S1, preg.getS1());
+        values.put(PregnancyTable.COLUMN_S1, preg.s1toString());
 
         values.put(PregnancyTable.COLUMN_DEVICEID, preg.getDeviceId());
         values.put(PregnancyTable.COLUMN_DEVICETAGID, preg.getDeviceTag());
@@ -1737,5 +1738,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return mwraByUID;
+    }
+
+    public List<Pregnancy> getPregBYMUID(String muid) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = PregnancyTable.COLUMN_MUID + "=?";
+
+        String[] whereArgs = {muid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = PregnancyTable.COLUMN_ID + " ASC";
+
+        ArrayList<Pregnancy> pregByUID = new ArrayList<>();
+        try {
+            c = db.query(
+                    PregnancyTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Pregnancy preg = new Pregnancy().Hydrate(c);
+
+                pregByUID.add(preg);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return pregByUID;
     }
 }

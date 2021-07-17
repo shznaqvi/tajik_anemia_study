@@ -164,6 +164,7 @@ object CreateTable {
             + PregnancyTable.COLUMN_PROJECT_NAME + " TEXT,"
             + PregnancyTable.COLUMN_UID + " TEXT,"
             + PregnancyTable.COLUMN_UUID + " TEXT,"
+            + PregnancyTable.COLUMN_MUID + " TEXT,"
             + PregnancyTable.COLUMN_CLUSTER + " TEXT,"
             + PregnancyTable.COLUMN_HHID + " TEXT,"
             + PregnancyTable.COLUMN_USERNAME + " TEXT,"

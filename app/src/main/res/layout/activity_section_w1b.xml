@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+        <variable
+            name="preg"
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy" />
 
         <variable
             name="callback"
@@ -87,6 +87,7 @@
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
+                            android:text="@={preg.w113}"
                             app:minValue="1"
                             app:type="range" />
 
@@ -168,6 +169,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                android:text="@={preg.w114d}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -181,6 +183,7 @@
                                 android:maxLength="2"
                                 app:maxValue="12"
                                 app:minValue="1"
+                                android:text="@={preg.w114m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -194,6 +197,7 @@
                                 android:maxLength="4"
                                 app:maxValue="2021"
                                 app:minValue="2015"
+                                android:text="@={preg.w114y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -241,36 +245,48 @@
                                 android:id="@+id/w115a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("1")?true:false}'
+                                android:onClick='@{()->preg.setW115("1")}'
                                 android:text="@string/w115a" />
 
                             <RadioButton
                                 android:id="@+id/w115b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("2")?true:false}'
+                                android:onClick='@{()->preg.setW115("2")}'
                                 android:text="@string/w115b" />
 
                             <RadioButton
                                 android:id="@+id/w115c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("3")?true:false}'
+                                android:onClick='@{()->preg.setW115("3")}'
                                 android:text="@string/w115c" />
 
                             <RadioButton
                                 android:id="@+id/w115d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("4")?true:false}'
+                                android:onClick='@{()->preg.setW115("4")}'
                                 android:text="@string/w115d" />
 
                             <RadioButton
                                 android:id="@+id/w115e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("5")?true:false}'
+                                android:onClick='@{()->preg.setW115("5")}'
                                 android:text="@string/w115e" />
 
                             <RadioButton
                                 android:id="@+id/w115f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w115.equals("6")?true:false}'
+                                android:onClick='@{()->preg.setW115("6")}'
                                 android:text="@string/w115f" />
 
                         </RadioGroup>
@@ -320,6 +336,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w116.equals("1")?true:false}'
+                                android:onClick='@{()->preg.setW116("1")}'
                                 android:text="@string/w116a" />
 
                             <RadioButton
@@ -327,6 +345,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{preg.w116.equals("2")?true:false}'
+                                android:onClick='@{()->preg.setW116("2")}'
                                 android:text="@string/w116b" />
 
                         </RadioGroup>
@@ -409,6 +429,7 @@
                                 android:maxLength="1"
                                 app:maxValue="5"
                                 app:minValue="0"
+                                android:text="@={preg.w117y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -422,6 +443,7 @@
                                 android:maxLength="2"
                                 app:maxValue="11"
                                 app:minValue="0"
+                                android:text="@={preg.w117m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -435,6 +457,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                android:text="@={preg.w117d}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -517,6 +540,7 @@
                                 android:maxLength="1"
                                 app:maxValue="5"
                                 app:minValue="0"
+                                android:text="@={preg.w118y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -530,6 +554,7 @@
                                 android:maxLength="2"
                                 app:maxValue="11"
                                 app:minValue="0"
+                                android:text="@={preg.w118m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -543,6 +568,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                android:text="@={preg.w118d}"
                                 app:type="range" />
 
                         </LinearLayout>
