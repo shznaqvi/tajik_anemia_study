@@ -6718,6 +6718,8 @@ public class Form extends BaseObservable {
         this.c20301b = c20301b;
         notifyPropertyChanged(BR.c20301b);
     }
+    
+    
 
     @Bindable
     public String getC20301ba() {
@@ -6725,9 +6727,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301ba(String c20301ba) {
+        if (this.c20301ba.equals(c20301ba)) return; // for all checkboxes
         this.c20301ba = c20301ba;
         notifyPropertyChanged(BR.c20301ba);
     }
+    
 
     @Bindable
     public String getC20301bb() {
@@ -6735,9 +6739,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301bb(String c20301bb) {
+        if (this.c20301bb.equals(c20301bb)) return; // for all checkboxes
         this.c20301bb = c20301bb;
         notifyPropertyChanged(BR.c20301bb);
     }
+    
 
     @Bindable
     public String getC20301bc() {
@@ -6745,9 +6751,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301bc(String c20301bc) {
+        if (this.c20301bc.equals(c20301bc)) return; // for all checkboxes
         this.c20301bc = c20301bc;
         notifyPropertyChanged(BR.c20301bc);
     }
+    
 
     @Bindable
     public String getC20301bd() {
@@ -6755,9 +6763,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301bd(String c20301bd) {
+        if (this.c20301bd.equals(c20301bd)) return; // for all checkboxes
         this.c20301bd = c20301bd;
         notifyPropertyChanged(BR.c20301bd);
     }
+    
 
     @Bindable
     public String getC20301be() {
@@ -6765,9 +6775,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301be(String c20301be) {
+        if (this.c20301be.equals(c20301be)) return; // for all checkboxes
         this.c20301be = c20301be;
         notifyPropertyChanged(BR.c20301be);
     }
+    
 
     @Bindable
     public String getC20301bf() {
@@ -6775,9 +6787,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301bf(String c20301bf) {
+        if (this.c20301bf.equals(c20301bf)) return; // for all checkboxes
         this.c20301bf = c20301bf;
         notifyPropertyChanged(BR.c20301bf);
     }
+    
 
     @Bindable
     public String getC20301bg() {
@@ -6785,9 +6799,12 @@ public class Form extends BaseObservable {
     }
 
     public void setC20301bg(String c20301bg) {
+        if (this.c20301bg.equals(c20301bg)) return; // for all checkboxes
         this.c20301bg = c20301bg;
         notifyPropertyChanged(BR.c20301bg);
     }
+    
+    
 
     @Bindable
     public String getC20302a() {
@@ -6809,15 +6826,19 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.c20302b);
     }
 
+
+
     @Bindable
     public String getC20302ba() {
         return c20302ba;
     }
 
     public void setC20302ba(String c20302ba) {
+        if (this.c20302ba.equals(c20302ba)) return; // for all checkboxes
         this.c20302ba = c20302ba;
         notifyPropertyChanged(BR.c20302ba);
     }
+
 
     @Bindable
     public String getC20302bb() {
@@ -6825,9 +6846,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302bb(String c20302bb) {
+        if (this.c20302bb.equals(c20302bb)) return; // for all checkboxes
         this.c20302bb = c20302bb;
         notifyPropertyChanged(BR.c20302bb);
     }
+
 
     @Bindable
     public String getC20302bc() {
@@ -6835,9 +6858,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302bc(String c20302bc) {
+        if (this.c20302bc.equals(c20302bc)) return; // for all checkboxes
         this.c20302bc = c20302bc;
         notifyPropertyChanged(BR.c20302bc);
     }
+
 
     @Bindable
     public String getC20302bd() {
@@ -6845,9 +6870,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302bd(String c20302bd) {
+        if (this.c20302bd.equals(c20302bd)) return; // for all checkboxes
         this.c20302bd = c20302bd;
         notifyPropertyChanged(BR.c20302bd);
     }
+
 
     @Bindable
     public String getC20302be() {
@@ -6855,9 +6882,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302be(String c20302be) {
+        if (this.c20302be.equals(c20302be)) return; // for all checkboxes
         this.c20302be = c20302be;
         notifyPropertyChanged(BR.c20302be);
     }
+
 
     @Bindable
     public String getC20302bf() {
@@ -6865,9 +6894,11 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302bf(String c20302bf) {
+        if (this.c20302bf.equals(c20302bf)) return; // for all checkboxes
         this.c20302bf = c20302bf;
         notifyPropertyChanged(BR.c20302bf);
     }
+
 
     @Bindable
     public String getC20302bg() {
@@ -6875,9 +6906,12 @@ public class Form extends BaseObservable {
     }
 
     public void setC20302bg(String c20302bg) {
+        if (this.c20302bg.equals(c20302bg)) return; // for all checkboxes
         this.c20302bg = c20302bg;
         notifyPropertyChanged(BR.c20302bg);
     }
+
+
 
     @Bindable
     public String getC20303a() {
