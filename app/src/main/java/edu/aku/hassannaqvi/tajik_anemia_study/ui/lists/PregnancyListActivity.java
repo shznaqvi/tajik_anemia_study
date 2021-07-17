@@ -21,23 +21,22 @@ import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
-import edu.aku.hassannaqvi.tajik_anemia_study.adapters.ChildAdapter;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
+import edu.aku.hassannaqvi.tajik_anemia_study.adapters.PregAdapter;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityChildListBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2dActivity;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH3aActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityPregnancyListBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionW1bActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionW2Activity;
 
 
-public class ChildListActivity extends AppCompatActivity {
+public class PregnancyListActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "MwraActivity";
-    ActivityChildListBinding bi;
+    private static final String TAG = "PregnancyListActivity";
+    ActivityPregnancyListBinding bi;
     DatabaseHelper db;
-    private ChildAdapter childAdapter;
+    private PregAdapter pregAdapter;
     ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -58,10 +57,10 @@ public class ChildListActivity extends AppCompatActivity {
                                         (age >= 14 && age < 50 && !notMarried && isFemale )
 
                         ) {*/
-                        MainApp.childList.add(MainApp.child);
+                        MainApp.pregList.add(MainApp.preg);
 
-                        MainApp.childCount++;
-                        childAdapter.notifyItemInserted(MainApp.childList.size() - 1);
+                        MainApp.pregCount++;
+                        pregAdapter.notifyItemInserted(MainApp.pregList.size() - 1);
                         //  Collections.sort(MainApp.fm, new SortByStatus());
                         //fmAdapter.notifyDataSetChanged();
 
@@ -70,7 +69,7 @@ public class ChildListActivity extends AppCompatActivity {
                         checkCompleteFm();
                     }
                     if (result.getResultCode() == Activity.RESULT_CANCELED) {
-                        Toast.makeText(ChildListActivity.this, "No child added.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PregnancyListActivity.this, "No preg added.", Toast.LENGTH_SHORT).show();
                     }
 
                 }
@@ -80,27 +79,27 @@ public class ChildListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_mwra);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_child_list);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_pregnancy_list);
         bi.setCallback(this);
         bi.setMwra(MainApp.mwra);
 
         db = MainApp.appInfo.dbHelper;
-        MainApp.childList = new ArrayList<>();
-        Log.d(TAG, "onCreate: childlist " + MainApp.childList.size());
-        MainApp.childList = db.getChildBYMUID(MainApp.mwra.getUid());
-
-        // Set Selected Child
-        for (int i = 0; i < MainApp.childList.size(); i++) {
-            if (MainApp.childList.get(i).getIndexed().equals("1")) {
-                MainApp.selectedChild = String.valueOf(i);
+        MainApp.pregList = new ArrayList<>();
+        Log.d(TAG, "onCreate: preglist " + MainApp.pregList.size());
+        MainApp.pregList = db.getPregBYMUID(MainApp.mwra.getUid());
+ /*
+        // Set Selected Preg
+        for (int i = 0; i < MainApp.pregList.size(); i++) {
+            if (MainApp.pregList.get(i).getIndexed().equals("1")) {
+                MainApp.selectedPreg = String.valueOf(i);
                 break;
             }
-        }
-        MainApp.childCount = Math.round(MainApp.childList.size());
+        }*/
+        MainApp.pregCount = Math.round(MainApp.pregList.size());
 
-        childAdapter = new ChildAdapter(this, MainApp.childList);
-        bi.rvChild.setAdapter(childAdapter);
-        bi.rvChild.setLayoutManager(new LinearLayoutManager(this));
+        pregAdapter = new PregAdapter(this, MainApp.pregList);
+        bi.rvPreg.setAdapter(pregAdapter);
+        bi.rvPreg.setLayoutManager(new LinearLayoutManager(this));
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -108,10 +107,10 @@ public class ChildListActivity extends AppCompatActivity {
         fab.setOnClickListener(view -> {
             if (MainApp.form.getiStatus().equals("")) {
                 //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
-                MainApp.child = new Child();
-                addChild();
+                MainApp.preg = new Pregnancy();
+                addPreg();
             } else {
-                Toast.makeText(ChildListActivity.this, "This form has been locked. You cannot add new children to locked forms", Toast.LENGTH_LONG).show();
+                Toast.makeText(PregnancyListActivity.this, "This form has been locked. You cannot add new pregren to locked forms", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -123,12 +122,12 @@ public class ChildListActivity extends AppCompatActivity {
         Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
         //MainApp.mwra = new MWRA();
-        //MainApp.child = new Child();
-        if (MainApp.childList.size() > 0) {
+        //MainApp.preg = new Preg();
+        if (MainApp.pregList.size() > 0) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
             bi.btnContinue.setVisibility(View.VISIBLE);
             bi.btnContinue.setEnabled(true);
-            bi.btnRand.setVisibility(View.VISIBLE);
+            //bi.btnRand.setVisibility(View.VISIBLE);
 
         }
         checkCompleteFm();
@@ -141,9 +140,9 @@ public class ChildListActivity extends AppCompatActivity {
 
     private void checkCompleteFm() {
         //     if (!MainApp.form.getIStatus().equals("1")) {
-        int compCount = MainApp.mwraList.size();
+        int compCount = MainApp.pregList.size();
 
-        MainApp.mwraCountComplete = compCount;
+        MainApp.pregCountComplete = compCount;
         //   bi.btnContinue.setVisibility(compCount == mwraCount && !form.getiStatus().equals("1")? View.VISIBLE : View.GONE);
      /*   bi.btnContinue.setVisibility(compCount >= mwraCount ? View.VISIBLE : View.GONE);
         bi.btnContinue.setEnabled(bi.btnContinue.getVisibility()==View.VISIBLE);*/
@@ -153,21 +152,18 @@ public class ChildListActivity extends AppCompatActivity {
         //   }
     }
 
-    public void addChild() {
-        Intent intent = new Intent(this, SectionH2dActivity.class);
+    public void addPreg() {
+        Intent intent = new Intent(this, SectionW1bActivity.class);
         //   finish();
         MemberInfoLauncher.launch(intent);
     }
 
     public void btnContinue(View view) {
 
-        MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
-        MainApp.childList = new ArrayList<>();
+        // MainApp.preg = db.getYoungestPregByMUID(MainApp.mwra.getUid());
+        MainApp.pregList = new ArrayList<>();
         finish();
-
-
-        startActivity(new Intent(this, SectionH3aActivity.class).putExtra("complete", true));
-        //startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
+        startActivity(new Intent(this, SectionW2Activity.class).putExtra("complete", true));
 
     }
 
@@ -181,35 +177,26 @@ public class ChildListActivity extends AppCompatActivity {
     }
 
 
-    public void btnRand(View view) {
+    /*public void btnRand(View view) {
         int aCount = 0;
 
-        String childUid = db.getYoungestChildByMUID(MainApp.mwra.getUid()).getUid();
-        for (int i = 0; i < MainApp.childList.size(); i++) {
+        String pregUid = db.getYoungestPregByMUID(MainApp.mwra.getUid()).getUid();
+        for (int i = 0; i < MainApp.pregList.size(); i++) {
 
-            MainApp.child = MainApp.childList.get(i);
-            // Get Child from list
-            String curChildUid = MainApp.child.getUid();
+            // Get MWRA from list
+            String curPregUid = MainApp.pregList.get(i).getUid();
 
             // Unselect and Disable if MWRA has been previously selected and refused
-            if (childUid.equals(curChildUid)) {
-                MainApp.selectedChild = String.valueOf(i);
-                MainApp.child.setIndexed("1");
-                childAdapter.notifyDataSetChanged();
-
-                // Updating database to mark indexed mother
-                db.updatesChildListColumn(TableContracts.ChildListTable.COLUMN_INDEX, "1");
-
-                // Updating adapter
-                bi.btnRand.setVisibility(View.INVISIBLE);
-                bi.btnContinue.setVisibility(View.VISIBLE);
-                bi.btnContinue.setEnabled(true);
+            if (pregUid.equals(curPregUid)) {
+                MainApp.selectedPreg = String.valueOf(i);
+                MainApp.pregList.get(i).setIndexed("1");
+                pregAdapter.notifyDataSetChanged();
             }
 
         }
 
 
-    }
+    }*/
 
 /*    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -223,7 +210,7 @@ public class ChildListActivity extends AppCompatActivity {
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 // Write your code if there's no result
-                Toast.makeText(this, "Child for " + MainApp.mwraList.get(selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Preg for " + MainApp.mwraList.get(selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
             }
         }
     }*/

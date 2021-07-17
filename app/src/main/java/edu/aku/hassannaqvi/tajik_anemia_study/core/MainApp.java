@@ -65,14 +65,19 @@ public class MainApp extends Application {
     public static int idType = 0;
     public static boolean mwraComplete;
     public static boolean childComplete;
+    public static boolean pregComplete;
     public static List<MWRA> mwraList;
     public static List<Child> childList;
+    public static List<Pregnancy> pregList;
     public static int mwraCount = 0;
     public static int childCount = 0;
+    public static int pregCount = 0;
     public static String selectedFemale = "";
     public static String selectedChild = "";
+    public static String selectedPreg = "";
     public static int mwraCountComplete = 0;
     public static int childCountComplete = 0;
+    public static int pregCountComplete = 0;
 
 
     public static void hideSystemUI(View decorView) {

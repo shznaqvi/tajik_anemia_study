@@ -437,7 +437,7 @@
                                 android:maxLength="2"
                                 app:maxValue="99"
                                 app:minValue="0"
-                                android:text="@={form.h211m}"
+                                android:text="@={form.h213m}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -466,7 +466,7 @@
                                 android:maxLength="2"
                                 app:maxValue="99"
                                 app:minValue="0"
-                                android:text="@={form.h211f}"
+                                android:text="@={form.h213f}"
                                 app:type="range" />
 
                         </LinearLayout>

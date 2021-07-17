@@ -26,6 +26,7 @@ public class Pregnancy extends BaseObservable {
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
     private String uuid = StringUtils.EMPTY;
+    private String muid = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
@@ -94,6 +95,14 @@ public class Pregnancy extends BaseObservable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public String getMuid() {
+        return muid;
+    }
+
+    public void setMuid(String muid) {
+        this.muid = muid;
     }
 
     @Bindable
@@ -333,6 +342,7 @@ public class Pregnancy extends BaseObservable {
         this.id = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_MUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_USERNAME));
@@ -376,26 +386,23 @@ public class Pregnancy extends BaseObservable {
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("w113", w113)
-                    .put("w114d", w114d)
-                    .put("w114m", w114m)
-                    .put("w114y", w114y)
-                    .put("w115", w115)
-                    .put("w116", w116)
-                    .put("w117y", w117y)
-                    .put("w117m", w117m)
-                    .put("w117d", w117d)
-                    .put("w118y", w118y)
-                    .put("w118m", w118m)
-                    .put("w118d", w118d);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
+        json.put("w113", w113)
+                .put("w114d", w114d)
+                .put("w114m", w114m)
+                .put("w114y", w114y)
+                .put("w115", w115)
+                .put("w116", w116)
+                .put("w117y", w117y)
+                .put("w117m", w117m)
+                .put("w117d", w117d)
+                .put("w118y", w118y)
+                .put("w118m", w118m)
+                .put("w118d", w118d);
+
         return json.toString();
     }
 
@@ -408,6 +415,7 @@ public class Pregnancy extends BaseObservable {
             json.put(PregnancyTable.COLUMN_ID, this.id);
             json.put(PregnancyTable.COLUMN_UID, this.uid);
             json.put(PregnancyTable.COLUMN_UUID, this.uuid);
+            json.put(PregnancyTable.COLUMN_MUID, this.muid);
             json.put(PregnancyTable.COLUMN_CLUSTER, this.cluster);
             json.put(PregnancyTable.COLUMN_HHID, this.hhid);
             json.put(PregnancyTable.COLUMN_USERNAME, this.userName);
