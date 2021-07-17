@@ -250,6 +250,7 @@ public class SectionC3Activity extends AppCompatActivity {
                 : "-1");
 
         form.setC31396x(bi.c31396x.getText().toString());
+
         form.setC314(bi.c314961.isChecked() ? "961"
                 : bi.c314962.isChecked() ? "962"
                 : bi.c314963.isChecked() ? "963"

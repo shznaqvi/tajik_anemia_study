@@ -2122,7 +2122,6 @@ public class Form extends BaseObservable {
 
     public void setH313d(String h313d) {
         if (this.h313d.equals(h313d)) return; // for all checkboxes
-
         this.h313d = h313d;
         notifyPropertyChanged(BR.h313d);
     }
@@ -2134,7 +2133,6 @@ public class Form extends BaseObservable {
 
     public void setH313e(String h313e) {
         if (this.h313e.equals(h313e)) return; // for all checkboxes
-
         this.h313e = h313e;
         notifyPropertyChanged(BR.h313e);
     }
@@ -2146,7 +2144,6 @@ public class Form extends BaseObservable {
 
     public void setH313f(String h313f) {
         if (this.h313f.equals(h313f)) return; // for all checkboxes
-
         this.h313f = h313f;
         notifyPropertyChanged(BR.h313f);
     }
@@ -8824,6 +8821,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310a(String c310a) {
+        if (this.c310a.equals(c310a)) return; // for all checkboxes
         this.c310a = c310a;
         notifyPropertyChanged(BR.c310a);
     }
@@ -8834,6 +8832,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310b(String c310b) {
+        if (this.c310b.equals(c310b)) return; // for all checkboxes
         this.c310b = c310b;
         notifyPropertyChanged(BR.c310b);
     }
@@ -8844,6 +8843,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310c(String c310c) {
+        if (this.c310c.equals(c310c)) return; // for all checkboxes
         this.c310c = c310c;
         notifyPropertyChanged(BR.c310c);
     }
@@ -8854,6 +8854,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310d(String c310d) {
+        if (this.c310d.equals(c310d)) return; // for all checkboxes
         this.c310d = c310d;
         notifyPropertyChanged(BR.c310d);
     }
@@ -8864,6 +8865,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310e(String c310e) {
+        if (this.c310e.equals(c310e)) return; // for all checkboxes
         this.c310e = c310e;
         notifyPropertyChanged(BR.c310e);
     }
@@ -8874,6 +8876,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310f(String c310f) {
+        if (this.c310f.equals(c310f)) return; // for all checkboxes
         this.c310f = c310f;
         notifyPropertyChanged(BR.c310f);
     }
@@ -8884,6 +8887,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC310g(String c310g) {
+        if (this.c310g.equals(c310g)) return; // for all checkboxes
         this.c310g = c310g;
         notifyPropertyChanged(BR.c310g);
     }
@@ -8894,7 +8898,9 @@ public class Form extends BaseObservable {
     }
 
     public void setC31096(String c31096) {
+        if (this.c31096.equals(c31096)) return; // for all checkboxes
         this.c31096 = c31096;
+        setC31096x(c31096.equals("96") ? this.c31096x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c31096);
     }
 
@@ -8935,6 +8941,7 @@ public class Form extends BaseObservable {
 
     public void setC313(String c313) {
         this.c313 = c313;
+        setC31396x(c313.equals("96") ? this.c31396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c313);
     }
 
@@ -8955,6 +8962,9 @@ public class Form extends BaseObservable {
 
     public void setC314(String c314) {
         this.c314 = c314;
+        setC314961x(c314.equals("961") ? this.c314961x : ""); // for all skips, mention all skipped questions
+        setC314962x(c314.equals("962") ? this.c314962x : ""); // for all skips, mention all skipped questions
+        setC314963x(c314.equals("963") ? this.c314963x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c314);
     }
 
@@ -9004,6 +9014,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315a(String c315a) {
+        if (this.c315a.equals(c315a)) return; // for all checkboxes
         this.c315a = c315a;
         notifyPropertyChanged(BR.c315a);
     }
@@ -9014,6 +9025,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315b(String c315b) {
+        if (this.c315b.equals(c315b)) return; // for all checkboxes
         this.c315b = c315b;
         notifyPropertyChanged(BR.c315b);
     }
@@ -9024,6 +9036,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315c(String c315c) {
+        if (this.c315c.equals(c315c)) return; // for all checkboxes
         this.c315c = c315c;
         notifyPropertyChanged(BR.c315c);
     }
@@ -9034,6 +9047,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315d(String c315d) {
+        if (this.c315d.equals(c315d)) return; // for all checkboxes
         this.c315d = c315d;
         notifyPropertyChanged(BR.c315d);
     }
@@ -9044,6 +9058,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315e(String c315e) {
+        if (this.c315e.equals(c315e)) return; // for all checkboxes
         this.c315e = c315e;
         notifyPropertyChanged(BR.c315e);
     }
@@ -9054,6 +9069,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315f(String c315f) {
+        if (this.c315f.equals(c315f)) return; // for all checkboxes
         this.c315f = c315f;
         notifyPropertyChanged(BR.c315f);
     }
@@ -9064,6 +9080,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315g(String c315g) {
+        if (this.c315g.equals(c315g)) return; // for all checkboxes
         this.c315g = c315g;
         notifyPropertyChanged(BR.c315g);
     }
@@ -9074,6 +9091,7 @@ public class Form extends BaseObservable {
     }
 
     public void setC315h(String c315h) {
+        if (this.c315h.equals(c315h)) return; // for all checkboxes
         this.c315h = c315h;
         notifyPropertyChanged(BR.c315h);
     }
@@ -9084,7 +9102,9 @@ public class Form extends BaseObservable {
     }
 
     public void setC31596(String c31596) {
+        if (this.c31596.equals(c31596)) return; // for all checkboxes
         this.c31596 = c31596;
+        setC31596x(c31596.equals("96") ? this.c31596x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.c31596);
     }
 
