@@ -176,26 +176,17 @@ public class SectionC3Activity extends AppCompatActivity {
         form.setC304961x(bi.c304961x.getText().toString());
         form.setC304962x(bi.c304962x.getText().toString());
         form.setC304963x(bi.c304963x.getText().toString());
+
         form.setC305a(bi.c305a.isChecked() ? "1" : "-1");
-
         form.setC305b(bi.c305b.isChecked() ? "2" : "-1");
-
         form.setC305c(bi.c305c.isChecked() ? "3" : "-1");
-
         form.setC305d(bi.c305d.isChecked() ? "4" : "-1");
-
         form.setC305e(bi.c305e.isChecked() ? "5" : "-1");
-
         form.setC305f(bi.c305f.isChecked() ? "6" : "-1");
-
         form.setC305g(bi.c305g.isChecked() ? "7" : "-1");
-
         form.setC305h(bi.c305h.isChecked() ? "8" : "-1");
-
         form.setC305i(bi.c305i.isChecked() ? "9" : "-1");
-
         form.setC305j(bi.c305j.isChecked() ? "10" : "-1");
-
         form.setC30596(bi.c30596.isChecked() ? "96" : "-1");
 
         form.setC30596x(bi.c30596x.getText().toString());
@@ -227,20 +218,14 @@ public class SectionC3Activity extends AppCompatActivity {
         form.setC309961x(bi.c309961x.getText().toString());
         form.setC309962x(bi.c309962x.getText().toString());
         form.setC309963x(bi.c309963x.getText().toString());
+
         form.setC310a(bi.c310a.isChecked() ? "1" : "-1");
-
         form.setC310b(bi.c310b.isChecked() ? "2" : "-1");
-
         form.setC310c(bi.c310c.isChecked() ? "3" : "-1");
-
         form.setC310d(bi.c310d.isChecked() ? "4" : "-1");
-
         form.setC310e(bi.c310e.isChecked() ? "5" : "-1");
-
         form.setC310f(bi.c310f.isChecked() ? "6" : "-1");
-
         form.setC310g(bi.c310g.isChecked() ? "7" : "-1");
-
         form.setC31096(bi.c31096.isChecked() ? "96" : "-1");
 
         form.setC31096x(bi.c31096x.getText().toString());
@@ -272,25 +257,19 @@ public class SectionC3Activity extends AppCompatActivity {
         form.setC314961x(bi.c314961x.getText().toString());
         form.setC314962x(bi.c314962x.getText().toString());
         form.setC314963x(bi.c314963x.getText().toString());
+
         form.setC315a(bi.c315a.isChecked() ? "1" : "-1");
-
         form.setC315b(bi.c315b.isChecked() ? "2" : "-1");
-
         form.setC315c(bi.c315c.isChecked() ? "3" : "-1");
-
         form.setC315d(bi.c315d.isChecked() ? "4" : "-1");
-
         form.setC315e(bi.c315e.isChecked() ? "5" : "-1");
-
         form.setC315f(bi.c315f.isChecked() ? "6" : "-1");
-
         form.setC315g(bi.c315g.isChecked() ? "7" : "-1");
-
         form.setC315h(bi.c315h.isChecked() ? "8" : "-1");
-
         form.setC31596(bi.c31596.isChecked() ? "96" : "-1");
 
         form.setC31596x(bi.c31596x.getText().toString());
+
         form.setC316(bi.c316a.isChecked() ? "1"
                 : bi.c316b.isChecked() ? "2"
                 : bi.c31698.isChecked() ? "98"
@@ -311,6 +290,7 @@ public class SectionC3Activity extends AppCompatActivity {
                 : "-1");
 
         form.setC320(bi.c320.getText().toString());
+
         form.setC321(bi.c321a.isChecked() ? "1"
                 : bi.c321b.isChecked() ? "2"
                 : bi.c321c.isChecked() ? "3"
