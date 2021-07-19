@@ -83,6 +83,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
 
     private void saveDraft() {
+/*
 
         form.setC201(bi.c201.getText().toString().trim().isEmpty() ? "-1" : bi.c201.getText().toString());
 
@@ -297,6 +298,7 @@ public class SectionC2Activity extends AppCompatActivity {
         form.setC204(bi.c204a.isChecked() ? "1"
                 : bi.c204b.isChecked() ? "2"
                 : "-1");
+*/
 
     }
 

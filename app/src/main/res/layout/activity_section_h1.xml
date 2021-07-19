@@ -844,8 +844,8 @@
                                     android:id="@+id/h20698"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.h206.equals("11")?true:false}'
-                                    android:onClick='@{()->form.setH206("11")}'
+                                    android:checked='@{form.h206.equals("98")?true:false}'
+                                    android:onClick='@{()->form.setH206("98")}'
                                     android:text="@string/h20698" />
 
                             </RadioGroup>
@@ -965,8 +965,8 @@
                                     android:id="@+id/h20798"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.h207.equals("10")?true:false}'
-                                    android:onClick='@{()->form.setH207("10")}'
+                                    android:checked='@{form.h207.equals("98")?true:false}'
+                                    android:onClick='@{()->form.setH207("98")}'
                                     android:text="@string/h20798" />
                             </RadioGroup>
                         </LinearLayout>

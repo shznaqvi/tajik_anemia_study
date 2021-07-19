@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2cBinding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
@@ -31,6 +32,7 @@ public class SectionH2cActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2c);
         bi.setCallback(this);
+        if (mwra == null) mwra = new MWRA();
         bi.setMwra(MainApp.mwra);
 
         setupSkips();

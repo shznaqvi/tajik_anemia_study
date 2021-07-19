@@ -12,15 +12,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH1Binding;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
@@ -36,6 +33,7 @@ public class SectionH1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h1);
         bi.setCallback(this);
+        if (form == null) form = new Form();
         bi.setForm(form);
         setupSkips();
 
@@ -100,23 +98,23 @@ public class SectionH1Activity extends AppCompatActivity {
 
     private void saveDraft() {
         //    MainApp.form = new Form();
-
+/*
         form.setUserName(MainApp.user.getUserName());
         form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         form.setDeviceId(MainApp.deviceid);
         form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
 
-       /* form.setH101(bi.h101.getSelectedItem().toString());
+       *//* form.setH101(bi.h101.getSelectedItem().toString());
         form.setH102(bi.h102.getSelectedItem().toString());
         form.setH103(bi.h103.getSelectedItem().toString());
-        form.setH104(bi.h104.getSelectedItem().toString());*/
+        form.setH104(bi.h104.getSelectedItem().toString());*//*
 
-       /* form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
+         *//* form.setH106d(bi.h106d.getText().toString().isEmpty() ? "-1" : bi.h106d.getText().toString());
         form.setH106m(bi.h106m.getText().toString().isEmpty() ? "-1" : bi.h106m.getText().toString());
         form.setH106y(bi.h106y.getText().toString().isEmpty() ? "-1" : bi.h106y.getText().toString());
         form.setH107h(bi.h107h.getText().toString().isEmpty() ? "-1" : bi.h107h.getText().toString());
-        form.setH107m(bi.h107m.getText().toString().isEmpty() ? "-1" : bi.h107m.getText().toString());*/
+        form.setH107m(bi.h107m.getText().toString().isEmpty() ? "-1" : bi.h107m.getText().toString());*//*
 
         form.setH108(bi.h106.getText().toString().isEmpty() ? "-1" : bi.h106.getText().toString());
         form.setH108(bi.h107.getText().toString().isEmpty() ? "-1" : bi.h107.getText().toString());
@@ -176,7 +174,7 @@ public class SectionH1Activity extends AppCompatActivity {
 
         form.setH208(bi.h208a.isChecked() ? "1"
                 : bi.h208b.isChecked() ? "2"
-                : "-1");
+                : "-1");*/
     }
 
 

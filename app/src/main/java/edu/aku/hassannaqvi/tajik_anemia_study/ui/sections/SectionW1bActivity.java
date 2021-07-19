@@ -30,12 +30,14 @@ public class SectionW1bActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_w1b);
+
+        if (preg == null)
+            preg = new Pregnancy(); // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
+        bi.setPreg(preg);
         bi.setCallback(this);
 
         db = MainApp.appInfo.dbHelper;
 
-        preg = new Pregnancy(); // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
-        bi.setPreg(preg);
         setupSkips();
     }
 

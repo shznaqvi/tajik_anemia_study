@@ -15,8 +15,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2aBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-
 
 public class SectionH2aActivity extends AppCompatActivity {
     ActivitySectionH2aBinding bi;
@@ -61,6 +59,7 @@ public class SectionH2aActivity extends AppCompatActivity {
 
 
     private void saveDraft() {
+/*
 
         form.setH201(bi.h201.getText().toString().isEmpty() ? "-1" : bi.h201.getText().toString());
 
@@ -109,6 +108,7 @@ public class SectionH2aActivity extends AppCompatActivity {
         form.setH208(bi.h208a.isChecked() ? "1"
                 : bi.h208b.isChecked() ? "2"
                 : "-1");
+*/
 
     }
 

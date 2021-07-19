@@ -30,7 +30,8 @@ public class SectionH2dActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2d);
         bi.setCallback(this);
 
-        MainApp.child = new Child();  // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
+        if (MainApp.child == null)
+            MainApp.child = new Child();  // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
         bi.setChild(MainApp.child);
 
         // Always declair db in onCreate()
