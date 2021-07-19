@@ -287,7 +287,7 @@
                                 android:id="@+id/h224a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("1")?true:false}'
+                                android:checked='@{mwra.h224.equals("1")}'
                                 android:onClick='@{()->mwra.setH224("1")}'
                                 android:text="@string/h224a" />
 
@@ -295,7 +295,7 @@
                                 android:id="@+id/h224b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("2")?true:false}'
+                                android:checked='@{mwra.h224.equals("2")}'
                                 android:onClick='@{()->mwra.setH224("2")}'
                                 android:text="@string/h224b" />
 
@@ -303,7 +303,7 @@
                                 android:id="@+id/h224c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("3")?true:false}'
+                                android:checked='@{mwra.h224.equals("3")}'
                                 android:onClick='@{()->mwra.setH224("3")}'
                                 android:text="@string/h224c" />
 
@@ -311,7 +311,7 @@
                                 android:id="@+id/h224d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("4")?true:false}'
+                                android:checked='@{mwra.h224.equals("4")}'
                                 android:onClick='@{()->mwra.setH224("4")}'
                                 android:text="@string/h224d" />
 
@@ -319,7 +319,7 @@
                                 android:id="@+id/h224e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("5")?true:false}'
+                                android:checked='@{mwra.h224.equals("5")}'
                                 android:onClick='@{()->mwra.setH224("5")}'
                                 android:text="@string/h224e" />
 
@@ -327,7 +327,7 @@
                                 android:id="@+id/h224f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("6")?true:false}'
+                                android:checked='@{mwra.h224.equals("6")}'
                                 android:onClick='@{()->mwra.setH224("6")}'
                                 android:text="@string/h224f" />
 
@@ -335,7 +335,7 @@
                                 android:id="@+id/h224g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("7")?true:false}'
+                                android:checked='@{mwra.h224.equals("7")}'
                                 android:onClick='@{()->mwra.setH224("7")}'
                                 android:text="@string/h224g" />
 
@@ -343,7 +343,7 @@
                                 android:id="@+id/h224h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("8")?true:false}'
+                                android:checked='@{mwra.h224.equals("8")}'
                                 android:onClick='@{()->mwra.setH224("8")}'
                                 android:text="@string/h224h" />
 
@@ -351,7 +351,7 @@
                                 android:id="@+id/h224i"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("9")?true:false}'
+                                android:checked='@{mwra.h224.equals("9")}'
                                 android:onClick='@{()->mwra.setH224("9")}'
                                 android:text="@string/h224i" />
 
@@ -359,7 +359,7 @@
                                 android:id="@+id/h224j"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("10")?true:false}'
+                                android:checked='@{mwra.h224.equals("10")}'
                                 android:onClick='@{()->mwra.setH224("10")}'
                                 android:text="@string/h224j" />
 
@@ -367,7 +367,7 @@
                                 android:id="@+id/h22498"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h224.equals("11")?true:false}'
+                                android:checked='@{mwra.h224.equals("11")}'
                                 android:onClick='@{()->mwra.setH224("11")}'
                                 android:text="@string/h22498" />
 
@@ -415,7 +415,7 @@
                             <RadioButton
                                 android:id="@+id/h225a"
                                 android:layout_width="match_parent"
-                                android:checked='@{mwra.h225.equals("1")?true:false}'
+                                android:checked='@{mwra.h225.equals("1")}'
                                 android:onClick='@{()->mwra.setH225("1")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h225a" />
@@ -423,7 +423,7 @@
                             <RadioButton
                                 android:id="@+id/h225b"
                                 android:layout_width="match_parent"
-                                android:checked='@{mwra.h225.equals("2")?true:false}'
+                                android:checked='@{mwra.h225.equals("2")}'
                                 android:onClick='@{()->mwra.setH225("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h225b" />
@@ -432,7 +432,7 @@
                                 android:id="@+id/h225c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("3")?true:false}'
+                                android:checked='@{mwra.h225.equals("3")}'
                                 android:onClick='@{()->mwra.setH225("3")}'
                                 android:text="@string/h225c" />
 
@@ -440,7 +440,7 @@
                                 android:id="@+id/h225d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("4")?true:false}'
+                                android:checked='@{mwra.h225.equals("4")}'
                                 android:onClick='@{()->mwra.setH225("4")}'
                                 android:text="@string/h225d" />
 
@@ -448,7 +448,7 @@
                                 android:id="@+id/h225e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("5")?true:false}'
+                                android:checked='@{mwra.h225.equals("5")}'
                                 android:onClick='@{()->mwra.setH225("5")}'
                                 android:text="@string/h225e" />
 
@@ -456,7 +456,7 @@
                                 android:id="@+id/h225f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("6")?true:false}'
+                                android:checked='@{mwra.h225.equals("6")}'
                                 android:onClick='@{()->mwra.setH225("6")}'
                                 android:text="@string/h225f" />
 
@@ -464,7 +464,7 @@
                                 android:id="@+id/h225g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("7")?true:false}'
+                                android:checked='@{mwra.h225.equals("7")}'
                                 android:onClick='@{()->mwra.setH225("7")}'
                                 android:text="@string/h225g" />
 
@@ -472,7 +472,7 @@
                                 android:id="@+id/h225h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("8")?true:false}'
+                                android:checked='@{mwra.h225.equals("8")}'
                                 android:onClick='@{()->mwra.setH225("8")}'
                                 android:text="@string/h225h" />
 
@@ -480,7 +480,7 @@
                                 android:id="@+id/h225i"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("9")?true:false}'
+                                android:checked='@{mwra.h225.equals("9")}'
                                 android:onClick='@{()->mwra.setH225("9")}'
                                 android:text="@string/h225i" />
 
@@ -488,14 +488,14 @@
                                 android:id="@+id/h225j"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{mwra.h225.equals("10")?true:false}'
+                                android:checked='@{mwra.h225.equals("10")}'
                                 android:onClick='@{()->mwra.setH225("10")}'
                                 android:text="@string/h225j" />
 
                             <RadioButton
                                 android:id="@+id/h22598"
                                 android:layout_width="match_parent"
-                                android:checked='@{mwra.h225.equals("11")?true:false}'
+                                android:checked='@{mwra.h225.equals("11")}'
                                 android:onClick='@{()->mwra.setH225("11")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h22598" />
@@ -670,7 +670,7 @@
                                 android:id="@+id/h227a"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:checked='@{mwra.h227.equals("1")?true:false}'
+                                android:checked='@{mwra.h227.equals("1")}'
                                 android:onClick='@{()->mwra.setH227("1")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h227a" />
@@ -679,7 +679,7 @@
                                 android:id="@+id/h227b"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:checked='@{mwra.h227.equals("2")?true:false}'
+                                android:checked='@{mwra.h227.equals("2")}'
                                 android:onClick='@{()->mwra.setH227("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h227b" />

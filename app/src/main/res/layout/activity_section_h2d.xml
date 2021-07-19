@@ -392,7 +392,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{child.h232.equals("1")?true:false}'
+                                android:checked='@{child.h232.equals("1")}'
                                 android:onClick='@{()->child.setH232("1")}'
                                 android:text="@string/h232m" />
 
@@ -400,7 +400,7 @@
                                 android:id="@+id/h232f"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:checked='@{child.h232.equals("2")?true:false}'
+                                android:checked='@{child.h232.equals("2")}'
                                 android:onClick='@{()->child.setH232("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h232f" />
@@ -451,7 +451,7 @@
                                 android:id="@+id/h233a"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:checked='@{child.h233.equals("1")?true:false}'
+                                android:checked='@{child.h233.equals("1")}'
                                 android:onClick='@{()->child.setH233("1")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h233a" />
@@ -460,7 +460,7 @@
                                 android:id="@+id/h233b"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
-                                android:checked='@{child.h233.equals("2")?true:false}'
+                                android:checked='@{child.h233.equals("2")}'
                                 android:onClick='@{()->child.setH233("2")}'
                                 android:layout_height="wrap_content"
                                 android:text="@string/h233b" />

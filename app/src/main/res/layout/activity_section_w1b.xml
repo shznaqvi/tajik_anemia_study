@@ -245,7 +245,7 @@
                                 android:id="@+id/w115a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("1")?true:false}'
+                                android:checked='@{preg.w115.equals("1")}'
                                 android:onClick='@{()->preg.setW115("1")}'
                                 android:text="@string/w115a" />
 
@@ -253,7 +253,7 @@
                                 android:id="@+id/w115b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("2")?true:false}'
+                                android:checked='@{preg.w115.equals("2")}'
                                 android:onClick='@{()->preg.setW115("2")}'
                                 android:text="@string/w115b" />
 
@@ -261,7 +261,7 @@
                                 android:id="@+id/w115c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("3")?true:false}'
+                                android:checked='@{preg.w115.equals("3")}'
                                 android:onClick='@{()->preg.setW115("3")}'
                                 android:text="@string/w115c" />
 
@@ -269,7 +269,7 @@
                                 android:id="@+id/w115d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("4")?true:false}'
+                                android:checked='@{preg.w115.equals("4")}'
                                 android:onClick='@{()->preg.setW115("4")}'
                                 android:text="@string/w115d" />
 
@@ -277,7 +277,7 @@
                                 android:id="@+id/w115e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("5")?true:false}'
+                                android:checked='@{preg.w115.equals("5")}'
                                 android:onClick='@{()->preg.setW115("5")}'
                                 android:text="@string/w115e" />
 
@@ -285,7 +285,7 @@
                                 android:id="@+id/w115f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w115.equals("6")?true:false}'
+                                android:checked='@{preg.w115.equals("6")}'
                                 android:onClick='@{()->preg.setW115("6")}'
                                 android:text="@string/w115f" />
 
@@ -336,7 +336,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w116.equals("1")?true:false}'
+                                android:checked='@{preg.w116.equals("1")}'
                                 android:onClick='@{()->preg.setW116("1")}'
                                 android:text="@string/w116a" />
 
@@ -345,7 +345,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{preg.w116.equals("2")?true:false}'
+                                android:checked='@{preg.w116.equals("2")}'
                                 android:onClick='@{()->preg.setW116("2")}'
                                 android:text="@string/w116b" />
 

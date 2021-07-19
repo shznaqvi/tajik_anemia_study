@@ -2376,7 +2376,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH3241(String h3241) {
+        Log.d(TAG, "this.h3241: " + this.h3241);
+        Log.d(TAG, "h3241: " + h3241);
         if (this.h3241 == h3241) return;
+        Log.d(TAG, "h3241: " + h3241);
         this.h3241 = h3241;
         setH3241x(h3241.equals("1") ? this.h3241x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h3241);
@@ -2535,7 +2538,14 @@ public class Form extends BaseObservable {
     }
 
     public void setH401(String h401) {
+        Log.d(TAG, "setH401: " + h401);
         this.h401 = h401;
+        setH402(h401.equals("1") ? this.h402 : ""); // for all skips, mention all skipped questions
+        setH403a(h401.equals("1") ? this.h403a : ""); // for all skips, mention all skipped questions
+        setH403b(h401.equals("1") ? this.h403b : ""); // for all skips, mention all skipped questions
+        setH403c(h401.equals("1") ? this.h403c : ""); // for all skips, mention all skipped questions
+        setH403d(h401.equals("1") ? this.h403d : ""); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h401);
     }
 
@@ -2545,6 +2555,9 @@ public class Form extends BaseObservable {
     }
 
     public void setH402(String h402) {
+        Log.d(TAG, "H402: " + h402);
+        Log.d(TAG, "this.h402: " + this.h402);
+
         this.h402 = h402;
         notifyPropertyChanged(BR.h402);
     }
@@ -2555,6 +2568,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH403(String h403) {
+        Log.d(TAG, "setH403: " + h403);
+
         this.h403 = h403;
         notifyPropertyChanged(BR.h403);
     }
@@ -2565,6 +2580,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH403a(String h403a) {
+        Log.d(TAG, "setH403a: " + h403a);
+
         if (this.h403a.equals(h403a)) return; // for all checkboxes
         this.h403a = h403a;
         notifyPropertyChanged(BR.h403a);
@@ -2576,6 +2593,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH403b(String h403b) {
+        Log.d(TAG, "setH403b: " + h403b);
+
         if (this.h403b.equals(h403b)) return; // for all checkboxes
         this.h403b = h403b;
         notifyPropertyChanged(BR.h403b);
@@ -2587,6 +2606,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH403c(String h403c) {
+        Log.d(TAG, "setH403c: " + h403c);
+
         if (this.h403c.equals(h403c)) return; // for all checkboxes
         this.h403c = h403c;
         notifyPropertyChanged(BR.h403c);
@@ -2598,6 +2619,7 @@ public class Form extends BaseObservable {
     }
 
     public void setH403d(String h403d) {
+        Log.d(TAG, "setH403d: " + h403d);
 
         if (this.h403d.equals(h403d)) return; // for all checkboxes
         this.h403d = h403d;
@@ -2614,7 +2636,13 @@ public class Form extends BaseObservable {
     }
 
     public void setH404(String h404) {
+        Log.d(TAG, "h404: " + h404);
+        Log.d(TAG, "this.h404: " + this.h404);
         this.h404 = h404;
+        setH405a(h404.equals("2") ? "" : this.h405a); // for all skips, mention all skipped questions
+        setH405b(h404.equals("2") ? "" : this.h405b); // for all skips, mention all skipped questions
+        setH405c(h404.equals("2") ? "" : this.h405c); // for all skips, mention all skipped questions
+        setH405d(h404.equals("2") ? "" : this.h405c); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h404);
     }
 
@@ -2634,6 +2662,8 @@ public class Form extends BaseObservable {
     }
 
     public void setH405a(String h405a) {
+        Log.d(TAG, "h405a: " + h405a);
+        Log.d(TAG, "this.h405a: " + this.h405a);
         if (this.h405a.equals(h405a)) return; // for all checkboxes
         this.h405a = h405a;
         notifyPropertyChanged(BR.h405a);
@@ -2677,26 +2707,7 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.h405d);
     }
 
-    @Bindable
-    public String getH406f() {
-        return h406f;
-    }
 
-    public void setH406f(String h406f) {
-        this.h406f = h406f;
-        setH406fx(h406f.equals("1") ? this.h405a : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.h406f);
-    }
-
-    @Bindable
-    public String getH406fx() {
-        return h406fx;
-    }
-
-    public void setH406fx(String h406fx) {
-        this.h406fx = h406fx;
-        notifyPropertyChanged(BR.h406f);
-    }
 
     @Bindable
     public String getH406a() {
@@ -2746,6 +2757,27 @@ public class Form extends BaseObservable {
     public void setH406e(String h406e) {
         this.h406e = h406e;
         notifyPropertyChanged(BR.h406e);
+    }
+
+    @Bindable
+    public String getH406f() {
+        return h406f;
+    }
+
+    public void setH406f(String h406f) {
+        this.h406f = h406f;
+        setH406fx(h406f.equals("2") ? "" : this.h406fx); // for all skips, mention all skipped questions
+        notifyPropertyChanged(BR.h406f);
+    }
+
+    @Bindable
+    public String getH406fx() {
+        return h406fx;
+    }
+
+    public void setH406fx(String h406fx) {
+        this.h406fx = h406fx;
+        notifyPropertyChanged(BR.h406f);
     }
 
     @Bindable

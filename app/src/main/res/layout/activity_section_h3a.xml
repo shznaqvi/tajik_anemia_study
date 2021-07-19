@@ -90,7 +90,7 @@
                                 android:id="@+id/h301a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("1")?true:false}'
+                                android:checked='@{form.h301.equals("1")}'
                                 android:onClick='@{()->form.setH301("1")}'
                                 android:text="@string/h301a" />
 
@@ -98,7 +98,7 @@
                                 android:id="@+id/h301b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("2")?true:false}'
+                                android:checked='@{form.h301.equals("2")}'
                                 android:onClick='@{()->form.setH301("2")}'
                                 android:text="@string/h301b" />
 
@@ -106,7 +106,7 @@
                                 android:id="@+id/h301c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("3")?true:false}'
+                                android:checked='@{form.h301.equals("3")}'
                                 android:onClick='@{()->form.setH301("3")}'
                                 android:text="@string/h301c" />
 
@@ -114,7 +114,7 @@
                                 android:id="@+id/h301d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("4")?true:false}'
+                                android:checked='@{form.h301.equals("4")}'
                                 android:onClick='@{()->form.setH301("4")}'
                                 android:text="@string/h301d" />
 
@@ -122,7 +122,7 @@
                                 android:id="@+id/h301e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("5")?true:false}'
+                                android:checked='@{form.h301.equals("5")}'
                                 android:onClick='@{()->form.setH301("5")}'
                                 android:text="@string/h301e" />
 
@@ -130,7 +130,7 @@
                                 android:id="@+id/h301f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("6")?true:false}'
+                                android:checked='@{form.h301.equals("6")}'
                                 android:onClick='@{()->form.setH301("6")}'
                                 android:text="@string/h301f" />
 
@@ -138,7 +138,7 @@
                                 android:id="@+id/h301g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("7")?true:false}'
+                                android:checked='@{form.h301.equals("7")}'
                                 android:onClick='@{()->form.setH301("7")}'
                                 android:text="@string/h301g" />
 
@@ -146,7 +146,7 @@
                                 android:id="@+id/h301h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("8")?true:false}'
+                                android:checked='@{form.h301.equals("8")}'
                                 android:onClick='@{()->form.setH301("8")}'
                                 android:text="@string/h301h" />
 
@@ -154,7 +154,7 @@
                                 android:id="@+id/h301i"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("9")?true:false}'
+                                android:checked='@{form.h301.equals("9")}'
                                 android:onClick='@{()->form.setH301("9")}'
                                 android:text="@string/h301i" />
 
@@ -162,7 +162,7 @@
                                 android:id="@+id/h30196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h301.equals("96")?true:false}'
+                                android:checked='@{form.h301.equals("96")}'
                                 android:onClick='@{()->form.setH301("96")}'
                                 android:text="@string/h30196" />
 
@@ -224,7 +224,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h302.equals("1")?true:false}'
+                                android:checked='@{form.h302.equals("1")}'
                                 android:onClick='@{()->form.setH302("1")}'
                                 android:text="@string/h302a" />
 
@@ -233,7 +233,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h302.equals("2")?true:false}'
+                                android:checked='@{form.h302.equals("2")}'
                                 android:onClick='@{()->form.setH302("2")}'
                                 android:text="@string/h302b" />
 
@@ -242,7 +242,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h302.equals("96")?true:false}'
+                                android:checked='@{form.h302.equals("96")}'
                                 android:onClick='@{()->form.setH302("96")}'
                                 android:text="@string/h30296" />
 
@@ -300,7 +300,7 @@
                                 android:id="@+id/h303a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("1")?true:false}'
+                                android:checked='@{form.h303.equals("1")}'
                                 android:onClick='@{()->form.setH303("1")}'
                                 android:text="@string/h303a" />
 
@@ -308,7 +308,7 @@
                                 android:id="@+id/h303b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("2")?true:false}'
+                                android:checked='@{form.h303.equals("2")}'
                                 android:onClick='@{()->form.setH303("2")}'
                                 android:text="@string/h303b" />
 
@@ -316,7 +316,7 @@
                                 android:id="@+id/h303c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("3")?true:false}'
+                                android:checked='@{form.h303.equals("3")}'
                                 android:onClick='@{()->form.setH303("3")}'
                                 android:text="@string/h303c" />
 
@@ -324,7 +324,7 @@
                                 android:id="@+id/h303d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("4")?true:false}'
+                                android:checked='@{form.h303.equals("4")}'
                                 android:onClick='@{()->form.setH303("4")}'
                                 android:text="@string/h303d" />
 
@@ -332,7 +332,7 @@
                                 android:id="@+id/h303e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("5")?true:false}'
+                                android:checked='@{form.h303.equals("5")}'
                                 android:onClick='@{()->form.setH303("5")}'
                                 android:text="@string/h303e" />
 
@@ -340,7 +340,7 @@
                                 android:id="@+id/h303f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("6")?true:false}'
+                                android:checked='@{form.h303.equals("6")}'
                                 android:onClick='@{()->form.setH303("6")}'
                                 android:text="@string/h303f" />
 
@@ -348,7 +348,7 @@
                                 android:id="@+id/h303g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("7")?true:false}'
+                                android:checked='@{form.h303.equals("7")}'
                                 android:onClick='@{()->form.setH303("7")}'
                                 android:text="@string/h303g" />
 
@@ -356,7 +356,7 @@
                                 android:id="@+id/h303h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("8")?true:false}'
+                                android:checked='@{form.h303.equals("8")}'
                                 android:onClick='@{()->form.setH303("8")}'
                                 android:text="@string/h303h" />
 
@@ -364,7 +364,7 @@
                                 android:id="@+id/h303i"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("9")?true:false}'
+                                android:checked='@{form.h303.equals("9")}'
                                 android:onClick='@{()->form.setH303("9")}'
                                 android:text="@string/h303i" />
 
@@ -372,7 +372,7 @@
                                 android:id="@+id/h303j"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("10")?true:false}'
+                                android:checked='@{form.h303.equals("10")}'
                                 android:onClick='@{()->form.setH303("10")}'
                                 android:text="@string/h303j" />
 
@@ -380,15 +380,15 @@
                                 android:id="@+id/h303k"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("10")?true:false}'
-                                android:onClick='@{()->form.setH303("10")}'
+                                android:checked='@{form.h303.equals("11")}'
+                                android:onClick='@{()->form.setH303("11")}'
                                 android:text="@string/h303k" />
 
                             <RadioButton
                                 android:id="@+id/h303l"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("12")?true:false}'
+                                android:checked='@{form.h303.equals("12")}'
                                 android:onClick='@{()->form.setH303("12")}'
                                 android:text="@string/h303l" />
 
@@ -396,7 +396,7 @@
                                 android:id="@+id/h303m"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("13")?true:false}'
+                                android:checked='@{form.h303.equals("13")}'
                                 android:onClick='@{()->form.setH303("13")}'
                                 android:text="@string/h303m" />
 
@@ -404,7 +404,7 @@
                                 android:id="@+id/h303n"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("14")?true:false}'
+                                android:checked='@{form.h303.equals("14")}'
                                 android:onClick='@{()->form.setH303("14")}'
                                 android:text="@string/h303n" />
 
@@ -412,7 +412,7 @@
                                 android:id="@+id/h303o"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("15")?true:false}'
+                                android:checked='@{form.h303.equals("15")}'
                                 android:onClick='@{()->form.setH303("15")}'
                                 android:text="@string/h303o" />
 
@@ -420,7 +420,7 @@
                                 android:id="@+id/h30396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h303.equals("96")?true:false}'
+                                android:checked='@{form.h303.equals("96")}'
                                 android:onClick='@{()->form.setH303("96")}'
                                 android:text="@string/h30396" />
 
@@ -550,7 +550,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h305.equals("1")?true:false}'
+                                android:checked='@{form.h305.equals("1")}'
                                 android:onClick='@{()->form.setH305("1")}'
                                 android:text="@string/h305a" />
 
@@ -559,7 +559,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h305.equals("2")?true:false}'
+                                android:checked='@{form.h305.equals("2")}'
                                 android:onClick='@{()->form.setH305("2")}'
                                 android:text="@string/h305b" />
 
@@ -608,7 +608,7 @@
                                 android:id="@+id/h306a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("1")?true:false}'
+                                android:checked='@{form.h306.equals("1")}'
                                 android:onClick='@{()->form.setH306("1")}'
                                 android:text="@string/h306a" />
 
@@ -616,7 +616,7 @@
                                 android:id="@+id/h306b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("2")?true:false}'
+                                android:checked='@{form.h306.equals("2")}'
                                 android:onClick='@{()->form.setH306("2")}'
                                 android:text="@string/h306b" />
 
@@ -624,7 +624,7 @@
                                 android:id="@+id/h306c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("3")?true:false}'
+                                android:checked='@{form.h306.equals("3")}'
                                 android:onClick='@{()->form.setH306("3")}'
                                 android:text="@string/h306c" />
 
@@ -632,7 +632,7 @@
                                 android:id="@+id/h306d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("4")?true:false}'
+                                android:checked='@{form.h306.equals("4")}'
                                 android:onClick='@{()->form.setH306("4")}'
                                 android:text="@string/h306d" />
 
@@ -640,7 +640,7 @@
                                 android:id="@+id/h306e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("5")?true:false}'
+                                android:checked='@{form.h306.equals("5")}'
                                 android:onClick='@{()->form.setH306("5")}'
                                 android:text="@string/h306e" />
 
@@ -648,7 +648,7 @@
                                 android:id="@+id/h306f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("6")?true:false}'
+                                android:checked='@{form.h306.equals("6")}'
                                 android:onClick='@{()->form.setH306("6")}'
                                 android:text="@string/h306f" />
 
@@ -656,7 +656,7 @@
                                 android:id="@+id/h30696"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h306.equals("96")?true:false}'
+                                android:checked='@{form.h306.equals("96")}'
                                 android:onClick='@{()->form.setH306("96")}'
                                 android:text="@string/h30696" />
 
@@ -721,7 +721,7 @@
                                 android:id="@+id/h307a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("1")?true:false}'
+                                android:checked='@{form.h307.equals("1")}'
                                 android:onClick='@{()->form.setH307("1")}'
                                 android:text="@string/h307a" />
 
@@ -729,7 +729,7 @@
                                 android:id="@+id/h307b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("2")?true:false}'
+                                android:checked='@{form.h307.equals("2")}'
                                 android:onClick='@{()->form.setH307("2")}'
                                 android:text="@string/h307b" />
 
@@ -737,7 +737,7 @@
                                 android:id="@+id/h307c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("3")?true:false}'
+                                android:checked='@{form.h307.equals("3")}'
                                 android:onClick='@{()->form.setH307("3")}'
                                 android:text="@string/h307c" />
 
@@ -745,7 +745,7 @@
                                 android:id="@+id/h307d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("4")?true:false}'
+                                android:checked='@{form.h307.equals("4")}'
                                 android:onClick='@{()->form.setH307("4")}'
                                 android:text="@string/h307d" />
 
@@ -760,7 +760,7 @@
                                 android:id="@+id/h307e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("5")?true:false}'
+                                android:checked='@{form.h307.equals("5")}'
                                 android:onClick='@{()->form.setH307("5")}'
                                 android:text="@string/h307e" />
 
@@ -768,7 +768,7 @@
                                 android:id="@+id/h307f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("6")?true:false}'
+                                android:checked='@{form.h307.equals("6")}'
                                 android:onClick='@{()->form.setH307("6")}'
                                 android:text="@string/h307f" />
 
@@ -776,7 +776,7 @@
                                 android:id="@+id/h307g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("7")?true:false}'
+                                android:checked='@{form.h307.equals("7")}'
                                 android:onClick='@{()->form.setH307("7")}'
                                 android:text="@string/h307g" />
 
@@ -784,7 +784,7 @@
                                 android:id="@+id/h307h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("8")?true:false}'
+                                android:checked='@{form.h307.equals("8")}'
                                 android:onClick='@{()->form.setH307("8")}'
                                 android:text="@string/h307h" />
 
@@ -792,7 +792,7 @@
                                 android:id="@+id/h307i"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("9")?true:false}'
+                                android:checked='@{form.h307.equals("9")}'
                                 android:onClick='@{()->form.setH307("9")}'
                                 android:text="@string/h307i" />
 
@@ -800,7 +800,7 @@
                                 android:id="@+id/h30796"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h307.equals("96")?true:false}'
+                                android:checked='@{form.h307.equals("96")}'
                                 android:onClick='@{()->form.setH307("96")}'
                                 android:text="@string/h30796" />
 
@@ -861,7 +861,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h308.equals("1")?true:false}'
+                                android:checked='@{form.h308.equals("1")}'
                                 android:onClick='@{()->form.setH308("1")}'
                                 android:text="@string/h308a" />
 
@@ -870,7 +870,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h308.equals("2")?true:false}'
+                                android:checked='@{form.h308.equals("2")}'
                                 android:onClick='@{()->form.setH308("2")}'
                                 android:text="@string/h308b" />
 
@@ -982,7 +982,7 @@
                                 android:id="@+id/h310a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("1")?true:false}'
+                                android:checked='@{form.h310.equals("1")}'
                                 android:onClick='@{()->form.setH310("1")}'
                                 android:text="@string/h310a" />
 
@@ -990,7 +990,7 @@
                                 android:id="@+id/h310b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("2")?true:false}'
+                                android:checked='@{form.h310.equals("2")}'
                                 android:onClick='@{()->form.setH310("2")}'
                                 android:text="@string/h310b" />
 
@@ -998,7 +998,7 @@
                                 android:id="@+id/h310c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("3")?true:false}'
+                                android:checked='@{form.h310.equals("3")}'
                                 android:onClick='@{()->form.setH310("3")}'
                                 android:text="@string/h310c" />
 
@@ -1006,7 +1006,7 @@
                                 android:id="@+id/h310d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("4")?true:false}'
+                                android:checked='@{form.h310.equals("4")}'
                                 android:onClick='@{()->form.setH310("4")}'
                                 android:text="@string/h310d" />
 
@@ -1014,7 +1014,7 @@
                                 android:id="@+id/h310e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("5")?true:false}'
+                                android:checked='@{form.h310.equals("5")}'
                                 android:onClick='@{()->form.setH310("5")}'
                                 android:text="@string/h310e" />
 
@@ -1022,7 +1022,7 @@
                                 android:id="@+id/h310f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("6")?true:false}'
+                                android:checked='@{form.h310.equals("6")}'
                                 android:onClick='@{()->form.setH310("6")}'
                                 android:text="@string/h310f" />
 
@@ -1030,7 +1030,7 @@
                                 android:id="@+id/h310g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("7")?true:false}'
+                                android:checked='@{form.h310.equals("7")}'
                                 android:onClick='@{()->form.setH310("7")}'
                                 android:text="@string/h310g" />
 
@@ -1038,7 +1038,7 @@
                                 android:id="@+id/h31096"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h310.equals("96")?true:false}'
+                                android:checked='@{form.h310.equals("96")}'
                                 android:onClick='@{()->form.setH310("96")}'
                                 android:text="@string/h31096" />
 
@@ -1107,7 +1107,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311a.equals("1")?true:false}'
+                                android:checked='@{form.h311a.equals("1")}'
                                 android:onClick='@{()->form.setH311a("1")}'
                                 android:text="@string/h311aa" />
 
@@ -1116,7 +1116,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311a.equals("2")?true:false}'
+                                android:checked='@{form.h311a.equals("2")}'
                                 android:onClick='@{()->form.setH311a("2")}'
                                 android:text="@string/h311ab" />
 
@@ -1141,7 +1141,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311b.equals("1")?true:false}'
+                                android:checked='@{form.h311b.equals("1")}'
                                 android:onClick='@{()->form.setH311b("1")}'
                                 android:text="@string/h311ba" />
 
@@ -1150,7 +1150,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311b.equals("2")?true:false}'
+                                android:checked='@{form.h311b.equals("2")}'
                                 android:onClick='@{()->form.setH311b("2")}'
                                 android:text="@string/h311bb" />
 
@@ -1175,7 +1175,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311c.equals("1")?true:false}'
+                                android:checked='@{form.h311c.equals("1")}'
                                 android:onClick='@{()->form.setH311c("1")}'
                                 android:text="@string/h311ca" />
 
@@ -1184,7 +1184,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311c.equals("2")?true:false}'
+                                android:checked='@{form.h311c.equals("2")}'
                                 android:onClick='@{()->form.setH311c("2")}'
                                 android:text="@string/h311cb" />
 
@@ -1209,7 +1209,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311d.equals("1")?true:false}'
+                                android:checked='@{form.h311d.equals("1")}'
                                 android:onClick='@{()->form.setH311d("1")}'
                                 android:text="@string/h311da" />
 
@@ -1218,7 +1218,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311d.equals("2")?true:false}'
+                                android:checked='@{form.h311d.equals("2")}'
                                 android:onClick='@{()->form.setH311d("2")}'
                                 android:text="@string/h311db" />
 
@@ -1243,7 +1243,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311e.equals("1")?true:false}'
+                                android:checked='@{form.h311e.equals("1")}'
                                 android:onClick='@{()->form.setH311e("1")}'
                                 android:text="@string/h311ea" />
 
@@ -1252,8 +1252,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311f.equals("2")?true:false}'
-                                android:onClick='@{()->form.setH311f("2")}'
+                                android:checked='@{form.h311e.equals("2")}'
+                                android:onClick='@{()->form.setH311e("2")}'
                                 android:text="@string/h311eb" />
 
                         </RadioGroup>
@@ -1277,7 +1277,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311f.equals("1")?true:false}'
+                                android:checked='@{form.h311f.equals("1")}'
                                 android:onClick='@{()->form.setH311f("1")}'
                                 android:text="@string/h311fa" />
 
@@ -1286,7 +1286,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311f.equals("2")?true:false}'
+                                android:checked='@{form.h311f.equals("2")}'
                                 android:onClick='@{()->form.setH311f("2")}'
                                 android:text="@string/h311fb" />
 
@@ -1311,7 +1311,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311g.equals("1")?true:false}'
+                                android:checked='@{form.h311g.equals("1")}'
                                 android:onClick='@{()->form.setH311g("1")}'
                                 android:text="@string/h311ga" />
 
@@ -1320,7 +1320,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311g.equals("2")?true:false}'
+                                android:checked='@{form.h311g.equals("2")}'
                                 android:onClick='@{()->form.setH311g("2")}'
                                 android:text="@string/h311gb" />
 
@@ -1345,7 +1345,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311h.equals("1")?true:false}'
+                                android:checked='@{form.h311h.equals("1")}'
                                 android:onClick='@{()->form.setH311h("1")}'
                                 android:text="@string/h311ha" />
 
@@ -1354,7 +1354,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311h.equals("2")?true:false}'
+                                android:checked='@{form.h311h.equals("2")}'
                                 android:onClick='@{()->form.setH311h("2")}'
                                 android:text="@string/h311hb" />
 
@@ -1379,7 +1379,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311i.equals("1")?true:false}'
+                                android:checked='@{form.h311i.equals("1")}'
                                 android:onClick='@{()->form.setH311i("1")}'
                                 android:text="@string/h311ia" />
 
@@ -1388,7 +1388,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311i.equals("2")?true:false}'
+                                android:checked='@{form.h311i.equals("2")}'
                                 android:onClick='@{()->form.setH311i("2")}'
                                 android:text="@string/h311ib" />
 
@@ -1413,7 +1413,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311j.equals("1")?true:false}'
+                                android:checked='@{form.h311j.equals("1")}'
                                 android:onClick='@{()->form.setH311j("1")}'
                                 android:text="@string/h311ja" />
 
@@ -1422,7 +1422,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311j.equals("2")?true:false}'
+                                android:checked='@{form.h311j.equals("2")}'
                                 android:onClick='@{()->form.setH311j("2")}'
                                 android:text="@string/h311jb" />
 
@@ -1447,7 +1447,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311k.equals("1")?true:false}'
+                                android:checked='@{form.h311k.equals("1")}'
                                 android:onClick='@{()->form.setH311k("1")}'
                                 android:text="@string/h311ka" />
 
@@ -1456,7 +1456,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311k.equals("2")?true:false}'
+                                android:checked='@{form.h311k.equals("2")}'
                                 android:onClick='@{()->form.setH311k("2")}'
                                 android:text="@string/h311kb" />
 
@@ -1481,7 +1481,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311k.equals("1")?true:false}'
+                                android:checked='@{form.h311l.equals("1")}'
                                 android:onClick='@{()->form.setH311l("1")}'
                                 android:text="@string/h311la" />
 
@@ -1490,7 +1490,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311k.equals("2")?true:false}'
+                                android:checked='@{form.h311l.equals("2")}'
                                 android:onClick='@{()->form.setH311l("2")}'
                                 android:text="@string/h311lb" />
 
@@ -1515,7 +1515,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311m.equals("1")?true:false}'
+                                android:checked='@{form.h311m.equals("1")}'
                                 android:onClick='@{()->form.setH311m("1")}'
                                 android:text="@string/h311ma" />
 
@@ -1524,7 +1524,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311m.equals("2")?true:false}'
+                                android:checked='@{form.h311m.equals("2")}'
                                 android:onClick='@{()->form.setH311m("2")}'
                                 android:text="@string/h311mb" />
 
@@ -1549,7 +1549,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311n.equals("1")?true:false}'
+                                android:checked='@{form.h311n.equals("1")}'
                                 android:onClick='@{()->form.setH311n("1")}'
                                 android:text="@string/h311na" />
 
@@ -1558,7 +1558,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311n.equals("2")?true:false}'
+                                android:checked='@{form.h311n.equals("2")}'
                                 android:onClick='@{()->form.setH311n("2")}'
                                 android:text="@string/h311nb" />
 
@@ -1583,7 +1583,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311o.equals("1")?true:false}'
+                                android:checked='@{form.h311o.equals("1")}'
                                 android:onClick='@{()->form.setH311o("1")}'
                                 android:text="@string/h311oa" />
 
@@ -1592,7 +1592,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311o.equals("2")?true:false}'
+                                android:checked='@{form.h311o.equals("2")}'
                                 android:onClick='@{()->form.setH311o("2")}'
                                 android:text="@string/h311ob" />
 
@@ -1617,7 +1617,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311p.equals("1")?true:false}'
+                                android:checked='@{form.h311p.equals("1")}'
                                 android:onClick='@{()->form.setH311p("1")}'
                                 android:text="@string/h311pa" />
 
@@ -1626,7 +1626,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311p.equals("2")?true:false}'
+                                android:checked='@{form.h311p.equals("2")}'
                                 android:onClick='@{()->form.setH311p("2")}'
                                 android:text="@string/h311pb" />
 
@@ -1651,7 +1651,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311q.equals("1")?true:false}'
+                                android:checked='@{form.h311q.equals("1")}'
                                 android:onClick='@{()->form.setH311q("1")}'
                                 android:text="@string/h311qa" />
 
@@ -1660,7 +1660,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311q.equals("2")?true:false}'
+                                android:checked='@{form.h311q.equals("2")}'
                                 android:onClick='@{()->form.setH311q("2")}'
                                 android:text="@string/h311qb" />
 
@@ -1685,7 +1685,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311r.equals("1")?true:false}'
+                                android:checked='@{form.h311r.equals("1")}'
                                 android:onClick='@{()->form.setH311r("1")}'
                                 android:text="@string/h311ra" />
 
@@ -1694,7 +1694,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311r.equals("2")?true:false}'
+                                android:checked='@{form.h311r.equals("2")}'
                                 android:onClick='@{()->form.setH311r("2")}'
                                 android:text="@string/h311rb" />
 
@@ -1719,7 +1719,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311s.equals("1")?true:false}'
+                                android:checked='@{form.h311s.equals("1")}'
                                 android:onClick='@{()->form.setH311s("1")}'
                                 android:text="@string/h311sa" />
 
@@ -1728,7 +1728,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h311s.equals("2")?true:false}'
+                                android:checked='@{form.h311s.equals("2")}'
                                 android:onClick='@{()->form.setH311s("2")}'
                                 android:text="@string/h311sb" />
 
@@ -1787,7 +1787,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312a.equals("1")?true:false}'
+                                android:checked='@{form.h312a.equals("1")}'
                                 android:onClick='@{()->form.setH312a("1")}'
                                 android:text="@string/h312aa" />
 
@@ -1796,7 +1796,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312a.equals("2")?true:false}'
+                                android:checked='@{form.h312a.equals("2")}'
                                 android:onClick='@{()->form.setH312a("2")}'
                                 android:text="@string/h312ab" />
 
@@ -1821,7 +1821,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312b.equals("1")?true:false}'
+                                android:checked='@{form.h312b.equals("1")}'
                                 android:onClick='@{()->form.setH312b("1")}'
                                 android:text="@string/h312ba" />
 
@@ -1830,7 +1830,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312b.equals("2")?true:false}'
+                                android:checked='@{form.h312b.equals("2")}'
                                 android:onClick='@{()->form.setH312b("2")}'
                                 android:text="@string/h312bb" />
 
@@ -1855,7 +1855,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312c.equals("1")?true:false}'
+                                android:checked='@{form.h312c.equals("1")}'
                                 android:onClick='@{()->form.setH312c("1")}'
                                 android:text="@string/h312ca" />
 
@@ -1864,7 +1864,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312c.equals("2")?true:false}'
+                                android:checked='@{form.h312c.equals("2")}'
                                 android:onClick='@{()->form.setH312c("2")}'
                                 android:text="@string/h312cb" />
 
@@ -1889,7 +1889,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312d.equals("1")?true:false}'
+                                android:checked='@{form.h312d.equals("1")}'
                                 android:onClick='@{()->form.setH312d("1")}'
                                 android:text="@string/h312da" />
 
@@ -1898,7 +1898,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312d.equals("2")?true:false}'
+                                android:checked='@{form.h312d.equals("2")}'
                                 android:onClick='@{()->form.setH312d("2")}'
                                 android:text="@string/h312db" />
 
@@ -1923,7 +1923,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312e.equals("1")?true:false}'
+                                android:checked='@{form.h312e.equals("1")}'
                                 android:onClick='@{()->form.setH312e("1")}'
                                 android:text="@string/h312ea" />
 
@@ -1932,7 +1932,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312e.equals("2")?true:false}'
+                                android:checked='@{form.h312e.equals("2")}'
                                 android:onClick='@{()->form.setH312e("2")}'
                                 android:text="@string/h312eb" />
 
@@ -1957,7 +1957,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312f.equals("1")?true:false}'
+                                android:checked='@{form.h312f.equals("1")}'
                                 android:onClick='@{()->form.setH312f("1")}'
                                 android:text="@string/h312fa" />
 
@@ -1966,7 +1966,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312f.equals("2")?true:false}'
+                                android:checked='@{form.h312f.equals("2")}'
                                 android:onClick='@{()->form.setH312f("2")}'
                                 android:text="@string/h312fb" />
 
@@ -1991,7 +1991,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312g.equals("1")?true:false}'
+                                android:checked='@{form.h312g.equals("1")}'
                                 android:onClick='@{()->form.setH312g("1")}'
                                 android:text="@string/h312ga" />
 
@@ -2000,7 +2000,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked='@{form.h312g.equals("2")?true:false}'
+                                android:checked='@{form.h312g.equals("2")}'
                                 android:onClick='@{()->form.setH312g("2")}'
                                 android:text="@string/h312gb" />
 

@@ -95,7 +95,7 @@
                                 android:id="@+id/h501a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h501.equals("1")?true:false}'
+                                android:checked='@{form.h501.equals("1")}'
                                 android:onClick='@{()->form.setH501("1")}'
                                 android:text="@string/h501a" />
 
@@ -103,7 +103,7 @@
                                 android:id="@+id/h501b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h501.equals("2")?true:false}'
+                                android:checked='@{form.h501.equals("2")}'
                                 android:onClick='@{()->form.setH501("2")}'
                                 android:text="@string/h501b" />
 
@@ -111,7 +111,7 @@
                                 android:id="@+id/h501c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h501.equals("3")?true:false}'
+                                android:checked='@{form.h501.equals("3")}'
                                 android:onClick='@{()->form.setH501("3")}'
                                 android:text="@string/h501c" />
 
@@ -126,7 +126,7 @@
                                 android:id="@+id/h501d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h501.equals("4")?true:false}'
+                                android:checked='@{form.h501.equals("4")}'
                                 android:onClick='@{()->form.setH501("4")}'
                                 android:text="@string/h501d" />
 
@@ -134,7 +134,7 @@
                                 android:id="@+id/h50196"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h501.equals("96")?true:false}'
+                                android:checked='@{form.h501.equals("96")}'
                                 android:onClick='@{()->form.setH501("96")}'
                                 android:text="@string/h50196" />
 
@@ -209,7 +209,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h502.equals("1")?true:false}'
+                                android:checked='@{form.h502.equals("1")}'
                                 android:onClick='@{()->form.setH502("1")}'
                                 android:text="@string/h502a" />
 
@@ -218,7 +218,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h502.equals("2")?true:false}'
+                                android:checked='@{form.h502.equals("2")}'
                                 android:onClick='@{()->form.setH502("2")}'
                                 android:text="@string/h502b" />
 
@@ -227,7 +227,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h502.equals("3")?true:false}'
+                                android:checked='@{form.h502.equals("3")}'
                                 android:onClick='@{()->form.setH502("3")}'
                                 android:text="@string/h502c" />
                         </RadioGroup>
@@ -274,7 +274,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h503.equals("1")?true:false}'
+                                android:checked='@{form.h503.equals("1")}'
                                 android:onClick='@{()->form.setH503("1")}'
                                 android:text="@string/h503a" />
 
@@ -283,7 +283,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h503.equals("2")?true:false}'
+                                android:checked='@{form.h503.equals("2")}'
                                 android:onClick='@{()->form.setH503("2")}'
                                 android:text="@string/h503b" />
 
@@ -292,7 +292,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="2"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h503.equals("3")?true:false}'
+                                android:checked='@{form.h503.equals("3")}'
                                 android:onClick='@{()->form.setH503("3")}'
                                 android:text="@string/h503c" />
 
@@ -301,7 +301,7 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="2"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.h503.equals("4")?true:false}'
+                                android:checked='@{form.h503.equals("4")}'
                                 android:onClick='@{()->form.setH503("4")}'
                                 android:text="@string/h503d" />
                         </RadioGroup>

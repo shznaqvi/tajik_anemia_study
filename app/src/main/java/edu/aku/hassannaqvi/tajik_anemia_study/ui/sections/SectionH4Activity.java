@@ -3,14 +3,11 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
@@ -21,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH4Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionH4Activity extends AppCompatActivity {
@@ -41,29 +37,32 @@ public class SectionH4Activity extends AppCompatActivity {
 
     private void setupSkips() {
 
-        bi.h401.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVh402.setVisibility(View.VISIBLE);
-            bi.fldGrpCVh403.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVh402);
-            Clear.clearAllFields(bi.fldGrpCVh403);
+      /*  bi.h401.setOnCheckedChangeListener((radioGroup, i) -> {
+
+
             if (i == bi.h401b.getId() || i == bi.h401c.getId() || i == bi.h401d.getId()) {
                 bi.fldGrpCVh402.setVisibility(View.GONE);
                 bi.fldGrpCVh403.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.fldGrpCVh402);
+                Clear.clearAllFields(bi.fldGrpCVh403);
+            } else {
+                bi.fldGrpCVh402.setVisibility(View.VISIBLE);
+                bi.fldGrpCVh403.setVisibility(View.VISIBLE);
             }
-        });
+        });*/
 
-        bi.h403d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h403check, !b));
-        bi.h405d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h405check, !b));
+        // bi.h403d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h403check, !b));
+        //   bi.h405d.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.h405check, !b));
 
-        chLsnr(bi.h403a, bi.h403b, bi.h403c);
+       /* chLsnr(bi.h403a, bi.h403b, bi.h403c);
         chLsnr(bi.h403b, bi.h403a, bi.h403c);
-        chLsnr(bi.h403c, bi.h403a, bi.h403b);
+        chLsnr(bi.h403c, bi.h403a, bi.h403b);*/
 
-        rgLsnr(bi.h404, bi.h404b, new ViewGroup[]{bi.fldGrpCVh405});
+        //   rgLsnr(bi.h404, bi.h404b, new ViewGroup[]{bi.fldGrpCVh405});
 
     }
 
-    private void chLsnr(CheckBox cb1, CheckBox cb2, CheckBox cb3) {
+/*    private void chLsnr(CheckBox cb1, CheckBox cb2, CheckBox cb3) {
         cb1.setOnCheckedChangeListener((compoundButton, b) -> {
             if (b || cb2.isChecked() || cb3.isChecked()) {
                 Clear.clearAllFields(bi.fldGrpCVh404);
@@ -75,7 +74,7 @@ public class SectionH4Activity extends AppCompatActivity {
                 bi.fldGrpCVh405.setVisibility(View.VISIBLE);
             }
         });
-    }
+    }*/
 
 
     private boolean updateDB() {
