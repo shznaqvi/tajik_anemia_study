@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Form" />
 
         <variable
             name="callback"
@@ -33,8 +33,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:title="@string/secw4title"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/secw4title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -102,42 +102,56 @@
                                 android:id="@+id/w401a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401a.equals("1")}'
+                                android:onClick="@{()->form.setW401a(form.w401a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w401a" />
 
                             <CheckBox
                                 android:id="@+id/w401b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401b.equals("2")}'
+                                android:onClick="@{()->form.setW401b(form.w401b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w401b" />
 
                             <CheckBox
                                 android:id="@+id/w401c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401c.equals("3")}'
+                                android:onClick="@{()->form.setW401c(form.w401c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w401c" />
 
                             <CheckBox
                                 android:id="@+id/w401d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401d.equals("4")}'
+                                android:onClick="@{()->form.setW401d(form.w401d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w401d" />
 
                             <CheckBox
                                 android:id="@+id/w401e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401e.equals("5")}'
+                                android:onClick="@{()->form.setW401e(form.w401e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w401e" />
 
                             <CheckBox
                                 android:id="@+id/w401f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401f.equals("6")}'
+                                android:onClick="@{()->form.setW401f(form.w401f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w401f" />
 
                             <CheckBox
                                 android:id="@+id/w401g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w401g.equals("7")}'
+                                android:onClick="@{()->form.setW401g(form.w401g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w401g" />
 
                         </LinearLayout>
@@ -146,6 +160,8 @@
                             android:id="@+id/w40198"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40198.equals("98")}'
+                            android:onClick="@{()->form.setW40198(form.w40198.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40198" />
 
@@ -200,42 +216,56 @@
                                 android:id="@+id/w402a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402a.equals("1")}'
+                                android:onClick="@{()->form.setW402a(form.w402a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w402a" />
 
                             <CheckBox
                                 android:id="@+id/w402b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402b.equals("2")}'
+                                android:onClick="@{()->form.setW402b(form.w402b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w402b" />
 
                             <CheckBox
                                 android:id="@+id/w402c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402c.equals("3")}'
+                                android:onClick="@{()->form.setW402c(form.w402c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w402c" />
 
                             <CheckBox
                                 android:id="@+id/w402d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402d.equals("4")}'
+                                android:onClick="@{()->form.setW402d(form.w402d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w402d" />
 
                             <CheckBox
                                 android:id="@+id/w402e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402e.equals("5")}'
+                                android:onClick="@{()->form.setW402e(form.w402e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w402e" />
 
                             <CheckBox
                                 android:id="@+id/w402f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402f.equals("6")}'
+                                android:onClick="@{()->form.setW402f(form.w402f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w402f" />
 
                             <CheckBox
                                 android:id="@+id/w402g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w402g.equals("7")}'
+                                android:onClick="@{()->form.setW402g(form.w402g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w402g" />
 
                         </LinearLayout>
@@ -244,6 +274,8 @@
                             android:id="@+id/w40298"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40298.equals("98")}'
+                            android:onClick="@{()->form.setW40298(form.w40298.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40298" />
 
@@ -298,42 +330,56 @@
                                 android:id="@+id/w403a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403a.equals("1")}'
+                                android:onClick="@{()->form.setW403a(form.w403a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w403a" />
 
                             <CheckBox
                                 android:id="@+id/w403b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403b.equals("2")}'
+                                android:onClick="@{()->form.setW403b(form.w403b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w403b" />
 
                             <CheckBox
                                 android:id="@+id/w403c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403c.equals("3")}'
+                                android:onClick="@{()->form.setW403c(form.w403c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w403c" />
 
                             <CheckBox
                                 android:id="@+id/w403d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403d.equals("4")}'
+                                android:onClick="@{()->form.setW403d(form.w403d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w403d" />
 
                             <CheckBox
                                 android:id="@+id/w403e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403e.equals("5")}'
+                                android:onClick="@{()->form.setW403e(form.w403e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w403e" />
 
                             <CheckBox
                                 android:id="@+id/w403f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403f.equals("6")}'
+                                android:onClick="@{()->form.setW403f(form.w403f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w403f" />
 
                             <CheckBox
                                 android:id="@+id/w403g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w403g.equals("7")}'
+                                android:onClick="@{()->form.setW403g(form.w403g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w403g" />
 
                         </LinearLayout>
@@ -342,6 +388,8 @@
                             android:id="@+id/w40398"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40398.equals("98")}'
+                            android:onClick="@{()->form.setW40398(form.w40398.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40398" />
 
@@ -396,42 +444,56 @@
                                 android:id="@+id/w404a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404a.equals("1")}'
+                                android:onClick="@{()->form.setW404a(form.w404a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w404a" />
 
                             <CheckBox
                                 android:id="@+id/w404b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404b.equals("2")}'
+                                android:onClick="@{()->form.setW404b(form.w404b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w404b" />
 
                             <CheckBox
                                 android:id="@+id/w404c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404c.equals("3")}'
+                                android:onClick="@{()->form.setW404c(form.w404c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w404c" />
 
                             <CheckBox
                                 android:id="@+id/w404d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404d.equals("4")}'
+                                android:onClick="@{()->form.setW404d(form.w404d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w404d" />
 
                             <CheckBox
                                 android:id="@+id/w404e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404e.equals("5")}'
+                                android:onClick="@{()->form.setW404e(form.w404e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w404e" />
 
                             <CheckBox
                                 android:id="@+id/w404f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404f.equals("6")}'
+                                android:onClick="@{()->form.setW404f(form.w404f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w404f" />
 
                             <CheckBox
                                 android:id="@+id/w404g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w404g.equals("7")}'
+                                android:onClick="@{()->form.setW404g(form.w404g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w404g" />
 
                         </LinearLayout>
@@ -440,6 +502,8 @@
                             android:id="@+id/w40498"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40498.equals("98")}'
+                            android:onClick="@{()->form.setW40498(form.w40498.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40498" />
 
@@ -494,42 +558,56 @@
                                 android:id="@+id/w405a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405a.equals("1")}'
+                                android:onClick="@{()->form.setW405a(form.w405a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w405a" />
 
                             <CheckBox
                                 android:id="@+id/w405b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405b.equals("2")}'
+                                android:onClick="@{()->form.setW405b(form.w405b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w405b" />
 
                             <CheckBox
                                 android:id="@+id/w405c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405c.equals("3")}'
+                                android:onClick="@{()->form.setW405c(form.w405c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w405c" />
 
                             <CheckBox
                                 android:id="@+id/w405d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405d.equals("4")}'
+                                android:onClick="@{()->form.setW405d(form.w405d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w405d" />
 
                             <CheckBox
                                 android:id="@+id/w405e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405e.equals("5")}'
+                                android:onClick="@{()->form.setW405e(form.w405e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w405e" />
 
                             <CheckBox
                                 android:id="@+id/w405f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405f.equals("6")}'
+                                android:onClick="@{()->form.setW405f(form.w405f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w405f" />
 
                             <CheckBox
                                 android:id="@+id/w405g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w405g.equals("7")}'
+                                android:onClick="@{()->form.setW405g(form.w405g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w405g" />
 
                         </LinearLayout>
@@ -538,6 +616,8 @@
                             android:id="@+id/w40598"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40598.equals("98")}'
+                            android:onClick="@{()->form.setW40598(form.w40598.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40598" />
 
@@ -636,6 +716,8 @@
                             android:id="@+id/w40698"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40698.equals("98")}'
+                            android:onClick="@{()->form.setW40698(form.w40698.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40698" />
 
@@ -734,6 +816,8 @@
                             android:id="@+id/w40798"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40798.equals("98")}'
+                            android:onClick="@{()->form.setW40798(form.w40798.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40798" />
 
@@ -832,6 +916,8 @@
                             android:id="@+id/w40898"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40898.equals("98")}'
+                            android:onClick="@{()->form.setW40898(form.w40898.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40898" />
 
@@ -930,6 +1016,8 @@
                             android:id="@+id/w40998"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w40998.equals("98")}'
+                            android:onClick="@{()->form.setW40998(form.w40998.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w40998" />
 
@@ -1028,6 +1116,8 @@
                             android:id="@+id/w41098"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked='@{form.w41098.equals("98")}'
+                            android:onClick="@{()->form.setW41098(form.w41098.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w41098" />
 
