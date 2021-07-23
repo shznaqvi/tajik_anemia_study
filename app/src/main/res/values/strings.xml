@@ -2566,5 +2566,6 @@
     <string name="title_mwra_detail">MWRA Detail</string>
     <string name="Q_e120">E120</string>
     <string name="e120">Who\'s Sample is it?</string>
-
+    <string name="action_database">Database Manager</string>
+    <string name="action_data_sync">Sync Data</string>
 </resources>

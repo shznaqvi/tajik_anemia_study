@@ -22,21 +22,21 @@
         <activity
             android:name=".ui.lists.MwraListActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.lists.ChildListActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.lists.PregnancyListActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.IdentificationActivity"
             android:label="@string/sech1title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
@@ -65,7 +65,7 @@
             android:label="@string/sech2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.sections.SectionH2cActivity"
             android:label="@string/sech2ctitle2"

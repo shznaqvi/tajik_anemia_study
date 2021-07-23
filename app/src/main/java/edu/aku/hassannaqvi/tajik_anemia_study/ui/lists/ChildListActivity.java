@@ -67,7 +67,7 @@ public class ChildListActivity extends AppCompatActivity {
 
                         //        }
 
-                        checkCompleteFm();
+                     //   checkCompleteFm();
                     }
                     if (result.getResultCode() == Activity.RESULT_CANCELED) {
                         Toast.makeText(ChildListActivity.this, "No child added.", Toast.LENGTH_SHORT).show();
@@ -131,7 +131,7 @@ public class ChildListActivity extends AppCompatActivity {
             bi.btnRand.setVisibility(View.VISIBLE);
 
         }
-        checkCompleteFm();
+        // checkCompleteFm();
 
 
         // bi.fab.setClickable(!MainApp.form.getiStatus().equals("1"));
@@ -139,19 +139,19 @@ public class ChildListActivity extends AppCompatActivity {
         bi.totalmember.setText(MainApp.mwraTotal+ " M completed");*/
     }
 
-    private void checkCompleteFm() {
+/*    private void checkCompleteFm() {
         //     if (!MainApp.form.getIStatus().equals("1")) {
         int compCount = MainApp.mwraList.size();
 
         MainApp.mwraCountComplete = compCount;
         //   bi.btnContinue.setVisibility(compCount == mwraCount && !form.getiStatus().equals("1")? View.VISIBLE : View.GONE);
-     /*   bi.btnContinue.setVisibility(compCount >= mwraCount ? View.VISIBLE : View.GONE);
-        bi.btnContinue.setEnabled(bi.btnContinue.getVisibility()==View.VISIBLE);*/
+     *//*   bi.btnContinue.setVisibility(compCount >= mwraCount ? View.VISIBLE : View.GONE);
+        bi.btnContinue.setEnabled(bi.btnContinue.getVisibility()==View.VISIBLE);*//*
 
         //  } else {
         //       Toast.makeText(this, "Form has been completed or locked", Toast.LENGTH_LONG).show();
         //   }
-    }
+    }*/
 
     public void addChild() {
         Intent intent = new Intent(this, SectionH2dActivity.class);
