@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +16,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH5Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionH5Activity extends AppCompatActivity {
@@ -37,7 +34,7 @@ public class SectionH5Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        rgLsnr(bi.h501, bi.h501d, bi.h50196, new ViewGroup[]{bi.fldGrpCVh502, bi.fldGrpCVh503});
+   //     rgLsnr(bi.h501, bi.h501d, bi.h50196, new ViewGroup[]{bi.fldGrpCVh502, bi.fldGrpCVh503});
     }
 
 
@@ -58,7 +55,7 @@ public class SectionH5Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionH6Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

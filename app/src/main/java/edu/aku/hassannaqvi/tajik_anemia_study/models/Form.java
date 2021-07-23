@@ -2787,6 +2787,12 @@ public class Form extends BaseObservable {
 
     public void setH501(String h501) {
         this.h501 = h501;
+
+        // seperated condition check which used in multiple skips
+        boolean h501check = h501.equals("1") || h501.equals("2") || h501.equals("3");
+
+        setH502(h501check ? this.h502 : ""); // for all skips, mention all skipped questions
+        setH503(h501check ? this.h503 : ""); // for all skips, mention all skipped questions
         setH50196x(h501.equals("96") ? this.h50196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h501);
     }
@@ -2828,6 +2834,7 @@ public class Form extends BaseObservable {
 
     public void setH601(String h601) {
         this.h601 = h601;
+        setH602(h601.equals("2") ? "" : this.h602); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h601);
     }
 
@@ -2848,6 +2855,7 @@ public class Form extends BaseObservable {
 
     public void setH603(String h603) {
         this.h603 = h603;
+        setH604(h603.equals("2") ? "" : this.h604); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h603);
     }
 
@@ -2868,6 +2876,8 @@ public class Form extends BaseObservable {
 
     public void setH605(String h605) {
         this.h605 = h605;
+        setH606(h605.equals("2") ? "" : this.h606); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h605);
     }
 
@@ -2888,6 +2898,8 @@ public class Form extends BaseObservable {
 
     public void setH607(String h607) {
         this.h607 = h607;
+        setH608(h607.equals("2") ? "" : this.h608); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h607);
     }
 
@@ -2908,6 +2920,8 @@ public class Form extends BaseObservable {
 
     public void setH609(String h609) {
         this.h609 = h609;
+        setH610(h609.equals("2") ? "" : this.h610); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h609);
     }
 
@@ -2928,6 +2942,8 @@ public class Form extends BaseObservable {
 
     public void setH611(String h611) {
         this.h611 = h611;
+        setH612(h611.equals("2") ? "" : this.h612); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h611);
     }
 
@@ -2948,6 +2964,8 @@ public class Form extends BaseObservable {
 
     public void setH613(String h613) {
         this.h613 = h613;
+        setH614(h613.equals("2") ? "" : this.h614); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h613);
     }
 
@@ -2968,6 +2986,8 @@ public class Form extends BaseObservable {
 
     public void setH615(String h615) {
         this.h615 = h615;
+        setH616(h615.equals("2") ? "" : this.h616); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h615);
     }
 
@@ -2988,6 +3008,8 @@ public class Form extends BaseObservable {
 
     public void setH617(String h617) {
         this.h617 = h617;
+        setH618(h617.equals("2") ? "" : this.h618); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h617);
     }
 
@@ -3008,6 +3030,9 @@ public class Form extends BaseObservable {
 
     public void setH701(String h701) {
         this.h701 = h701;
+
+        setH701q(h701.equals("2") ? "" : this.h701q); // for all skips, mention all skipped questions
+        setH701s(h701.equals("2") ? "" : this.h701s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h701);
     }
 
@@ -3038,6 +3063,8 @@ public class Form extends BaseObservable {
 
     public void setH702(String h702) {
         this.h702 = h702;
+        setH702q(h702.equals("2") ? "" : this.h702q); // for all skips, mention all skipped questions
+        setH702s(h702.equals("2") ? "" : this.h702s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h702);
     }
 
@@ -3068,6 +3095,9 @@ public class Form extends BaseObservable {
 
     public void setH703(String h703) {
         this.h703 = h703;
+        setH703q(h703.equals("2") ? "" : this.h703q); // for all skips, mention all skipped questions
+        setH703s(h703.equals("2") ? "" : this.h703s); // for all skips, mention all skipped questions
+
         notifyPropertyChanged(BR.h703);
     }
 
@@ -3098,6 +3128,8 @@ public class Form extends BaseObservable {
 
     public void setH704(String h704) {
         this.h704 = h704;
+        setH704q(h704.equals("2") ? "" : this.h704q); // for all skips, mention all skipped questions
+        setH704s(h704.equals("2") ? "" : this.h704s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h704);
     }
 
@@ -3128,6 +3160,8 @@ public class Form extends BaseObservable {
 
     public void setH705(String h705) {
         this.h705 = h705;
+        setH705q(h705.equals("2") ? "" : this.h705q); // for all skips, mention all skipped questions
+        setH705s(h705.equals("2") ? "" : this.h705s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h705);
     }
 
@@ -3158,6 +3192,8 @@ public class Form extends BaseObservable {
 
     public void setH706(String h706) {
         this.h706 = h706;
+        setH706q(h706.equals("2") ? "" : this.h706q); // for all skips, mention all skipped questions
+        setH706s(h706.equals("2") ? "" : this.h706s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h706);
     }
 
@@ -3188,6 +3224,8 @@ public class Form extends BaseObservable {
 
     public void setH707(String h707) {
         this.h707 = h707;
+        setH707q(h707.equals("2") ? "" : this.h707q); // for all skips, mention all skipped questions
+        setH707s(h707.equals("2") ? "" : this.h707s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h707);
     }
 
@@ -3218,6 +3256,8 @@ public class Form extends BaseObservable {
 
     public void setH708(String h708) {
         this.h708 = h708;
+        setH708q(h708.equals("2") ? "" : this.h708q); // for all skips, mention all skipped questions
+        setH708s(h708.equals("2") ? "" : this.h708s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h708);
     }
 
@@ -3248,6 +3288,8 @@ public class Form extends BaseObservable {
 
     public void setH709(String h709) {
         this.h709 = h709;
+        setH701q(h701.equals("2") ? "" : this.h701q); // for all skips, mention all skipped questions
+        setH701s(h701.equals("2") ? "" : this.h701s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h709);
     }
 
@@ -3278,6 +3320,8 @@ public class Form extends BaseObservable {
 
     public void setH710(String h710) {
         this.h710 = h710;
+        setH710q(h710.equals("2") ? "" : this.h710q); // for all skips, mention all skipped questions
+        setH710s(h710.equals("2") ? "" : this.h710s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h710);
     }
 
@@ -3308,6 +3352,8 @@ public class Form extends BaseObservable {
 
     public void setH711(String h711) {
         this.h711 = h711;
+        setH711q(h711.equals("2") ? "" : this.h711q); // for all skips, mention all skipped questions
+        setH711s(h711.equals("2") ? "" : this.h711s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h711);
     }
 
@@ -3338,6 +3384,8 @@ public class Form extends BaseObservable {
 
     public void setH712(String h712) {
         this.h712 = h712;
+        setH712q(h712.equals("2") ? "" : this.h712q); // for all skips, mention all skipped questions
+        setH712s(h712.equals("2") ? "" : this.h712s); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h712);
     }
 
@@ -3368,6 +3416,9 @@ public class Form extends BaseObservable {
 
     public void setH713a(String h713a) {
         this.h713a = h713a;
+        setH713b(h713a.equals("2") ? "" : this.h713b); // for all skips, mention all skipped questions
+        setH713c(h713a.equals("2") ? "" : this.h713c); // for all skips, mention all skipped questions
+        setH713d(h713a.equals("2") ? "" : this.h713d); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h713a);
     }
 
@@ -3408,6 +3459,9 @@ public class Form extends BaseObservable {
 
     public void setH714a(String h714a) {
         this.h714a = h714a;
+        setH714b(h714a.equals("2") ? "" : this.h714b); // for all skips, mention all skipped questions
+        setH714c(h714a.equals("2") ? "" : this.h714c); // for all skips, mention all skipped questions
+        setH714d(h714a.equals("2") ? "" : this.h714d); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h714a);
     }
 

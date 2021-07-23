@@ -114,6 +114,7 @@
                 <!-- h602  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh602"
+                    android:visibility="@{form.H601.equals(`2`)?View.GONE:View.VISIBLE}"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -239,6 +240,8 @@
                 <!-- h604  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh604"
+                    android:visibility="@{form.H603.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -364,6 +367,7 @@
                 <!-- h606  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh606"
+                    android:visibility="@{form.H605.equals(`2`)?View.GONE:View.VISIBLE}"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -464,8 +468,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h601.equals("1")}'
-                                android:onClick='@{()->form.setH601("1")}'
+                                android:checked='@{form.h607.equals("1")}'
+                                android:onClick='@{()->form.setH607("1")}'
                                 android:text="@string/h607a" />
 
                             <RadioButton
@@ -473,8 +477,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h601.equals("2")}'
-                                android:onClick='@{()->form.setH601("2")}'
+                                android:checked='@{form.h607.equals("2")}'
+                                android:onClick='@{()->form.setH607("2")}'
                                 android:text="@string/h607b" />
 
                         </RadioGroup>
@@ -487,6 +491,8 @@
                 <!-- h608  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh608"
+                    android:visibility="@{form.H607.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -612,6 +618,8 @@
                 <!-- h610  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh610"
+                    android:visibility="@{form.H609.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -737,6 +745,8 @@
                 <!-- h612  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh612"
+                    android:visibility="@{form.H611.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -862,6 +872,8 @@
                 <!-- h614  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh614"
+                    android:visibility="@{form.H613.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -987,6 +999,8 @@
                 <!-- h616  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh616"
+                    android:visibility="@{form.H615.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1112,6 +1126,8 @@
                 <!-- h618  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh618"
+                    android:visibility="@{form.H617.equals(`2`)?View.GONE:View.VISIBLE}"
+
                     style="@style/cardView">
 
                     <LinearLayout

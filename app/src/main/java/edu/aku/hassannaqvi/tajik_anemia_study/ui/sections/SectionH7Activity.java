@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +16,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH7Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionH7Activity extends AppCompatActivity {
@@ -37,7 +34,7 @@ public class SectionH7Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
+/*
         rgLsnr(bi.h701, bi.h701b, new ViewGroup[]{bi.fldGrpCVh701t});
         rgLsnr(bi.h702, bi.h702b, new ViewGroup[]{bi.fldGrpCVh702t});
         rgLsnr(bi.h703, bi.h703b, new ViewGroup[]{bi.fldGrpCVh703t});
@@ -51,7 +48,7 @@ public class SectionH7Activity extends AppCompatActivity {
         rgLsnr(bi.h711, bi.h711b, new ViewGroup[]{bi.fldGrpCVh711t});
         rgLsnr(bi.h712, bi.h712b, new ViewGroup[]{bi.fldGrpCVh712t});
         rgLsnr(bi.h713a, bi.h713ab, new ViewGroup[]{bi.fldGrpCVh713t});
-        rgLsnr(bi.h714a, bi.h714ab, new ViewGroup[]{bi.fldGrpCVh714t});
+        rgLsnr(bi.h714a, bi.h714ab, new ViewGroup[]{bi.fldGrpCVh714t});*/
 
     }
 
@@ -73,7 +70,7 @@ public class SectionH7Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionW1aActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

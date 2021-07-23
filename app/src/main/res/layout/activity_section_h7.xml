@@ -108,12 +108,16 @@
                                     android:id="@+id/h701a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h701.equals("1")}'
+                                    android:onClick='@{()->form.setH701("1")}'
                                     android:text="@string/h701a" />
 
                                 <RadioButton
                                     android:id="@+id/h701b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h701.equals("2")}'
+                                    android:onClick='@{()->form.setH701("2")}'
                                     android:text="@string/h701b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -122,6 +126,7 @@
                             android:id="@+id/fldGrpCVh701t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H701.equals(`1`)?View.VISIBLE:View.GONE}"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -147,6 +152,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H701q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -169,6 +175,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H701s}"
                                     android:hint="@string/h701s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -197,12 +204,16 @@
                                     android:id="@+id/h702a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h702.equals("1")}'
+                                    android:onClick='@{()->form.setH702("1")}'
                                     android:text="@string/h702a" />
 
                                 <RadioButton
                                     android:id="@+id/h702b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h702.equals("2")}'
+                                    android:onClick='@{()->form.setH702("2")}'
                                     android:text="@string/h702b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -211,6 +222,7 @@
                             android:id="@+id/fldGrpCVh702t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H702.equals(`1`)?View.VISIBLE:View.GONE}"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -236,6 +248,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H702q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -257,6 +270,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H702s}"
                                     android:hint="@string/h702s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -285,12 +299,16 @@
                                     android:id="@+id/h703a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h703.equals("1")}'
+                                    android:onClick='@{()->form.setH703("1")}'
                                     android:text="@string/h703a" />
 
                                 <RadioButton
                                     android:id="@+id/h703b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h703.equals("2")}'
+                                    android:onClick='@{()->form.setH703("2")}'
                                     android:text="@string/h703b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -299,6 +317,8 @@
                             android:id="@+id/fldGrpCVh703t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H703.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -324,6 +344,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H703q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -345,6 +366,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H703s}"
                                     android:hint="@string/h703s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -373,12 +395,16 @@
                                     android:id="@+id/h704a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h704.equals("1")}'
+                                    android:onClick='@{()->form.setH704("1")}'
                                     android:text="@string/h704a" />
 
                                 <RadioButton
                                     android:id="@+id/h704b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h704.equals("2")}'
+                                    android:onClick='@{()->form.setH704("2")}'
                                     android:text="@string/h704b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -387,6 +413,8 @@
                             android:id="@+id/fldGrpCVh704t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H704.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -412,6 +440,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H704q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -433,6 +462,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H704s}"
                                     android:hint="@string/h704s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -461,12 +491,16 @@
                                     android:id="@+id/h705a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h705.equals("1")}'
+                                    android:onClick='@{()->form.setH705("1")}'
                                     android:text="@string/h705a" />
 
                                 <RadioButton
                                     android:id="@+id/h705b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h705.equals("2")}'
+                                    android:onClick='@{()->form.setH705("2")}'
                                     android:text="@string/h705b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -475,6 +509,8 @@
                             android:id="@+id/fldGrpCVh705t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H705.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -500,6 +536,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H705q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -521,6 +558,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H705s}"
                                     android:hint="@string/h705s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -549,12 +587,16 @@
                                     android:id="@+id/h706a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h706.equals("1")}'
+                                    android:onClick='@{()->form.setH706("1")}'
                                     android:text="@string/h706a" />
 
                                 <RadioButton
                                     android:id="@+id/h706b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h706.equals("2")}'
+                                    android:onClick='@{()->form.setH706("2")}'
                                     android:text="@string/h706b" />
                             </RadioGroup>
                         </LinearLayout>
@@ -563,6 +605,8 @@
                             android:id="@+id/fldGrpCVh706t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H706.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -588,6 +632,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H706q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -609,6 +654,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H706s}"
                                     android:hint="@string/h706s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -637,18 +683,24 @@
                                     android:id="@+id/h707a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h707.equals("1")}'
+                                    android:onClick='@{()->form.setH707("1")}'
                                     android:text="@string/h707a" />
 
                                 <RadioButton
                                     android:id="@+id/h707b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h707.equals("2")}'
+                                    android:onClick='@{()->form.setH707("2")}'
                                     android:text="@string/h707b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh707t"
+                            android:visibility="@{form.H707.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -676,6 +728,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H707q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -697,6 +750,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H707s}"
                                     android:hint="@string/h707s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -725,18 +779,24 @@
                                     android:id="@+id/h708a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h708.equals("1")}'
+                                    android:onClick='@{()->form.setH708("1")}'
                                     android:text="@string/h708a" />
 
                                 <RadioButton
                                     android:id="@+id/h708b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h708.equals("2")}'
+                                    android:onClick='@{()->form.setH708("2")}'
                                     android:text="@string/h708b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh708t"
+                            android:visibility="@{form.H708.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -764,6 +824,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H708q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -785,6 +846,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H708s}"
                                     android:hint="@string/h708s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -813,18 +875,24 @@
                                     android:id="@+id/h709a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h709.equals("1")}'
+                                    android:onClick='@{()->form.setH709("1")}'
                                     android:text="@string/h709a" />
 
                                 <RadioButton
                                     android:id="@+id/h709b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h709.equals("2")}'
+                                    android:onClick='@{()->form.setH709("2")}'
                                     android:text="@string/h709b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh709t"
+                            android:visibility="@{form.H709.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -852,6 +920,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H709q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -873,6 +942,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H709s}"
                                     android:hint="@string/h709s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -901,18 +971,24 @@
                                     android:id="@+id/h710a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h710.equals("1")}'
+                                    android:onClick='@{()->form.setH710("1")}'
                                     android:text="@string/h710a" />
 
                                 <RadioButton
                                     android:id="@+id/h710b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h710.equals("2")}'
+                                    android:onClick='@{()->form.setH710("2")}'
                                     android:text="@string/h710b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh710t"
+                            android:visibility="@{form.H710.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -940,6 +1016,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H710q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -961,6 +1038,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H710s}"
                                     android:hint="@string/h710s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -989,18 +1067,24 @@
                                     android:id="@+id/h711a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h711.equals("1")}'
+                                    android:onClick='@{()->form.setH711("1")}'
                                     android:text="@string/h711a" />
 
                                 <RadioButton
                                     android:id="@+id/h711b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h711.equals("2")}'
+                                    android:onClick='@{()->form.setH711("2")}'
                                     android:text="@string/h711b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh711t"
+                            android:visibility="@{form.H711.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -1028,6 +1112,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H711q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -1049,6 +1134,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H711s}"
                                     android:hint="@string/h711s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -1077,18 +1163,24 @@
                                     android:id="@+id/h712a"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h712.equals("1")}'
+                                    android:onClick='@{()->form.setH712("1")}'
                                     android:text="@string/h712a" />
 
                                 <RadioButton
                                     android:id="@+id/h712b"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:checked='@{form.h712.equals("2")}'
+                                    android:onClick='@{()->form.setH712("2")}'
                                     android:text="@string/h712b" />
                             </RadioGroup>
                         </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh712t"
+                            android:visibility="@{form.H712.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -1116,6 +1208,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H712q}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -1137,6 +1230,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:text="@={form.H712s}"
                                     android:hint="@string/h712s" />
                             </LinearLayout>
                         </LinearLayout>
@@ -1190,6 +1284,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:checked='@{form.h713a.equals("1")}'
+                                    android:onClick='@{()->form.setH713a("1")}'
                                     android:text="@string/h713aa" />
 
                                 <RadioButton
@@ -1197,6 +1293,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:checked='@{form.h713a.equals("2")}'
+                                    android:onClick='@{()->form.setH713a("2")}'
                                     android:text="@string/h713ab" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1205,6 +1303,8 @@
                             android:id="@+id/fldGrpCVh713t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H713a.equals(`1`)?View.VISIBLE:View.GONE}"
+
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -1223,6 +1323,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:text="@={form.H713b}"
                                     android:hint="@string/h713b" />
                             </LinearLayout>
 
@@ -1249,6 +1350,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H713c}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -1268,6 +1370,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:text="@={form.H713d}"
                                     android:hint="@string/h713d" />
 
                             </LinearLayout>
@@ -1323,6 +1426,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:checked='@{form.h714a.equals("1")}'
+                                    android:onClick='@{()->form.setH714a("1")}'
                                     android:text="@string/h714aa" />
 
                                 <RadioButton
@@ -1330,6 +1435,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:checked='@{form.h714a.equals("2")}'
+                                    android:onClick='@{()->form.setH714a("2")}'
                                     android:text="@string/h714ab" />
                             </RadioGroup>
                         </LinearLayout>
@@ -1338,6 +1445,7 @@
                             android:id="@+id/fldGrpCVh714t"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="@{form.H714a.equals(`1`)?View.VISIBLE:View.GONE}"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -1356,6 +1464,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:text="@={form.H714b}"
                                     android:hint="@string/h714b" />
                             </LinearLayout>
 
@@ -1382,6 +1491,7 @@
                                     android:maxLength="3"
                                     app:maxValue="100"
                                     app:minValue="0"
+                                    android:text="@={form.H714c}"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -1401,6 +1511,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:text="@={form.H714d}"
                                     android:hint="@string/h714d" />
 
                             </LinearLayout>
