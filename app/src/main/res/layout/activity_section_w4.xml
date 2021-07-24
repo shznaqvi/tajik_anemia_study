@@ -672,42 +672,56 @@
                                 android:id="@+id/w406a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406a.equals("1")}'
+                                android:onClick="@{()->form.setW406a(form.w406a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w406a" />
 
                             <CheckBox
                                 android:id="@+id/w406b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406b.equals("2")}'
+                                android:onClick="@{()->form.setW406b(form.w406b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w406b" />
 
                             <CheckBox
                                 android:id="@+id/w406c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406c.equals("3")}'
+                                android:onClick="@{()->form.setW406c(form.w406c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w406c" />
 
                             <CheckBox
                                 android:id="@+id/w406d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406d.equals("4")}'
+                                android:onClick="@{()->form.setW406d(form.w406d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w406d" />
 
                             <CheckBox
                                 android:id="@+id/w406e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406e.equals("5")}'
+                                android:onClick="@{()->form.setW406e(form.w406e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w406e" />
 
                             <CheckBox
                                 android:id="@+id/w406f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406f.equals("6")}'
+                                android:onClick="@{()->form.setW406f(form.w406f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w406f" />
 
                             <CheckBox
                                 android:id="@+id/w406g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w406g.equals("7")}'
+                                android:onClick="@{()->form.setW406g(form.w406g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w406g" />
 
                         </LinearLayout>
@@ -772,42 +786,56 @@
                                 android:id="@+id/w407a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407a.equals("1")}'
+                                android:onClick="@{()->form.setW407a(form.w407a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w407a" />
 
                             <CheckBox
                                 android:id="@+id/w407b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407b.equals("2")}'
+                                android:onClick="@{()->form.setW407b(form.w407b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w407b" />
 
                             <CheckBox
                                 android:id="@+id/w407c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407c.equals("3")}'
+                                android:onClick="@{()->form.setW407c(form.w407c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w407c" />
 
                             <CheckBox
                                 android:id="@+id/w407d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407d.equals("4")}'
+                                android:onClick="@{()->form.setW407d(form.w407d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w407d" />
 
                             <CheckBox
                                 android:id="@+id/w407e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407e.equals("5")}'
+                                android:onClick="@{()->form.setW407e(form.w407e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w407e" />
 
                             <CheckBox
                                 android:id="@+id/w407f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407f.equals("6")}'
+                                android:onClick="@{()->form.setW407f(form.w407f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w407f" />
 
                             <CheckBox
                                 android:id="@+id/w407g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w407g.equals("7")}'
+                                android:onClick="@{()->form.setW407g(form.w407g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w407g" />
 
                         </LinearLayout>
@@ -872,42 +900,56 @@
                                 android:id="@+id/w408a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408a.equals("1")}'
+                                android:onClick="@{()->form.setW408a(form.w408a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w408a" />
 
                             <CheckBox
                                 android:id="@+id/w408b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408b.equals("2")}'
+                                android:onClick="@{()->form.setW408b(form.w408b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w408b" />
 
                             <CheckBox
                                 android:id="@+id/w408c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408c.equals("3")}'
+                                android:onClick="@{()->form.setW408c(form.w408c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w408c" />
 
                             <CheckBox
                                 android:id="@+id/w408d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408d.equals("4")}'
+                                android:onClick="@{()->form.setW408d(form.w408d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w408d" />
 
                             <CheckBox
                                 android:id="@+id/w408e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408e.equals("5")}'
+                                android:onClick="@{()->form.setW408e(form.w408e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w408e" />
 
                             <CheckBox
                                 android:id="@+id/w408f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408f.equals("6")}'
+                                android:onClick="@{()->form.setW408f(form.w408f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w408f" />
 
                             <CheckBox
                                 android:id="@+id/w408g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w408g.equals("7")}'
+                                android:onClick="@{()->form.setW408g(form.w408g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w408g" />
 
                         </LinearLayout>
@@ -972,42 +1014,56 @@
                                 android:id="@+id/w409a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409a.equals("1")}'
+                                android:onClick="@{()->form.setW409a(form.w409a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w409a" />
 
                             <CheckBox
                                 android:id="@+id/w409b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409b.equals("2")}'
+                                android:onClick="@{()->form.setW409b(form.w409b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w409b" />
 
                             <CheckBox
                                 android:id="@+id/w409c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409c.equals("3")}'
+                                android:onClick="@{()->form.setW409c(form.w409c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w409c" />
 
                             <CheckBox
                                 android:id="@+id/w409d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409d.equals("4")}'
+                                android:onClick="@{()->form.setW409d(form.w409d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w409d" />
 
                             <CheckBox
                                 android:id="@+id/w409e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409e.equals("5")}'
+                                android:onClick="@{()->form.setW409e(form.w409e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w409e" />
 
                             <CheckBox
                                 android:id="@+id/w409f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409f.equals("6")}'
+                                android:onClick="@{()->form.setW409f(form.w409f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w409f" />
 
                             <CheckBox
                                 android:id="@+id/w409g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w409g.equals("7")}'
+                                android:onClick="@{()->form.setW409g(form.w409g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w409g" />
 
                         </LinearLayout>
@@ -1072,42 +1128,56 @@
                                 android:id="@+id/w410a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410a.equals("1")}'
+                                android:onClick="@{()->form.setW410a(form.w410a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w410a" />
 
                             <CheckBox
                                 android:id="@+id/w410b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410b.equals("2")}'
+                                android:onClick="@{()->form.setW410b(form.w410b.equals(`2`)?``:`2`)}"
                                 android:text="@string/w410b" />
 
                             <CheckBox
                                 android:id="@+id/w410c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410c.equals("3")}'
+                                android:onClick="@{()->form.setW410c(form.w410c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w410c" />
 
                             <CheckBox
                                 android:id="@+id/w410d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410d.equals("4")}'
+                                android:onClick="@{()->form.setW410d(form.w410d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w410d" />
 
                             <CheckBox
                                 android:id="@+id/w410e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410e.equals("5")}'
+                                android:onClick="@{()->form.setW410e(form.w410e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w410e" />
 
                             <CheckBox
                                 android:id="@+id/w410f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410f.equals("6")}'
+                                android:onClick="@{()->form.setW410f(form.w410f.equals(`6`)?``:`6`)}"
                                 android:text="@string/w410f" />
 
                             <CheckBox
                                 android:id="@+id/w410g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w410g.equals("7")}'
+                                android:onClick="@{()->form.setW410g(form.w410g.equals(`7`)?``:`7`)}"
                                 android:text="@string/w410g" />
 
                         </LinearLayout>
