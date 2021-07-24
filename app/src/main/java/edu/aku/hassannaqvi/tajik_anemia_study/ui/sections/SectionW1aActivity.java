@@ -16,6 +16,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1aBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.PregnancyListActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
@@ -58,7 +59,7 @@ public class SectionW1aActivity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
