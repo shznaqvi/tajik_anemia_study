@@ -2008,12 +2008,14 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:padding="0dp"
                                 android:orientation="vertical">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/c323mx"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
                                     android:enabled='@{c323m.checked?true:false}'
                                     android:gravity="center"
                                     android:hint="#"
@@ -2029,6 +2031,7 @@
                                     android:id="@+id/c323dx"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
                                     android:enabled='@{c323d.checked?true:false}'
                                     android:gravity="center"
                                     android:hint="##"
