@@ -16,8 +16,8 @@ android {
         dataBinding true
         viewBinding true
     }
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     Properties versionProps = new Properties()
     def versionPropsFile = file('version.properties')
