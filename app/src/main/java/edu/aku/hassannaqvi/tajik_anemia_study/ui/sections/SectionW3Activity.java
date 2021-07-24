@@ -95,7 +95,7 @@ public class SectionW3Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionW4Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
