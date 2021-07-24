@@ -8,7 +8,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
@@ -36,7 +35,7 @@ public class SectionW4Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        bi.w40198.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w401check, !b));
+   /*     bi.w40198.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w401check, !b));
         bi.w40298.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w402check, !b));
         bi.w40398.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w403check, !b));
         bi.w40498.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w404check, !b));
@@ -45,7 +44,7 @@ public class SectionW4Activity extends AppCompatActivity {
         bi.w40798.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w407check, !b));
         bi.w40898.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w408check, !b));
         bi.w40998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w409check, !b));
-        bi.w41098.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w410check, !b));
+        bi.w41098.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w410check, !b));*/
     }
 
 

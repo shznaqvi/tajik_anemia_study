@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC2Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionC2Activity extends AppCompatActivity {
@@ -38,7 +36,7 @@ public class SectionC2Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        rgLsnr(bi.c20301a, bi.c20301ab, new ViewGroup[]{bi.c20301bcheck});
+/*        rgLsnr(bi.c20301a, bi.c20301ab, new ViewGroup[]{bi.c20301bcheck});
         rgLsnr(bi.c20302a, bi.c20302ab, new ViewGroup[]{bi.c20302bcheck});
         rgLsnr(bi.c20303a, bi.c20303ab, new ViewGroup[]{bi.c20303bcheck});
         rgLsnr(bi.c20304a, bi.c20304ab, new ViewGroup[]{bi.c20304bcheck});
@@ -54,7 +52,7 @@ public class SectionC2Activity extends AppCompatActivity {
         rgLsnr(bi.c20314a, bi.c20314ab, new ViewGroup[]{bi.c20314bcheck});
         rgLsnr(bi.c20315a, bi.c20315ab, new ViewGroup[]{bi.c20315bcheck});
         rgLsnr(bi.c20316a, bi.c20316ab, new ViewGroup[]{bi.c20316bcheck});
-        rgLsnr(bi.c20317a, bi.c20317ab, new ViewGroup[]{bi.c20317bcheck});
+        rgLsnr(bi.c20317a, bi.c20317ab, new ViewGroup[]{bi.c20317bcheck});*/
     }
 
 

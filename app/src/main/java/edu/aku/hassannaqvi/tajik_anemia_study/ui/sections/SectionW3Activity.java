@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -21,7 +20,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW3Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionW3Activity extends AppCompatActivity {
@@ -39,7 +37,7 @@ public class SectionW3Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        bi.w30299.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w302check, !b));
+       /* bi.w30299.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w302check, !b));
 
         bi.w306.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVw307.setVisibility(View.VISIBLE);
@@ -62,7 +60,7 @@ public class SectionW3Activity extends AppCompatActivity {
         ch313(bi.w31398, bi.w313a);
 
         rgLsnr(bi.w315, bi.w315b, new ViewGroup[]{bi.fldGrpCVw316, bi.fldGrpCVw317, bi.fldGrpCVw318t, bi.fldGrpCVw319});
-        rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});
+        rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});*/
     }
 
     private void ch313(CheckBox cb1, CheckBox cb2) {

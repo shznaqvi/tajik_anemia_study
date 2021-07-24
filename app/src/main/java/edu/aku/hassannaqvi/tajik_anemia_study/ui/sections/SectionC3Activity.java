@@ -3,13 +3,11 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
@@ -20,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC3Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionC3Activity extends AppCompatActivity {
@@ -39,7 +36,7 @@ public class SectionC3Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-
+/*
         bi.c301.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVc302.setVisibility(View.VISIBLE);
             bi.fldGrpCVc303.setVisibility(View.VISIBLE);
@@ -117,7 +114,7 @@ public class SectionC3Activity extends AppCompatActivity {
 
         rgLsnr(bi.c319, bi.c319b, new ViewGroup[]{bi.fldGrpCVc320t});
 
-        rgLsnr(bi.c322, bi.c322b, new ViewGroup[]{bi.fldGrpCVc323});
+        rgLsnr(bi.c322, bi.c322b, new ViewGroup[]{bi.fldGrpCVc323});*/
 
     }
 
