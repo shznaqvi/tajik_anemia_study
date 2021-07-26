@@ -1040,16 +1040,16 @@
                                 android:id="@+id/w311a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w311.equals("00")}'
-                                android:onClick='@{()->form.setW310("00")}'
+                                android:checked='@{form.w311.equals("1")}'
+                                android:onClick='@{()->form.setW310("1")}'
                                 android:text="@string/w311a" />
 
                             <RadioButton
                                 android:id="@+id/w311h"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w311.equals("1")}'
-                                android:onClick='@{()->form.setW311("1")}'
+                                android:checked='@{form.w311.equals("2")}'
+                                android:onClick='@{()->form.setW311("2")}'
                                 android:text="@string/w311h" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -1070,8 +1070,8 @@
                                 android:id="@+id/w311d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w311.equals("2")}'
-                                android:onClick='@{()->form.setW311("2")}'
+                                android:checked='@{form.w311.equals("3")}'
+                                android:onClick='@{()->form.setW311("3")}'
                                 android:text="@string/w311d" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
