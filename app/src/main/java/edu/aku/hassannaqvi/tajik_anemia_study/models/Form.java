@@ -7325,6 +7325,13 @@ public class Form extends BaseObservable {
 
     public void setC20304a(String c20304a) {
         this.c20304a = c20304a;
+        setC20304ba(c20304a.equals("1") ? this.c20304ba : "");
+        setC20304bb(c20304a.equals("1") ? this.c20304bb : "");
+        setC20304bc(c20304a.equals("1") ? this.c20304bc : "");
+        setC20304bd(c20304a.equals("1") ? this.c20304bd : "");
+        setC20304be(c20304a.equals("1") ? this.c20304be : "");
+        setC20304bf(c20304a.equals("1") ? this.c20304bf : "");
+        setC20304bg(c20304a.equals("1") ? this.c20304bg : "");
         notifyPropertyChanged(BR.c20304a);
     }
 
@@ -7430,6 +7437,13 @@ public class Form extends BaseObservable {
 
     public void setC20305a(String c20305a) {
         this.c20305a = c20305a;
+        setC20305ba(c20305a.equals("1") ? this.c20305ba : "");
+        setC20305bb(c20305a.equals("1") ? this.c20305bb : "");
+        setC20305bc(c20305a.equals("1") ? this.c20305bc : "");
+        setC20305bd(c20305a.equals("1") ? this.c20305bd : "");
+        setC20305be(c20305a.equals("1") ? this.c20305be : "");
+        setC20305bf(c20305a.equals("1") ? this.c20305bf : "");
+        setC20305bg(c20305a.equals("1") ? this.c20305bg : "");
         notifyPropertyChanged(BR.c20305a);
     }
 
@@ -7535,6 +7549,13 @@ public class Form extends BaseObservable {
 
     public void setC20306a(String c20306a) {
         this.c20306a = c20306a;
+        setC20306ba(c20306a.equals("1") ? this.c20306ba : "");
+        setC20306bb(c20306a.equals("1") ? this.c20306bb : "");
+        setC20306bc(c20306a.equals("1") ? this.c20306bc : "");
+        setC20306bd(c20306a.equals("1") ? this.c20306bd : "");
+        setC20306be(c20306a.equals("1") ? this.c20306be : "");
+        setC20306bf(c20306a.equals("1") ? this.c20306bf : "");
+        setC20306bg(c20306a.equals("1") ? this.c20306bg : "");
         notifyPropertyChanged(BR.c20306a);
     }
 
@@ -7640,6 +7661,13 @@ public class Form extends BaseObservable {
 
     public void setC20307a(String c20307a) {
         this.c20307a = c20307a;
+        setC20307ba(c20307a.equals("1") ? this.c20307ba : "");
+        setC20307bb(c20307a.equals("1") ? this.c20307bb : "");
+        setC20307bc(c20307a.equals("1") ? this.c20307bc : "");
+        setC20307bd(c20307a.equals("1") ? this.c20307bd : "");
+        setC20307be(c20307a.equals("1") ? this.c20307be : "");
+        setC20307bf(c20307a.equals("1") ? this.c20307bf : "");
+        setC20307bg(c20307a.equals("1") ? this.c20307bg : "");
         notifyPropertyChanged(BR.c20307a);
     }
 
@@ -7745,6 +7773,13 @@ public class Form extends BaseObservable {
 
     public void setC20308a(String c20308a) {
         this.c20308a = c20308a;
+        setC20308ba(c20308a.equals("1") ? this.c20308ba : "");
+        setC20308bb(c20308a.equals("1") ? this.c20308bb : "");
+        setC20308bc(c20308a.equals("1") ? this.c20308bc : "");
+        setC20308bd(c20308a.equals("1") ? this.c20308bd : "");
+        setC20308be(c20308a.equals("1") ? this.c20308be : "");
+        setC20308bf(c20308a.equals("1") ? this.c20308bf : "");
+        setC20308bg(c20308a.equals("1") ? this.c20308bg : "");
         notifyPropertyChanged(BR.c20308a);
     }
 
