@@ -173,6 +173,7 @@
                 <!-- h211  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh211"
+                    android:visibility="@{form.h210.equals(`1`)?View.VISIBLE:View.GONE}"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -356,6 +357,8 @@
                 <!-- h213  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh213"
+                    android:visibility="@{form.h212.equals(`1`)?View.VISIBLE:View.GONE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -540,6 +543,8 @@
                 <!-- h215  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh215"
+                    android:visibility="@{form.h214.equals(`1`)?View.VISIBLE:View.GONE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -720,6 +725,7 @@
                 <!-- h217  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh217"
+                    android:visibility="@{form.h216.equals(`1`)?View.VISIBLE:View.GONE}"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -901,6 +907,7 @@
                 <!-- h219  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh219"
+                    android:visibility="@{form.h218.equals(`1`)?View.VISIBLE:View.GONE}"
                     style="@style/cardView">
 
                     <LinearLayout

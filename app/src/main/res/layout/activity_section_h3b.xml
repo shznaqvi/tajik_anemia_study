@@ -420,6 +420,7 @@
                 <!-- h316  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh316"
+                    android:visibility="@{form.h315.equals(`1`)?View.VISIBLE:View.GONE}"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1099,6 +1100,7 @@
                 <!-- h322  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVh322"
+                    android:visibility="@{form.h321.equals(`2`)?View.GONE:View.VISIBLE}"
                     style="@style/cardView">
 
                     <LinearLayout

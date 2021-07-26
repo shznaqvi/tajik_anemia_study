@@ -504,7 +504,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="w205a"
-                                android:text='@{w20598.checked ? "" : w205ax.getText().toString() }'
+                                android:text='@={form.w205ax}'
                                 app:maxValue="10"
                                 app:minValue="1"
                                 app:type="range" />
@@ -512,7 +512,9 @@
                             <CheckBox
                                 android:id="@+id/w20598"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked='@{form.W205.equals("98")}'
+                                android:onClick='@{()->form.setW205(form.w205.equals("98")?"":"98")}'
                                 android:tag="-1"
                                 android:text="@string/w20598" />
 
