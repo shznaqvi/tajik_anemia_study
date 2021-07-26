@@ -6332,6 +6332,7 @@ public class Form extends BaseObservable {
 
     public void setC101(String c101) {
         this.c101 = c101;
+        setC102(c101.equals("1") ? this.c102 : "");
         notifyPropertyChanged(BR.c101);
     }
 
@@ -6392,6 +6393,7 @@ public class Form extends BaseObservable {
 
     public void setC106b(String c106b) {
         this.c106b = c106b;
+        setC106ca(c106b.equals("1") ? this.c106ca : "");
         notifyPropertyChanged(BR.c106b);
     }
 
@@ -6412,6 +6414,8 @@ public class Form extends BaseObservable {
 
     public void setC106d(String c106d) {
         this.c106d = c106d;
+        setC106ea(c106d.equals("1") ? this.c106ea : "");
+        setC106f(c106d.equals("1") ? this.c106f : "");
         notifyPropertyChanged(BR.c106d);
     }
 
@@ -6442,6 +6446,8 @@ public class Form extends BaseObservable {
 
     public void setC106g(String c106g) {
         this.c106g = c106g;
+        setC106ha(c106g.equals("1") ? this.c106ha : "");
+        setC106i(c106g.equals("1") ? this.c106i : "");
         notifyPropertyChanged(BR.c106g);
     }
 
@@ -6502,6 +6508,7 @@ public class Form extends BaseObservable {
 
     public void setC106m(String c106m) {
         this.c106m = c106m;
+        setC106n(c106m.equals("1") ? this.c106n : "");
         notifyPropertyChanged(BR.c106m);
     }
 
@@ -6532,6 +6539,7 @@ public class Form extends BaseObservable {
 
     public void setC106p(String c106p) {
         this.c106p = c106p;
+        setC106q(c106p.equals("1") ? this.c106q : "");
         notifyPropertyChanged(BR.c106p);
     }
 
@@ -6552,6 +6560,7 @@ public class Form extends BaseObservable {
 
     public void setC107a(String c107a) {
         this.c107a = c107a;
+        setC107b(c107a.equals("1") ? this.c106q : "");
         notifyPropertyChanged(BR.c107a);
     }
 
