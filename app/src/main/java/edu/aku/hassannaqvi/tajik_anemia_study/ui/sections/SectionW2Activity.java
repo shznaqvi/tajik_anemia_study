@@ -3,13 +3,11 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
@@ -20,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW2Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionW2Activity extends AppCompatActivity {
@@ -38,6 +35,7 @@ public class SectionW2Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
+/*
 
         rgLsnr(bi.w201, bi.w201b, new ViewGroup[]{bi.fldGrpCVw202, bi.fldGrpCVw203, bi.fldGrpCVw204, bi.fldGrpCVw205, bi.fldGrpCVw206, bi.fldGrpCVw20601});
         rgLsnr(bi.w207, bi.w207b, new ViewGroup[]{bi.fldGrpCVw208, bi.fldGrpCVw209, bi.fldGrpCVw210, bi.fldGrpCVw211, bi.fldGrpCVw212,});
@@ -51,6 +49,7 @@ public class SectionW2Activity extends AppCompatActivity {
             Clear.clearAllFields(bi.fldGrpCVw20601, i != bi.w20697.getId());
         });
 
+*/
 
     }
 
@@ -72,7 +71,7 @@ public class SectionW2Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionW3Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }

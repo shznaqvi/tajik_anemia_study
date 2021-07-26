@@ -2,10 +2,15 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -19,11 +24,17 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH1Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.SyncActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.ChildListActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.pregList;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.AndroidUtilityKt.isNetworkConnected;
 
 
 public class SectionH1Activity extends AppCompatActivity {
+    private static final String TAG = "SectionH1Activity";
     ActivitySectionH1Binding bi;
     private DatabaseHelper db;
 
@@ -36,8 +47,156 @@ public class SectionH1Activity extends AppCompatActivity {
         if (form == null) form = new Form();
         bi.setForm(form);
         setupSkips();
-
+        setSupportActionBar(bi.toolbar);
+        //bi.toolbar.setNavigationIcon(R.drawable.ic_settings);
         db = MainApp.appInfo.dbHelper;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        MenuCompat.setGroupDividerEnabled(menu, true);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+
+            case R.id.action_data_sync:
+                if (isNetworkConnected(this)) {
+                    startActivity(new Intent(this, SyncActivity.class));
+                } else
+                    Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.secH1:
+                startActivity(new Intent(this, SectionH1Activity.class));
+                return true;
+            case R.id.secH2b:
+                startActivity(new Intent(this, SectionH2bActivity.class));
+                return true;
+            case R.id.mwraList:
+                startActivity(new Intent(this, MwraListActivity.class));
+                return true;
+            case R.id.childList:
+                MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
+                if (MainApp.mwra != null) {
+                    startActivity(new Intent(this, ChildListActivity.class));
+                } else {
+                    Toast.makeText(this, "No Mother has been selected. Please select a mother before opening Child List", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secH3a:
+                startActivity(new Intent(this, SectionH3aActivity.class));
+                Log.d(TAG, "onOptionsItemSelected: H3 " + form.sH3atoString());
+                return true;
+
+            case R.id.secH4:
+
+                startActivity(new Intent(this, SectionH4Activity.class));
+                return true;
+            case R.id.secH5:
+                startActivity(new Intent(this, SectionH5Activity.class));
+                return true;
+            case R.id.secH6:
+                startActivity(new Intent(this, SectionH6Activity.class));
+                return true;
+            case R.id.secH7:
+                startActivity(new Intent(this, SectionH7Activity.class));
+                return true;
+
+            case R.id.secW1:
+                if (!form.getW101d().equals("")) {
+                    startActivity(new Intent(this, SectionW1aActivity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secW1b:
+                if (MainApp.mwra != null) {
+                    pregList = db.getPregBYMUID(MainApp.mwra.getUid());
+                    startActivity(new Intent(this, SectionW1bActivity.class));
+                } else {
+                    Toast.makeText(this, "No Mother has been selected. Please select a mother before opening Pregnancy List", Toast.LENGTH_LONG).show();
+                }
+                return true;
+
+
+            case R.id.secW2:
+                if (!form.getW201().equals("")) {
+                    startActivity(new Intent(this, SectionW2Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secW3:
+                if (!form.getW301().equals("")) {
+                    startActivity(new Intent(this, SectionW3Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secW4:
+                if (!form.getW401().equals("")) {
+                    startActivity(new Intent(this, SectionW4Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secC1:
+                if (!form.getC101().equals("")) {
+                    startActivity(new Intent(this, SectionC1Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secC2:
+                if (!form.getC201().equals("")) {
+                    startActivity(new Intent(this, SectionC2Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+            case R.id.secC3:
+                Log.d(TAG, "onOptionsItemSelected: C3 " + form.getC301().equals(""));
+                if (!form.getC301().equals("")) {
+                    startActivity(new Intent(this, SectionC3Activity.class));
+                } else {
+                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                }
+                return true;
+
+            /*case R.id.formsReportDate -> {
+                startActivity(new Intent(this, FormsReportDate.class));
+                return true;
+            }
+            case R.id.lhwsReportDate -> {
+                startActivity(new Intent(this, HHIDReportDate.class));
+                return true;
+            }
+            case R.id.formsReportPending -> {
+                startActivity(new Intent(this, FormsReportPending.class));
+                return true;
+            }
+
+            case R.id.formsReportCluster -> {
+                startActivity(new Intent(this, FormsReportLHW.class));
+                return true;
+            }
+            case R.id.action_database -> {
+                startActivity(new Intent(this, AndroidManager.class));
+                return true;
+            }*/
+
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 
 

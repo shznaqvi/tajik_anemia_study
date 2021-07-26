@@ -3,7 +3,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC1Bindi
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt.rgLsnr;
 
 
 public class SectionC1Activity extends AppCompatActivity {
@@ -38,13 +36,13 @@ public class SectionC1Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-        rgLsnr(bi.c101, bi.c101b, new ViewGroup[]{bi.fldGrpCVc102});
+    /*    rgLsnr(bi.c101, bi.c101b, new ViewGroup[]{bi.fldGrpCVc102});
         rgLsnr(bi.c106b, bi.c106bb, bi.c106b98, new ViewGroup[]{bi.fldGrpCVc106c});
         rgLsnr(bi.c106d, bi.c106db, bi.c106d98, new ViewGroup[]{bi.fldGrpCVc106e, bi.fldGrpCVc106f});
         rgLsnr(bi.c106g, bi.c106gb, bi.c106g98, new ViewGroup[]{bi.fldGrpCVc106h, bi.fldGrpCVc106i});
         rgLsnr(bi.c106m, bi.c106mb, bi.c106m98, new ViewGroup[]{bi.fldGrpCVc106n});
         rgLsnr(bi.c106p, bi.c106pb, bi.c106p98, new ViewGroup[]{bi.fldGrpCVc106q});
-        rgLsnr(bi.c107a, bi.c107ab, bi.c107a98, new ViewGroup[]{bi.fldGrpCVc107bt});
+        rgLsnr(bi.c107a, bi.c107ab, bi.c107a98, new ViewGroup[]{bi.fldGrpCVc107bt});*/
     }
 
 
@@ -65,7 +63,7 @@ public class SectionC1Activity extends AppCompatActivity {
         saveDraft();
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            startActivity(new Intent(this, SectionC2Activity.class).putExtra("complete", true));
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
