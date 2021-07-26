@@ -4484,6 +4484,7 @@ public class Form extends BaseObservable {
 
     public void setW30196x(String w30196x) {
         this.w30196x = w30196x;
+        setW30196x(w301.equals("96") ? this.w30196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w30196x);
     }
 
@@ -4503,6 +4504,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302a(String w302a) {
+        if (this.w302a.equals(w302a)) return; // for all checkboxes
         this.w302a = w302a;
         notifyPropertyChanged(BR.w302a);
     }
@@ -4513,6 +4515,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302b(String w302b) {
+        if (this.w302b.equals(w302b)) return; // for all checkboxes
         this.w302b = w302b;
         notifyPropertyChanged(BR.w302b);
     }
@@ -4523,6 +4526,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302c(String w302c) {
+        if (this.w302c.equals(w302c)) return; // for all checkboxes
         this.w302c = w302c;
         notifyPropertyChanged(BR.w302c);
     }
@@ -4533,6 +4537,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302d(String w302d) {
+        if (this.w302d.equals(w302d)) return; // for all checkboxes
         this.w302d = w302d;
         notifyPropertyChanged(BR.w302d);
     }
@@ -4543,6 +4548,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302e(String w302e) {
+        if (this.w302e.equals(w302e)) return; // for all checkboxes
         this.w302e = w302e;
         notifyPropertyChanged(BR.w302e);
     }
@@ -4553,6 +4559,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302f(String w302f) {
+        if (this.w302f.equals(w302f)) return; // for all checkboxes
         this.w302f = w302f;
         notifyPropertyChanged(BR.w302f);
     }
@@ -4563,6 +4570,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW302g(String w302g) {
+        if (this.w302g.equals(w302g)) return; // for all checkboxes
         this.w302g = w302g;
         notifyPropertyChanged(BR.w302g);
     }
@@ -4573,7 +4581,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW30296(String w30296) {
+        if (this.w30296.equals(w30296)) return; // for all checkboxes
         this.w30296 = w30296;
+        setW30296x(w30296.equals("96") ? this.w30296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w30296);
     }
 
@@ -4593,6 +4603,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW30299(String w30299) {
+        if (this.w30299.equals(w30299)) return; // for all checkboxes
         this.w30299 = w30299;
         notifyPropertyChanged(BR.w30299);
     }
@@ -4604,6 +4615,9 @@ public class Form extends BaseObservable {
 
     public void setW303(String w303) {
         this.w303 = w303;
+        setW303961x(h301.equals("961") ? this.w303961x : ""); // for all skips, mention all skipped questions
+        setW303962x(h301.equals("962") ? this.w303962x : ""); // for all skips, mention all skipped questions
+        setW303963x(h301.equals("963") ? this.w303963x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w303);
     }
 
@@ -4674,6 +4688,8 @@ public class Form extends BaseObservable {
 
     public void setW307(String w307) {
         this.w307 = w307;
+        setW307ax(w307.equals("1") ? this.w307ax : ""); // for all skips, mention all skipped questions
+        setW307bx(w307.equals("2") ? this.w307bx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w307);
     }
 
@@ -4734,6 +4750,8 @@ public class Form extends BaseObservable {
 
     public void setW311(String w311) {
         this.w311 = w311;
+        setW311hx(w311.equals("2") ? this.w311hx : ""); // for all skips, mention all skipped questions
+        setW311dx(w311.equals("3") ? this.w311dx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w311);
     }
 
@@ -4783,6 +4801,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW313a(String w313a) {
+        if (this.w313a.equals(w313a)) return; // for all checkboxes
         this.w313a = w313a;
         notifyPropertyChanged(BR.w313a);
     }
@@ -4793,6 +4812,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW313b(String w313b) {
+        if (this.w313b.equals(w313b)) return; // for all checkboxes
         this.w313b = w313b;
         notifyPropertyChanged(BR.w313b);
     }
@@ -4803,6 +4823,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW313c(String w313c) {
+        if (this.w313c.equals(w313c)) return; // for all checkboxes
         this.w313c = w313c;
         notifyPropertyChanged(BR.w313c);
     }
@@ -4813,6 +4834,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW313d(String w313d) {
+        if (this.w313d.equals(w313d)) return; // for all checkboxes
         this.w313d = w313d;
         notifyPropertyChanged(BR.w313d);
     }
@@ -4823,6 +4845,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW313e(String w313e) {
+        if (this.w313e.equals(w313e)) return; // for all checkboxes
         this.w313e = w313e;
         notifyPropertyChanged(BR.w313e);
     }
@@ -4833,7 +4856,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW31396(String w31396) {
+        if (this.w31396.equals(w31396)) return; // for all checkboxes
         this.w31396 = w31396;
+        setW31396x(w31396.equals("96") ? this.w31396x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w31396);
     }
 
@@ -4853,6 +4878,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW31398(String w31398) {
+        if (this.w31398.equals(w31398)) return; // for all checkboxes
         this.w31398 = w31398;
         notifyPropertyChanged(BR.w31398);
     }
@@ -4864,6 +4890,9 @@ public class Form extends BaseObservable {
 
     public void setW314(String w314) {
         this.w314 = w314;
+        setW314961x(h301.equals("961") ? this.w314961x : ""); // for all skips, mention all skipped questions
+        setW314962x(h301.equals("962") ? this.w314962x : ""); // for all skips, mention all skipped questions
+        setW314963x(h301.equals("963") ? this.w314963x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w314);
     }
 
@@ -4923,6 +4952,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316a(String w316a) {
+        if (this.w316a.equals(w316a)) return; // for all checkboxes
         this.w316a = w316a;
         notifyPropertyChanged(BR.w316a);
     }
@@ -4933,6 +4963,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316b(String w316b) {
+        if (this.w316b.equals(w316b)) return; // for all checkboxes
         this.w316b = w316b;
         notifyPropertyChanged(BR.w316b);
     }
@@ -4943,6 +4974,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316c(String w316c) {
+        if (this.w316c.equals(w316c)) return; // for all checkboxes
         this.w316c = w316c;
         notifyPropertyChanged(BR.w316c);
     }
@@ -4953,6 +4985,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316d(String w316d) {
+        if (this.w316d.equals(w316d)) return; // for all checkboxes
         this.w316d = w316d;
         notifyPropertyChanged(BR.w316d);
     }
@@ -4963,6 +4996,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316e(String w316e) {
+        if (this.w316e.equals(w316e)) return; // for all checkboxes
         this.w316e = w316e;
         notifyPropertyChanged(BR.w316e);
     }
@@ -4973,6 +5007,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316f(String w316f) {
+        if (this.w316f.equals(w316f)) return; // for all checkboxes
         this.w316f = w316f;
         notifyPropertyChanged(BR.w316f);
     }
@@ -4983,6 +5018,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316g(String w316g) {
+        if (this.w316g.equals(w316g)) return; // for all checkboxes
         this.w316g = w316g;
         notifyPropertyChanged(BR.w316g);
     }
@@ -4993,6 +5029,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW316h(String w316h) {
+        if (this.w316h.equals(w316h)) return; // for all checkboxes
         this.w316h = w316h;
         notifyPropertyChanged(BR.w316h);
     }
@@ -5003,7 +5040,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW31696(String w31696) {
+        if (this.w31696.equals(w31696)) return; // for all checkboxes
         this.w31696 = w31696;
+        setW31696x(w31696x.equals("96") ? this.w31696x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w31696);
     }
 
@@ -5024,6 +5063,9 @@ public class Form extends BaseObservable {
 
     public void setW317(String w317) {
         this.w317 = w317;
+        setW317hx(w317hx.equals("1") ? this.w317hx : ""); // for all skips, mention all skipped questions
+        setW317dx(w317dx.equals("2") ? this.w317dx : ""); // for all skips, mention all skipped questions
+        setW317wx(w317wx.equals("3") ? this.w317wx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w317);
     }
 
@@ -5083,6 +5125,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319a(String w319a) {
+        if (this.w319a.equals(w319a)) return; // for all checkboxes
         this.w319a = w319a;
         notifyPropertyChanged(BR.w319a);
     }
@@ -5093,6 +5136,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319b(String w319b) {
+        if (this.w319b.equals(w319b)) return; // for all checkboxes
         this.w319b = w319b;
         notifyPropertyChanged(BR.w319b);
     }
@@ -5103,6 +5147,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319c(String w319c) {
+        if (this.w319c.equals(w319c)) return; // for all checkboxes
         this.w319c = w319c;
         notifyPropertyChanged(BR.w319c);
     }
@@ -5113,6 +5158,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319d(String w319d) {
+        if (this.w319d.equals(w319d)) return; // for all checkboxes
         this.w319d = w319d;
         notifyPropertyChanged(BR.w319d);
     }
@@ -5123,6 +5169,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319e(String w319e) {
+        if (this.w319e.equals(w319e)) return; // for all checkboxes
         this.w319e = w319e;
         notifyPropertyChanged(BR.w319e);
     }
@@ -5133,6 +5180,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319f(String w319f) {
+        if (this.w319f.equals(w319f)) return; // for all checkboxes
         this.w319f = w319f;
         notifyPropertyChanged(BR.w319f);
     }
@@ -5143,6 +5191,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319g(String w319g) {
+        if (this.w319g.equals(w319g)) return; // for all checkboxes
         this.w319g = w319g;
         notifyPropertyChanged(BR.w319g);
     }
@@ -5153,6 +5202,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW319h(String w319h) {
+        if (this.w319h.equals(w319h)) return; // for all checkboxes
         this.w319h = w319h;
         notifyPropertyChanged(BR.w319h);
     }
@@ -5163,7 +5213,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW31996(String w31996) {
+        if (this.w31996.equals(w31996)) return; // for all checkboxes
         this.w31996 = w31996;
+        setW31996x(w31996x.equals("96") ? this.w31996x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w31996);
     }
 
@@ -5203,6 +5255,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321a(String w321a) {
+        if (this.w321a.equals(w321a)) return; // for all checkboxes
         this.w321a = w321a;
         notifyPropertyChanged(BR.w321a);
     }
@@ -5213,6 +5266,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321b(String w321b) {
+        if (this.w321b.equals(w321b)) return; // for all checkboxes
         this.w321b = w321b;
         notifyPropertyChanged(BR.w321b);
     }
@@ -5223,6 +5277,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321c(String w321c) {
+        if (this.w321c.equals(w321c)) return; // for all checkboxes
         this.w321c = w321c;
         notifyPropertyChanged(BR.w321c);
     }
@@ -5233,6 +5288,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321d(String w321d) {
+        if (this.w321d.equals(w321d)) return; // for all checkboxes
         this.w321d = w321d;
         notifyPropertyChanged(BR.w321d);
     }
@@ -5243,6 +5299,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321e(String w321e) {
+        if (this.w321e.equals(w321e)) return; // for all checkboxes
         this.w321e = w321e;
         notifyPropertyChanged(BR.w321e);
     }
@@ -5253,6 +5310,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321f(String w321f) {
+        if (this.w321f.equals(w321f)) return; // for all checkboxes
         this.w321f = w321f;
         notifyPropertyChanged(BR.w321f);
     }
@@ -5263,6 +5321,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321g(String w321g) {
+        if (this.w321g.equals(w321g)) return; // for all checkboxes
         this.w321g = w321g;
         notifyPropertyChanged(BR.w321g);
     }
@@ -5273,6 +5332,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW321h(String w321h) {
+        if (this.w321h.equals(w321h)) return; // for all checkboxes
         this.w321h = w321h;
         notifyPropertyChanged(BR.w321h);
     }
@@ -5283,7 +5343,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW32196(String w32196) {
+        if (this.w32196.equals(w32196)) return; // for all checkboxes
         this.w32196 = w32196;
+        setW32196x(w32196x.equals("96") ? this.w32196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w32196);
     }
 
@@ -5304,6 +5366,9 @@ public class Form extends BaseObservable {
 
     public void setW322(String w322) {
         this.w322 = w322;
+        setW322hx(w322hx.equals("1") ? this.w322hx : ""); // for all skips, mention all skipped questions
+        setW322hx(w322dx.equals("2") ? this.w322dx : ""); // for all skips, mention all skipped questions
+        setW322hx(w322wx.equals("3") ? this.w322wx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w322);
     }
 
@@ -5363,6 +5428,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW324a(String w324a) {
+        if (this.w324a.equals(w324a)) return; // for all checkboxes
         this.w324a = w324a;
         notifyPropertyChanged(BR.w324a);
     }
@@ -5373,6 +5439,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW324b(String w324b) {
+        if (this.w324b.equals(w324b)) return; // for all checkboxes
         this.w324b = w324b;
         notifyPropertyChanged(BR.w324b);
     }
@@ -5383,6 +5450,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW324c(String w324c) {
+        if (this.w324c.equals(w324c)) return; // for all checkboxes
         this.w324c = w324c;
         notifyPropertyChanged(BR.w324c);
     }
@@ -5393,6 +5461,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW324d(String w324d) {
+        if (this.w324d.equals(w324d)) return; // for all checkboxes
         this.w324d = w324d;
         notifyPropertyChanged(BR.w324d);
     }
@@ -5403,7 +5472,9 @@ public class Form extends BaseObservable {
     }
 
     public void setW32496(String w32496) {
+        if (this.w32496.equals(w32496)) return; // for all checkboxes
         this.w32496 = w32496;
+        setW32496x(w32496x.equals("96") ? this.w32496x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w32496);
     }
 
@@ -5444,6 +5515,7 @@ public class Form extends BaseObservable {
 
     public void setW327(String w327) {
         this.w327 = w327;
+        setW32796x(w32796x.equals("96") ? this.w32796x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w327);
     }
 
