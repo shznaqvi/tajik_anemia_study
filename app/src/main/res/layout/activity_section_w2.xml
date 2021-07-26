@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Form" />
 
         <variable
             name="callback"
@@ -89,6 +89,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked='@{form.w201.equals("1")}'
+                                android:onClick='@{()->form.setW201("1")}'
                                 android:text="@string/w201a" />
 
                             <RadioButton
@@ -96,6 +98,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked='@{form.w201.equals("2")}'
+                                android:onClick='@{()->form.setW201("2")}'
                                 android:text="@string/w201b" />
 
                         </RadioGroup>
@@ -152,6 +156,8 @@
                                 android:id="@+id/w202a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w202a.equals("1")}'
+                                android:onClick="@{()->form.setW202a(form.w202a.equals(`1`)?``:`1`)}"
                                 android:text="@string/w202a" />
 
                             <CheckBox
