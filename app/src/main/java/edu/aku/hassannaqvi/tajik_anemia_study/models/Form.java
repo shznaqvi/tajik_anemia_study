@@ -7469,6 +7469,13 @@ public class Form extends BaseObservable {
 
     public void setC20306a(String c20306a) {
         this.c20306a = c20306a;
+        setC20306ba(c20306a.equals("1") ? this.c20306ba : "");
+        setC20306bb(c20306a.equals("1") ? this.c20306bb : "");
+        setC20306bc(c20306a.equals("1") ? this.c20306bc : "");
+        setC20306bd(c20306a.equals("1") ? this.c20306bd : "");
+        setC20306be(c20306a.equals("1") ? this.c20306be : "");
+        setC20306bf(c20306a.equals("1") ? this.c20306bf : "");
+        setC20306bg(c20306a.equals("1") ? this.c20306bg : "");
         notifyPropertyChanged(BR.c20306a);
     }
 
