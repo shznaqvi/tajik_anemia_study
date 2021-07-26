@@ -90,6 +90,7 @@
                             android:id="@+id/c101"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->c102.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -120,7 +121,8 @@
                 <!-- c102  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc102"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility='@{c101a.checked ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -157,7 +159,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
 
                             <RadioButton
                                 android:id="@+id/c102h"
@@ -566,7 +567,8 @@
                 <!-- c106c  EditTextPicker   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106c"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106ba.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -659,6 +661,7 @@
                             android:id="@+id/c106d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->c106f.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -698,7 +701,8 @@
                 <!-- c106e  EditTextPicker   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106e"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106da.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -761,7 +765,8 @@
                 <!-- c106f  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106f"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106da.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -860,6 +865,7 @@
                             android:id="@+id/c106g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->c106i.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -899,7 +905,8 @@
                 <!-- c106h  EditTextPicker   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106h"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106ga.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -962,7 +969,8 @@
                 <!-- c106i  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106i"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106da.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1268,6 +1276,7 @@
                             android:id="@+id/c106m"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->c106n.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -1307,7 +1316,8 @@
                 <!-- c106n  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106n"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106ma.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1475,6 +1485,7 @@
                             android:id="@+id/c106p"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->c106q.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
@@ -1514,7 +1525,8 @@
                 <!-- c106q  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc106q"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c106pa.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1690,7 +1702,8 @@
                 <!-- c107bt  EditTextPicker   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc107bt"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{c107aa.checked ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
