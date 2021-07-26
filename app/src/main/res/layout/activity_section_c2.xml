@@ -294,8 +294,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0"
-                            android:visibility="@{c20301aa.checked ? View.VISIBLE : View.GONE}">
+                            android:tag="0">
 
                             <TextView
                                 style="@style/info"
@@ -307,56 +306,63 @@
                                 android:id="@+id/c20301ba"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301ba.equals("1")}'
-                                android:onClick='@{()->form.setC20301ba(c20301ba.checked?"1":"")}'
+                                android:checked="@{form.c20301ba.equals(`1`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301ba(form.c20301ba.equals(`1`)?``:`1`)}"
                                 android:text="@string/c20301ba" />
 
                             <CheckBox
                                 android:id="@+id/c20301bb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301bb.equals("2")}'
-                                android:onClick='@{()->form.setC20301bb(c20301bb.checked?"2":"")}'
+                                android:checked="@{form.c20301bb.equals(`2`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301bb(form.c20301bb.equals(`2`)?``:`2`)}"
                                 android:text="@string/c20301bb" />
 
                             <CheckBox
                                 android:id="@+id/c20301bc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301bc.equals("3")}'
-                                android:onClick='@{()->form.setC20301bc(c20301bc.checked?"3":"")}'
+                                android:checked="@{form.c20301bc.equals(`3`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301bc(form.c20301bc.equals(`3`)?``:`3`)}"
                                 android:text="@string/c20301bc" />
 
                             <CheckBox
                                 android:id="@+id/c20301bd"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301bd.equals("4")}'
-                                android:onClick='@{()->form.setC20301bd(c20301bd.checked?"4":"")}'
+                                android:checked="@{form.c20301bd.equals(`4`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301bd(form.c20301bd.equals(`4`)?``:`4`)}"
                                 android:text="@string/c20301bd" />
 
                             <CheckBox
                                 android:id="@+id/c20301be"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301be.equals("5")}'
-                                android:onClick='@{()->form.setC20301be(c20301be.checked?"5":"")}'
+                                android:checked="@{form.c20301be.equals(`5`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301be(form.c20301be.equals(`5`)?``:`5`)}"
                                 android:text="@string/c20301be" />
 
                             <CheckBox
                                 android:id="@+id/c20301bf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301bf.equals("6")}'
-                                android:onClick='@{()->form.setC20301bf(c20301bf.checked?"6":"")}'
+                                android:checked="@{form.c20301bf.equals(`6`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301bf(form.c20301bf.equals(`6`)?``:`6`)}"
                                 android:text="@string/c20301bf" />
 
                             <CheckBox
                                 android:id="@+id/c20301bg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.c20301bg.equals("7")}'
-                                android:onClick='@{()->form.setC20301bg(c20301bg.checked?"7":"")}'
+                                android:checked="@{form.c20301bg.equals(`7`)}"
+                                android:enabled="@{form.c20301a.equals(`1`)}"
+                                android:onClick="@{()->form.setC20301bg(form.c20301bg.equals(`7`)?``:`7`)}"
                                 android:text="@string/c20301bg" />
 
                         </LinearLayout>

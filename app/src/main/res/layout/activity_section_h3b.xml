@@ -168,7 +168,6 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.h31396.equals(`96`)}"
                                 android:onClick="@{()->form.setH31396(form.h31396.equals(`96`)?``:`96`)}"
-
                                 android:text="@string/h31396" />
 
                             <EditText
