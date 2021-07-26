@@ -294,7 +294,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:tag="0">
+                            android:tag="0"
+                            android:visibility="@{c20301aa.checked ? View.VISIBLE : View.GONE}">
 
                             <TextView
                                 style="@style/info"
