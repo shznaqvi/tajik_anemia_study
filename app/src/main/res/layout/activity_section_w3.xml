@@ -306,7 +306,7 @@
                                 android:hint="@string/w30296"
                                 android:tag="w30296"
                                 android:text='@={form.w30296x}'
-                                android:visibility='@{w30296.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.w30296.equals(`96`)? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
 
