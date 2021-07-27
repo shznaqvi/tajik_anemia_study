@@ -7900,6 +7900,13 @@ public class Form extends BaseObservable {
 
     public void setC20309a(String c20309a) {
         this.c20309a = c20309a;
+        setC20309ba(c20309a.equals("1") ? this.c20309ba : "");
+        setC20309bb(c20309a.equals("1") ? this.c20309bb : "");
+        setC20309bc(c20309a.equals("1") ? this.c20309bc : "");
+        setC20309bd(c20309a.equals("1") ? this.c20309bd : "");
+        setC20309be(c20309a.equals("1") ? this.c20309be : "");
+        setC20309bf(c20309a.equals("1") ? this.c20309bf : "");
+        setC20309bg(c20309a.equals("1") ? this.c20309bg : "");
         notifyPropertyChanged(BR.c20309a);
     }
 
@@ -8005,6 +8012,13 @@ public class Form extends BaseObservable {
 
     public void setC20310a(String c20310a) {
         this.c20310a = c20310a;
+        setC20310ba(c20310a.equals("1") ? this.c20310ba : "");
+        setC20310bb(c20310a.equals("1") ? this.c20310bb : "");
+        setC20310bc(c20310a.equals("1") ? this.c20310bc : "");
+        setC20310bd(c20310a.equals("1") ? this.c20310bd : "");
+        setC20310be(c20310a.equals("1") ? this.c20310be : "");
+        setC20310bf(c20310a.equals("1") ? this.c20310bf : "");
+        setC20310bg(c20310a.equals("1") ? this.c20310bg : "");
         notifyPropertyChanged(BR.c20310a);
     }
 
@@ -8110,6 +8124,13 @@ public class Form extends BaseObservable {
 
     public void setC20311a(String c20311a) {
         this.c20311a = c20311a;
+        setC20311ba(c20311a.equals("1") ? this.c20311ba : "");
+        setC20311bb(c20311a.equals("1") ? this.c20311bb : "");
+        setC20311bc(c20311a.equals("1") ? this.c20311bc : "");
+        setC20311bd(c20311a.equals("1") ? this.c20311bd : "");
+        setC20311be(c20311a.equals("1") ? this.c20311be : "");
+        setC20311bf(c20311a.equals("1") ? this.c20311bf : "");
+        setC20311bg(c20311a.equals("1") ? this.c20311bg : "");
         notifyPropertyChanged(BR.c20311a);
     }
 
@@ -8215,6 +8236,13 @@ public class Form extends BaseObservable {
 
     public void setC20312a(String c20312a) {
         this.c20312a = c20312a;
+        setC20312ba(c20312a.equals("1") ? this.c20312ba : "");
+        setC20312bb(c20312a.equals("1") ? this.c20312bb : "");
+        setC20312bc(c20312a.equals("1") ? this.c20312bc : "");
+        setC20312bd(c20312a.equals("1") ? this.c20312bd : "");
+        setC20312be(c20312a.equals("1") ? this.c20312be : "");
+        setC20312bf(c20312a.equals("1") ? this.c20312bf : "");
+        setC20312bg(c20312a.equals("1") ? this.c20312bg : "");
         notifyPropertyChanged(BR.c20312a);
     }
 
@@ -8320,6 +8348,13 @@ public class Form extends BaseObservable {
 
     public void setC20313a(String c20313a) {
         this.c20313a = c20313a;
+        setC20313ba(c20313a.equals("1") ? this.c20313ba : "");
+        setC20313bb(c20313a.equals("1") ? this.c20313bb : "");
+        setC20313bc(c20313a.equals("1") ? this.c20313bc : "");
+        setC20313bd(c20313a.equals("1") ? this.c20313bd : "");
+        setC20313be(c20313a.equals("1") ? this.c20313be : "");
+        setC20313bf(c20313a.equals("1") ? this.c20313bf : "");
+        setC20313bg(c20313a.equals("1") ? this.c20313bg : "");
         notifyPropertyChanged(BR.c20313a);
     }
 
@@ -8425,6 +8460,13 @@ public class Form extends BaseObservable {
 
     public void setC20314a(String c20314a) {
         this.c20314a = c20314a;
+        setC20314ba(c20314a.equals("1") ? this.c20314ba : "");
+        setC20314bb(c20314a.equals("1") ? this.c20314bb : "");
+        setC20314bc(c20314a.equals("1") ? this.c20314bc : "");
+        setC20314bd(c20314a.equals("1") ? this.c20314bd : "");
+        setC20314be(c20314a.equals("1") ? this.c20314be : "");
+        setC20314bf(c20314a.equals("1") ? this.c20314bf : "");
+        setC20314bg(c20314a.equals("1") ? this.c20314bg : "");
         notifyPropertyChanged(BR.c20314a);
     }
 
@@ -8530,6 +8572,13 @@ public class Form extends BaseObservable {
 
     public void setC20315a(String c20315a) {
         this.c20315a = c20315a;
+        setC20315ba(c20315a.equals("1") ? this.c20315ba : "");
+        setC20315bb(c20315a.equals("1") ? this.c20315bb : "");
+        setC20315bc(c20315a.equals("1") ? this.c20315bc : "");
+        setC20315bd(c20315a.equals("1") ? this.c20315bd : "");
+        setC20315be(c20315a.equals("1") ? this.c20315be : "");
+        setC20315bf(c20315a.equals("1") ? this.c20315bf : "");
+        setC20315bg(c20315a.equals("1") ? this.c20315bg : "");
         notifyPropertyChanged(BR.c20315a);
     }
 
@@ -8635,6 +8684,13 @@ public class Form extends BaseObservable {
 
     public void setC20316a(String c20316a) {
         this.c20316a = c20316a;
+        setC20316ba(c20316a.equals("1") ? this.c20316ba : "");
+        setC20316bb(c20316a.equals("1") ? this.c20316bb : "");
+        setC20316bc(c20316a.equals("1") ? this.c20316bc : "");
+        setC20316bd(c20316a.equals("1") ? this.c20316bd : "");
+        setC20316be(c20316a.equals("1") ? this.c20316be : "");
+        setC20316bf(c20316a.equals("1") ? this.c20316bf : "");
+        setC20316bg(c20316a.equals("1") ? this.c20316bg : "");
         notifyPropertyChanged(BR.c20316a);
     }
 
@@ -8740,6 +8796,13 @@ public class Form extends BaseObservable {
 
     public void setC20317a(String c20317a) {
         this.c20317a = c20317a;
+        setC20317ba(c20317a.equals("1") ? this.c20317ba : "");
+        setC20317bb(c20317a.equals("1") ? this.c20317bb : "");
+        setC20317bc(c20317a.equals("1") ? this.c20317bc : "");
+        setC20317bd(c20317a.equals("1") ? this.c20317bd : "");
+        setC20317be(c20317a.equals("1") ? this.c20317be : "");
+        setC20317bf(c20317a.equals("1") ? this.c20317bf : "");
+        setC20317bg(c20317a.equals("1") ? this.c20317bg : "");
         notifyPropertyChanged(BR.c20317a);
     }
 
@@ -9508,6 +9571,7 @@ public class Form extends BaseObservable {
 
     public void setC319(String c319) {
         this.c319 = c319;
+        setC320(c319.equals("1") ? this.c320 : "");
         notifyPropertyChanged(BR.c319);
     }
 
@@ -9548,6 +9612,8 @@ public class Form extends BaseObservable {
 
     public void setC323(String c323) {
         this.c323 = c323;
+        setC323mx(c323.equals("1") ? this.c323mx : "");
+        setC323dx(c323.equals("2") ? this.c323dx : "");
         notifyPropertyChanged(BR.c323);
     }
 
