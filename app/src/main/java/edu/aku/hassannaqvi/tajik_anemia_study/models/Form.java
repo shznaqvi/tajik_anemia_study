@@ -3781,7 +3781,7 @@ public class Form extends BaseObservable {
     public void setW20296(String w20296) {
         if (this.w20296.equals(w20296)) return; // for all checkboxes
         this.w20296 = w20296;
-        setW20296x(w20296x.equals("96") ? this.w20296x : ""); // for all skips, mention all skipped questions
+        setW20296x(w20296.equals("96") ? this.w20296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w20296);
     }
 
@@ -3844,6 +3844,8 @@ public class Form extends BaseObservable {
     }
 
     public void setW204(String w204) {
+        setW204wx(w204.equals("1") ? this.w204wx : ""); // for all skips, mention all skipped questions
+        setW204mx(w204.equals("2") ? this.w204mx : ""); // for all skips, mention all skipped questions
         this.w204 = w204;
         notifyPropertyChanged(BR.w204);
     }
