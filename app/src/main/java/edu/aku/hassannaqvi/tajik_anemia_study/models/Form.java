@@ -8916,6 +8916,20 @@ public class Form extends BaseObservable {
 
     public void setC301(String c301) {
         this.c301 = c301;
+        setC302(c301.equals("1") ? this.c302 : "");
+        setC303(c301.equals("1") ? this.c303 : "");
+        setC304(c301.equals("1") ? this.c304 : "");
+        setC305a(c301.equals("1") ? this.c305a : "");
+        setC305b(c301.equals("1") ? this.c305b : "");
+        setC305c(c301.equals("1") ? this.c305c : "");
+        setC305d(c301.equals("1") ? this.c305d : "");
+        setC305e(c301.equals("1") ? this.c305e : "");
+        setC305f(c301.equals("1") ? this.c305f : "");
+        setC305g(c301.equals("1") ? this.c305g : "");
+        setC305h(c301.equals("1") ? this.c305h : "");
+        setC305i(c301.equals("1") ? this.c305i : "");
+        setC305j(c301.equals("1") ? this.c305j : "");
+        setC30596(c301.equals("1") ? this.c30596 : "");
         notifyPropertyChanged(BR.c301);
     }
 
@@ -8926,6 +8940,19 @@ public class Form extends BaseObservable {
 
     public void setC302(String c302) {
         this.c302 = c302;
+        setC303(c302.equals("2") ? this.c303 : "");
+        setC304(c302.equals("1") ? this.c304 : "");
+        setC305a(c302.equals("1") ? this.c305a : "");
+        setC305b(c302.equals("1") ? this.c305b : "");
+        setC305c(c302.equals("1") ? this.c305c : "");
+        setC305d(c302.equals("1") ? this.c305d : "");
+        setC305e(c302.equals("1") ? this.c305e : "");
+        setC305f(c302.equals("1") ? this.c305f : "");
+        setC305g(c302.equals("1") ? this.c305g : "");
+        setC305h(c302.equals("1") ? this.c305h : "");
+        setC305i(c302.equals("1") ? this.c305i : "");
+        setC305j(c302.equals("1") ? this.c305j : "");
+        setC30596(c302.equals("1") ? this.c30596 : "");
         notifyPropertyChanged(BR.c302);
     }
 
