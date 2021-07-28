@@ -9672,6 +9672,7 @@ public class Form extends BaseObservable {
 
     public void setC322(String c322) {
         this.c322 = c322;
+        setC323(c322.equals("1") ? this.c323 : "");
         notifyPropertyChanged(BR.c322);
     }
 
