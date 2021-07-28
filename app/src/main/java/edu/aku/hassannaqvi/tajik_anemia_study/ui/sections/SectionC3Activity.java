@@ -37,9 +37,8 @@ public class SectionC3Activity extends AppCompatActivity {
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SC3, form.sC3toString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
