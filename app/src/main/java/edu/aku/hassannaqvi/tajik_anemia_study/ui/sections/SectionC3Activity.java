@@ -89,6 +89,7 @@ public class SectionC3Activity extends AppCompatActivity {
         rgLsnr(bi.c311, bi.c311b, new ViewGroup[]{bi.fldGrpCVc312, bi.fldGrpCVc313, bi.fldGrpCVc314, bi.fldGrpCVc315});
 
         rgLsnr(bi.c312, bi.c312a, new ViewGroup[]{bi.fldGrpCVc313});
+
         bi.c312.setOnCheckedChangeListener((radioGroup, i) -> {
             bi.fldGrpCVc313.setVisibility(View.VISIBLE);
             bi.fldGrpCVc314.setVisibility(View.VISIBLE);
