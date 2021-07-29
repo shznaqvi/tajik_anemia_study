@@ -51,9 +51,7 @@ public class SectionC2Activity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionC3Activity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -289,12 +287,10 @@ public class SectionC2Activity extends AppCompatActivity {
     }
 
 
-/*
-    @Override
+   /* @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
-*/
 
 }
