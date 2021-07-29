@@ -18,7 +18,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1bBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
 
 
@@ -36,7 +35,6 @@ public class SectionW1bActivity extends AppCompatActivity {
             preg = new Pregnancy(); // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
         bi.setPreg(preg);
         bi.setCallback(this);
-        bi.setForm(form);
 
         db = MainApp.appInfo.dbHelper;
 
