@@ -1222,15 +1222,18 @@
                                 android:id="@+id/w313b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w313b.equals("2")}'
+                                android:checked="@{form.w313b.equals(`2`)}"
+                                android:enabled="@{!form.w31397.equals(`97`) &amp;&amp; !form.w31398.equals(`98`)}"
                                 android:onClick="@{()->form.setW313b(form.w313b.equals(`2`)?``:`2`)}"
+                                android:onCheckedChanged="@{()->w314.clearCheck()}"
                                 android:text="@string/w313b" />
 
                             <CheckBox
                                 android:id="@+id/w313c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w313c.equals("3")}'
+                                android:checked="@{form.w313c.equals(`3`)}"
+                                android:enabled="@{!form.w31397.equals(`97`) &amp;&amp; !form.w31398.equals(`98`)}"
                                 android:onClick="@{()->form.setW313c(form.w313c.equals(`3`)?``:`3`)}"
                                 android:text="@string/w313c" />
 
@@ -1238,7 +1241,8 @@
                                 android:id="@+id/w313d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w313d.equals("4")}'
+                                android:checked="@{form.w313d.equals(`4`)}"
+                                android:enabled="@{!form.w31397.equals(`97`) &amp;&amp; !form.w31398.equals(`98`)}"
                                 android:onClick="@{()->form.setW313d(form.w313d.equals(`4`)?``:`4`)}"
                                 android:text="@string/w313d" />
 
@@ -1246,7 +1250,8 @@
                                 android:id="@+id/w313e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w313e.equals("5")}'
+                                android:checked="@{form.w313e.equals(`5`)}"
+                                android:enabled="@{!form.w31397.equals(`97`) &amp;&amp; !form.w31398.equals(`98`)}"
                                 android:onClick="@{()->form.setW313e(form.w313e.equals(`5`)?``:`5`)}"
                                 android:text="@string/w313e" />
 
@@ -1254,7 +1259,8 @@
                                 android:id="@+id/w31396"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w31396.equals("96")}'
+                                android:checked="@{form.w31396.equals(`96`)}"
+                                android:enabled="@{!form.w31397.equals(`97`) &amp;&amp; !form.w31398.equals(`98`)}"
                                 android:onClick="@{()->form.setW31396(form.w31396.equals(`96`)?``:`96`)}"
                                 android:text="@string/w31396" />
 
@@ -1265,17 +1271,18 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/w31396"
                                 android:tag="w31396"
-                                android:text='@={form.w31396x}'
-                                android:visibility='@{w31396.checked? View.VISIBLE : View.GONE}' />
+                                android:text="@={form.w31396x}"
+                                android:visibility="@{form.w31396.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
                         <CheckBox
-                            android:id="@+id/w313a"
+                            android:id="@+id/w31397"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked='@{form.w313a.equals("1")}'
-                            android:onClick="@{()->form.setW313a(form.w313a.equals(`1`)?``:`1`)}"
+                            android:checked="@{form.w31397.equals(`97`)}"
+                            android:enabled="@{!form.w31398.equals(`98`)}"
+                            android:onClick="@{()->form.setW31397(form.w31397.equals(`97`)?``:`97`)}"
                             android:tag="-1"
                             android:text="@string/w313a" />
 
@@ -1283,7 +1290,8 @@
                             android:id="@+id/w31398"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked='@{form.w31398.equals("98")}'
+                            android:checked="@{form.w31398.equals(`98`)}"
+                            android:enabled="@{!form.w31397.equals(`97`)}"
                             android:onClick="@{()->form.setW31398(form.w31398.equals(`98`)?``:`98`)}"
                             android:tag="-1"
                             android:text="@string/w31398" />
@@ -1296,7 +1304,8 @@
                 <!-- w314  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw314"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.w313b.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1322,66 +1331,86 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/w314"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                            <RadioButton
-                                android:id="@+id/w314961"
-                                android:layout_width="match_parent"
+                            <RadioGroup
+                                android:id="@+id/w314"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w314.equals("961")}'
-                                android:onClick='@{()->form.setW314("961")}'
-                                android:text="@string/w314t1" />
+                                android:layout_weight="1">
 
-                            <EditText
-                                android:id="@+id/w314961x"
-                                android:layout_width="match_parent"
+                                <RadioButton
+                                    android:id="@+id/w314961"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.w314.equals(`961`)}"
+                                    android:onClick="@{()->form.setW314(`961`)}"
+                                    android:text="@string/w314t1" />
+
+                                <RadioButton
+                                    android:id="@+id/w314962"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.w314.equals(`962`)}"
+                                    android:onClick="@{()->form.setW314(`962`)}"
+                                    android:text="@string/w314t2" />
+
+                                <RadioButton
+                                    android:id="@+id/w314963"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.w314.equals(`963`)}"
+                                    android:onClick="@{()->form.setW314(`963`)}"
+                                    android:text="@string/w314t3" />
+
+                            </RadioGroup>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/w314961"
-                                android:tag="w314961"
-                                android:text='@={form.w314961x}'
-                                android:visibility='@{w314961.checked? View.VISIBLE : View.GONE}' />
+                                android:layout_weight="2"
+                                android:orientation="vertical"
+                                android:padding="0dp">
 
-                            <RadioButton
-                                android:id="@+id/w314962"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked='@{form.w314.equals("962")}'
-                                android:onClick='@{()->form.setW314("962")}'
-                                android:text="@string/w314t2" />
+                                <EditText
+                                    android:id="@+id/w314961x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:enabled="@{form.w314.equals(`961`)}"
+                                    android:hint="@string/w314961"
+                                    android:tag="w314961"
+                                    android:text='@={form.w314961x}' />
 
-                            <EditText
-                                android:id="@+id/w314962x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/w314962"
-                                android:tag="w314962"
-                                android:text='@={form.w314962x}'
-                                android:visibility='@{w314962.checked? View.VISIBLE : View.GONE}' />
+                                <EditText
+                                    android:id="@+id/w314962x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:enabled="@{form.w314.equals(`962`)}"
+                                    android:hint="@string/w314962"
+                                    android:tag="w314962"
+                                    android:text='@={form.w314962x}' />
 
-                            <RadioButton
-                                android:id="@+id/w314963"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked='@{form.w314.equals("963")}'
-                                android:onClick='@{()->form.setW314("963")}'
-                                android:text="@string/w314t3" />
+                                <EditText
+                                    android:id="@+id/w314963x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:enabled="@{form.w314.equals(`963`)}"
+                                    android:hint="@string/w314963"
+                                    android:tag="w314963"
+                                    android:text='@={form.w314963x}' />
 
-                            <EditText
-                                android:id="@+id/w314963x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/w314963"
-                                android:tag="w314963"
-                                android:text='@={form.w314963x}'
-                                android:visibility='@{w314963.checked? View.VISIBLE : View.GONE}' />
+                            </LinearLayout>
 
-                        </RadioGroup>
+                        </LinearLayout>
 
                     </LinearLayout>
 

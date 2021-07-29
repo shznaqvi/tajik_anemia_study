@@ -408,7 +408,7 @@ public class Form extends BaseObservable {
     private String w311dx = StringUtils.EMPTY;
     private String w312 = StringUtils.EMPTY;
     private String w313 = StringUtils.EMPTY;
-    private String w313a = StringUtils.EMPTY;
+    private String w31397 = StringUtils.EMPTY;
     private String w313b = StringUtils.EMPTY;
     private String w313c = StringUtils.EMPTY;
     private String w313d = StringUtils.EMPTY;
@@ -4840,14 +4840,20 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getW313a() {
-        return w313a;
+    public String getW31397() {
+        return w31397;
     }
 
-    public void setW313a(String w313a) {
-        if (this.w313a.equals(w313a)) return; // for all checkboxes
-        this.w313a = w313a;
-        notifyPropertyChanged(BR.w313a);
+    public void setW31397(String w31397) {
+        if (this.w31397.equals(w31397)) return; // for all checkboxes
+        this.w31397 = w31397;
+        setW313b(w31397.equals("97") ? "" : this.w313b);
+        setW313c(w31397.equals("97") ? "" : this.w313c);
+        setW313d(w31397.equals("97") ? "" : this.w313d);
+        setW313e(w31397.equals("97") ? "" : this.w313e);
+        setW31396(w31397.equals("97") ? "" : this.w31396);
+        setW31398(w31397.equals("97") ? "" : this.w31398);
+        notifyPropertyChanged(BR.w31397);
     }
 
     @Bindable
@@ -4858,6 +4864,7 @@ public class Form extends BaseObservable {
     public void setW313b(String w313b) {
         if (this.w313b.equals(w313b)) return; // for all checkboxes
         this.w313b = w313b;
+        setW314(w313b.equals("2") ? this.w314 : "");
         notifyPropertyChanged(BR.w313b);
     }
 
@@ -4924,6 +4931,12 @@ public class Form extends BaseObservable {
     public void setW31398(String w31398) {
         if (this.w31398.equals(w31398)) return; // for all checkboxes
         this.w31398 = w31398;
+        setW313b(w31398.equals("98") ? "" : this.w313b);
+        setW313c(w31398.equals("98") ? "" : this.w313c);
+        setW313d(w31398.equals("98") ? "" : this.w313d);
+        setW313e(w31398.equals("98") ? "" : this.w313e);
+        setW31396(w31398.equals("98") ? "" : this.w31396);
+        setW31397(w31398.equals("98") ? "" : this.w31397);
         notifyPropertyChanged(BR.w31398);
     }
 
@@ -10260,7 +10273,7 @@ public class Form extends BaseObservable {
                 this.w311dx = json.getString("w311dx");
                 this.w312 = json.getString("w312");
                 this.w313 = json.getString("w313");
-                this.w313a = json.getString("w313a");
+                this.w31397 = json.getString("w31397");
                 this.w313b = json.getString("w313b");
                 this.w313c = json.getString("w313c");
                 this.w313d = json.getString("w313d");
@@ -11210,7 +11223,7 @@ public class Form extends BaseObservable {
                     .put("w311dx", w311dx)
                     .put("w312", w312)
                     .put("w313", w313)
-                    .put("w313a", w313a)
+                    .put("w31397", w31397)
                     .put("w313b", w313b)
                     .put("w313c", w313c)
                     .put("w313d", w313d)
