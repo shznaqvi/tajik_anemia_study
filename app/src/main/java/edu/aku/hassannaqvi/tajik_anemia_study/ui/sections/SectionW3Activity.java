@@ -3,13 +3,11 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.validatorcrawler.aliazaz.Clear;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
@@ -57,34 +55,16 @@ public class SectionW3Activity extends AppCompatActivity {
             }
         });
 
-        ch313(bi.w313a, bi.w31398);
-        ch313(bi.w31398, bi.w313a);
-
         rgLsnr(bi.w315, bi.w315b, new ViewGroup[]{bi.fldGrpCVw316, bi.fldGrpCVw317, bi.fldGrpCVw318t, bi.fldGrpCVw319});
         rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});*/
-    }
-
-    private void ch313(CheckBox cb1, CheckBox cb2) {
-        cb1.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                Clear.clearAllFields(bi.w313check, false);
-                cb2.setChecked(false);
-                cb2.setEnabled(false);
-            } else {
-                Clear.clearAllFields(bi.w313check, true);
-                cb2.setChecked(false);
-                cb2.setEnabled(true);
-            }
-        });
     }
 
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW3, form.sW3toString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -93,24 +73,10 @@ public class SectionW3Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionW4Activity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void saveDraft() {
-  /*      MainApp.form = new Form();
-
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-*/
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -125,12 +91,10 @@ public class SectionW3Activity extends AppCompatActivity {
     }
 
 
-/*
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
-*/
+    }*/
 
 
 }
