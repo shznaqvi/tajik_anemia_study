@@ -1294,8 +1294,7 @@
                 <!-- w314  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw314"
-                    style="@style/cardView"
-                    android:visibility="gone">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
