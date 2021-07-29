@@ -1742,8 +1742,7 @@ public class Form extends BaseObservable {
 
     public void setH305(String h305) {
         this.h305 = h305;
-        setH305(h306.equals("1") ? this.h305 : ""); // for all skips, mention all skipped questions
-
+        setH306(h305.equals("1") ? this.h306 : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h305);
     }
 
@@ -4519,6 +4518,7 @@ public class Form extends BaseObservable {
 
     public void setW301(String w301) {
         this.w301 = w301;
+        setW30196x(w301.equals("96") ? this.w30196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w301);
     }
 
@@ -4529,7 +4529,6 @@ public class Form extends BaseObservable {
 
     public void setW30196x(String w30196x) {
         this.w30196x = w30196x;
-        setW30196x(w301.equals("96") ? this.w30196x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w30196x);
     }
 

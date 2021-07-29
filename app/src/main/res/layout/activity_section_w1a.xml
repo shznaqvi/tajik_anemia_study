@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
+        <variable
             name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Form" />
 
         <variable
             name="callback"
@@ -129,7 +129,8 @@
                                  android:maxLength="2"
                                  app:maxValue="31"
                                  app:minValue="1"
-                                app:type="range" />
+                                 android:text="@={form.w101d}"
+                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w101m"
@@ -142,6 +143,7 @@
                                 android:maxLength="2"
                                 app:maxValue="12"
                                 app:minValue="1"
+                                android:text="@={form.w101m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -155,6 +157,7 @@
                                 android:maxLength="4"
                                 app:maxValue="2006"
                                 app:minValue="1972"
+                                android:text="@={form.w101y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -217,6 +220,7 @@
                                 android:maxLength="2"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                android:text="@={form.w102}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -266,6 +270,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w103.equals("1")}'
+                                android:onClick='@{()->form.setW103("1")}'
                                 android:text="@string/w103a" />
 
                             <RadioButton
@@ -273,6 +279,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w103.equals("2")}'
+                                android:onClick='@{()->form.setW103("2")}'
                                 android:text="@string/w103b" />
 
                         </RadioGroup>
@@ -322,6 +330,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w104.equals("1")}'
+                                android:onClick='@{()->form.setW104("1")}'
                                 android:text="@string/w104a" />
 
                             <RadioButton
@@ -329,6 +339,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w104.equals("2")}'
+                                android:onClick='@{()->form.setW104("2")}'
                                 android:text="@string/w104b" />
 
                         </RadioGroup>
@@ -391,6 +403,7 @@
                                 android:maxLength="2"
                                 app:maxValue="49"
                                 app:minValue="15"
+                                android:text="@={form.w105}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -440,6 +453,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w106.equals("1")}'
+                                android:onClick='@{()->form.setW106("1")}'
                                 android:text="@string/w106a" />
 
                             <RadioButton
@@ -447,6 +462,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w106.equals("2")}'
+                                android:onClick='@{()->form.setW106("2")}'
                                 android:text="@string/w106b" />
 
                         </RadioGroup>
@@ -495,6 +512,7 @@
                                 android:maxLength="2"
                                 app:maxValue="10"
                                 app:minValue="1"
+                                android:text="@={form.w107}"
                                 app:type="range" />
 
                     </LinearLayout>
@@ -541,6 +559,7 @@
                                 android:maxLength="2"
                                 app:maxValue="10"
                                 app:minValue="1"
+                                android:text="@={form.w108}"
                                 app:type="range" />
 
                     </LinearLayout>
@@ -587,6 +606,7 @@
                             android:maxLength="2"
                             app:maxValue="49"
                             app:minValue="15"
+                            android:text="@={form.w109}"
                             app:type="range" />
 
                     </LinearLayout>
@@ -633,6 +653,7 @@
                                 android:maxLength="2"
                                 app:maxValue="10"
                                 app:minValue="1"
+                                android:text="@={form.w110}"
                                 app:type="range" />
 
                     </LinearLayout>
@@ -679,6 +700,7 @@
                                 android:maxLength="2"
                                 app:maxValue="10"
                                 app:minValue="1"
+                                android:text="@={form.w111}"
                                 app:type="range" />
 
                     </LinearLayout>
@@ -726,6 +748,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w112.equals("1")}'
+                                android:onClick='@{()->form.setW112("1")}'
                                 android:text="@string/w112a" />
 
                             <RadioButton
@@ -733,6 +757,8 @@
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.w112.equals("2")}'
+                                android:onClick='@{()->form.setW112("2")}'
                                 android:text="@string/w112b" />
 
                         </RadioGroup>

@@ -220,7 +220,7 @@
                                 android:id="@+id/w20296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked='@{form.w20296.equals("96")}'
+                                android:checked="@{form.w20296.equals(`96`)}"
                                 android:onClick="@{()->form.setW20296(form.w20296.equals(`96`)?``:`96`)}"
                                 android:text="@string/w20296" />
 
@@ -232,7 +232,7 @@
                                 android:hint="@string/w20296"
                                 android:tag="w20296"
                                 android:text='@={form.w20296x}'
-                                android:visibility='@{w20296.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility="@{form.w20296.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </LinearLayout>
 
@@ -346,7 +346,7 @@
                                 android:hint="@string/w203962"
                                 android:tag="w203962"
                                 android:text='@={form.w203962x}'
-                                android:visibility='@{w203962.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.w203.equals("962") ? View.VISIBLE : View.GONE}' />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -371,7 +371,7 @@
                                 android:hint="@string/w203963"
                                 android:tag="w203963"
                                 android:text='@={form.w203963x}'
-                                android:visibility='@{w203963.checked? View.VISIBLE : View.GONE}' />
+                                android:visibility='@{form.w203.equals("963") ? View.VISIBLE : View.GONE}' />
 
                         </RadioGroup>
 
@@ -460,7 +460,7 @@
                             android:maxLength="2"
                             android:tag="w204w"
                             android:text='@={form.w204wx}'
-                            android:visibility='@{w204w.checked? View.VISIBLE : View.GONE}'
+                            android:visibility="@{form.w204.equals(`1`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="42"
                             app:minValue="4"
                             app:type="range" />
@@ -474,7 +474,7 @@
                             android:maxLength="1"
                             android:tag="w204m"
                             android:text='@={form.w204mx}'
-                            android:visibility='@{w204m.checked? View.VISIBLE : View.GONE}'
+                            android:visibility="@{form.w204.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="9"
                             app:minValue="1"
                             app:type="range" />
@@ -530,7 +530,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:enabled='@{w20598.checked ? false : true}'
+                                android:enabled='@{form.w205.equals(`98`) ? false : true}'
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
