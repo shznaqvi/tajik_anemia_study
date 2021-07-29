@@ -551,8 +551,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h305.equals("1")}'
-                                android:onClick='@{()->form.setH305("1")}'
+                                android:checked="@{form.h305.equals(`1`)}"
+                                android:onClick="@{()->form.setH305(`1`)}"
                                 android:text="@string/h305a" />
 
                             <RadioButton
@@ -560,8 +560,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h305.equals("2")}'
-                                android:onClick='@{()->form.setH305("2")}'
+                                android:checked="@{form.h305.equals(`2`)}"
+                                android:onClick="@{()->form.setH305(`2`)}"
                                 android:text="@string/h305b" />
 
                         </RadioGroup>

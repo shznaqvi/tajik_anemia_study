@@ -30,6 +30,7 @@ public class SectionW4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_w4);
         bi.setCallback(this);
+        bi.setForm(form);
         setupSkips();
     }
 
