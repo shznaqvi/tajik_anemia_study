@@ -1009,7 +1009,7 @@
                     android:visibility='@{w207b.checked ? View.GONE : View.VISIBLE}'>
 
 
-                <!-- w208  Radio   -->
+                    <!-- w208  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVw208"
                         style="@style/cardView">
@@ -1231,86 +1231,84 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:id="@+id/w210check"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:tag="0">
+                                android:orientation="horizontal">
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="match_parent"
+                                <LinearLayout
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="12dp"
-                                    android:text="@string/w210t1" />
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:tag="0">
 
-                                <CheckBox
-                                    android:id="@+id/w210961"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked='@{form.w210961.equals("961")}'
-                                    android:onClick="@{()->form.setW210961(form.w210961.equals(`961`)?``:`961`)}"
-                                    android:text="@string/w210961" />
+                                    <CheckBox
+                                        android:id="@+id/w210961"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{form.w210961.equals(`961`)}"
+                                        android:onClick="@{()->form.setW210961(form.w210961.equals(`961`)?``:`961`)}"
+                                        android:text="@string/w210961" />
 
-                                <EditText
-                                    android:id="@+id/w210961x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                    android:hint="@string/w210961"
-                                    android:tag="w210961"
-                                    android:text='@={form.w210961x}'
-                                    android:visibility='@{w210961.checked? View.VISIBLE : View.GONE}' />
+                                    <CheckBox
+                                        android:id="@+id/w210962"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{form.w210962.equals(`962`)}"
+                                        android:onClick="@{()->form.setW210962(form.w210962.equals(`962`)?``:`962`)}"
+                                        android:text="@string/w210962" />
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="12dp"
-                                    android:text="@string/w210t2" />
+                                    <CheckBox
+                                        android:id="@+id/w210963"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:checked="@{form.w210963.equals(`963`)}"
+                                        android:onClick="@{()->form.setW210963(form.w210963.equals(`963`)?``:`963`)}"
+                                        android:text="@string/w210963" />
 
-                                <CheckBox
-                                    android:id="@+id/w210962"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked='@{form.w210962.equals("962")}'
-                                    android:onClick="@{()->form.setW210962(form.w210962.equals(`962`)?``:`962`)}"
-                                    android:text="@string/w210962" />
+                                </LinearLayout>
 
-                                <EditText
-                                    android:id="@+id/w210962x"
-                                    android:layout_width="match_parent"
+                                <LinearLayout
+                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                    android:hint="@string/w210962"
-                                    android:tag="w210962"
-                                    android:text='@={form.w210962x}'
-                                    android:visibility='@{w210962.checked? View.VISIBLE : View.GONE}' />
+                                    android:layout_weight="1.35"
+                                    android:orientation="vertical"
+                                    android:padding="0dp">
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="12dp"
-                                    android:text="@string/w210t3" />
+                                    <EditText
+                                        android:id="@+id/w210961x"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                        android:enabled="@{form.w210961.equals(`961`)}"
+                                        android:hint="@string/w210961"
+                                        android:tag="w210961"
+                                        android:text="@={form.w210961x}" />
 
-                                <CheckBox
-                                    android:id="@+id/w210963"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked='@{form.w210963.equals("963")}'
-                                    android:onClick="@{()->form.setW210963(form.w210963.equals(`963`)?``:`963`)}"
-                                    android:text="@string/w210963" />
+                                    <EditText
+                                        android:id="@+id/w210962x"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                        android:enabled="@{form.w210962.equals(`962`)}"
+                                        android:hint="@string/w210962"
+                                        android:tag="w210962"
+                                        android:text="@={form.w210962x}" />
 
-                                <EditText
-                                    android:id="@+id/w210963x"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                    android:hint="@string/w210963"
-                                    android:tag="w210963"
-                                    android:text='@={form.w210963x}'
-                                    android:visibility='@{w210963.checked? View.VISIBLE : View.GONE}' />
+                                    <EditText
+                                        android:id="@+id/w210963x"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="6dp"
+                                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                        android:enabled="@{form.w210962.equals(`962`)}"
+                                        android:hint="@string/w210963"
+                                        android:tag="w210963"
+                                        android:text="@={form.w210963x}" />
+
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -1486,6 +1484,7 @@
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
+
                 </LinearLayout>
 
 
