@@ -135,9 +135,9 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         w115.setText(birthStatus);
         w116.setText(curStatus);
         if ((preg.getW116().equals("1"))) {
-            w117.setText((preg.getW117y() + "y / " + preg.getW117m() + "m / " + preg.getW117d() + "d"));
+            w117.setText((preg.getW117y() + "y/" + preg.getW117m() + "m/" + preg.getW117d() + "d"));
         } else {
-            w117.setText("(at death)\r\n" + preg.getW118y() + "y / " + preg.getW118m() + "m / " + preg.getW118d() + "d");
+            w117.setText("(at death)\r\n" + preg.getW118y() + "y/" + preg.getW118m() + "m/" + preg.getW118d() + "d");
         }
         itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getColor(R.color.grayLight) : mContext.getColor(R.color.white));
 /*        fAge.setText(preg.getH231y() + " | " + (preg.getH232().equals("1") ? "Boy" : "Girl"));

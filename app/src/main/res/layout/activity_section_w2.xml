@@ -593,57 +593,6 @@
                             </LinearLayout>
 
                             <RadioGroup
-                                android:id="@+id/w206"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:id="@+id/w20697"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:checked='@{form.w206.equals("97")}'
-                                    android:onClick='@{()->form.setW206("97")}'
-                                    android:text="@string/w20697" />
-
-                                <RadioButton
-                                    android:id="@+id/w20696"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:checked='@{form.w206.equals("96")}'
-                                    android:onClick='@{()->form.setW206("96")}'
-                                    android:text="@string/w20696" />
-
-                            </RadioGroup>
-
-                            <EditText
-                                android:id="@+id/w20696x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/w20696"
-                                android:tag="w20696"
-                                android:text='@={form.w20696x}'
-                                android:visibility='@{form.w206.equals("96") ? View.VISIBLE : View.GONE}' />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <!-- w20601  Radio   -->
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/fldGrpCVw20601"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <RadioGroup
                                 android:id="@+id/w20601"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -907,6 +856,82 @@
 
                             </RadioGroup>
 
+                            <RadioGroup
+                                android:id="@+id/w20697"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/w20697" />
+
+                                <RadioButton
+                                    android:id="@+id/w20697a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked='@{form.w20697.equals("1")}'
+                                    android:onClick='@{()->form.setW20697("1")}'
+                                    android:text="@string/w20608a" />
+
+                                <RadioButton
+                                    android:id="@+id/w20697b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked='@{form.w20697.equals("2")}'
+                                    android:onClick='@{()->form.setW20697("2")}'
+                                    android:text="@string/w20608b" />
+
+                            </RadioGroup>
+
+                            <RadioGroup
+                                android:id="@+id/w20696"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:text="@string/w20696" />
+
+                                <RadioButton
+                                    android:id="@+id/w20696a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked='@{form.w20696.equals("1")}'
+                                    android:onClick='@{()->form.setW20696("1")}'
+                                    android:text="@string/w20608a" />
+
+                                <RadioButton
+                                    android:id="@+id/w20696b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked='@{form.w20696.equals("2")}'
+                                    android:onClick='@{()->form.setW20696("2")}'
+                                    android:text="@string/w20608b" />
+
+                            </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/w20696x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/w20696"
+                                android:tag="w20696"
+                                android:text='@={form.w20696x}'
+                                android:visibility='@{form.w20696.equals("1") ? View.VISIBLE : View.GONE}' />
+
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
@@ -973,8 +998,8 @@
 
                 <LinearLayout
                     android:id="@+id/fldGrpCVw20702"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility='@{w207b.checked ? View.GONE : View.VISIBLE}'>
 
@@ -1519,8 +1544,8 @@
 
                 <LinearLayout
                     android:id="@+id/fldGrpCVw21302"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility='@{w213b.checked ? View.GONE : View.VISIBLE}'>
 
@@ -2488,8 +2513,8 @@
 
                 <LinearLayout
                     android:id="@+id/fldGrpCVw224d"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility='@{w224d.checked ? View.GONE : View.VISIBLE}'>
 

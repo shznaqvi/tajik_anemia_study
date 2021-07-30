@@ -328,6 +328,8 @@ public class Form extends BaseObservable {
     private String w20606 = StringUtils.EMPTY;
     private String w20607 = StringUtils.EMPTY;
     private String w20608 = StringUtils.EMPTY;
+    private String w20696 = StringUtils.EMPTY;
+    private String w20697 = StringUtils.EMPTY;
     private String w207 = StringUtils.EMPTY;
     private String w208 = StringUtils.EMPTY;
     private String w209 = StringUtils.EMPTY;
@@ -934,7 +936,6 @@ public class Form extends BaseObservable {
     public void setSysDate(String sysDate) {
         this.sysDate = sysDate;
     }
-
 
 
     public String getDeviceId() {
@@ -1658,7 +1659,6 @@ public class Form extends BaseObservable {
         this.h220c = h220c;
         notifyPropertyChanged(BR.h220c);
     }
-
 
 
     @Bindable
@@ -2737,7 +2737,6 @@ public class Form extends BaseObservable {
     }
 
 
-
     @Bindable
     public String getH406a() {
         return h406a;
@@ -3695,6 +3694,9 @@ public class Form extends BaseObservable {
         setW20606(w201.equals("2") ? this.w20606 : "");
         setW20607(w201.equals("2") ? this.w20607 : "");
         setW20608(w201.equals("2") ? this.w20608 : "");
+        setW20696(w201.equals("2") ? this.w20696 : "");
+        setW20697(w201.equals("2") ? this.w20697 : "");
+        setW20696x(w201.equals("2") ? this.w20696x : "");
 
         notifyPropertyChanged(BR.w201);
     }
@@ -3902,7 +3904,7 @@ public class Form extends BaseObservable {
     public void setW205(String w205) {
         if (this.w205.equals(w205)) return; // for all checkboxes
         this.w205 = w205;
-        setW205ax(w205.equals("98") ? this.w205ax : ""); // for all skips, mention all skipped questions
+        setW205ax(w205.equals("98") ? "" : this.w205ax); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.w205);
     }
 
@@ -3943,7 +3945,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20601(String w20601) {
-        this.w20601 = w20601;
+        if (this.w20601 != w20601) {
+
+            this.w20601 = w20601;
+            setW20697(w20601.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20601);
     }
 
@@ -3953,7 +3959,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20602(String w20602) {
-        this.w20602 = w20602;
+        if (this.w20602 != w20602) {
+
+            this.w20602 = w20602;
+            setW20697(w20602.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20602);
     }
 
@@ -3963,7 +3973,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20603(String w20603) {
-        this.w20603 = w20603;
+        if (this.w20603 != w20603) {
+
+            this.w20603 = w20603;
+            setW20697(w20603.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20603);
     }
 
@@ -3973,7 +3987,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20604(String w20604) {
-        this.w20604 = w20604;
+        if (this.w20604 != w20604) {
+
+            this.w20604 = w20604;
+            setW20697(w20604.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20604);
     }
 
@@ -3983,7 +4001,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20605(String w20605) {
-        this.w20605 = w20605;
+        if (this.w20605 != w20605) {
+
+            this.w20605 = w20605;
+            setW20697(w20605.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20605);
     }
 
@@ -3993,7 +4015,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20606(String w20606) {
-        this.w20606 = w20606;
+        if (this.w20606 != w20606) {
+
+            this.w20606 = w20606;
+            setW20697(w20606.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20606);
     }
 
@@ -4003,7 +4029,11 @@ public class Form extends BaseObservable {
     }
 
     public void setW20607(String w20607) {
-        this.w20607 = w20607;
+        if (this.w20607 != w20607) {
+
+            this.w20607 = w20607;
+            setW20697(w20607.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20607);
     }
 
@@ -4013,8 +4043,46 @@ public class Form extends BaseObservable {
     }
 
     public void setW20608(String w20608) {
-        this.w20608 = w20608;
+        if (this.w20608 != w20608) {
+
+            this.w20608 = w20608;
+            setW20697(w20608.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
+        }
         notifyPropertyChanged(BR.w20608);
+    }
+
+    @Bindable
+    public String getW20696() {
+        return w20696;
+    }
+
+    public void setW20696(String w20696) {
+        this.w20696 = w20696;
+        setW20696x(w20696.equals("1") ? this.w20696x : ""); // for all skips, mention all skipped questions
+
+        notifyPropertyChanged(BR.w20696);
+    }
+
+    @Bindable
+    public String getW20697() {
+        return w20697;
+    }
+
+    public void setW20697(String w20697) {
+        this.w20697 = w20697;
+
+        // If None of the above, than set all above options to 'No' (except for others)
+        setW20601(w20697.equals("1") ? "2" : this.w20601); // for all skips, mention all skipped questions
+        setW20602(w20697.equals("1") ? "2" : this.w20602); // for all skips, mention all skipped questions
+        setW20603(w20697.equals("1") ? "2" : this.w20603); // for all skips, mention all skipped questions
+        setW20604(w20697.equals("1") ? "2" : this.w20604); // for all skips, mention all skipped questions
+        setW20605(w20697.equals("1") ? "2" : this.w20605); // for all skips, mention all skipped questions
+        setW20606(w20697.equals("1") ? "2" : this.w20606); // for all skips, mention all skipped questions
+        setW20607(w20697.equals("1") ? "2" : this.w20607); // for all skips, mention all skipped questions
+        setW20608(w20697.equals("1") ? "2" : this.w20608); // for all skips, mention all skipped questions
+
+
+        notifyPropertyChanged(BR.w20697);
     }
 
     @Bindable
@@ -7176,8 +7244,7 @@ public class Form extends BaseObservable {
         this.c20301b = c20301b;
         notifyPropertyChanged(BR.c20301b);
     }
-    
-    
+
 
     @Bindable
     public String getC20301ba() {
@@ -7189,7 +7256,7 @@ public class Form extends BaseObservable {
         this.c20301ba = c20301ba;
         notifyPropertyChanged(BR.c20301ba);
     }
-    
+
 
     @Bindable
     public String getC20301bb() {
@@ -7201,7 +7268,7 @@ public class Form extends BaseObservable {
         this.c20301bb = c20301bb;
         notifyPropertyChanged(BR.c20301bb);
     }
-    
+
 
     @Bindable
     public String getC20301bc() {
@@ -7213,7 +7280,7 @@ public class Form extends BaseObservable {
         this.c20301bc = c20301bc;
         notifyPropertyChanged(BR.c20301bc);
     }
-    
+
 
     @Bindable
     public String getC20301bd() {
@@ -7225,7 +7292,7 @@ public class Form extends BaseObservable {
         this.c20301bd = c20301bd;
         notifyPropertyChanged(BR.c20301bd);
     }
-    
+
 
     @Bindable
     public String getC20301be() {
@@ -7237,7 +7304,7 @@ public class Form extends BaseObservable {
         this.c20301be = c20301be;
         notifyPropertyChanged(BR.c20301be);
     }
-    
+
 
     @Bindable
     public String getC20301bf() {
@@ -7249,7 +7316,7 @@ public class Form extends BaseObservable {
         this.c20301bf = c20301bf;
         notifyPropertyChanged(BR.c20301bf);
     }
-    
+
 
     @Bindable
     public String getC20301bg() {
@@ -7261,8 +7328,7 @@ public class Form extends BaseObservable {
         this.c20301bg = c20301bg;
         notifyPropertyChanged(BR.c20301bg);
     }
-    
-    
+
 
     @Bindable
     public String getC20302a() {
@@ -7290,7 +7356,6 @@ public class Form extends BaseObservable {
         this.c20302b = c20302b;
         notifyPropertyChanged(BR.c20302b);
     }
-
 
 
     @Bindable
@@ -7375,7 +7440,6 @@ public class Form extends BaseObservable {
         this.c20302bg = c20302bg;
         notifyPropertyChanged(BR.c20302bg);
     }
-
 
 
     @Bindable
@@ -10295,6 +10359,8 @@ public class Form extends BaseObservable {
                 this.w20606 = json.getString("w20606");
                 this.w20607 = json.getString("w20607");
                 this.w20608 = json.getString("w20608");
+                this.w20696 = json.getString("w20696");
+                this.w20697 = json.getString("w20697");
                 this.w207 = json.getString("w207");
                 this.w208 = json.getString("w208");
                 this.w209 = json.getString("w209");
@@ -10888,21 +10954,21 @@ public class Form extends BaseObservable {
                 .put("h107", h107)
                 /*    .put("h107m", h107m)*/
                 .put("h108", h108)
-                    .put("h109", h109)
-                    .put("h110", h110)
-                    .put("h111", h111)
-                    .put("h112", h112)
-                    .put("h11296x", h11296x)
-                    .put("h201", h201)
-                    .put("h202", h202)
-                    .put("h203d", h203d)
-                    .put("h203m", h203m)
-                    .put("h203y", h203y)
-                    .put("h204", h204)
-                    .put("h205", h205)
-                    .put("h206", h206)
-                    .put("h207", h207)
-                    .put("h208", h208);
+                .put("h109", h109)
+                .put("h110", h110)
+                .put("h111", h111)
+                .put("h112", h112)
+                .put("h11296x", h11296x)
+                .put("h201", h201)
+                .put("h202", h202)
+                .put("h203d", h203d)
+                .put("h203m", h203m)
+                .put("h203y", h203y)
+                .put("h204", h204)
+                .put("h205", h205)
+                .put("h206", h206)
+                .put("h207", h207)
+                .put("h208", h208);
 
         return json.toString();
     }
@@ -11246,6 +11312,8 @@ public class Form extends BaseObservable {
                     .put("w20606", w20606)
                     .put("w20607", w20607)
                     .put("w20608", w20608)
+                    .put("w20696", w20696)
+                    .put("w20697", w20697)
                     .put("w207", w207)
                     .put("w208", w208)
                     .put("w209", w209)
