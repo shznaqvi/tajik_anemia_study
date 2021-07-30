@@ -36,27 +36,6 @@ public class SectionW3Activity extends AppCompatActivity {
 
 
     private void setupSkips() {
-       /* bi.w30299.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w302check, !b));
-
-        bi.w306.setOnCheckedChangeListener((radioGroup, i) -> {
-            bi.fldGrpCVw307.setVisibility(View.VISIBLE);
-            Clear.clearAllFields(bi.fldGrpCVw307);
-            if (i == bi.w306b.getId() || i == bi.w30698.getId()) {
-                bi.fldGrpCVw307.setVisibility(View.GONE);
-            }
-        });
-
-        bi.w313b.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                bi.fldGrpCVw314.setVisibility(View.VISIBLE);
-            } else {
-                Clear.clearAllFields(bi.fldGrpCVw314);
-                bi.fldGrpCVw314.setVisibility(View.GONE);
-            }
-        });
-
-        rgLsnr(bi.w315, bi.w315b, new ViewGroup[]{bi.fldGrpCVw316, bi.fldGrpCVw317, bi.fldGrpCVw318t, bi.fldGrpCVw319});
-        rgLsnr(bi.w320, bi.w320b, new ViewGroup[]{bi.fldGrpCVw321, bi.fldGrpCVw322, bi.fldGrpCVw323t, bi.fldGrpCVw324, bi.fldGrpCVw325, bi.fldGrpCVw326, bi.fldGrpCVw327});*/
     }
 
 

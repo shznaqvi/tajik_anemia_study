@@ -3671,6 +3671,31 @@ public class Form extends BaseObservable {
 
     public void setW201(String w201) {
         this.w201 = w201;
+
+        setW202a(w201.equals("2") ? this.w202a : "");
+        setW202b(w201.equals("2") ? this.w202b : "");
+        setW202c(w201.equals("2") ? this.w202c : "");
+        setW202d(w201.equals("2") ? this.w202d : "");
+        setW202e(w201.equals("2") ? this.w202e : "");
+        setW202f(w201.equals("2") ? this.w202f : "");
+        setW202g(w201.equals("2") ? this.w202g : "");
+        setW202h(w201.equals("2") ? this.w202h : "");
+        setW20296(w201.equals("2") ? this.w20296 : "");
+
+        setW203(w201.equals("2") ? this.w203 : "");
+        setW204(w201.equals("2") ? this.w204 : "");
+        setW205(w201.equals("2") ? this.w205 : "");
+        setW206(w201.equals("2") ? this.w206 : "");
+
+        setW20601(w201.equals("2") ? this.w20601 : "");
+        setW20602(w201.equals("2") ? this.w20602 : "");
+        setW20603(w201.equals("2") ? this.w20603 : "");
+        setW20604(w201.equals("2") ? this.w20604 : "");
+        setW20605(w201.equals("2") ? this.w20605 : "");
+        setW20606(w201.equals("2") ? this.w20606 : "");
+        setW20607(w201.equals("2") ? this.w20607 : "");
+        setW20608(w201.equals("2") ? this.w20608 : "");
+
         notifyPropertyChanged(BR.w201);
     }
 
@@ -3999,6 +4024,15 @@ public class Form extends BaseObservable {
 
     public void setW207(String w207) {
         this.w207 = w207;
+
+        setW208(w207.equals("2") ? this.w208 : "");
+        setW209(w207.equals("2") ? this.w209 : "");
+        setW210961(w207.equals("2") ? this.w210961 : "");
+        setW210962(w207.equals("2") ? this.w210962 : "");
+        setW210963(w207.equals("2") ? this.w210963 : "");
+        setW211(w207.equals("2") ? this.w211 : "");
+        setW212(w207.equals("2") ? this.w212 : "");
+
         notifyPropertyChanged(BR.w207);
     }
 
@@ -4158,6 +4192,14 @@ public class Form extends BaseObservable {
 
     public void setW213(String w213) {
         this.w213 = w213;
+
+        setW214(w213.equals("2") ? this.w214 : "");
+        setW215961(w213.equals("2") ? this.w215961 : "");
+        setW215962(w213.equals("2") ? this.w215962 : "");
+        setW215963(w213.equals("2") ? this.w215963 : "");
+        setW216(w213.equals("2") ? this.w216 : "");
+        setW217(w213.equals("2") ? this.w217 : "");
+
         notifyPropertyChanged(BR.w213);
     }
 
@@ -4307,6 +4349,9 @@ public class Form extends BaseObservable {
 
     public void setW218(String w218) {
         this.w218 = w218;
+
+        setW219(w218.equals("2") ? this.w219 : "");
+
         notifyPropertyChanged(BR.w218);
     }
 
@@ -4339,6 +4384,18 @@ public class Form extends BaseObservable {
         this.w221 = w221;
         setW221mx(w221.equals("1") ? this.w221mx : ""); // for all skips, mention all skipped questions
         setW221dx(w221.equals("2") ? this.w221dx : ""); // for all skips, mention all skipped questions
+
+
+        setW222(w221.equals("98") ? this.w222 : "");
+        setW223a(w221.equals("98") ? this.w223a : "");
+        setW223b(w221.equals("98") ? this.w223b : "");
+        setW223c(w221.equals("98") ? this.w223c : "");
+        setW223d(w221.equals("98") ? this.w223d : "");
+        setW223e(w221.equals("98") ? this.w223e : "");
+        setW223f(w221.equals("98") ? this.w223f : "");
+        setW223g(w221.equals("98") ? this.w223g : "");
+        setW223h(w221.equals("98") ? this.w223h : "");
+
         notifyPropertyChanged(BR.w221);
     }
 
@@ -4488,6 +4545,10 @@ public class Form extends BaseObservable {
 
     public void setW224(String w224) {
         this.w224 = w224;
+
+        setW225(w224.equals("4") ? this.w225 : "");
+        setW226(w224.equals("4") ? this.w226 : "");
+
         notifyPropertyChanged(BR.w224);
     }
 
@@ -4498,6 +4559,9 @@ public class Form extends BaseObservable {
 
     public void setW225(String w225) {
         this.w225 = w225;
+
+        setW226(w225.equals("2") ? this.w226 : "");
+
         notifyPropertyChanged(BR.w225);
     }
 
