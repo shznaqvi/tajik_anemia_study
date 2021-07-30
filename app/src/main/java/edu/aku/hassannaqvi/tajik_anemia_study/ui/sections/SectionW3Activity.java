@@ -31,11 +31,6 @@ public class SectionW3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_w3);
         bi.setCallback(this);
         bi.setForm(form);
-        setupSkips();
-    }
-
-
-    private void setupSkips() {
     }
 
 
