@@ -58,9 +58,8 @@ public class SectionW2Activity extends AppCompatActivity {
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW2, form.sW2toString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -69,26 +68,10 @@ public class SectionW2Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionW3Activity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void saveDraft() {
-        //     MainApp.form = new Form();
-/*
-
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-*/
-
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -103,12 +86,10 @@ public class SectionW2Activity extends AppCompatActivity {
     }
 
 
-/*
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
-*/
+    }*/
 
 
 }
