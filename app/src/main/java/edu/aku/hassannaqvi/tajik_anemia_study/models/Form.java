@@ -4092,15 +4092,13 @@ public class Form extends BaseObservable {
 
     public void setW207(String w207) {
         this.w207 = w207;
-
-        setW208(w207.equals("2") ? this.w208 : "");
-        setW209(w207.equals("2") ? this.w209 : "");
-        setW210961(w207.equals("2") ? this.w210961 : "");
-        setW210962(w207.equals("2") ? this.w210962 : "");
-        setW210963(w207.equals("2") ? this.w210963 : "");
-        setW211(w207.equals("2") ? this.w211 : "");
-        setW212(w207.equals("2") ? this.w212 : "");
-
+        setW208(w207.equals("1") ? this.w208 : "");
+        setW209(w207.equals("1") ? this.w209 : "");
+        setW210961(w207.equals("1") ? this.w210961 : "");
+        setW210962(w207.equals("1") ? this.w210962 : "");
+        setW210963(w207.equals("1") ? this.w210963 : "");
+        setW211(w207.equals("1") ? this.w211 : "");
+        setW212(w207.equals("1") ? this.w212 : "");
         notifyPropertyChanged(BR.w207);
     }
 
@@ -4452,8 +4450,6 @@ public class Form extends BaseObservable {
         this.w221 = w221;
         setW221mx(w221.equals("1") ? this.w221mx : ""); // for all skips, mention all skipped questions
         setW221dx(w221.equals("2") ? this.w221dx : ""); // for all skips, mention all skipped questions
-
-
         setW222(w221.equals("98") ? this.w222 : "");
         setW223a(w221.equals("98") ? this.w223a : "");
         setW223b(w221.equals("98") ? this.w223b : "");
@@ -4463,7 +4459,6 @@ public class Form extends BaseObservable {
         setW223f(w221.equals("98") ? this.w223f : "");
         setW223g(w221.equals("98") ? this.w223g : "");
         setW223h(w221.equals("98") ? this.w223h : "");
-
         notifyPropertyChanged(BR.w221);
     }
 
@@ -4613,10 +4608,8 @@ public class Form extends BaseObservable {
 
     public void setW224(String w224) {
         this.w224 = w224;
-
-        setW225(w224.equals("4") ? this.w225 : "");
-        setW226(w224.equals("4") ? this.w226 : "");
-
+        setW225(w224.equals("4") ? "" : this.w225);
+        setW226(w224.equals("4") ? "" : this.w226);
         notifyPropertyChanged(BR.w224);
     }
 
