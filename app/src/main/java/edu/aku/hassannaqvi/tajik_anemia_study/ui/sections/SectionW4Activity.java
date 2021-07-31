@@ -31,30 +31,14 @@ public class SectionW4Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_w4);
         bi.setCallback(this);
         bi.setForm(form);
-        setupSkips();
-    }
-
-
-    private void setupSkips() {
-   /*     bi.w40198.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w401check, !b));
-        bi.w40298.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w402check, !b));
-        bi.w40398.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w403check, !b));
-        bi.w40498.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w404check, !b));
-        bi.w40598.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w405check, !b));
-        bi.w40698.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w406check, !b));
-        bi.w40798.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w407check, !b));
-        bi.w40898.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w408check, !b));
-        bi.w40998.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w409check, !b));
-        bi.w41098.setOnCheckedChangeListener((compoundButton, b) -> Clear.clearAllFields(bi.w410check, !b));*/
     }
 
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW4, form.sW4toString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -63,24 +47,10 @@ public class SectionW4Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionC1Activity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void saveDraft() {
-      /*  MainApp.form = new Form();
-
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);*/
-
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -94,8 +64,8 @@ public class SectionW4Activity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
-/*
-    @Override
+
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
     }*/
