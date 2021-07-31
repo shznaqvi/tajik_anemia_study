@@ -4448,15 +4448,15 @@ public class Form extends BaseObservable {
         this.w221 = w221;
         setW221mx(w221.equals("1") ? this.w221mx : ""); // for all skips, mention all skipped questions
         setW221dx(w221.equals("2") ? this.w221dx : ""); // for all skips, mention all skipped questions
-        setW222(w221.equals("98") ? this.w222 : "");
-        setW223a(w221.equals("98") ? this.w223a : "");
-        setW223b(w221.equals("98") ? this.w223b : "");
-        setW223c(w221.equals("98") ? this.w223c : "");
-        setW223d(w221.equals("98") ? this.w223d : "");
-        setW223e(w221.equals("98") ? this.w223e : "");
-        setW223f(w221.equals("98") ? this.w223f : "");
-        setW223g(w221.equals("98") ? this.w223g : "");
-        setW223h(w221.equals("98") ? this.w223h : "");
+        setW222(w221.equals("98") ? "" : this.w222);
+        setW223a(w221.equals("98") ? "" : this.w223a);
+        setW223b(w221.equals("98") ? "" : this.w223b);
+        setW223c(w221.equals("98") ? "" : this.w223c);
+        setW223d(w221.equals("98") ? "" : this.w223d);
+        setW223e(w221.equals("98") ? "" : this.w223e);
+        setW223f(w221.equals("98") ? "" : this.w223f);
+        setW223g(w221.equals("98") ? "" : this.w223g);
+        setW223h(w221.equals("98") ? "" : this.w223h);
         notifyPropertyChanged(BR.w221);
     }
 

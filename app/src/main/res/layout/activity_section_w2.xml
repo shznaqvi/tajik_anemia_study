@@ -2040,8 +2040,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w218.equals("1")}'
-                                android:onClick='@{()->form.setW218("1")}'
+                                android:checked="@{form.w218.equals(`1`)}"
+                                android:onClick="@{()->form.setW218(`1`)}"
                                 android:text="@string/w218a" />
 
                             <RadioButton
@@ -2049,8 +2049,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w218.equals("2")}'
-                                android:onClick='@{()->form.setW218("2")}'
+                                android:checked="@{form.w218.equals(`2`)}"
+                                android:onClick="@{()->form.setW218(`2`)}"
                                 android:text="@string/w218b" />
 
                         </RadioGroup>
@@ -2064,7 +2064,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw219"
                     style="@style/cardView"
-                    android:visibility='@{w218b.checked ? View.GONE : View.VISIBLE}'>
+                    android:visibility='@{form.w218.equals(`1`) ? View.VISIBLE : View.GONE}'>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -2101,8 +2101,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w219.equals("1")}'
-                                android:onClick='@{()->form.setW219("1")}'
+                                android:checked="@{form.w219.equals(`1`)}"
+                                android:onClick="@{()->form.setW219(`1`)}"
                                 android:text="@string/w219a" />
 
                             <RadioButton
@@ -2110,8 +2110,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w219.equals("2")}'
-                                android:onClick='@{()->form.setW219("2")}'
+                                android:checked="@{form.w219.equals(`2`)}"
+                                android:onClick="@{()->form.setW219(`2`)}"
                                 android:text="@string/w219b" />
 
                         </RadioGroup>
@@ -2161,8 +2161,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w220.equals("1")}'
-                                android:onClick='@{()->form.setW220("1")}'
+                                android:checked="@{form.w220.equals(`1`)}"
+                                android:onClick="@{()->form.setW220(`1`)}"
                                 android:text="@string/w220a" />
 
                             <RadioButton
@@ -2170,8 +2170,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w220.equals("2")}'
-                                android:onClick='@{()->form.setW220("2")}'
+                                android:checked="@{form.w220.equals(`2`)}"
+                                android:onClick="@{()->form.setW220(`2`)}"
                                 android:text="@string/w220b" />
 
                             <RadioButton
@@ -2179,8 +2179,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w220.equals("98")}'
-                                android:onClick='@{()->form.setW220("98")}'
+                                android:checked="@{form.w220.equals(`98`)}"
+                                android:onClick="@{()->form.setW220(`98`)}"
                                 android:text="@string/w22098" />
 
                         </RadioGroup>
@@ -2231,8 +2231,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w221.equals("1")}'
-                                android:onClick='@{()->form.setW221("1")}'
+                                android:checked="@{form.w221.equals(`1`)}"
+                                android:onClick="@{()->form.setW221(`1`)}"
                                 android:text="@string/w221m" />
 
                             <RadioButton
@@ -2240,8 +2240,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w221.equals("2")}'
-                                android:onClick='@{()->form.setW221("2")}'
+                                android:checked="@{form.w221.equals(`2`)}"
+                                android:onClick="@{()->form.setW221(`2`)}"
                                 android:text="@string/w221d" />
 
                             <RadioButton
@@ -2249,8 +2249,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.w221.equals("98")}'
-                                android:onClick='@{()->form.setW221("98")}'
+                                android:checked="@{form.w221.equals(`98`)}"
+                                android:onClick="@{()->form.setW221(`98`)}"
                                 android:text="@string/w22198" />
 
                         </RadioGroup>
@@ -2263,8 +2263,8 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:tag="w221d"
-                            android:text='@={form.w221dx}'
-                            android:visibility='@{form.w221.equals("2") ? View.VISIBLE : View.GONE}'
+                            android:text="@={form.w221dx}"
+                            android:visibility="@{form.w221.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="31"
                             app:minValue="1"
                             app:type="range" />
@@ -2277,8 +2277,8 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:tag="w221m"
-                            android:text='@{form.w221mx}'
-                            android:visibility='@{form.w221.equals("1") ? View.VISIBLE : View.GONE}'
+                            android:text="@{form.w221mx}"
+                            android:visibility="@{form.w221.equals(`1`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="11"
                             app:minValue="1"
                             app:type="range" />
@@ -2293,7 +2293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility='@{form.w221.equals(`98`) ? View.GONE : View.VISIBLE}'>
+                    android:visibility="@{form.w221.equals(`98`) ? View.GONE : View.VISIBLE}">
 
                     <!-- w222  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2333,48 +2333,48 @@
                                     android:id="@+id/w222a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("1")}'
-                                    android:onClick='@{()->form.setW222("1")}'
+                                    android:checked="@{form.w222.equals(`1`)}"
+                                    android:onClick="@{()->form.setW222(`1`)}"
                                     android:text="@string/w222a" />
 
                                 <RadioButton
                                     android:id="@+id/w222b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("2")}'
-                                    android:onClick='@{()->form.setW222("2")}'
+                                    android:checked="@{form.w222.equals(`2`)}"
+                                    android:onClick="@{()->form.setW222(`2`)}"
                                     android:text="@string/w222b" />
 
                                 <RadioButton
                                     android:id="@+id/w222c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("3")}'
-                                    android:onClick='@{()->form.setW222("3")}'
+                                    android:checked="@{form.w222.equals(`3`)}"
+                                    android:onClick="@{()->form.setW222(`3`)}"
                                     android:text="@string/w222c" />
 
                                 <RadioButton
                                     android:id="@+id/w222d"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("4")}'
-                                    android:onClick='@{()->form.setW222("4")}'
+                                    android:checked="@{form.w222.equals(`4`)}"
+                                    android:onClick="@{()->form.setW222(`4`)}"
                                     android:text="@string/w222d" />
 
                                 <RadioButton
                                     android:id="@+id/w222e"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("5")}'
-                                    android:onClick='@{()->form.setW222("5")}'
+                                    android:checked="@{form.w222.equals(`5`)}"
+                                    android:onClick="@{()->form.setW222(`5`)}"
                                     android:text="@string/w222e" />
 
                                 <RadioButton
                                     android:id="@+id/w22296"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w222.equals("96")}'
-                                    android:onClick='@{()->form.setW222("96")}'
+                                    android:checked="@{form.w222.equals(`96`)}"
+                                    android:onClick="@{()->form.setW222(`96`)}"
                                     android:text="@string/w22296" />
 
                                 <EditText
@@ -2384,8 +2384,8 @@
                                     android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                     android:hint="@string/w22296"
                                     android:tag="w22296"
-                                    android:text='@={form.w22296x}'
-                                    android:visibility='@{form.w222.equals("96") ? View.VISIBLE : View.GONE}' />
+                                    android:text="@={form.w22296x}"
+                                    android:visibility="@{form.w222.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                             </RadioGroup>
 
@@ -2434,7 +2434,7 @@
                                     android:id="@+id/w223a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223a.equals("1")}'
+                                    android:checked="@{form.w223a.equals(`1`)}"
                                     android:onClick="@{()->form.setW223a(form.w223a.equals(`1`)?``:`1`)}"
                                     android:text="@string/w223a" />
 
@@ -2442,7 +2442,7 @@
                                     android:id="@+id/w223b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223b.equals("2")}'
+                                    android:checked="@{form.w223b.equals(`2`)}"
                                     android:onClick="@{()->form.setW223b(form.w223b.equals(`2`)?``:`2`)}"
                                     android:text="@string/w223b" />
 
@@ -2450,7 +2450,7 @@
                                     android:id="@+id/w223c"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223c.equals("3")}'
+                                    android:checked="@{form.w223c.equals(`3`)}"
                                     android:onClick="@{()->form.setW223c(form.w223c.equals(`3`)?``:`3`)}"
                                     android:text="@string/w223c" />
 
@@ -2458,7 +2458,7 @@
                                     android:id="@+id/w223d"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223d.equals("4")}'
+                                    android:checked="@{form.w223d.equals(`4`)}"
                                     android:onClick="@{()->form.setW223d(form.w223d.equals(`4`)?``:`4`)}"
                                     android:text="@string/w223d" />
 
@@ -2466,7 +2466,7 @@
                                     android:id="@+id/w223e"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223e.equals("5")}'
+                                    android:checked="@{form.w223e.equals(`5`)}"
                                     android:onClick="@{()->form.setW223e(form.w223e.equals(`5`)?``:`5`)}"
                                     android:text="@string/w223e" />
 
@@ -2474,7 +2474,7 @@
                                     android:id="@+id/w223f"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223f.equals("6")}'
+                                    android:checked="@{form.w223f.equals(`6`)}"
                                     android:onClick="@{()->form.setW223f(form.w223f.equals(`6`)?``:`6`)}"
                                     android:text="@string/w223f" />
 
@@ -2482,7 +2482,7 @@
                                     android:id="@+id/w223g"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223g.equals("7")}'
+                                    android:checked="@{form.w223g.equals(`7`)}"
                                     android:onClick="@{()->form.setW223g(form.w223g.equals(`7`)?``:`7`)}"
                                     android:text="@string/w223g" />
 
@@ -2490,7 +2490,7 @@
                                     android:id="@+id/w223h"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w223h.equals("8")}'
+                                    android:checked="@{form.w223h.equals(`8`)}"
                                     android:onClick="@{()->form.setW223h(form.w223h.equals(`8`)?``:`8`)}"
                                     android:text="@string/w223h" />
 
