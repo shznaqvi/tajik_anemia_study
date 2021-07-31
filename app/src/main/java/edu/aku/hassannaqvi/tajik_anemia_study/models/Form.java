@@ -5961,6 +5961,13 @@ public class Form extends BaseObservable {
     public void setW40298(String w40298) {
         if (this.w40298.equals(w40298)) return; // for all checkboxes
         this.w40298 = w40298;
+        setW402a(w40298.equals("98") ? "" : this.w402a);
+        setW402b(w40298.equals("98") ? "" : this.w402b);
+        setW402c(w40298.equals("98") ? "" : this.w402c);
+        setW402d(w40298.equals("98") ? "" : this.w402d);
+        setW402e(w40298.equals("98") ? "" : this.w402e);
+        setW402f(w40298.equals("98") ? "" : this.w402f);
+        setW402g(w40298.equals("98") ? "" : this.w402g);
         notifyPropertyChanged(BR.w40298);
     }
 
