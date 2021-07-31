@@ -3945,11 +3945,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20601(String w20601) {
-        if (this.w20601 != w20601) {
-
-            this.w20601 = w20601;
-            setW20697(w20601.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20601 = w20601;
         notifyPropertyChanged(BR.w20601);
     }
 
@@ -3959,11 +3955,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20602(String w20602) {
-        if (this.w20602 != w20602) {
-
-            this.w20602 = w20602;
-            setW20697(w20602.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20602 = w20602;
         notifyPropertyChanged(BR.w20602);
     }
 
@@ -3973,11 +3965,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20603(String w20603) {
-        if (this.w20603 != w20603) {
-
-            this.w20603 = w20603;
-            setW20697(w20603.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20603 = w20603;
         notifyPropertyChanged(BR.w20603);
     }
 
@@ -3987,11 +3975,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20604(String w20604) {
-        if (this.w20604 != w20604) {
-
-            this.w20604 = w20604;
-            setW20697(w20604.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20604 = w20604;
         notifyPropertyChanged(BR.w20604);
     }
 
@@ -4001,11 +3985,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20605(String w20605) {
-        if (this.w20605 != w20605) {
-
-            this.w20605 = w20605;
-            setW20697(w20605.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20605 = w20605;
         notifyPropertyChanged(BR.w20605);
     }
 
@@ -4015,11 +3995,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20606(String w20606) {
-        if (this.w20606 != w20606) {
-
-            this.w20606 = w20606;
-            setW20697(w20606.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20606 = w20606;
         notifyPropertyChanged(BR.w20606);
     }
 
@@ -4029,11 +4005,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20607(String w20607) {
-        if (this.w20607 != w20607) {
-
-            this.w20607 = w20607;
-            setW20697(w20607.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20607 = w20607;
         notifyPropertyChanged(BR.w20607);
     }
 
@@ -4043,11 +4015,7 @@ public class Form extends BaseObservable {
     }
 
     public void setW20608(String w20608) {
-        if (this.w20608 != w20608) {
-
-            this.w20608 = w20608;
-            setW20697(w20608.equals("1") ? "2" : this.w20697); // for all skips, mention all skipped questions
-        }
+        this.w20608 = w20608;
         notifyPropertyChanged(BR.w20608);
     }
 
@@ -4059,7 +4027,6 @@ public class Form extends BaseObservable {
     public void setW20696(String w20696) {
         this.w20696 = w20696;
         setW20696x(w20696.equals("1") ? this.w20696x : ""); // for all skips, mention all skipped questions
-
         notifyPropertyChanged(BR.w20696);
     }
 
@@ -4070,18 +4037,15 @@ public class Form extends BaseObservable {
 
     public void setW20697(String w20697) {
         this.w20697 = w20697;
-
-        // If None of the above, than set all above options to 'No' (except for others)
-        setW20601(w20697.equals("1") ? "2" : this.w20601); // for all skips, mention all skipped questions
-        setW20602(w20697.equals("1") ? "2" : this.w20602); // for all skips, mention all skipped questions
-        setW20603(w20697.equals("1") ? "2" : this.w20603); // for all skips, mention all skipped questions
-        setW20604(w20697.equals("1") ? "2" : this.w20604); // for all skips, mention all skipped questions
-        setW20605(w20697.equals("1") ? "2" : this.w20605); // for all skips, mention all skipped questions
-        setW20606(w20697.equals("1") ? "2" : this.w20606); // for all skips, mention all skipped questions
-        setW20607(w20697.equals("1") ? "2" : this.w20607); // for all skips, mention all skipped questions
-        setW20608(w20697.equals("1") ? "2" : this.w20608); // for all skips, mention all skipped questions
-
-
+        setW20601(w20697.equals("1") ? "" : this.w20601);
+        setW20602(w20697.equals("1") ? "" : this.w20602);
+        setW20603(w20697.equals("1") ? "" : this.w20603);
+        setW20604(w20697.equals("1") ? "" : this.w20604);
+        setW20605(w20697.equals("1") ? "" : this.w20605);
+        setW20606(w20697.equals("1") ? "" : this.w20606);
+        setW20607(w20697.equals("1") ? "" : this.w20607);
+        setW20608(w20697.equals("1") ? "" : this.w20608);
+        setW20696(w20697.equals("1") ? "" : this.w20696);
         notifyPropertyChanged(BR.w20697);
     }
 

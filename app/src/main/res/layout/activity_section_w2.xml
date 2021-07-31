@@ -594,7 +594,6 @@
                                 android:id="@+id/w20601"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -609,6 +608,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20601.equals(`1`)}"
                                     android:onClick="@{()->form.setW20601(`1`)}"
                                     android:text="@string/w20601a" />
@@ -618,6 +618,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20601.equals(`2`)}"
                                     android:onClick="@{()->form.setW20601(`2`)}"
                                     android:text="@string/w20601b" />
@@ -629,7 +630,6 @@
                                 android:id="@+id/w20602"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -644,6 +644,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20602.equals(`1`)}"
                                     android:onClick="@{()->form.setW20602(`1`)}"
                                     android:text="@string/w20602a" />
@@ -653,6 +654,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20602.equals(`2`)}"
                                     android:onClick="@{()->form.setW20602(`2`)}"
                                     android:text="@string/w20602b" />
@@ -664,7 +666,6 @@
                                 android:id="@+id/w20603"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -679,6 +680,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20603.equals(`1`)}"
                                     android:onClick="@{()->form.setW20603(`1`)}"
                                     android:text="@string/w20603a" />
@@ -688,6 +690,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20603.equals(`2`)}"
                                     android:onClick="@{()->form.setW20603(`2`)}"
                                     android:text="@string/w20603b" />
@@ -699,7 +702,6 @@
                                 android:id="@+id/w20604"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -714,6 +716,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20604.equals(`1`)}"
                                     android:onClick="@{()->form.setW20604(`1`)}"
                                     android:text="@string/w20604a" />
@@ -723,6 +726,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20604.equals(`2`)}"
                                     android:onClick="@{()->form.setW20604(`2`)}"
                                     android:text="@string/w20604b" />
@@ -734,7 +738,6 @@
                                 android:id="@+id/w20605"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -749,6 +752,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20605.equals(`1`)}"
                                     android:onClick="@{()->form.setW20605(`1`)}"
                                     android:text="@string/w20605a" />
@@ -758,6 +762,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20605.equals(`2`)}"
                                     android:onClick="@{()->form.setW20605(`2`)}"
                                     android:text="@string/w20605b" />
@@ -769,7 +774,6 @@
                                 android:id="@+id/w20606"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -784,6 +788,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20606.equals(`1`)}"
                                     android:onClick="@{()->form.setW20606(`1`)}"
                                     android:text="@string/w20606a" />
@@ -793,6 +798,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20606.equals(`2`)}"
                                     android:onClick="@{()->form.setW20606(`2`)}"
                                     android:text="@string/w20606b" />
@@ -804,7 +810,6 @@
                                 android:id="@+id/w20607"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -819,6 +824,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20607.equals(`1`)}"
                                     android:onClick="@{()->form.setW20607(`1`)}"
                                     android:text="@string/w20607a" />
@@ -828,6 +834,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20607.equals(`2`)}"
                                     android:onClick="@{()->form.setW20607(`2`)}"
                                     android:text="@string/w20607b" />
@@ -839,7 +846,6 @@
                                 android:id="@+id/w20608"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -854,6 +860,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20608.equals(`1`)}"
                                     android:onClick="@{()->form.setW20608(`1`)}"
                                     android:text="@string/w20608a" />
@@ -863,6 +870,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20608.equals(`2`)}"
                                     android:onClick="@{()->form.setW20608(`2`)}"
                                     android:text="@string/w20608b" />
@@ -909,7 +917,6 @@
                                 android:id="@+id/w20696"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -924,6 +931,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20696.equals(`1`)}"
                                     android:onClick="@{()->form.setW20696(`1`)}"
                                     android:text="@string/w20608a" />
@@ -933,6 +941,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:enabled="@{!form.w20697.equals(`1`)}"
                                     android:checked="@{form.w20696.equals(`2`)}"
                                     android:onClick="@{()->form.setW20696(`2`)}"
                                     android:text="@string/w20608b" />
