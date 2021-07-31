@@ -4618,9 +4618,7 @@ public class Form extends BaseObservable {
 
     public void setW225(String w225) {
         this.w225 = w225;
-
-        setW226(w225.equals("2") ? this.w226 : "");
-
+        setW226(w225.equals("1") ? this.w226 : "");
         notifyPropertyChanged(BR.w225);
     }
 
