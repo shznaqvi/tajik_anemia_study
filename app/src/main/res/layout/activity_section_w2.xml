@@ -589,10 +589,12 @@
 
                             </LinearLayout>
 
+                            <!--w20601-->
                             <RadioGroup
                                 android:id="@+id/w20601"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -607,8 +609,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.w20601.equals('1')}"
-                                    android:onClick="@{()->form.setW20601('1')}"
+                                    android:checked="@{form.w20601.equals(`1`)}"
+                                    android:onClick="@{()->form.setW20601(`1`)}"
                                     android:text="@string/w20601a" />
 
                                 <RadioButton
@@ -616,16 +618,18 @@
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
-                                    android:checked="@{form.w20601.equals('2')}"
-                                    android:onClick="@{()->form.setW20601('2')}"
+                                    android:checked="@{form.w20601.equals(`2`)}"
+                                    android:onClick="@{()->form.setW20601(`2`)}"
                                     android:text="@string/w20601b" />
 
                             </RadioGroup>
 
+                            <!--w20602-->
                             <RadioGroup
                                 android:id="@+id/w20602"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -655,10 +659,12 @@
 
                             </RadioGroup>
 
+                            <!--w20603-->
                             <RadioGroup
                                 android:id="@+id/w20603"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -688,10 +694,12 @@
 
                             </RadioGroup>
 
+                            <!--w20604-->
                             <RadioGroup
                                 android:id="@+id/w20604"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -721,10 +729,12 @@
 
                             </RadioGroup>
 
+                            <!--w20605-->
                             <RadioGroup
                                 android:id="@+id/w20605"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -754,10 +764,12 @@
 
                             </RadioGroup>
 
+                            <!--w20606-->
                             <RadioGroup
                                 android:id="@+id/w20606"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -787,10 +799,12 @@
 
                             </RadioGroup>
 
+                            <!--w20607-->
                             <RadioGroup
                                 android:id="@+id/w20607"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -820,10 +834,12 @@
 
                             </RadioGroup>
 
+                            <!--w20608-->
                             <RadioGroup
                                 android:id="@+id/w20608"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -853,10 +869,12 @@
 
                             </RadioGroup>
 
+                            <!--w20697-->
                             <RadioGroup
                                 android:id="@+id/w20697"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:onCheckedChanged="@{()-> w20601.clearCheck() + w20602.clearCheck() + w20603.clearCheck() + w20604.clearCheck() + w20605.clearCheck() + w20606.clearCheck() + w20607.clearCheck() + w20608.clearCheck() + w20696.clearCheck()}"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -886,10 +904,12 @@
 
                             </RadioGroup>
 
+                            <!--w20696-->
                             <RadioGroup
                                 android:id="@+id/w20696"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:enabled="@{!form.w20697.equals(`1`)}"
                                 android:orientation="horizontal">
 
                                 <TextView

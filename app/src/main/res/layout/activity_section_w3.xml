@@ -1457,7 +1457,7 @@
                             android:id="@+id/w315"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            onCheckedChnaged="@{()->w317.clearCheck()}"
+                            android:onCheckedChanged="@{()-> w317.clearCheck()}"
                             android:orientation="horizontal">
 
                             <RadioButton
