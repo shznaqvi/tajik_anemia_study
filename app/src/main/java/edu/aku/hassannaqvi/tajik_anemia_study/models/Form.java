@@ -4258,14 +4258,12 @@ public class Form extends BaseObservable {
 
     public void setW213(String w213) {
         this.w213 = w213;
-
-        setW214(w213.equals("2") ? this.w214 : "");
-        setW215961(w213.equals("2") ? this.w215961 : "");
-        setW215962(w213.equals("2") ? this.w215962 : "");
-        setW215963(w213.equals("2") ? this.w215963 : "");
-        setW216(w213.equals("2") ? this.w216 : "");
-        setW217(w213.equals("2") ? this.w217 : "");
-
+        setW214(w213.equals("1") ? this.w214 : "");
+        setW215961(w213.equals("1") ? this.w215961 : "");
+        setW215962(w213.equals("1") ? this.w215962 : "");
+        setW215963(w213.equals("1") ? this.w215963 : "");
+        setW216(w213.equals("1") ? this.w216 : "");
+        setW217(w213.equals("1") ? this.w217 : "");
         notifyPropertyChanged(BR.w213);
     }
 
