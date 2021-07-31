@@ -3671,32 +3671,32 @@ public class Form extends BaseObservable {
     public void setW201(String w201) {
         this.w201 = w201;
 
-        setW202a(w201.equals("2") ? this.w202a : "");
-        setW202b(w201.equals("2") ? this.w202b : "");
-        setW202c(w201.equals("2") ? this.w202c : "");
-        setW202d(w201.equals("2") ? this.w202d : "");
-        setW202e(w201.equals("2") ? this.w202e : "");
-        setW202f(w201.equals("2") ? this.w202f : "");
-        setW202g(w201.equals("2") ? this.w202g : "");
-        setW202h(w201.equals("2") ? this.w202h : "");
-        setW20296(w201.equals("2") ? this.w20296 : "");
+        setW202a(w201.equals("1") ? this.w202a : "");
+        setW202b(w201.equals("1") ? this.w202b : "");
+        setW202c(w201.equals("1") ? this.w202c : "");
+        setW202d(w201.equals("1") ? this.w202d : "");
+        setW202e(w201.equals("1") ? this.w202e : "");
+        setW202f(w201.equals("1") ? this.w202f : "");
+        setW202g(w201.equals("1") ? this.w202g : "");
+        setW202h(w201.equals("1") ? this.w202h : "");
+        setW20296(w201.equals("1") ? this.w20296 : "");
 
-        setW203(w201.equals("2") ? this.w203 : "");
-        setW204(w201.equals("2") ? this.w204 : "");
-        setW205(w201.equals("2") ? this.w205 : "");
-        setW206(w201.equals("2") ? this.w206 : "");
+        setW203(w201.equals("1") ? this.w203 : "");
+        setW204(w201.equals("1") ? this.w204 : "");
+        setW205(w201.equals("1") ? this.w205 : "");
+        setW206(w201.equals("1") ? this.w206 : "");
 
-        setW20601(w201.equals("2") ? this.w20601 : "");
-        setW20602(w201.equals("2") ? this.w20602 : "");
-        setW20603(w201.equals("2") ? this.w20603 : "");
-        setW20604(w201.equals("2") ? this.w20604 : "");
-        setW20605(w201.equals("2") ? this.w20605 : "");
-        setW20606(w201.equals("2") ? this.w20606 : "");
-        setW20607(w201.equals("2") ? this.w20607 : "");
-        setW20608(w201.equals("2") ? this.w20608 : "");
-        setW20696(w201.equals("2") ? this.w20696 : "");
-        setW20697(w201.equals("2") ? this.w20697 : "");
-        setW20696x(w201.equals("2") ? this.w20696x : "");
+        setW20601(w201.equals("1") ? this.w20601 : "");
+        setW20602(w201.equals("1") ? this.w20602 : "");
+        setW20603(w201.equals("1") ? this.w20603 : "");
+        setW20604(w201.equals("1") ? this.w20604 : "");
+        setW20605(w201.equals("1") ? this.w20605 : "");
+        setW20606(w201.equals("1") ? this.w20606 : "");
+        setW20607(w201.equals("1") ? this.w20607 : "");
+        setW20608(w201.equals("1") ? this.w20608 : "");
+        setW20696(w201.equals("1") ? this.w20696 : "");
+        setW20697(w201.equals("1") ? this.w20697 : "");
+        setW20696x(w201.equals("1") ? this.w20696x : "");
 
         notifyPropertyChanged(BR.w201);
     }
