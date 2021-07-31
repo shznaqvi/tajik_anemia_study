@@ -6282,7 +6282,7 @@ public class Form extends BaseObservable {
         setW405d(w40598.equals("98") ? "" : this.w405d);
         setW405e(w40598.equals("98") ? "" : this.w405e);
         setW405f(w40598.equals("98") ? "" : this.w405f);
-        setW401g(w40598.equals("98") ? "" : this.w405g);
+        setW405g(w40598.equals("98") ? "" : this.w405g);
         notifyPropertyChanged(BR.w40598);
     }
 
