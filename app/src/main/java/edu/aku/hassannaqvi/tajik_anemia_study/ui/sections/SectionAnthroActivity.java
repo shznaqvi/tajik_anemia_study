@@ -10,16 +10,11 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionAnthroBinding;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.anthro;
@@ -36,12 +31,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_anthro);
         bi.setCallback(this);
-        setupSkips();
-    }
-
-
-    private void setupSkips() {
-
+        bi.setAnthro(anthro);
     }
 
 
@@ -62,24 +52,10 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-    private void saveDraft() {
-        MainApp.form = new Form();
-
-        form.setUserName(MainApp.user.getUserName());
-        form.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        form.setDeviceId(MainApp.deviceid);
-        form.setAppver(MainApp.versionName + "." + MainApp.versionCode);
-
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 

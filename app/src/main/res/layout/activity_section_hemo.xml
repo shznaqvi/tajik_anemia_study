@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+        <variable
+            name="blood"
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Blood" />
 
         <variable
             name="callback"
@@ -85,6 +85,7 @@
                             android:layout_height="wrap_content"
                             android:focusable="false"
                             android:gravity="center"
+                            android:text="@={blood.e101}"
                             android:hint="YYYY/MM/DD"
                             app:dateFormat="yyyy-MM-dd"
                             app:maxDate="CR_DATE"
@@ -132,6 +133,7 @@
                             android:id="@+id/e104"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@={blood.e104}"
                             android:hint="@string/e104" />
 
                     </LinearLayout>
@@ -177,15 +179,19 @@
                             <RadioButton
                                 android:id="@+id/e105a"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{blood.e105.equals(`1`)}"
+                                android:onClick="@{()->blood.setE105(`1`)}"
                                 android:text="@string/e105a" />
 
                             <RadioButton
                                 android:id="@+id/e105b"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{blood.e105.equals(`2`)}"
+                                android:onClick="@{()->blood.setE105(`2`)}"
                                 android:text="@string/e105b" />
 
                         </RadioGroup>
@@ -228,7 +234,9 @@
                             android:id="@+id/e106"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/e106"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:text="@={blood.e106}"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
@@ -273,7 +281,9 @@
                             android:id="@+id/e107"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/e107"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:text="@={blood.e107}"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
@@ -318,7 +328,9 @@
                             android:id="@+id/e018"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/e018"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:text="@={blood.e018}"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
@@ -362,21 +374,31 @@
                         <RadioGroup
                             android:id="@+id/e109"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/e109a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{blood.e109.equals(`1`)}"
+                                android:onClick="@{()->blood.setE109(`1`)}"
                                 android:text="@string/e109a" />
 
                             <RadioButton
                                 android:id="@+id/e109b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{blood.e109.equals(`2`)}"
+                                android:onClick="@{()->blood.setE109(`2`)}"
                                 android:text="@string/e109b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -413,7 +435,9 @@
                             android:id="@+id/e110"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/e110"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:text="@={blood.e110}"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"
@@ -458,7 +482,9 @@
                             android:id="@+id/e111"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/e111"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:text="@={blood.e111}"
                             android:inputType="number"
                             android:maxLength="3"
                             app:maxValue="100"

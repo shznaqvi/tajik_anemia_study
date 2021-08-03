@@ -6,9 +6,9 @@
 
         <import type="android.view.View" />
 
-        <!--<variable
-            name="form"
-            type="edu.aku.hassannaqvi.tas.models.Form" />-->
+        <variable
+            name="anthro"
+            type="edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro" />
 
         <variable
             name="callback"
@@ -86,6 +86,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={anthro.d101}"
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
@@ -135,6 +136,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={anthro.d102}"
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
@@ -184,6 +186,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:text="@={anthro.d103}"
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
@@ -238,6 +241,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d104.equals(`1`)}"
+                                android:onClick="@{()->anthro.setD104(`1`)}"
                                 android:text="@string/d104a" />
 
                             <RadioButton
@@ -245,6 +250,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d104.equals(`2`)}"
+                                android:onClick="@{()->anthro.setD104(`2`)}"
                                 android:text="@string/d104b" />
 
                         </RadioGroup>
@@ -294,6 +301,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d105.equals(`1`)}"
+                                android:onClick="@{()->anthro.setD105(`1`)}"
                                 android:text="@string/d105a" />
 
                             <RadioButton
@@ -301,6 +310,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d105.equals(`2`)}"
+                                android:onClick="@{()->anthro.setD105(`2`)}"
                                 android:text="@string/d105b" />
 
                         </RadioGroup>
@@ -350,6 +361,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d106.equals(`1`)}"
+                                android:onClick="@{()->anthro.setD106(`1`)}"
                                 android:text="@string/d106a" />
 
                             <RadioButton
@@ -357,6 +370,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d106.equals(`2`)}"
+                                android:onClick="@{()->anthro.setD106(`2`)}"
                                 android:text="@string/d106b" />
 
                             <RadioButton
@@ -364,6 +379,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:checked="@{anthro.d106.equals(`3`)}"
+                                android:onClick="@{()->anthro.setD106(`3`)}"
                                 android:text="@string/d106c" />
 
                         </RadioGroup>
