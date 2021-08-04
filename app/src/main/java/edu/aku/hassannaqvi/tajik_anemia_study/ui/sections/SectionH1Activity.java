@@ -27,6 +27,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.SyncActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.ChildListActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.pregList;
@@ -50,6 +51,7 @@ public class SectionH1Activity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         //bi.toolbar.setNavigationIcon(R.drawable.ic_settings);
         db = MainApp.appInfo.dbHelper;
+        bi.h106.setMinDate(DateUtilsKt.getMonthsBack("dd/MM/yyyy", -1));
     }
 
 
