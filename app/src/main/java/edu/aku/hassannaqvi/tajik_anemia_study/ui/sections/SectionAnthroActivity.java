@@ -17,9 +17,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionAnthroBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.anthro;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-
 
 public class SectionAnthroActivity extends AppCompatActivity {
     ActivitySectionAnthroBinding bi;
@@ -31,17 +28,23 @@ public class SectionAnthroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_anthro);
         bi.setCallback(this);
-        bi.setAnthro(anthro);
+        bi.setAnthro(MainApp.anthro);
+        setupSkips();
+    }
+
+
+    private void setupSkips() {
+
     }
 
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addAnthro(anthro);
-        form.setId(String.valueOf(updcount));
+        long updcount = db.addAnthro(MainApp.anthro);
+        MainApp.anthro.setId(String.valueOf(updcount));
         if (updcount > 0) {
-            form.setUid(form.getDeviceId() + form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
+            MainApp.anthro.setUid(MainApp.anthro.getDeviceId() + MainApp.anthro.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.anthro.getUid());
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -52,10 +55,24 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        saveDraft();
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void saveDraft() {
+
+        MainApp.anthro.setUuid(MainApp.form.getUid());
+        MainApp.anthro.setUserName(MainApp.user.getUserName());
+        MainApp.anthro.setSysDate(MainApp.form.getSysDate());
+        MainApp.anthro.setDeviceId(MainApp.deviceid);
+        MainApp.anthro.setAppver(MainApp.versionName + "." + MainApp.versionCode);
+
     }
 
 

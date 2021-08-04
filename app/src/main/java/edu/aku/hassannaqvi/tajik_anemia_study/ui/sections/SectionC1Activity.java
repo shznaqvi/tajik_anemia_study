@@ -31,6 +31,7 @@ public class SectionC1Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c1);
         bi.setCallback(this);
         bi.setForm(form);
+        form.setC100Name(MainApp.child.getH229());
         setupSkips();
     }
 

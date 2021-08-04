@@ -78,6 +78,7 @@ public class MainApp extends Application {
     public static int mwraCountComplete = 0;
     public static int childCountComplete = 0;
     public static int pregCountComplete = 0;
+    public static List<String> subjectNames;
 
 
     public static void hideSystemUI(View decorView) {

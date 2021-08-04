@@ -169,8 +169,7 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.sections.SectionHemoActivity"
-            android:label="@string/modetitle"
+            android:name=".ui.sections.SectionSamplesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
