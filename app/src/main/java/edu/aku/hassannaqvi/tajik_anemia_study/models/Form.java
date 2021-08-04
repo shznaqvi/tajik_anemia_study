@@ -3573,6 +3573,15 @@ public class Form extends BaseObservable {
 
     public void setW103(String w103) {
         this.w103 = w103;
+        setW104(w103.equals("1") ? this.w104 : "");
+        setW105(w103.equals("1") ? this.w105 : "");
+        setW106(w103.equals("1") ? this.w106 : "");
+        setW107(w103.equals("1") ? this.w107 : "");
+        setW108(w103.equals("1") ? this.w108 : "");
+        setW109(w103.equals("1") ? this.w109 : "");
+        setW110(w103.equals("1") ? this.w110 : "");
+        setW111(w103.equals("1") ? this.w111 : "");
+        setW112(w103.equals("1") ? this.w112 : "");
         notifyPropertyChanged(BR.w103);
     }
 
