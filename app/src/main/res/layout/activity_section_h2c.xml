@@ -238,7 +238,6 @@
                             android:hint="##"
                             android:inputType="number"
                             android:text="@={mwra.h223}"
-
                             android:maxLength="2"
                             app:maxValue="49"
                             app:minValue="15"

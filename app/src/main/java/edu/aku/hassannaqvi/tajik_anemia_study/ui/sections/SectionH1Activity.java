@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,6 +53,23 @@ public class SectionH1Activity extends AppCompatActivity {
         //bi.toolbar.setNavigationIcon(R.drawable.ic_settings);
         db = MainApp.appInfo.dbHelper;
         bi.h106.setMinDate(DateUtilsKt.getMonthsBack("dd/MM/yyyy", -1));
+    }
+
+
+    public void ageCal(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.h203d.getText()) || TextUtils.isEmpty(bi.h203m.getText()) || TextUtils.isEmpty(bi.h203y.getText()))
+            return;
+        if (bi.h203y.getText().toString().equals("9998")) {
+            bi.h204.setText("");
+            bi.h204.setEnabled(true);
+        } else {
+            bi.h204.setText("");
+            if (Integer.parseInt(bi.h203y.getText().toString()) >= 1972) {
+                bi.h204.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h203y.getText().toString()))));
+                bi.h204.setEnabled(false);
+            }
+        }
+
     }
 
 

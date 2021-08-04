@@ -234,7 +234,7 @@
     <string name="h202a">Male</string>
     <string name="h202b">Female</string>
     <string name="h203">Date of Birth</string>
-    <string name="h203d">Date</string>
+    <string name="h203d">Day</string>
     <string name="h203m">Month</string>
     <string name="h203y">Year</string>
     <string name="h204t">Age in Completed Years</string>

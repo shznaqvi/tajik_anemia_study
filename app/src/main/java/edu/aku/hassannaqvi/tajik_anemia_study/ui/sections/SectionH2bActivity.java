@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -45,12 +46,22 @@ public class SectionH2bActivity extends AppCompatActivity {
     }
 
 
+    public void setMaxValue(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.h209.getText())) return;
+        bi.h211t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+        bi.h213t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+        bi.h215t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+        bi.h217t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+        bi.h219t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+
+    }
+
+
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
         long updcount = db.updatesFormColumn(FormsTable.COLUMN_SH2B, form.sH2btoString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -63,9 +74,7 @@ public class SectionH2bActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, MwraListActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 

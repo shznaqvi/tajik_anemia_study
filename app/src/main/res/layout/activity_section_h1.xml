@@ -542,11 +542,13 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:onTextChanged="@{callback::ageCal}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
-                                    app:maxValue="31"
                                     android:text="@={form.h203d}"
+                                    app:defaultValue="98"
+                                    app:maxValue="31"
                                     app:minValue="1"
                                     app:type="range" />
 
@@ -556,12 +558,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:onTextChanged="@{callback::ageCal}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
+                                    android:text="@={form.h203m}"
+                                    app:defaultValue="98"
                                     app:maxValue="12"
                                     app:minValue="1"
-                                    android:text="@={form.h203m}"
                                     app:type="range" />
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
@@ -570,12 +574,14 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
+                                    android:onTextChanged="@{callback::ageCal}"
+                                    android:text="@={form.h203y}"
                                     android:hint="####"
                                     android:inputType="number"
                                     android:maxLength="4"
-                                    app:maxValue="1990"
-                                    app:minValue="1900"
-                                    android:text="@={form.h203y}"
+                                    app:defaultValue="9998"
+                                    app:maxValue="2006"
+                                    app:minValue="1972"
                                     app:type="range" />
 
                             </LinearLayout>
