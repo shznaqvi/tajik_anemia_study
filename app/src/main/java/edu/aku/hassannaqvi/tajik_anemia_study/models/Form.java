@@ -1284,6 +1284,16 @@ public class Form extends BaseObservable {
 
     public void setH111(String h111) {
         this.h111 = h111;
+        setH201(h111.equals("1") ? this.h201 : "");
+        setH202(h111.equals("1") ? this.h202 : "");
+        setH203d(h111.equals("1") ? this.h203d : "");
+        setH203m(h111.equals("1") ? this.h203m : "");
+        setH203y(h111.equals("1") ? this.h203y : "");
+        setH204(h111.equals("1") ? this.h204 : "");
+        setH205(h111.equals("1") ? this.h205 : "");
+        setH206(h111.equals("1") ? this.h206 : "");
+        setH207(h111.equals("1") ? this.h207 : "");
+        setH208(h111.equals("1") ? this.h208 : "");
         notifyPropertyChanged(BR.h111);
     }
 
