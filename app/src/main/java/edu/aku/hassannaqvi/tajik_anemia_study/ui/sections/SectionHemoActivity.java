@@ -11,14 +11,11 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
-import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
-import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionHemoBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.blood;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.samples;
 
 
 public class SectionHemoActivity extends AppCompatActivity {
@@ -36,7 +33,7 @@ public class SectionHemoActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
+/*        db = MainApp.appInfo.getDbHelper();
         long updcount = db.addSamples(samples);
         samples.setId(String.valueOf(updcount));
         if (updcount > 0) {
@@ -46,7 +43,8 @@ public class SectionHemoActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
+        return false;
     }
 
 

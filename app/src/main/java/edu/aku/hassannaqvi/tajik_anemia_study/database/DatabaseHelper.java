@@ -327,7 +327,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addSamples(Samples sam) {
+    public Long addSamples(Samples sam) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(SamplesTable.COLUMN_PROJECT_NAME, sam.getProjectName());
@@ -337,7 +337,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(SamplesTable.COLUMN_HHID, sam.getHhid());
         values.put(SamplesTable.COLUMN_USERNAME, sam.getUserName());
         values.put(SamplesTable.COLUMN_SYSDATE, sam.getSysDate());
-        values.put(SamplesTable.COLUMN_S1, sam.getS1());
+        values.put(SamplesTable.COLUMN_S1, sam.s1toString());
 
         values.put(SamplesTable.COLUMN_DEVICEID, sam.getDeviceId());
         values.put(SamplesTable.COLUMN_DEVICETAGID, sam.getDeviceTag());
@@ -1093,7 +1093,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedSamp() {
+    public JSONArray getUnsyncedSamp() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1780,5 +1780,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return pregByUID;
+    }
+
+    public Samples getSamplesByUUIDName(String uid, String subjectName) throws JSONException {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = SamplesTable.COLUMN_UUID + "=? AND "
+                + SamplesTable.COLUMN_SUBJECTNAME + "=?";
+
+        String[] whereArgs = {uid, subjectName};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = SamplesTable.COLUMN_ID + " ASC";
+
+        Samples sampleByUID = new Samples();
+        try {
+            c = db.query(
+                    SamplesTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                sampleByUID = new Samples().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return sampleByUID;
     }
 }

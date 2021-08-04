@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.models;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -29,6 +28,7 @@ public class Samples extends BaseObservable {
     private String cluster = StringUtils.EMPTY;
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
+    private String subjectName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
@@ -45,11 +45,13 @@ public class Samples extends BaseObservable {
 
     // FIELD VARIABLES
     private String e101 = StringUtils.EMPTY;
+    private String e102 = StringUtils.EMPTY;
+    private String e103 = StringUtils.EMPTY;
     private String e104 = StringUtils.EMPTY;
     private String e105 = StringUtils.EMPTY;
     private String e106 = StringUtils.EMPTY;
     private String e107 = StringUtils.EMPTY;
-    private String e018 = StringUtils.EMPTY;
+    private String e108 = StringUtils.EMPTY;
     private String e109 = StringUtils.EMPTY;
     private String e110 = StringUtils.EMPTY;
     private String e111 = StringUtils.EMPTY;
@@ -120,6 +122,14 @@ public class Samples extends BaseObservable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getSubjectname() {
+        return subjectName;
+    }
+
+    public void setSubjectname(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public String getSysDate() {
@@ -216,6 +226,26 @@ public class Samples extends BaseObservable {
     }
 
     @Bindable
+    public String getE102() {
+        return e102;
+    }
+
+    public void setE102(String e102) {
+        this.e102 = e102;
+        notifyPropertyChanged(BR.e102);
+    }
+
+    @Bindable
+    public String getE103() {
+        return e103;
+    }
+
+    public void setE103(String e103) {
+        this.e103 = e103;
+        notifyPropertyChanged(BR.e103);
+    }
+
+    @Bindable
     public String getE104() {
         return e104;
     }
@@ -256,12 +286,12 @@ public class Samples extends BaseObservable {
     }
 
     @Bindable
-    public String getE018() {
-        return e018;
+    public String getE108() {
+        return e108;
     }
 
-    public void setE018(String e018) {
-        this.e018 = e018;
+    public void setE108(String e108) {
+        this.e108 = e108;
         notifyPropertyChanged(BR.e018);
     }
 
@@ -296,13 +326,14 @@ public class Samples extends BaseObservable {
     }
 
 
-    public Samples Hydrate(Cursor cursor) {
+    public Samples Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_UUID));
         this.cluster = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_CLUSTER));
         this.hhid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_USERNAME));
+        this.subjectName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SUBJECTNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICETAGID));
@@ -317,74 +348,70 @@ public class Samples extends BaseObservable {
     }
 
 
-    public void s1Hydrate(String string) {
+    public void s1Hydrate(String string) throws JSONException {
 
         if (string != null) {
 
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.e101 = json.getString("e101");
-                this.e104 = json.getString("e104");
-                this.e105 = json.getString("e105");
-                this.e106 = json.getString("e106");
-                this.e107 = json.getString("e107");
-                this.e018 = json.getString("e018");
-                this.e109 = json.getString("e109");
-                this.e110 = json.getString("e110");
-                this.e111 = json.getString("e111");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.e101 = json.getString("e101");
+            this.e102 = json.getString("e102");
+            this.e103 = json.getString("e103");
+            this.e104 = json.getString("e104");
+            this.e105 = json.getString("e105");
+            this.e106 = json.getString("e106");
+            this.e107 = json.getString("e107");
+            this.e108 = json.getString("e108");
+            this.e109 = json.getString("e109");
+            this.e110 = json.getString("e110");
+            this.e111 = json.getString("e111");
+
         }
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("e101", e101)
-                    .put("e104", e104)
-                    .put("e105", e105)
-                    .put("e106", e106)
-                    .put("e107", e107)
-                    .put("e018", e018)
-                    .put("e109", e109)
-                    .put("e110", e110)
-                    .put("e111", e111);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
+        json.put("e101", e101)
+                .put("e102", e102)
+                .put("e103", e103)
+                .put("e104", e104)
+                .put("e105", e105)
+                .put("e106", e106)
+                .put("e107", e107)
+                .put("e108", e108)
+                .put("e109", e109)
+                .put("e110", e110)
+                .put("e111", e111);
+
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(SamplesTable.COLUMN_ID, this.id);
-            json.put(SamplesTable.COLUMN_UID, this.uid);
-            json.put(SamplesTable.COLUMN_UUID, this.uuid);
-            json.put(SamplesTable.COLUMN_CLUSTER, this.cluster);
-            json.put(SamplesTable.COLUMN_HHID, this.hhid);
-            json.put(SamplesTable.COLUMN_USERNAME, this.userName);
-            json.put(SamplesTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(SamplesTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(SamplesTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(SamplesTable.COLUMN_ISTATUS, this.iStatus);
-            //  json.put(SamplesTable.COLUMN_SYNCED, this.synced);
-            //  json.put(SamplesTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(SamplesTable.COLUMN_ID, this.id);
+        json.put(SamplesTable.COLUMN_UID, this.uid);
+        json.put(SamplesTable.COLUMN_UUID, this.uuid);
+        json.put(SamplesTable.COLUMN_CLUSTER, this.cluster);
+        json.put(SamplesTable.COLUMN_HHID, this.hhid);
+        json.put(SamplesTable.COLUMN_USERNAME, this.userName);
+        json.put(SamplesTable.COLUMN_SUBJECTNAME, this.subjectName);
+        json.put(SamplesTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(SamplesTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(SamplesTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(SamplesTable.COLUMN_ISTATUS, this.iStatus);
+        //  json.put(SamplesTable.COLUMN_SYNCED, this.synced);
+        //  json.put(SamplesTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-            json.put(SamplesTable.COLUMN_S1, new JSONObject(s1toString()));
-            return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "toJSONObject: " + e.getMessage());
-            return null;
-        }
+        json.put(SamplesTable.COLUMN_S1, new JSONObject(s1toString()));
+
+        return null;
     }
+
 }
