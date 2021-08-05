@@ -64,14 +64,24 @@ public class SectionSamplesActivity extends AppCompatActivity {
         bi.e104.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (bi.e104.getSelectedItemPosition() != 0) {
+                    try {
+                        Samples tempSamples = db.getSamplesByUUIDNameType(MainApp.form.getUid(), bi.e104.getSelectedItem().toString(), MainApp.idType);
+                        if (!tempSamples.getUid().equals("")) {
 
+                            MainApp.samples.s1Hydrate(tempSamples.s1toString());
 
-                try {
-                    MainApp.samples = db.getSamplesByUUIDName(MainApp.form.getUid(), bi.e104.getSelectedItem().toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "onItemSelected(Samples): " + e.getMessage());
-                    Toast.makeText(SectionSamplesActivity.this, "onItemSelected(Samples): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            // uid is important because it will be checked in insertRecord() to check if this is new record or already exist
+                            MainApp.samples.setUid(tempSamples.getUid());
+                            MainApp.samples.setId(tempSamples.getId());
+                        } else {
+                            MainApp.samples.setE104(bi.e104.getSelectedItem().toString());
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "onItemSelected(Samples): " + e.getMessage());
+                        Toast.makeText(SectionSamplesActivity.this, "onItemSelected(Samples): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
                /* MainApp.samples.setE101("");
                 MainApp.samples.setE104("");
@@ -138,7 +148,7 @@ public class SectionSamplesActivity extends AppCompatActivity {
     private boolean updateDB() {
         long updcount = 0;
         try {
-            updcount = db.updatesSampColumn(TableContracts.SamplesTable.COLUMN_UID, MainApp.samples.s1toString());
+            updcount = db.updatesSampColumn(TableContracts.SamplesTable.COLUMN_S1, MainApp.samples.s1toString());
             if (updcount > 0) {
                 return true;
             }
@@ -158,7 +168,7 @@ public class SectionSamplesActivity extends AppCompatActivity {
         if (updateDB()) {
             MainApp.subjectNames.remove(bi.e104.getSelectedItemPosition());
             finish();
-            if (MainApp.subjectNames.size() == 0) {
+            if (MainApp.subjectNames.size() == 1) {
                 startActivity(new Intent(this, IdentificationActivity.class).putExtra("complete", true));
 
             } else {
