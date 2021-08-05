@@ -336,9 +336,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(SamplesTable.COLUMN_CLUSTER, sam.getCluster());
         values.put(SamplesTable.COLUMN_HHID, sam.getHhid());
         values.put(SamplesTable.COLUMN_USERNAME, sam.getUserName());
+        values.put(SamplesTable.COLUMN_SUBJECTNAME, sam.getSubjectName());
+        values.put(SamplesTable.COLUMN_SAMPLE_TYPE, sam.getSampleType());
         values.put(SamplesTable.COLUMN_SYSDATE, sam.getSysDate());
         values.put(SamplesTable.COLUMN_S1, sam.s1toString());
-
         values.put(SamplesTable.COLUMN_DEVICEID, sam.getDeviceId());
         values.put(SamplesTable.COLUMN_DEVICETAGID, sam.getDeviceTag());
         values.put(SamplesTable.COLUMN_APPVERSION, sam.getAppver());
@@ -1782,7 +1783,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return pregByUID;
     }
 
-    public Samples getSamplesByUUIDName(String uid, String subjectName) throws JSONException {
+    public Samples getSamplesByUUIDNameType(String uid, String subjectName, int sampleType) throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
@@ -1790,9 +1791,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String whereClause;
         whereClause = SamplesTable.COLUMN_UUID + "=? AND "
-                + SamplesTable.COLUMN_SUBJECTNAME + "=?";
+                + SamplesTable.COLUMN_SUBJECTNAME + "=? AND "
+                + SamplesTable.COLUMN_SAMPLE_TYPE + "=?";
 
-        String[] whereArgs = {uid, subjectName};
+        String[] whereArgs = {uid, subjectName, String.valueOf(sampleType)};
 
         String groupBy = null;
         String having = null;

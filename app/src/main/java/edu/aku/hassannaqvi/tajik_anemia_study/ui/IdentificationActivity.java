@@ -323,6 +323,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 // Populate Subject Names for spinner Adapter in Samples Activity.
                 MainApp.subjectNames = new ArrayList<>();
+                MainApp.subjectNames.add("...");
                 MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
                 MainApp.subjectNames.add(MainApp.form.getC100Name());
 

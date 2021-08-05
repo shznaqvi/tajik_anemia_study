@@ -190,6 +190,8 @@ object CreateTable {
             + SamplesTable.COLUMN_HHID + " TEXT,"
             + SamplesTable.COLUMN_USERNAME + " TEXT,"
             + SamplesTable.COLUMN_SYSDATE + " TEXT,"
+            + SamplesTable.COLUMN_SUBJECTNAME + " TEXT,"
+            + SamplesTable.COLUMN_SAMPLE_TYPE + " TEXT,"
             + SamplesTable.COLUMN_ISTATUS + " TEXT,"
             + SamplesTable.COLUMN_DEVICEID + " TEXT,"
             + SamplesTable.COLUMN_DEVICETAGID + " TEXT,"

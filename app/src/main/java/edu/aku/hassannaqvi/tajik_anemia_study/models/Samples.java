@@ -29,6 +29,7 @@ public class Samples extends BaseObservable {
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String subjectName = StringUtils.EMPTY;
+    private String sampleType = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
@@ -124,12 +125,20 @@ public class Samples extends BaseObservable {
         this.userName = userName;
     }
 
-    public String getSubjectname() {
+    public String getSubjectName() {
         return subjectName;
     }
 
-    public void setSubjectname(String subjectName) {
+    public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    public String getSampleType() {
+        return sampleType;
+    }
+
+    public void setSampleType(String sampleType) {
+        this.sampleType = sampleType;
     }
 
     public String getSysDate() {
@@ -232,6 +241,7 @@ public class Samples extends BaseObservable {
 
     public void setE102(String e102) {
         this.e102 = e102;
+        this.cluster = e102;
         notifyPropertyChanged(BR.e102);
     }
 
@@ -242,6 +252,7 @@ public class Samples extends BaseObservable {
 
     public void setE103(String e103) {
         this.e103 = e103;
+        this.hhid = e103;
         notifyPropertyChanged(BR.e103);
     }
 
@@ -252,6 +263,7 @@ public class Samples extends BaseObservable {
 
     public void setE104(String e104) {
         this.e104 = e104;
+        this.subjectName = e104;
         notifyPropertyChanged(BR.e104);
     }
 
@@ -262,6 +274,7 @@ public class Samples extends BaseObservable {
 
     public void setE105(String e105) {
         this.e105 = e105;
+        setSampleType(!e105.equals("") ? "3" : this.sampleType);
         notifyPropertyChanged(BR.e105);
     }
 
@@ -302,6 +315,7 @@ public class Samples extends BaseObservable {
 
     public void setE109(String e109) {
         this.e109 = e109;
+        setSampleType(!e109.equals("") ? "4" : this.sampleType);
         notifyPropertyChanged(BR.e109);
     }
 
@@ -334,6 +348,7 @@ public class Samples extends BaseObservable {
         this.hhid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_USERNAME));
         this.subjectName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SUBJECTNAME));
+        this.sampleType = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SAMPLE_TYPE));
         this.sysDate = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYSDATE));
         this.deviceId = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICETAGID));
@@ -343,7 +358,6 @@ public class Samples extends BaseObservable {
         this.syncDate = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYNCED_DATE));
 
         s1Hydrate(cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_S1)));
-
         return this;
     }
 
@@ -366,6 +380,9 @@ public class Samples extends BaseObservable {
             this.e109 = json.getString("e109");
             this.e110 = json.getString("e110");
             this.e111 = json.getString("e111");
+
+
+            notifyChange();
 
         }
     }
@@ -402,6 +419,7 @@ public class Samples extends BaseObservable {
         json.put(SamplesTable.COLUMN_HHID, this.hhid);
         json.put(SamplesTable.COLUMN_USERNAME, this.userName);
         json.put(SamplesTable.COLUMN_SUBJECTNAME, this.subjectName);
+        json.put(SamplesTable.COLUMN_SAMPLE_TYPE, this.sampleType);
         json.put(SamplesTable.COLUMN_SYSDATE, this.sysDate);
         json.put(SamplesTable.COLUMN_DEVICEID, this.deviceId);
         json.put(SamplesTable.COLUMN_DEVICETAGID, this.deviceTag);
