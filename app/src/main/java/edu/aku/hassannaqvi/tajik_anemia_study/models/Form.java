@@ -612,6 +612,7 @@ public class Form extends BaseObservable {
     private String c107q = StringUtils.EMPTY;
     private String c107r = StringUtils.EMPTY;
     private String c107s = StringUtils.EMPTY;
+    private String c107sflag = StringUtils.EMPTY;
     private String c108 = StringUtils.EMPTY;
     private String c108t1 = StringUtils.EMPTY;
     private String c109 = StringUtils.EMPTY;
@@ -7048,7 +7049,8 @@ public class Form extends BaseObservable {
 
     public void setC107a(String c107a) {
         this.c107a = c107a;
-        setC107b(c107a.equals("1") ? this.c106q : "");
+        setC107sflag();
+        setC107b(c107a.equals("1") ? this.c107b : "");
         notifyPropertyChanged(BR.c107a);
     }
 
@@ -7069,6 +7071,7 @@ public class Form extends BaseObservable {
 
     public void setC107c(String c107c) {
         this.c107c = c107c;
+        setC107sflag();
         notifyPropertyChanged(BR.c107c);
     }
 
@@ -7079,6 +7082,7 @@ public class Form extends BaseObservable {
 
     public void setC107d(String c107d) {
         this.c107d = c107d;
+        setC107sflag();
         notifyPropertyChanged(BR.c107d);
     }
 
@@ -7089,6 +7093,7 @@ public class Form extends BaseObservable {
 
     public void setC107e(String c107e) {
         this.c107e = c107e;
+        setC107sflag();
         notifyPropertyChanged(BR.c107e);
     }
 
@@ -7099,6 +7104,7 @@ public class Form extends BaseObservable {
 
     public void setC107f(String c107f) {
         this.c107f = c107f;
+        setC107sflag();
         notifyPropertyChanged(BR.c107f);
     }
 
@@ -7109,6 +7115,7 @@ public class Form extends BaseObservable {
 
     public void setC107g(String c107g) {
         this.c107g = c107g;
+        setC107sflag();
         notifyPropertyChanged(BR.c107g);
     }
 
@@ -7119,6 +7126,7 @@ public class Form extends BaseObservable {
 
     public void setC107h(String c107h) {
         this.c107h = c107h;
+        setC107sflag();
         notifyPropertyChanged(BR.c107h);
     }
 
@@ -7129,6 +7137,7 @@ public class Form extends BaseObservable {
 
     public void setC107j(String c107j) {
         this.c107j = c107j;
+        setC107sflag();
         notifyPropertyChanged(BR.c107j);
     }
 
@@ -7139,6 +7148,7 @@ public class Form extends BaseObservable {
 
     public void setC107i(String c107i) {
         this.c107i = c107i;
+        setC107sflag();
         notifyPropertyChanged(BR.c107i);
     }
 
@@ -7149,6 +7159,7 @@ public class Form extends BaseObservable {
 
     public void setC107k(String c107k) {
         this.c107k = c107k;
+        setC107sflag();
         notifyPropertyChanged(BR.c107k);
     }
 
@@ -7159,6 +7170,7 @@ public class Form extends BaseObservable {
 
     public void setC107l(String c107l) {
         this.c107l = c107l;
+        setC107sflag();
         notifyPropertyChanged(BR.c107l);
     }
 
@@ -7169,6 +7181,7 @@ public class Form extends BaseObservable {
 
     public void setC107m(String c107m) {
         this.c107m = c107m;
+        setC107sflag();
         notifyPropertyChanged(BR.c107m);
     }
 
@@ -7179,6 +7192,7 @@ public class Form extends BaseObservable {
 
     public void setC107n(String c107n) {
         this.c107n = c107n;
+        setC107sflag();
         notifyPropertyChanged(BR.c107n);
     }
 
@@ -7189,6 +7203,7 @@ public class Form extends BaseObservable {
 
     public void setC107o(String c107o) {
         this.c107o = c107o;
+        setC107sflag();
         notifyPropertyChanged(BR.c107o);
     }
 
@@ -7199,6 +7214,7 @@ public class Form extends BaseObservable {
 
     public void setC107p(String c107p) {
         this.c107p = c107p;
+        setC107sflag();
         notifyPropertyChanged(BR.c107p);
     }
 
@@ -7209,6 +7225,7 @@ public class Form extends BaseObservable {
 
     public void setC107q(String c107q) {
         this.c107q = c107q;
+        setC107sflag();
         notifyPropertyChanged(BR.c107q);
     }
 
@@ -7219,7 +7236,41 @@ public class Form extends BaseObservable {
 
     public void setC107r(String c107r) {
         this.c107r = c107r;
+        setC107sflag();
         notifyPropertyChanged(BR.c107r);
+    }
+
+    @Bindable
+    public String getC107sflag() {
+        return c107sflag;
+    }
+
+    public void setC107sflag() {
+        this.c107sflag = "";
+        if (this.c107a.equals("1")
+                || this.c107c.equals("1")
+                || this.c107d.equals("1")
+                || this.c107e.equals("1")
+                || this.c107f.equals("1")
+                || this.c107g.equals("1")
+                || this.c107h.equals("1")
+                || this.c107i.equals("1")
+                || this.c107j.equals("1")
+                || this.c107k.equals("1")
+                || this.c107l.equals("1")
+                || this.c107m.equals("1")
+                || this.c107n.equals("1")
+                || this.c107o.equals("1")
+                || this.c107p.equals("1")
+                || this.c107q.equals("1")
+                || this.c107r.equals("1")) {
+            setC107s("");
+            this.c107sflag = "";
+        } else {
+            setC107s(this.c107s);
+            this.c107sflag = "1";
+        }
+        notifyPropertyChanged(BR.c107sflag);
     }
 
     @Bindable
@@ -7239,6 +7290,8 @@ public class Form extends BaseObservable {
 
     public void setC108(String c108) {
         this.c108 = c108;
+        setC108t1(c108.equals("1") ? this.c108t1 : "");
+        setC109(c108.equals("1") ? this.c109 : "");
         notifyPropertyChanged(BR.c108);
     }
 
