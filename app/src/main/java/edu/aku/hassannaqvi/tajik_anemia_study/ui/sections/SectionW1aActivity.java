@@ -41,7 +41,7 @@ public class SectionW1aActivity extends AppCompatActivity {
 
 
     private void setupSkips() {
-       /* rgLsnr(bi.w103, bi.w103b, new ViewGroup[]{bi.fldGrpCVw104, bi.fldGrpCVw105t, bi.fldGrpCVw106,bi.fldGrpCVw107t,bi.fldGrpCVw108t,bi.fldGrpCVw109t,bi.fldGrpCVw110t,bi.fldGrpCVw111t,bi.fldGrpCVw112});*/
+        /* rgLsnr(bi.w103, bi.w103b, new ViewGroup[]{bi.fldGrpCVw104, bi.fldGrpCVw105t, bi.fldGrpCVw106,bi.fldGrpCVw107t,bi.fldGrpCVw108t,bi.fldGrpCVw109t,bi.fldGrpCVw110t,bi.fldGrpCVw111t,bi.fldGrpCVw112});*/
 
     }
 
@@ -90,7 +90,33 @@ public class SectionW1aActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        int w105 = Integer.parseInt(bi.w105.getText().toString());
+        int w107 = Integer.parseInt(bi.w107.getText().toString());
+        int w108 = Integer.parseInt(bi.w108.getText().toString());
+        int w109 = Integer.parseInt(bi.w109.getText().toString());
+        int w110 = Integer.parseInt(bi.w110.getText().toString());
+        int w111 = Integer.parseInt(bi.w111.getText().toString());
+
+        if (w109 < w105) {
+            return Validator.emptyCustomTextBox(this, bi.w109, "W109 cannot be less than W105");
+        }
+
+        if (w108 > w107) {
+            return Validator.emptyCustomTextBox(this, bi.w108, "W108 cannot be greater than W107");
+        }
+
+        if (w110 > w107) {
+            return Validator.emptyCustomTextBox(this, bi.w110, "W110 cannot be greater than W107");
+        }
+
+        if (w111 > w110) {
+            return Validator.emptyCustomTextBox(this, bi.w111, "W111 cannot be greater than W110");
+        }
+
+        return true;
     }
 
 
