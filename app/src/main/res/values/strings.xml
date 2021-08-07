@@ -313,14 +313,14 @@
     <string name="h218b">No</string>
     <string name="h219">If Yes, Numbers of members greater than 49 years  </string>
     <string name="h219_info">TOTAL NUMBERS WILL BE AUTO CALCULATED</string>
-    <string name="h219t">Total Number of Members</string>
+    <string name="h219t">Total Number of Members older than 49 years</string>
     <string name="h219m">Number of Male Members</string>
     <string name="h219f">Number of Female Members</string>
     <string name="h220">Number of Women of Reproductive Age (WRA) living in the household who are aged between 15 to 49 years?</string>
     <string name="h220_info">TOTAL NUMBERS WILL BE AUTO CALCULATED</string>
     <string name="h220a">Total Number of WRA 15-49</string>
-    <string name="h220b">Number of Married Women</string>
-    <string name="h220c">Number of Unmarried Women</string>
+    <string name="h220b">Married Women</string>
+    <string name="h220c">Unmarried Women</string>
     <string name="sech2ctitle2">SECTION H2: Married Women of Reproductive Age (MWRA) Information </string>
     <string name="sech2ctitle2_info">THIS SECTION WILL BE REPEATED AS PER THE TOTAL NUMBER OF MWRA ENTERED IN H220</string>
     <string name="noteh2c">Note: This Section will be filled only for Married Women of Reproductive Age (MWRA) have child under 06-59 months of age</string>
@@ -2569,4 +2569,11 @@
     <string name="e120">Who\'s Sample is it?</string>
     <string name="action_database">Database Manager</string>
     <string name="action_data_sync">Sync Data</string>
+
+
+    <!--ERROR MESSAGES-->
+    <string name="error_member_count">%1$s total does not match count of Male and Female</string>
+    <string name="error_member_count_household">%1$s total does not match count of various members of different ages</string>
+
+
 </resources>

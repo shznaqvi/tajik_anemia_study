@@ -542,7 +542,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:onTextChanged="@{callback::ageCal}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
@@ -558,7 +557,6 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:onTextChanged="@{callback::ageCal}"
                                     android:hint="##"
                                     android:inputType="number"
                                     android:maxLength="2"
@@ -583,6 +581,7 @@
                                     app:maxValue="2006"
                                     app:minValue="1972"
                                     app:type="range" />
+
 
                             </LinearLayout>
 

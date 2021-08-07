@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,11 +20,9 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
-
 public class SectionH2bActivity extends AppCompatActivity {
     ActivitySectionH2bBinding bi;
     private DatabaseHelper db;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +33,6 @@ public class SectionH2bActivity extends AppCompatActivity {
         setupSkips();
     }
 
-
     private void setupSkips() {
      /*   rgLsnr(bi.h210, bi.h210b, new ViewGroup[]{bi.fldGrpCVh211});
         rgLsnr(bi.h212, bi.h212b, new ViewGroup[]{bi.fldGrpCVh213});
@@ -45,17 +41,15 @@ public class SectionH2bActivity extends AppCompatActivity {
         rgLsnr(bi.h218, bi.h218b, new ViewGroup[]{bi.fldGrpCVh219});*/
     }
 
-
     public void setMaxValue(CharSequence s, int i, int i1, int i2) {
-        if (TextUtils.isEmpty(bi.h209.getText())) return;
+/*        if (TextUtils.isEmpty(bi.h209.getText())) return;
         bi.h211t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
         bi.h213t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
         bi.h215t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
         bi.h217t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
-        bi.h219t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));
+        bi.h219t.setMaxvalue(Float.parseFloat(bi.h209.getText().toString()));*/
 
     }
-
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
@@ -67,7 +61,6 @@ public class SectionH2bActivity extends AppCompatActivity {
         }
     }
 
-
     public void btnContinue(View view) {
         if (!formValidation()) return;
         saveDraft();
@@ -76,7 +69,6 @@ public class SectionH2bActivity extends AppCompatActivity {
             startActivity(new Intent(this, MwraListActivity.class).putExtra("complete", true));
         } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
-
 
     private void saveDraft() {
 
@@ -127,16 +119,72 @@ public class SectionH2bActivity extends AppCompatActivity {
 
     }
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
-
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        String errMsg = "";
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
+
+        if (Integer.parseInt(MainApp.form.getH220a()) < Integer.parseInt(MainApp.form.getH217f())
+                || Integer.parseInt(MainApp.form.getH220a()) > (Integer.parseInt(MainApp.form.getH215f()) + Integer.parseInt(MainApp.form.getH217f()))
+        )
+            return Validator.emptyCustomTextBox(this, bi.h220a, "H220: WRA count does not match Females 20-49.");
+
+
+
+     /*   // Internal Validation for Q H211 - H119 and H220 for Male + Female = Total
+        if (!validateMembers(bi.h211t, bi.h211m, bi.h211f, "H211")) return false;
+        if (!validateMembers(bi.h213t, bi.h213m, bi.h213f, "H213")) return false;
+        if (!validateMembers(bi.h215t, bi.h215m, bi.h215f, "H215")) return false;
+        if (!validateMembers(bi.h217t, bi.h217m, bi.h217f, "H217")) return false;
+        if (!validateMembers(bi.h219t, bi.h219m, bi.h219f, "H219")) return false;
+        if (!validateMembers(bi.h220a, bi.h220b, bi.h220c, "H220")) return false;
+
+        // Cross Validation of Q H209 with Total sum of Q H211 - H219
+        int totalMember =0;
+        if(!bi.h211t.getText().toString().equals("")) totalMember += Integer.parseInt(MainApp.form.getH211t());
+        if(!bi.h213t.getText().toString().equals("")) totalMember += Integer.parseInt(MainApp.form.getH213t());
+        if(!bi.h215t.getText().toString().equals("")) totalMember += Integer.parseInt(MainApp.form.getH215t());
+        if(!bi.h217t.getText().toString().equals("")) totalMember += Integer.parseInt(MainApp.form.getH217t());
+        if(!bi.h219t.getText().toString().equals("")) totalMember += Integer.parseInt(MainApp.form.getH219t());
+     *//*   if (Integer.parseInt(bi.h209.getText().toString()) != totalMember){
+            errMsg = String.format(getResources().getString(R.string.error_member_count), "H209");
+            return Validator.emptyCustomTextBox(this, bi.h209, errMsg);
+        }*//*
+
+        // Cross Validation of Q H220 with females in Q H217 (Condition: H220 >= females in H217)
+
+        int H215f = Math.round(Float.parseFloat(MainApp.form.getH215f()));
+*/
+      /*  if (Integer.parseInt(bi.h217f.getText().toString()) != totalMember) {
+            errMsg = String.format(getResources().getString(R.string.error_member_count_household), "H209");
+            return Validator.emptyCustomTextBox(this, bi.h209, errMsg);
+        }
+*/
+        return true;
+
     }
+
+   /* private boolean validateMembers(EditTextPicker t, EditTextPicker m, EditTextPicker f, String q) {
+
+    if (!t.getText().toString().isEmpty() && !m.getText().toString().isEmpty() && !f.getText().toString().isEmpty()) {
+        int ct, cf, cm = 0;
+
+
+        String errMsg = String.format(getResources().getString(R.string.error_member_count), q);
+
+        ct = Integer.parseInt(t.getText().toString());
+        cm = Integer.parseInt(m.getText().toString());
+        cf = Integer.parseInt(f.getText().toString());
+        if (ct != cm + cf) {
+            return Validator.emptyCustomTextBox(this, t, errMsg);
+        }
+    }
+        return true;
+    }*/
 
 /*
 

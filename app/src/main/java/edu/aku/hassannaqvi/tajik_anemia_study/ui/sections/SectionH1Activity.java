@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -57,7 +57,8 @@ public class SectionH1Activity extends AppCompatActivity {
 
 
     public void ageCal(CharSequence s, int i, int i1, int i2) {
-        if (TextUtils.isEmpty(bi.h203d.getText()) || TextUtils.isEmpty(bi.h203m.getText()) || TextUtils.isEmpty(bi.h203y.getText()))
+
+/*        if (TextUtils.isEmpty(bi.h203d.getText()) || TextUtils.isEmpty(bi.h203m.getText()) || TextUtils.isEmpty(bi.h203y.getText()))
             return;
         if (bi.h203y.getText().toString().equals("9998")) {
             bi.h204.setText("");
@@ -68,7 +69,23 @@ public class SectionH1Activity extends AppCompatActivity {
                 bi.h204.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h203y.getText().toString()))));
                 bi.h204.setEnabled(false);
             }
+        }*/
+
+        // Return VOID if zero length
+        if (i == 0) return;
+
+        int dobYear = Integer.parseInt(s.toString());
+        int curYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        if (dobYear > 1900 && dobYear < curYear) {
+            String ageInYears = String.valueOf(curYear - dobYear);
+            bi.h204.setText(ageInYears);
+            bi.h204.setEnabled(false);
         }
+
+        // Single-Line Solution
+        //bi.h204.setText(dobYear > 1900 && dobYear < curYear ? String.valueOf(Calendar .getInstance().get(Calendar.YEAR) - Integer.parseInt(s.toString())) : "");
+
 
     }
 
@@ -267,8 +284,14 @@ public class SectionH1Activity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
+            Intent i;
+            if (bi.h111a.isChecked()) {
+                i = new Intent(this, SectionH2bActivity.class).putExtra("complete", true);
+            } else {
+                i = new Intent(this, EndingActivity.class).putExtra("complete", false);
+            }
             finish();
-            startActivity(new Intent(this, SectionH2bActivity.class).putExtra("complete", true));
+            startActivity(i);
         } else {
             Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
@@ -365,6 +388,8 @@ public class SectionH1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+
     }
 
 

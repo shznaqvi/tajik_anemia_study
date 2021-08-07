@@ -91,7 +91,10 @@ public class Form extends BaseObservable {
     private String h206 = StringUtils.EMPTY;
     private String h207 = StringUtils.EMPTY;
     private String h208 = StringUtils.EMPTY;
-    private String h209 = StringUtils.EMPTY;
+    private String h209t = StringUtils.EMPTY;
+    private String h209m = StringUtils.EMPTY;
+    private String h209f = StringUtils.EMPTY;
+
     private String h210 = StringUtils.EMPTY;
     private String h211t = StringUtils.EMPTY;
     private String h211m = StringUtils.EMPTY;
@@ -1419,13 +1422,33 @@ public class Form extends BaseObservable {
     }
 
     @Bindable
-    public String getH209() {
-        return h209;
+    public String getH209t() {
+        return h209t;
     }
 
-    public void setH209(String h209) {
-        this.h209 = h209;
-        notifyPropertyChanged(BR.h209);
+    public void setH209t(String h209t) {
+        this.h209t = h209t;
+        notifyPropertyChanged(BR.h209t);
+    }
+
+    @Bindable
+    public String getH209m() {
+        return h209m;
+    }
+
+    public void setH209m(String h209m) {
+        this.h209m = h209m;
+        notifyPropertyChanged(BR.h209m);
+    }
+
+    @Bindable
+    public String getH209f() {
+        return h209f;
+    }
+
+    public void setH209f(String h209f) {
+        this.h209f = h209f;
+        notifyPropertyChanged(BR.h209f);
     }
 
     @Bindable
@@ -1449,8 +1472,10 @@ public class Form extends BaseObservable {
 
     public void setH211t(String h211t) {
         this.h211t = h211t;
+        calculateTotalMember();
         notifyPropertyChanged(BR.h211t);
     }
+
 
     @Bindable
     public String getH211m() {
@@ -1459,6 +1484,8 @@ public class Form extends BaseObservable {
 
     public void setH211m(String h211m) {
         this.h211m = h211m;
+        if (!this.h211m.equals("") && !this.h211f.equals(""))
+            setH211t(String.valueOf(Integer.parseInt(this.h211m) + Integer.parseInt(this.h211f)));
         notifyPropertyChanged(BR.h211m);
     }
 
@@ -1469,6 +1496,8 @@ public class Form extends BaseObservable {
 
     public void setH211f(String h211f) {
         this.h211f = h211f;
+        if (!this.h211m.equals("") && !this.h211f.equals(""))
+            setH211t(String.valueOf(Integer.parseInt(this.h211m) + Integer.parseInt(this.h211f)));
         notifyPropertyChanged(BR.h211f);
     }
 
@@ -1491,7 +1520,10 @@ public class Form extends BaseObservable {
     }
 
     public void setH213t(String h213t) {
+
         this.h213t = h213t;
+        calculateTotalMember();
+
         notifyPropertyChanged(BR.h213t);
     }
 
@@ -1502,6 +1534,9 @@ public class Form extends BaseObservable {
 
     public void setH213m(String h213m) {
         this.h213m = h213m;
+        if (!this.h213m.equals("") && !this.h213f.equals("")) {
+            setH213t(String.valueOf(Integer.valueOf(this.h213m) + Integer.valueOf(this.h213f)));
+        }
         notifyPropertyChanged(BR.h213m);
     }
 
@@ -1512,6 +1547,8 @@ public class Form extends BaseObservable {
 
     public void setH213f(String h213f) {
         this.h213f = h213f;
+        if (!this.h213m.equals("") && !this.h213f.equals(""))
+            setH213t(String.valueOf(Integer.valueOf(this.h213m) + Integer.valueOf(this.h213f)));
         notifyPropertyChanged(BR.h213f);
     }
 
@@ -1535,6 +1572,8 @@ public class Form extends BaseObservable {
 
     public void setH215t(String h215t) {
         this.h215t = h215t;
+        calculateTotalMember();
+
         notifyPropertyChanged(BR.h215t);
     }
 
@@ -1545,6 +1584,8 @@ public class Form extends BaseObservable {
 
     public void setH215m(String h215m) {
         this.h215m = h215m;
+        if (!this.h215m.equals("") && !this.h215f.equals(""))
+            setH215t(String.valueOf(Integer.valueOf(this.h215m) + Integer.valueOf(this.h215f)));
         notifyPropertyChanged(BR.h215m);
     }
 
@@ -1555,6 +1596,8 @@ public class Form extends BaseObservable {
 
     public void setH215f(String h215f) {
         this.h215f = h215f;
+        if (!this.h215m.equals("") && !this.h215f.equals(""))
+            setH215t(String.valueOf(Integer.valueOf(this.h215m) + Integer.valueOf(this.h215f)));
         notifyPropertyChanged(BR.h215f);
     }
 
@@ -1578,6 +1621,8 @@ public class Form extends BaseObservable {
 
     public void setH217t(String h217t) {
         this.h217t = h217t;
+        calculateTotalMember();
+
         notifyPropertyChanged(BR.h217t);
     }
 
@@ -1588,6 +1633,8 @@ public class Form extends BaseObservable {
 
     public void setH217m(String h217m) {
         this.h217m = h217m;
+        if (!this.h217m.equals("") && !this.h217f.equals(""))
+            setH217t(String.valueOf(Integer.valueOf(this.h217m) + Integer.valueOf(this.h217f)));
         notifyPropertyChanged(BR.h217m);
     }
 
@@ -1598,6 +1645,8 @@ public class Form extends BaseObservable {
 
     public void setH217f(String h217f) {
         this.h217f = h217f;
+        if (!this.h217m.equals("") && !this.h217f.equals(""))
+            setH217t(String.valueOf(Integer.valueOf(this.h217m) + Integer.valueOf(this.h217f)));
         notifyPropertyChanged(BR.h217f);
     }
 
@@ -1621,6 +1670,7 @@ public class Form extends BaseObservable {
 
     public void setH219t(String h219t) {
         this.h219t = h219t;
+        calculateTotalMember();
         notifyPropertyChanged(BR.h219t);
     }
 
@@ -1631,6 +1681,8 @@ public class Form extends BaseObservable {
 
     public void setH219m(String h219m) {
         this.h219m = h219m;
+        if (!this.h219m.equals("") && !this.h219f.equals(""))
+            setH219t(String.valueOf(Integer.valueOf(this.h219m) + Integer.valueOf(this.h219f)));
         notifyPropertyChanged(BR.h219m);
     }
 
@@ -1641,6 +1693,8 @@ public class Form extends BaseObservable {
 
     public void setH219f(String h219f) {
         this.h219f = h219f;
+        if (!this.h219m.equals("") && !this.h219f.equals(""))
+            setH219t(String.valueOf(Integer.valueOf(this.h219m) + Integer.valueOf(this.h219f)));
         notifyPropertyChanged(BR.h219f);
     }
 
@@ -1661,6 +1715,9 @@ public class Form extends BaseObservable {
 
     public void setH220b(String h220b) {
         this.h220b = h220b;
+        if (!this.h220b.equals("") && !this.h220c.equals("")) {
+            setH220a(String.valueOf(Integer.valueOf(this.h220b) + Integer.valueOf(this.h220c)));
+        }
         notifyPropertyChanged(BR.h220b);
     }
 
@@ -1671,6 +1728,9 @@ public class Form extends BaseObservable {
 
     public void setH220c(String h220c) {
         this.h220c = h220c;
+        if (!this.h220b.equals("") && !this.h220c.equals("")) {
+            setH220a(String.valueOf(Integer.valueOf(this.h220b) + Integer.valueOf(this.h220c)));
+        }
         notifyPropertyChanged(BR.h220c);
     }
 
@@ -10134,7 +10194,9 @@ public class Form extends BaseObservable {
             try {
                 JSONObject json = null;
                 json = new JSONObject(string);
-                this.h209 = json.getString("h209");
+                this.h209t = json.getString("h209");
+                this.h209m = json.getString("h209m");
+                this.h209f = json.getString("h209f");
                 this.h210 = json.getString("h210");
                 this.h211t = json.getString("h211t");
                 this.h211m = json.getString("h211m");
@@ -11097,7 +11159,9 @@ public class Form extends BaseObservable {
         Log.d(TAG, "sH2btoString: ");
         JSONObject json = new JSONObject();
         try {
-            json.put("h209", h209)
+            json.put("h209t", h209t)
+                    .put("h209m", h209m)
+                    .put("h209f", h209f)
                     .put("h210", h210)
                     .put("h211t", h211t)
                     .put("h211m", h211m)
@@ -12058,5 +12122,37 @@ public class Form extends BaseObservable {
             Log.d(TAG, "toJSONObject: " + e.getMessage());
             return null;
         }
+    }
+
+    private void calculateTotalMember() {
+        if (!this.h211t.equals("")
+                && !this.h213t.equals("")
+                && !this.h215t.equals("")
+                && !this.h217t.equals("")
+                && !this.h219t.equals("")) {
+
+            // Total Members
+            setH209t(String.valueOf(Integer.parseInt(this.h211t)
+                    + Integer.parseInt(this.h213t)
+                    + Integer.parseInt(this.h215t)
+                    + Integer.parseInt(this.h217t)
+                    + Integer.parseInt(this.h219t)
+            ));
+            // Total Males
+            setH209m(String.valueOf(Integer.parseInt(this.h211m)
+                    + Integer.parseInt(this.h213m)
+                    + Integer.parseInt(this.h215m)
+                    + Integer.parseInt(this.h217m)
+                    + Integer.parseInt(this.h219m)
+            ));
+            // Total Female
+            setH209f(String.valueOf(Integer.parseInt(this.h211f)
+                    + Integer.parseInt(this.h213f)
+                    + Integer.parseInt(this.h215f)
+                    + Integer.parseInt(this.h217f)
+                    + Integer.parseInt(this.h219f)
+            ));
+        }
+
     }
 }
