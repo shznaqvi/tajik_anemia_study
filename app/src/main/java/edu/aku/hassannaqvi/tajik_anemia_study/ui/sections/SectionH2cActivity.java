@@ -68,18 +68,17 @@ public class SectionH2cActivity extends AppCompatActivity {
 
         edx.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-                if (TextUtils.isEmpty(edx.getText()))
-                    return;
+                if (TextUtils.isEmpty(edx.getText())) return;
                 for (EditTextPicker item : edxArray) {
                     item.setText("");
                     item.setMaxvalue(Integer.parseInt(edx.getText().toString().trim()));
@@ -90,12 +89,12 @@ public class SectionH2cActivity extends AppCompatActivity {
 
         edxArray[0].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if (TextUtils.isEmpty(edx.getText()) || TextUtils.isEmpty(edxArray[0].getText()))
                     return;
                 edxArray[1].setText("");
