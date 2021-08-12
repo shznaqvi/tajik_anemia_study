@@ -555,11 +555,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:text="@={mwra.h226t}"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:maxLength="2"
+                                app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -585,11 +585,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:text="@={mwra.h226m}"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:maxLength="2"
+                                app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -616,10 +616,10 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@={mwra.h226f}"
-                                android:hint="###"
+                                android:hint="##"
                                 android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
+                                android:maxLength="2"
+                                app:maxValue="99"
                                 app:minValue="0"
                                 app:type="range" />
 

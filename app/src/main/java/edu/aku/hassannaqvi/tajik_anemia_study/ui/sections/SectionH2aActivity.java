@@ -50,9 +50,7 @@ public class SectionH2aActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 
 

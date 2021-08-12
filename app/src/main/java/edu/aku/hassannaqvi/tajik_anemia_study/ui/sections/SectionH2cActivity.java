@@ -2,12 +2,16 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -21,6 +25,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
+import static java.lang.Float.parseFloat;
 
 
 public class SectionH2cActivity extends AppCompatActivity {
@@ -35,6 +40,7 @@ public class SectionH2cActivity extends AppCompatActivity {
         bi.setCallback(this);
         if (mwra == null) mwra = new MWRA();
         bi.setMwra(MainApp.mwra);
+        setupTextWatchers();
     }
 
 
@@ -50,6 +56,58 @@ public class SectionH2cActivity extends AppCompatActivity {
             bi.h223.setText(ageInYears);
             bi.h223.setEnabled(false);
         }
+    }
+
+
+    private void setupTextWatchers() {
+        editTextImplementation(bi.h226t, new EditTextPicker[]{bi.h226m, bi.h226f});
+    }
+
+
+    public void editTextImplementation(EditTextPicker edx, EditTextPicker[] edxArray) {
+
+        edx.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(edx.getText()))
+                    return;
+                for (EditTextPicker item : edxArray) {
+                    item.setText("");
+                    item.setMaxvalue(Integer.parseInt(edx.getText().toString().trim()));
+                }
+            }
+        });
+
+
+        edxArray[0].addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (TextUtils.isEmpty(edx.getText()) || TextUtils.isEmpty(edxArray[0].getText()))
+                    return;
+                edxArray[1].setText("");
+                edxArray[1].setMaxvalue(parseFloat(edx.getText().toString().trim()) - parseFloat(edxArray[0].getText().toString().trim()));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
     }
 
 
