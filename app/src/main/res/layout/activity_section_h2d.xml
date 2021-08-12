@@ -79,7 +79,6 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="1dp"
                             android:layout_weight="1"
-
                             android:text="@{child.h228}" />
 
                     </LinearLayout>

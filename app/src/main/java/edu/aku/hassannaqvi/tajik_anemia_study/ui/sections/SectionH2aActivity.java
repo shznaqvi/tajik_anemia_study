@@ -11,9 +11,13 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
+import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2aBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
 public class SectionH2aActivity extends AppCompatActivity {
@@ -26,23 +30,17 @@ public class SectionH2aActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h2a);
         bi.setCallback(this);
-        setupSkips();
-    }
-
-
-    private void setupSkips() {
     }
 
 
     private boolean updateDB() {
-      /*  long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH2A, form.sH2atoString()toString());
-        if (updcount > 0) {
-            return true;
-        } else {
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH2B, form.sH2btoString());
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-        return false;
+        }
     }
 
 

@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -34,13 +35,21 @@ public class SectionH2cActivity extends AppCompatActivity {
         bi.setCallback(this);
         if (mwra == null) mwra = new MWRA();
         bi.setMwra(MainApp.mwra);
-
-        setupSkips();
     }
 
 
-    private void setupSkips() {
+    public void ageInYears(CharSequence s, int i, int i1, int i2) {
+        // Return VOID if zero length
+        if (i == 0) return;
 
+        int dobYear = Integer.parseInt(s.toString());
+        int curYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        if (dobYear > 1900 && dobYear < curYear) {
+            String ageInYears = String.valueOf(curYear - dobYear);
+            bi.h223.setText(ageInYears);
+            bi.h223.setEnabled(false);
+        }
     }
 
 

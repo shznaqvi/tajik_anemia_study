@@ -186,7 +186,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@={mwra.h222y}"
-
+                                android:onTextChanged="@{callback::ageInYears}"
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
