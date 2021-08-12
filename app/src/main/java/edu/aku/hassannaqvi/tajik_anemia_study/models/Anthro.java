@@ -50,11 +50,14 @@ public class Anthro extends BaseObservable {
     private String d104 = StringUtils.EMPTY;
     private String d105 = StringUtils.EMPTY;
     private String d106 = StringUtils.EMPTY;
+    private String d107 = StringUtils.EMPTY;
+    private String d108 = StringUtils.EMPTY;
+    private String d109 = StringUtils.EMPTY;
+    private String d110 = StringUtils.EMPTY;
 
 
     public Anthro() {
     }
-
 
 
     public String getProjectName() {
@@ -203,8 +206,6 @@ public class Anthro extends BaseObservable {
     }
 
 
-
-
     @Bindable
     public String getD101() {
         return d101;
@@ -265,7 +266,45 @@ public class Anthro extends BaseObservable {
         notifyPropertyChanged(BR.d106);
     }
 
+    @Bindable
+    public String getD107() {
+        return d107;
+    }
 
+    public void setD107(String d107) {
+        this.d107 = d107;
+        notifyPropertyChanged(BR.d107);
+    }
+
+    @Bindable
+    public String getD108() {
+        return d108;
+    }
+
+    public void setD108(String d108) {
+        this.d108 = d108;
+        notifyPropertyChanged(BR.d108);
+    }
+
+    @Bindable
+    public String getD109() {
+        return d109;
+    }
+
+    public void setD109(String d109) {
+        this.d109 = d109;
+        notifyPropertyChanged(BR.d109);
+    }
+
+    @Bindable
+    public String getD110() {
+        return d110;
+    }
+
+    public void setD110(String d110) {
+        this.d110 = d110;
+        notifyPropertyChanged(BR.d110);
+    }
 
 
     public Anthro Hydrate(Cursor cursor) {
@@ -302,6 +341,10 @@ public class Anthro extends BaseObservable {
                 this.d104 = json.getString("d104");
                 this.d105 = json.getString("d105");
                 this.d106 = json.getString("d106");
+                this.d107 = json.getString("d107");
+                this.d108 = json.getString("d108");
+                this.d109 = json.getString("d109");
+                this.d110 = json.getString("d110");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -318,7 +361,11 @@ public class Anthro extends BaseObservable {
                     .put("d103", d103)
                     .put("d104", d104)
                     .put("d105", d105)
-                    .put("d106", d106);
+                    .put("d106", d106)
+                    .put("d107", d107)
+                    .put("d108", d108)
+                    .put("d109", d109)
+                    .put("d110", d110);
         } catch (JSONException e) {
             e.printStackTrace();
             return "\"error\":, \"" + e.getMessage() + "\"";
