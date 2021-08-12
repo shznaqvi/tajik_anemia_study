@@ -69,7 +69,6 @@ public class SectionH2cActivity extends AppCompatActivity {
         edx.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -90,7 +89,6 @@ public class SectionH2cActivity extends AppCompatActivity {
         edxArray[0].addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -99,7 +97,6 @@ public class SectionH2cActivity extends AppCompatActivity {
                     return;
                 edxArray[1].setText("");
                 edxArray[1].setMaxvalue(parseFloat(edx.getText().toString().trim()) - parseFloat(edxArray[0].getText().toString().trim()));
-
             }
 
             @Override
