@@ -142,7 +142,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/h103" />
+                                android:hint="@string/h103"
+                                android:inputType="number" />
 
                         </LinearLayout>
 
@@ -168,7 +169,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:hint="@string/h104" />
+                                android:hint="@string/h104"
+                                android:inputType="number" />
 
                             <Button
                                 android:id="@+id/checkHousehold"
