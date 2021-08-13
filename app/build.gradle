@@ -65,7 +65,7 @@ android {
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
             minSdkVersion 21
-            targetSdkVersion 31
+            targetSdkVersion 29
         }
 
         applicationVariants.all { variant ->

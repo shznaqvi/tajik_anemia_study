@@ -48,7 +48,7 @@ public class SectionH2cActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(bi.h222y.getText())) return;
         bi.h223.setText("");
         bi.h223.setEnabled(true);
-        if (Integer.parseInt(bi.h222y.getText().toString()) >= 1972 && Integer.parseInt(bi.h222y.getText().toString()) <= 2005) {
+        if (Integer.parseInt(bi.h222y.getText().toString()) >= 1972 && Integer.parseInt(bi.h222y.getText().toString()) <= 2006) {
             bi.h223.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h222y.getText().toString()))));
             bi.h223.setEnabled(false);
         }

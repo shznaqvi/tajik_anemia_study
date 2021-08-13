@@ -190,7 +190,7 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                app:maxValue="2005"
+                                app:maxValue="2006"
                                 app:minValue="1972"
                                 app:type="range" />
 
