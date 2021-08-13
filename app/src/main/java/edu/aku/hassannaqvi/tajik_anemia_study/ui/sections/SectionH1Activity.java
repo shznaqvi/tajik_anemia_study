@@ -1,8 +1,8 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
-import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -56,32 +56,26 @@ public class SectionH1Activity extends AppCompatActivity {
     }
 
 
+
     public void ageCal(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.h203y.getText())) return;
+        bi.h204.setText("");
+        bi.h204.setEnabled(true);
+        if (Integer.parseInt(bi.h203y.getText().toString()) >= 1972 && Integer.parseInt(bi.h203y.getText().toString()) <= 2006) {
+            bi.h204.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h203y.getText().toString()))));
+            bi.h204.setEnabled(false);
+        }
 
-/*        if (TextUtils.isEmpty(bi.h203d.getText()) || TextUtils.isEmpty(bi.h203m.getText()) || TextUtils.isEmpty(bi.h203y.getText()))
-            return;
-        if (bi.h203y.getText().toString().equals("9998")) {
-            bi.h204.setText("");
-            bi.h204.setEnabled(true);
-        } else {
-            bi.h204.setText("");
-            if (Integer.parseInt(bi.h203y.getText().toString()) >= 1972) {
-                bi.h204.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h203y.getText().toString()))));
-                bi.h204.setEnabled(false);
-            }
-        }*/
-
-        // Return VOID if zero length
+        /*// Return VOID if zero length
         if (i == 0) return;
 
         int dobYear = Integer.parseInt(s.toString());
         int curYear = Calendar.getInstance().get(Calendar.YEAR);
-
         if (dobYear > 1900 && dobYear < curYear) {
             String ageInYears = String.valueOf(curYear - dobYear);
             bi.h204.setText(ageInYears);
             bi.h204.setEnabled(false);
-        }
+        }*/
 
         // Single-Line Solution
         //bi.h204.setText(dobYear > 1900 && dobYear < curYear ? String.valueOf(Calendar .getInstance().get(Calendar.YEAR) - Integer.parseInt(s.toString())) : "");
@@ -95,7 +89,6 @@ public class SectionH1Activity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         MenuCompat.setGroupDividerEnabled(menu, true);
-
         return true;
     }
 
@@ -388,17 +381,13 @@ public class SectionH1Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
-
-
     }
 
 
-/*
-    @Override
+    /*@Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-    }
+    }*/
 
-*/
 
 }

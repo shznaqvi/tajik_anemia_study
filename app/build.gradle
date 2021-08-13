@@ -64,7 +64,7 @@ android {
             applicationId "edu.aku.hassannaqvi.tajik_anemia_study"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
-            minSdkVersion 29
+            minSdkVersion 22
             targetSdkVersion 29
         }
 
