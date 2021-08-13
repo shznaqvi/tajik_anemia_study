@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
-import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -22,6 +21,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2cBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
+import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
@@ -45,8 +45,15 @@ public class SectionH2cActivity extends AppCompatActivity {
 
 
     public void ageInYears(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.h222y.getText())) return;
+        bi.h223.setText("");
+        bi.h223.setEnabled(true);
+        if (Integer.parseInt(bi.h222y.getText().toString()) >= 1972 && Integer.parseInt(bi.h222y.getText().toString()) <= 2005) {
+            bi.h223.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.h222y.getText().toString()))));
+            bi.h223.setEnabled(false);
+        }
         // Return VOID if zero length
-        if (i == 0) return;
+        /*if (i == 0) return;
 
         int dobYear = Integer.parseInt(s.toString());
         int curYear = Calendar.getInstance().get(Calendar.YEAR);
@@ -55,7 +62,7 @@ public class SectionH2cActivity extends AppCompatActivity {
             String ageInYears = String.valueOf(curYear - dobYear);
             bi.h223.setText(ageInYears);
             bi.h223.setEnabled(false);
-        }
+        }*/
     }
 
 
