@@ -100,7 +100,7 @@ public class SyncActivity extends AppCompatActivity {
         listActivityCreated = true;
         uploadlistActivityCreated = true;
 
-        db = new DatabaseHelper(this);
+        db = MainApp.appInfo.dbHelper;
         //dbBackup(this);
         OneTimeWorkRequest JSONWorker =
                 new OneTimeWorkRequest.Builder(ReadJSONWorker.class)
@@ -277,7 +277,6 @@ public class SyncActivity extends AppCompatActivity {
                         if (result.length() > 0) {
                             Log.d(TAG, "onChanged: result " + result);
                             System.out.println("SYSTEM onChanged: result" + result);
-                            DatabaseHelper db = new DatabaseHelper(SyncActivity.this);
                             try {
                                 JSONArray jsonArray = new JSONArray();
                                 int insertCount = 0;

@@ -53,6 +53,10 @@ public class SectionH1Activity extends AppCompatActivity {
         //bi.toolbar.setNavigationIcon(R.drawable.ic_settings);
         db = MainApp.appInfo.dbHelper;
         bi.h106.setMinDate(DateUtilsKt.getMonthsBack("dd/MM/yyyy", -1));
+
+        // IMPORTANT: this is for opening form in Edit Mode
+        bi.h204.setEnabled(false);
+
     }
 
 
@@ -76,6 +80,7 @@ public class SectionH1Activity extends AppCompatActivity {
             bi.h204.setText(ageInYears);
             bi.h204.setEnabled(false);
         }*/
+        bi.h204.setEnabled(true);
 
         // Single-Line Solution
         //bi.h204.setText(dobYear > 1900 && dobYear < curYear ? String.valueOf(Calendar .getInstance().get(Calendar.YEAR) - Integer.parseInt(s.toString())) : "");
@@ -122,7 +127,6 @@ public class SectionH1Activity extends AppCompatActivity {
                 return true;
             case R.id.secH3a:
                 startActivity(new Intent(this, SectionH3aActivity.class));
-                Log.d(TAG, "onOptionsItemSelected: H3 " + form.sH3atoString());
                 return true;
 
             case R.id.secH4:

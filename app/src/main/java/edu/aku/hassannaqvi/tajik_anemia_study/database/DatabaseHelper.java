@@ -39,7 +39,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.RandomHH;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
@@ -590,7 +590,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     // istatus examples: (1) or (1,9) or (1,3,5)
-    public Form getFormByAssessNo(String uid, String istatus) {
+    public Form getFormByAssessNo(String uid, String istatus) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -783,7 +783,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 JSONObject json = list.getJSONObject(i);
 
-                Random ran = new Random();
+                RandomHH ran = new RandomHH();
                 ran.sync(json);
                 ContentValues values = new ContentValues();
                 values.put(RandomTable.COLUMN_ID, ran.getID());
@@ -1495,7 +1495,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allCities;
     }
 
-    public Random checkHousehold(String cluster_no, String hh_no) {
+    public RandomHH checkHousehold(String cluster_no, String hh_no) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1504,7 +1504,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] selectionArgs = {cluster_no, hh_no};
 
         int cCount;
-        Random hh = null;
+        RandomHH hh = null;
         try {
             c = db.query(
                     RandomTable.TABLE_NAME,
@@ -1517,7 +1517,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
 
-                hh = new Random().hydrate(c);
+                hh = new RandomHH().hydrate(c);
 
             }
         } finally {
@@ -1533,7 +1533,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Form getFormByClusterHHNo(String cluster_no, String hh_no) {
+    public Form getFormByClusterHHNo(String cluster_no, String hh_no) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;

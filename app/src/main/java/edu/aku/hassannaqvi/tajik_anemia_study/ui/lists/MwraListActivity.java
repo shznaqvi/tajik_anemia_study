@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.lists;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,11 +12,13 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -30,7 +33,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMwraListBindin
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH2cActivity;
-
 
 
 public class MwraListActivity extends AppCompatActivity {
@@ -166,11 +168,37 @@ public class MwraListActivity extends AppCompatActivity {
     public void btnContinue(View view) {
 
         //MainApp.mwra = MainApp.mwraList.get(Integer.parseInt(MainApp.selectedFemale));
-        MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
-        MainApp.mwraList = new ArrayList<>();
-        finish();
-        startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
+        if (MainApp.mwraCount == MainApp.mwraList.size()) {
+            MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
+            MainApp.mwraList = new ArrayList<>();
+            finish();
+            startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
+        } else if (MainApp.mwraList.size() < MainApp.mwraCount) {
 
+            Snackbar snackbar = Snackbar
+                    .make(bi.parentLayout, "www.journaldev.com", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+    }
+
+    private void displayDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Delete entry")
+                .setMessage("Are you sure you want to delete this entry?")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public void btnEnd(View view) {

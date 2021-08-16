@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
+
+import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +31,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityIdentification
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.Random;
+import edu.aku.hassannaqvi.tajik_anemia_study.models.RandomHH;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionAnthroActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
@@ -280,7 +283,7 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void checkHousehold(View view) {
-        Random hhFound = db.checkHousehold(bi.h103.getText().toString(), bi.h104.getText().toString());
+        RandomHH hhFound = db.checkHousehold(bi.h103.getText().toString(), bi.h104.getText().toString());
         if (hhFound != null) {
             bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.black));
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
@@ -307,7 +310,13 @@ public class IdentificationActivity extends AppCompatActivity {
         switch (MainApp.idType) {
             case 1:
                 MainApp.form = new Form();
-                MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
+                try {
+                    MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
+                } catch (JSONException e) {
+                    Log.d(TAG, "hhExists(Form): " + e.getMessage());
+                    Toast.makeText(this, "hhExists(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
                 return MainApp.form != null;
 
             //TODO: Antro & Samples will be multiple. Different logic will be required
@@ -319,17 +328,24 @@ public class IdentificationActivity extends AppCompatActivity {
             case 3:
             case 4:
                 MainApp.form = new Form();
-                MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
+                try {
+                    MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
+                    // Populate Subject Names for spinner Adapter in Samples Activity.
+                    MainApp.subjectNames = new ArrayList<>();
+                    MainApp.subjectNames.add("...");
+                    MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
+                    MainApp.subjectNames.add(MainApp.form.getC100Name());
 
-                // Populate Subject Names for spinner Adapter in Samples Activity.
-                MainApp.subjectNames = new ArrayList<>();
-                MainApp.subjectNames.add("...");
-                MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
-                MainApp.subjectNames.add(MainApp.form.getC100Name());
+                    MainApp.samples = new Samples();
+                    //MainApp.samples = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
+                    return MainApp.samples != null;
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.d(TAG, "hhExists(Form): " + e.getMessage());
+                    Toast.makeText(this, "hhExists(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
-                MainApp.samples = new Samples();
-                //MainApp.samples = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
-                return MainApp.samples != null;
+
             default:
                 return false;
 

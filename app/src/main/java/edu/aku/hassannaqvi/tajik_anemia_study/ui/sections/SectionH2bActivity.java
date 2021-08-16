@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
+
+import org.json.JSONException;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
@@ -21,6 +24,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 public class SectionH2bActivity extends AppCompatActivity {
+    private static final String TAG = "SectionH2bActivity";
     ActivitySectionH2bBinding bi;
     private DatabaseHelper db;
 
@@ -53,7 +57,14 @@ public class SectionH2bActivity extends AppCompatActivity {
 
     private boolean updateDB() {
         db = MainApp.appInfo.getDbHelper();
-        long updcount = db.updatesFormColumn(FormsTable.COLUMN_SH2B, form.sH2btoString());
+        long updcount = 0;
+        try {
+            updcount = db.updatesFormColumn(FormsTable.COLUMN_SH2B, form.sH2btoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, "updateDB: " + e.getMessage());
+            Toast.makeText(this, "updateDB: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         if (updcount > 0) return true;
         else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

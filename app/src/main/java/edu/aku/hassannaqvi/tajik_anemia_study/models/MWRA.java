@@ -322,6 +322,8 @@ public class MWRA extends BaseObservable {
 
     public void setH226m(String h226m) {
         this.h226m = h226m;
+        if (!this.h226m.equals("") && !this.h226f.equals(""))
+            setH226t(String.valueOf(Integer.valueOf(this.h226m) + Integer.valueOf(this.h226f)));
         notifyPropertyChanged(BR.h226m);
     }
 
@@ -332,6 +334,8 @@ public class MWRA extends BaseObservable {
 
     public void setH226f(String h226f) {
         this.h226f = h226f;
+        if (!this.h226m.equals("") && !this.h226f.equals(""))
+            setH226t(String.valueOf(Integer.valueOf(this.h226m) + Integer.valueOf(this.h226f)));
         notifyPropertyChanged(BR.h226f);
     }
 

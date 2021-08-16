@@ -139,8 +139,8 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="99"
-                                app:minValue="0"
                                 android:text="@={form.h211m}"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker

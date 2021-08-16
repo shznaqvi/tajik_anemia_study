@@ -535,35 +535,6 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/h226t" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/h226t"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:text="@={mwra.h226t}"
-                                android:maxLength="2"
-                                app:maxValue="99"
-                                app:minValue="0"
-                                app:type="range" />
-
-                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -624,7 +595,35 @@
                                 app:type="range" />
 
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/h226t" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/h226t"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:text="@={mwra.h226t}"
+                                android:maxLength="2"
+                                app:maxValue="99"
+                                app:minValue="0"
+                                app:type="range" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
