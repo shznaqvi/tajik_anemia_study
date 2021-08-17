@@ -120,15 +120,17 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
 
 
         String curStatus = "";
+        Log.d(TAG, "onBindViewHolder: ");
         switch (preg.getW116()) {
             case "1":
-                curStatus = "Alive";
+                curStatus = "  Alive  ";
                 break;
             case "2":
-                curStatus = "Died";
+                curStatus = "   Died  ";
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + preg.getW116());
+                curStatus = "Born Dead";
+                break;
         }
 
         w114.setText(preg.getW114d() + "-" + preg.getW114m() + "-" + preg.getW114y());
@@ -136,10 +138,15 @@ public class PregAdapter extends RecyclerView.Adapter<PregAdapter.ViewHolder> {
         w116.setText(curStatus);
         if ((preg.getW116().equals("1"))) {
             w117.setText((preg.getW117y() + "y/" + preg.getW117m() + "m/" + preg.getW117d() + "d"));
-        } else {
+        } else if (!preg.getW116().equals("")) {
             w117.setText("(at death)\r\n" + preg.getW118y() + "y/" + preg.getW118m() + "m/" + preg.getW118d() + "d");
+        } else {
+            w117.setText("  ----  ");
+
         }
-        itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getColor(R.color.grayLight) : mContext.getColor(R.color.white));
+
+
+        itemRow.setBackgroundColor(position % 2 != 0 ? mContext.getResources().getColor(R.color.grayLight) : mContext.getResources().getColor(R.color.white));
 /*        fAge.setText(preg.getH231y() + " | " + (preg.getH232().equals("1") ? "Boy" : "Girl"));
         mainIcon.setImageResource((preg.getH232().equals("1") ? R.drawable.ic_boy : R.drawable.ic_girl));
         mainIcon.setBackgroundColor(preg.getIndexed().equals("1") ? mContext.getResources().getColor(R.color.greenLight) : (preg.getH232().equals("1") ? mContext.getResources().getColor(R.color.boy_blue) : mContext.getResources().getColor(R.color.girl_pink)));

@@ -32,8 +32,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:title="@string/secw1title"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/secw1title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -86,8 +86,8 @@
                             android:hint="###"
                             android:inputType="number"
                             android:maxLength="3"
-                            app:maxValue="100"
                             android:text="@={preg.w113}"
+                            app:maxValue="100"
                             app:minValue="1"
                             app:type="range" />
 
@@ -167,9 +167,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w114d}"
                                 app:maxValue="31"
                                 app:minValue="1"
-                                android:text="@={preg.w114d}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -181,9 +181,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w114m}"
                                 app:maxValue="12"
                                 app:minValue="1"
-                                android:text="@={preg.w114m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -195,9 +195,9 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
+                                android:text="@={preg.w114y}"
                                 app:maxValue="2021"
                                 app:minValue="2015"
-                                android:text="@={preg.w114y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -299,7 +299,8 @@
                 <!-- w116  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw116"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{preg.w115.equals(`2`)||preg.w115.equals(`5`)||preg.w115.equals(`6`)?View.GONE:View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -328,14 +329,14 @@
                         <RadioGroup
                             android:id="@+id/w116"
                             android:layout_width="match_parent"
-                            android:orientation="horizontal"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/w116a"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{preg.w116.equals(`1`)}"
                                 android:onClick="@{()->preg.setW116(`1`)}"
                                 android:text="@string/w116a" />
@@ -343,8 +344,8 @@
                             <RadioButton
                                 android:id="@+id/w116b"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{preg.w116.equals(`2`)}"
                                 android:onClick="@{()->preg.setW116(`2`)}"
                                 android:text="@string/w116b" />
@@ -355,11 +356,11 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <!-- w117t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw117t"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{preg.w116.equals(`1`)?View.VISIBLE:View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -427,9 +428,9 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
+                                android:text="@={preg.w117y}"
                                 app:maxValue="5"
                                 app:minValue="0"
-                                android:text="@={preg.w117y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -441,9 +442,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w117m}"
                                 app:maxValue="11"
                                 app:minValue="0"
-                                android:text="@={preg.w117m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -455,9 +456,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w117d}"
                                 app:maxValue="31"
                                 app:minValue="1"
-                                android:text="@={preg.w117d}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -470,6 +471,8 @@
                 <!-- w118t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVw118t"
+                    android:visibility="@{preg.w116.equals(`2`)?View.VISIBLE:View.GONE}"
+
                     style="@style/cardView">
 
                     <LinearLayout
@@ -538,9 +541,9 @@
                                 android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
+                                android:text="@={preg.w118y}"
                                 app:maxValue="5"
                                 app:minValue="0"
-                                android:text="@={preg.w118y}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -552,9 +555,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w118m}"
                                 app:maxValue="11"
                                 app:minValue="0"
-                                android:text="@={preg.w118m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -566,9 +569,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={preg.w118d}"
                                 app:maxValue="31"
                                 app:minValue="1"
-                                android:text="@={preg.w118d}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -576,7 +579,6 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout

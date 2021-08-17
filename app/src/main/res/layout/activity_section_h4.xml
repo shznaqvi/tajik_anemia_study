@@ -118,6 +118,7 @@
                                 android:id="@+id/h401d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:checked='@{form.h401.equals("4")}'
                                 android:onClick='@{()->form.setH401("4")}'
                                 android:text="@string/h401d" />
 

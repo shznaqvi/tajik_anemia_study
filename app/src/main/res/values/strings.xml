@@ -2584,7 +2584,10 @@
     <string name="error_member_count_household">%1$s total does not match count of various members of different ages</string>
     <string name="title_mwra_dialog">MWRA Count</string>
     <string name="message_mwra_dialog_addmore">You have already entered %1$s MWRAS. \nAre you sure you want to add more MWRA?</string>
-    <string name="message_mwra_dialog_proceeed">You have entered only %1$s of %2$s MWRAS in the household. \nAre you sure you want to select MWRA now?</string>
+    <string name="message_mwra_dialog_proceeed">You have entered only %1$s of %2$s MWRAS in the household. \nAre you sure you want to select a MWRA now?</string>
+    <string name="title_child_dialog">Children Count</string>
+    <string name="message_child_dialog_addmore">You have already entered %1$s Child(ren). \nAre you sure you want to add more Child?</string>
+    <string name="message_child_dialog_proceeed">You have entered only %1$s of %2$s Child(ren) in the household. \nAre you sure you want to select aChild now?</string>
 
 
 </resources>

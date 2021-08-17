@@ -264,6 +264,22 @@ public class Pregnancy extends BaseObservable {
 
     public void setW115(String w115) {
         this.w115 = w115;
+        if (this.w115 == "2" || this.w115 == "5" || this.w115 == "6") {
+            setW116("");
+            setW117d("");
+            setW117m("");
+            setW117y("");
+
+        } else {
+            setW116(this.w116);
+            setW117d(this.w117d);
+            setW117m(this.w117m);
+            setW117y(this.w117y);
+            setW118d(this.w118d);
+            setW118m(this.w118m);
+            setW118y(this.w118y);
+        }
+
         notifyPropertyChanged(BR.w115);
     }
 
@@ -274,6 +290,30 @@ public class Pregnancy extends BaseObservable {
 
     public void setW116(String w116) {
         this.w116 = w116;
+        if (this.w116.equals("2")) {
+            setW117d("");
+            setW117m("");
+            setW117y("");
+            setW118d(this.w118d);
+            setW118m(this.w118m);
+            setW118y(this.w118y);
+        } else if (this.w116.equals("1")) {
+            setW117d(this.w117d);
+            setW117m(this.w117m);
+            setW117y(this.w117y);
+            setW118d("");
+            setW118m("");
+            setW118y("");
+        } else {
+            setW117d("");
+            setW117m("");
+            setW117y("");
+            setW118d("");
+            setW118m("");
+            setW118y("");
+        }
+
+
         notifyPropertyChanged(BR.w116);
     }
 

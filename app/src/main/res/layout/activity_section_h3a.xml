@@ -242,7 +242,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{form.h303.equals("96")}'
+                                android:checked='@{form.h302.equals("96")}'
                                 android:onClick='@{()->form.setH302("96")}'
                                 android:text="@string/h30296" />
 
@@ -256,7 +256,7 @@
                             android:hint="@string/h30296"
                             android:tag="h30296"
                             android:text='@={form.h30296x}'
-                            android:visibility='@{form.h303.equals("96")? View.VISIBLE : View.GONE}' />
+                            android:visibility='@{form.h302.equals("96")? View.VISIBLE : View.GONE}' />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

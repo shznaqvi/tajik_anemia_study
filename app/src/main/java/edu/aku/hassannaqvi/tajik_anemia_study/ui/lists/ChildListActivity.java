@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.lists;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -154,9 +156,12 @@ public class ChildListActivity extends AppCompatActivity {
     }*/
 
     public void addChild() {
-        Intent intent = new Intent(this, SectionH2dActivity.class);
-        //   finish();
-        MemberInfoLauncher.launch(intent);
+        if (MainApp.childList.size() >= Integer.parseInt(MainApp.mwra.getH226t())) {
+            displayAddMoreDialog();
+        } else {
+            addMoreChild();
+
+        }
     }
 
     public void btnContinue(View view) {
@@ -171,17 +176,57 @@ public class ChildListActivity extends AppCompatActivity {
 
     }
 
-    public void btnEnd(View view) {
+    private void displayAddMoreDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_child_dialog)
+                .setMessage(String.format(getString(R.string.message_child_dialog_addmore), MainApp.mwra.getH226t()))
 
-        finish();
-        startActivity(new Intent(this, MainActivity.class));
-        /*   } else {
-               Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
-           }*/
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.h111a, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        addMoreChild();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.h111b, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void displayProceedDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_mwra_dialog)
+                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size(), MainApp.mwra.getH226t()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.h111a, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        proceedSelect();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.h111b, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
     }
 
 
-    public void btnRand(View view) {
+    private void addMoreChild() {
+        Intent intent = new Intent(this, SectionH2dActivity.class);
+        //   finish();
+        MemberInfoLauncher.launch(intent);
+    }
+
+    private void proceedSelect() {
+
         int aCount = 0;
 
         String childUid = db.getYoungestChildByMUID(MainApp.mwra.getUid()).getUid();
@@ -208,6 +253,26 @@ public class ChildListActivity extends AppCompatActivity {
 
         }
 
+    }
+
+
+    public void btnEnd(View view) {
+
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+        /*   } else {
+               Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
+           }*/
+    }
+
+
+    public void btnRand(View view) {
+
+        if (MainApp.childList.size() < Integer.parseInt(MainApp.mwra.getH226t())) {
+            displayProceedDialog();
+        } else {
+            proceedSelect();
+        }
 
     }
 
