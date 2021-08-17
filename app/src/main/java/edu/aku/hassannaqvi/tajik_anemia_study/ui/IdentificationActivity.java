@@ -315,7 +315,6 @@ public class IdentificationActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.d(TAG, "hhExists(Form): " + e.getMessage());
                     Toast.makeText(this, "hhExists(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-
                 }
                 return MainApp.form != null;
 

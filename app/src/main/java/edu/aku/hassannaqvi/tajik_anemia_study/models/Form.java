@@ -1692,7 +1692,6 @@ public class Form extends BaseObservable {
 
     public void setH220a(String h220a) {
         this.h220a = h220a;
-        MainApp.mwraCount = Integer.parseInt(h220b); //Count of Married-WRAs
         notifyPropertyChanged(BR.h220a);
     }
 
@@ -10039,7 +10038,7 @@ public class Form extends BaseObservable {
 
             JSONObject json = null;
             json = new JSONObject(string);
-            this.h209t = json.getString("h209");
+            this.h209t = json.getString("h209t");
             this.h209m = json.getString("h209m");
             this.h209f = json.getString("h209f");
             this.h210 = json.getString("h210");
