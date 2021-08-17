@@ -32,8 +32,8 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:title="@string/secw1title"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/secw1title"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -118,19 +118,19 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                             <com.edittextpicker.aliazaz.EditTextPicker
-                                 android:id="@+id/w101d"
-                                 android:layout_width="0dp"
-                                 android:layout_height="wrap_content"
-                                 android:layout_weight="1"
-                                 android:gravity="center"
-                                 android:hint="##"
-                                 android:inputType="number"
-                                 android:maxLength="2"
-                                 app:maxValue="31"
-                                 app:minValue="1"
-                                 android:text="@={form.w101d}"
-                                 app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/w101d"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.w101d}"
+                                app:maxValue="31"
+                                app:minValue="1"
+                                app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/w101m"
@@ -141,9 +141,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w101m}"
                                 app:maxValue="12"
                                 app:minValue="1"
-                                android:text="@={form.w101m}"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -155,9 +155,10 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
+                                android:onTextChanged="@{callback::ageInYears}"
+                                android:text="@={form.w101y}"
                                 app:maxValue="2006"
                                 app:minValue="1972"
-                                android:text="@={form.w101y}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -218,9 +219,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w102}"
                                 app:maxValue="31"
                                 app:minValue="1"
-                                android:text="@={form.w102}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -269,8 +270,8 @@
                             <RadioButton
                                 android:id="@+id/w103a"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.w103.equals(`1`)}"
                                 android:onClick="@{()->form.setW103(`1`)}"
                                 android:text="@string/w103a" />
@@ -278,8 +279,8 @@
                             <RadioButton
                                 android:id="@+id/w103b"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.w103.equals(`2`)}"
                                 android:onClick="@{()->form.setW103(`2`)}"
                                 android:text="@string/w103b" />
@@ -519,9 +520,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w107}"
                                 app:maxValue="10"
                                 app:minValue="1"
-                                android:text="@={form.w107}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -566,9 +567,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w108}"
                                 app:maxValue="10"
                                 app:minValue="1"
-                                android:text="@={form.w108}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -660,9 +661,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w110}"
                                 app:maxValue="10"
                                 app:minValue="1"
-                                android:text="@={form.w110}"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -707,9 +708,9 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:text="@={form.w111}"
                                 app:maxValue="10"
                                 app:minValue="1"
-                                android:text="@={form.w111}"
                                 app:type="range" />
 
                         </LinearLayout>
