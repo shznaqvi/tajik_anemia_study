@@ -65,7 +65,7 @@
             android:label="@string/sech2title"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.sections.SectionH2cActivity"
             android:label="@string/sech2ctitle2"

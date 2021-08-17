@@ -18,7 +18,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -160,74 +159,39 @@ public class MwraListActivity extends AppCompatActivity {
     }
 
     public void addFemale() {
-        Intent intent = new Intent(this, SectionH2cActivity.class);
-        //   finish();
-        MemberInfoLauncher.launch(intent);
+        if (MainApp.mwraList.size() >= Integer.parseInt(MainApp.form.getH220b())) {
+            displayAddMoreDialog();
+        } else {
+            addMoreMWRA();
+
+        }
     }
 
     public void btnContinue(View view) {
 
+        MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
+        MainApp.mwraList = new ArrayList<>();
+        finish();
+        startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
+
         //MainApp.mwra = MainApp.mwraList.get(Integer.parseInt(MainApp.selectedFemale));
-        if (MainApp.mwraCount == MainApp.mwraList.size()) {
-            MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
-            MainApp.mwraList = new ArrayList<>();
-            finish();
-            startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
-        } else if (MainApp.mwraList.size() < MainApp.mwraCount) {
+
+    /*    MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
+        MainApp.mwraList = new ArrayList<>();
+        finish();
+        startActivity(new Intent(this, !MainApp.mwra.getIndexed().equals("1") ? EndingActivity.class : ChildListActivity.class).putExtra("complete", true));
+    */
+        /*else if (MainApp.mwraList.size() < MainApp.mwraCount) {
 
             Snackbar snackbar = Snackbar
                     .make(bi.parentLayout, "www.journaldev.com", Snackbar.LENGTH_LONG);
             snackbar.show();
-        }
+        }*/
 
     }
 
-    private void displayDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("Delete entry")
-                .setMessage("Are you sure you want to delete this entry?")
+    private void proceedSelect() {
 
-                // Specifying a listener allows you to take an action before dismissing the dialog.
-                // The dialog is automatically dismissed when a dialog button is clicked.
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Continue with delete operation
-                    }
-                })
-
-                // A null listener allows the button to dismiss the dialog and take no further action.
-                .setNegativeButton(android.R.string.no, null)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show();
-    }
-
-    public void btnEnd(View view) {
-
-        finish();
-        startActivity(new Intent(this, MainActivity.class));
-        /*   } else {
-               Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
-           }*/
-    }
-
-/*    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // check if the request code is same as what is passed  here it is 2
-        if (requestCode == 2) {
-            if (resultCode == Activity.RESULT_OK) {
-                //   mwra.get(selectedFemale).setExpanded(false);
-                checkCompleteFm();
-                mwraAdapter.notifyItemChanged(selectedFemale);
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                // Write your code if there's no result
-                Toast.makeText(this, "Child for " + MainApp.mwraList.get(selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }*/
-
-    public void btnRand(View view) {
 
         int aCount = 0;
         for (int i = 0; i < MainApp.mwraList.size(); i++) {
@@ -280,6 +244,88 @@ public class MwraListActivity extends AppCompatActivity {
             bi.btnContinue.setEnabled(true);
         }
 
+    }
 
+
+    private void displayAddMoreDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_mwra_dialog)
+                .setMessage(String.format(getString(R.string.message_mwra_dialog_addmore), MainApp.form.getH220b()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.h111a, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        addMoreMWRA();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.h111b, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void displayProceedDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_mwra_dialog)
+                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size(), MainApp.form.getH220b()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.h111a, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        proceedSelect();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.h111b, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void addMoreMWRA() {
+        Intent intent = new Intent(this, SectionH2cActivity.class);
+        //   finish();
+        MemberInfoLauncher.launch(intent);
+    }
+
+    public void btnEnd(View view) {
+
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+        /*   } else {
+               Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show()
+           }*/
+    }
+
+/*    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // check if the request code is same as what is passed  here it is 2
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_OK) {
+                //   mwra.get(selectedFemale).setExpanded(false);
+                checkCompleteFm();
+                mwraAdapter.notifyItemChanged(selectedFemale);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                // Write your code if there's no result
+                Toast.makeText(this, "Child for " + MainApp.mwraList.get(selectedFemale).getH221() + " was not added.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }*/
+
+    public void btnRand(View view) {
+        if (MainApp.mwraList.size() < Integer.parseInt(MainApp.form.getH220b())) {
+            displayProceedDialog();
+        } else {
+            proceedSelect();
+        }
     }
 }

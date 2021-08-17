@@ -621,6 +621,7 @@
                                 android:maxLength="2"
                                 app:maxValue="99"
                                 app:minValue="0"
+                                android:enabled="false"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -77,17 +77,25 @@ public class SectionH1Activity extends AppCompatActivity {
             }
         }*/
 
+        bi.h204.setText("");
+        bi.h204.setEnabled(true);
+
         // Return VOID if zero length
         if (i == 0) return;
-
         int dobYear = Integer.parseInt(s.toString());
 
         int curYear = Calendar.getInstance().get(Calendar.YEAR);
 
         if (dobYear > 1900 && dobYear < curYear) {
             String ageInYears = String.valueOf(curYear - dobYear);
+            Log.d(TAG, "ageCal: " + ageInYears);
+            Toast.makeText(this, "ageCal: " + ageInYears, Toast.LENGTH_SHORT).show();
             bi.h204.setText(ageInYears);
             bi.h204.setEnabled(false);
+        } else {
+
+            bi.h204.setText("00");
+
         }
 
         // Single-Line Solution

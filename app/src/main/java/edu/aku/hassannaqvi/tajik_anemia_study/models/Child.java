@@ -11,6 +11,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.ChildListTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -261,6 +266,8 @@ public class Child extends BaseObservable {
 
     public void setH230d(String h230d) {
         this.h230d = h230d;
+        CaluculateAge();
+
         notifyPropertyChanged(BR.h230d);
     }
 
@@ -271,6 +278,12 @@ public class Child extends BaseObservable {
 
     public void setH230m(String h230m) {
         this.h230m = h230m;
+
+        if (h230m.equals("98")) {
+            setH230d("98");
+        }
+        CaluculateAge();
+
         notifyPropertyChanged(BR.h230m);
     }
 
@@ -281,7 +294,55 @@ public class Child extends BaseObservable {
 
     public void setH230y(String h230y) {
         this.h230y = h230y;
+        if (h230y.equals("9998")) {
+            setH230m("98");
+        }
+        // Calculate age
+        CaluculateAge();
+
         notifyPropertyChanged(BR.h230y);
+    }
+
+    private void CaluculateAge() {
+        Log.d(TAG, "CaluculateAge: " + this.h230y + "-" + this.h230m + "-" + this.h230d);
+
+        if (!this.h230y.equals("") && !this.h230y.equals("9998") && !this.h230m.equals("") && !this.h230d.equals("")) {
+
+            int day = !this.h230d.equals("98") ? Integer.parseInt(this.h230d) : 15;
+            int month = !this.h230m.equals("98") ? Integer.parseInt(this.h230m) : 6;
+            int year = Integer.parseInt(this.h230y);
+
+            SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
+            String todayDate = df.format(Calendar.getInstance().getTime());
+            Calendar cal = Calendar.getInstance();
+            Calendar cur = Calendar.getInstance();
+
+            try {
+                cal.setTime(df.parse(year + " " + month + " " + day));
+                long millis = System.currentTimeMillis() - cal.getTimeInMillis();
+                cal.setTimeInMillis(millis);
+
+                int mYear = cal.get(Calendar.YEAR);
+                int mMonth = cal.get(Calendar.MONTH);
+                int mDay = cal.get(Calendar.DAY_OF_MONTH);
+
+                Log.d(TAG, "CaluculateAge: " + (mYear - 1970) + "-" + mMonth + "-" + mDay);
+
+                setH231d(String.valueOf(mDay));
+                setH231m(String.valueOf(mMonth));
+                setH231y(String.valueOf(mYear - 1970));
+
+               /* String.format("%d min, %d sec",
+                        TimeUnit.MILLISECONDS.toMinutes(millis),
+                        TimeUnit.MILLISECONDS.toSeconds(millis) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))
+                );*/
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     @Bindable
@@ -393,9 +454,9 @@ public class Child extends BaseObservable {
                 .put("h230y", h230y)
                 .put("h231y", h231y)
                 .put("h231m", h231m)
-                    .put("h231d", h231d)
-                    .put("h232", h232)
-                    .put("h233", h233);
+                .put("h231d", h231d)
+                .put("h232", h232)
+                .put("h233", h233);
 
         return json.toString();
     }

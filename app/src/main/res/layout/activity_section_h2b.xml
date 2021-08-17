@@ -95,7 +95,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Male" />
+                                android:text="@string/h202a" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -103,7 +103,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Female" />
+                                android:text="@string/h202b" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -526,29 +526,29 @@
                                 android:gravity="center" />
 
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Married" />
+                                android:text="@string/h220b" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Unmarried" />
+                                android:text="@string/h220c" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:text="Total" />
+                                android:text="@string/h220a" />
                         </LinearLayout>
 
                         <LinearLayout
