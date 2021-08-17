@@ -61,7 +61,6 @@ public class SectionH1Activity extends AppCompatActivity {
     }
 
 
-
     public void ageCal(CharSequence s, int i, int i1, int i2) {
 
 /*        if (TextUtils.isEmpty(bi.h203d.getText()) || TextUtils.isEmpty(bi.h203m.getText()) || TextUtils.isEmpty(bi.h203y.getText()))
@@ -97,11 +96,8 @@ public class SectionH1Activity extends AppCompatActivity {
             bi.h204.setText("00");
 
         }
-
         // Single-Line Solution
         //bi.h204.setText(dobYear > 1900 && dobYear < curYear ? String.valueOf(Calendar .getInstance().get(Calendar.YEAR) - Integer.parseInt(s.toString())) : "");
-
-
     }
 
 

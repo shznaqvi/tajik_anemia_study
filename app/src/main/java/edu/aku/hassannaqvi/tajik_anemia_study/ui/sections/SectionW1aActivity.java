@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1aBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.PregnancyListActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
@@ -41,6 +43,16 @@ public class SectionW1aActivity extends AppCompatActivity {
         form.setW100Name(MainApp.mwra.getH221());
 
         setupSkips();
+    }
+
+    public void ageInYears(CharSequence s, int i, int i1, int i2) {
+        if (TextUtils.isEmpty(bi.w101y.getText())) return;
+        bi.w102.setText("");
+        bi.w102.setEnabled(true);
+        if (Integer.parseInt(bi.w101y.getText().toString()) >= 1972 && Integer.parseInt(bi.w101y.getText().toString()) <= 2006) {
+            bi.w102.setText(String.valueOf(DateUtilsKt.getAgeInYears(Integer.parseInt(bi.w101y.getText().toString()))));
+            bi.w102.setEnabled(false);
+        }
     }
 
 
