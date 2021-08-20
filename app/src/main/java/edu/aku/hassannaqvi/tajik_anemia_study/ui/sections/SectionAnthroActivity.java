@@ -60,7 +60,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
         } else {
-            Toast.makeText(this, R.string.fail_db, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -87,15 +87,11 @@ public class SectionH1Activity extends AppCompatActivity {
 
         if (dobYear > 1900 && dobYear < curYear) {
             String ageInYears = String.valueOf(curYear - dobYear);
-            Log.d(TAG, "ageCal: " + ageInYears);
-            Toast.makeText(this, "ageCal: " + ageInYears, Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.agecal) + ageInYears);
+            Toast.makeText(this, getString(R.string.agecal) + ageInYears, Toast.LENGTH_SHORT).show();
             bi.h204.setText(ageInYears);
             bi.h204.setEnabled(false);
-        } else {
-
-            bi.h204.setText("00");
-
-        }
+        } else bi.h204.setText("00");
         // Single-Line Solution
         //bi.h204.setText(dobYear > 1900 && dobYear < curYear ? String.valueOf(Calendar .getInstance().get(Calendar.YEAR) - Integer.parseInt(s.toString())) : "");
     }
@@ -118,7 +114,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 if (isNetworkConnected(this)) {
                     startActivity(new Intent(this, SyncActivity.class));
                 } else
-                    Toast.makeText(this, "Network connection not available!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.network_conn_error, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.secH1:
                 startActivity(new Intent(this, SectionH1Activity.class));
@@ -134,7 +130,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 if (MainApp.mwra != null) {
                     startActivity(new Intent(this, ChildListActivity.class));
                 } else {
-                    Toast.makeText(this, "No Mother has been selected. Please select a mother before opening Child List", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.no_mother_selected_child_list, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secH3a:
@@ -159,7 +155,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 if (!form.getW101d().equals("")) {
                     startActivity(new Intent(this, SectionW1aActivity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secW1b:
@@ -167,7 +163,7 @@ public class SectionH1Activity extends AppCompatActivity {
                     pregList = db.getPregBYMUID(MainApp.mwra.getUid());
                     startActivity(new Intent(this, SectionW1bActivity.class));
                 } else {
-                    Toast.makeText(this, "No Mother has been selected. Please select a mother before opening Pregnancy List", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.no_mother_selected_preg_list, Toast.LENGTH_LONG).show();
                 }
                 return true;
 
@@ -176,35 +172,35 @@ public class SectionH1Activity extends AppCompatActivity {
                 if (!form.getW201().equals("")) {
                     startActivity(new Intent(this, SectionW2Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secW3:
                 if (!form.getW301().equals("")) {
                     startActivity(new Intent(this, SectionW3Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secW4:
                 if (!form.getW401().equals("")) {
                     startActivity(new Intent(this, SectionW4Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secC1:
                 if (!form.getC101().equals("")) {
                     startActivity(new Intent(this, SectionC1Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secC2:
                 if (!form.getC201().equals("")) {
                     startActivity(new Intent(this, SectionC2Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secC3:
@@ -212,7 +208,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 if (!form.getC301().equals("")) {
                     startActivity(new Intent(this, SectionC3Activity.class));
                 } else {
-                    Toast.makeText(this, "This section is not available at the moment.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
 
@@ -258,7 +254,7 @@ public class SectionH1Activity extends AppCompatActivity {
             rowId = db.addForm(form);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
             return false;
         }
         form.setId(String.valueOf(rowId));
@@ -267,7 +263,7 @@ public class SectionH1Activity extends AppCompatActivity {
             db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, form.getUid());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -278,12 +274,12 @@ public class SectionH1Activity extends AppCompatActivity {
         try {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SH1, form.sH1toString());
         } catch (JSONException e) {
-            Toast.makeText(this, "Updating Database... " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (updcount == 1) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -302,7 +298,7 @@ public class SectionH1Activity extends AppCompatActivity {
             finish();
             startActivity(i);
         } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
 

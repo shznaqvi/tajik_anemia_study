@@ -2595,9 +2595,16 @@
 
     <string name="upd_db_form"> updateDB(Form):\t </string>
     <string name="upd_db_error"> Updating Database… ERROR! </string>
-    <string name="fail_db"> Failed to Update Database! </string>
+    <string name="db_excp_error"> Database Exception... ERROR! </string>
+    <string name="upd_db"> Updating Database... </string>
+    <string name="fail_db_upd"> Failed to Update Database! </string>
     <string name="backPress"> Back Press Not Allowed </string>
     <string name="invalid_response"> Invalid Response </string>
+    <string name="agecal">ageCal:\t</string>
+    <string name="network_conn_error"> Network connection not available ! </string>
+    <string name="no_mother_selected_child_list"> No Mother has been selected. Please select a mother before opening Child List </string>
+    <string name="sec_not_available_moment"> This section is not available at the moment. </string>
+    <string name="no_mother_selected_preg_list"> No Mother has been selected. Please select a mother before opening Pregnancy List </string>
 
 
 </resources>
