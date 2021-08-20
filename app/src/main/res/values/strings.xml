@@ -2589,5 +2589,11 @@
     <string name="message_child_dialog_addmore">You have already entered %1$s Child(ren). \nAre you sure you want to add more Child?</string>
     <string name="message_child_dialog_proceeed">You have entered only %1$s of %2$s Child(ren) in the household. \nAre you sure you want to select aChild now?</string>
 
+    <string name="upd_db_form"> updateDB(Form):\t </string>
+    <string name="upd_db_error"> Updating Database… ERROR! </string>
+    <string name="fail_db"> Failed to Update Database! </string>
+    <string name="backPress"> Back Press Not Allowed </string>
+    <string name="invalid_response"> Invalid Response </string>
+
 
 </resources>

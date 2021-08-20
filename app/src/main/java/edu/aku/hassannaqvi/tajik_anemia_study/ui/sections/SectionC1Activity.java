@@ -104,11 +104,11 @@ public class SectionC1Activity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, "updateDB(Form): " + e.getMessage());
-            Toast.makeText(this, "updateDB(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db_form + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (updcount > 0) return true;
         else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -120,9 +120,7 @@ public class SectionC1Activity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionC2Activity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, R.string.fail_db, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -337,7 +335,7 @@ public class SectionC1Activity extends AppCompatActivity {
         if (bi.c108a.isChecked() && (!bi.c107aa.isChecked() || !bi.c107ra.isChecked())) {
             bi.fldGrpCVc107a.setFocusable(true);
             bi.fldGrpCVc107r.setFocusable(true);
-            Toast.makeText(this, "Invalid Response", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.invalid_response, Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
