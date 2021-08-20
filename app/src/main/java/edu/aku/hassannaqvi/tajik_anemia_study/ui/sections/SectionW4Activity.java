@@ -61,7 +61,16 @@ public class SectionW4Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
-            startActivity(new Intent(this, SectionC1Activity.class).putExtra("complete", true));
+            Intent i = null;
+            int childAge = Integer.parseInt(MainApp.child.getAge());
+            if (childAge >= 6 && childAge < 24) {
+                i = new Intent(this, SectionC1Activity.class).putExtra("complete", true);
+            } else if (childAge >= 24 && childAge < 60) {
+                i = new Intent(this, SectionC2Activity.class).putExtra("complete", true);
+            } else {
+                i = new Intent(this, EndingActivity.class).putExtra("complete", true);
+            }
+            startActivity(i);
         } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
     }
 

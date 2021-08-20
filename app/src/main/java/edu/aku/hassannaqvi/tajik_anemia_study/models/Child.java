@@ -331,6 +331,7 @@ public class Child extends BaseObservable {
                 setH231d(String.valueOf(mDay));
                 setH231m(String.valueOf(mMonth));
                 setH231y(String.valueOf(mYear - 1970));
+                setAge(String.valueOf(((mYear - 1970) * 12) + mMonth));
 
                /* String.format("%d min, %d sec",
                         TimeUnit.MILLISECONDS.toMinutes(millis),
