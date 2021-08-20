@@ -126,19 +126,19 @@ public class SectionW1aActivity extends AppCompatActivity {
             int w111 = Integer.parseInt(bi.w111.getText().toString());
 
             if (w109 < w105) {
-                return Validator.emptyCustomTextBox(this, bi.w109, "W109 cannot be less than W105");
+                return Validator.emptyCustomTextBox(this, bi.w109, getString(R.string.w1E1));
             }
 
             if (w108 > w107) {
-                return Validator.emptyCustomTextBox(this, bi.w108, "W108 cannot be greater than W107");
+                return Validator.emptyCustomTextBox(this, bi.w108, getString(R.string.w1E2));
             }
 
             if (w110 > w107) {
-                return Validator.emptyCustomTextBox(this, bi.w110, "W110 cannot be greater than W107");
+                return Validator.emptyCustomTextBox(this, bi.w110, getString(R.string.w1E3));
             }
 
             if (w111 > w110) {
-                return Validator.emptyCustomTextBox(this, bi.w111, "W111 cannot be greater than W110");
+                return Validator.emptyCustomTextBox(this, bi.w111, getString(R.string.w1E4));
             }
         }
 

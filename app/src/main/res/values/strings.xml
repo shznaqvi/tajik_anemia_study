@@ -911,6 +911,10 @@
     <string name="w112">Was there a live birth in last five years?</string>
     <string name="w112a">Yes</string>
     <string name="w112b">No</string>
+    <string name="w1E1">W109 cannot be less than W105</string>
+    <string name="w1E2">W108 cannot be greater than W107</string>
+    <string name="w1E3">W110 cannot be greater than W107</string>
+    <string name="w1E4">W111 cannot be greater than W110</string>
     <string name="secw1atitle">DETAILS OF ALL PREGNANCIES IN LAST FIVE YEARS</string>
     <string name="instrucw1a">THIS TABLE IS FOR SELECTED MWRA AGED BETWEEN 15-49 YEARS.  IT WILL BE REAPEATED DEPENDING ON THE NUMBER OFPREGNANCY ENTERED IN W107 YEAR OF OUTCOME IS MANDATORY TO RECORD</string>
     <string name="w113t">Pregnancy history number</string>
