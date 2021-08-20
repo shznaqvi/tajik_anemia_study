@@ -69,13 +69,13 @@ public class SectionW1aActivity extends AppCompatActivity {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW1A, form.sW1atoString());
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.d(TAG, "updateDB: " + e.getMessage());
-            Toast.makeText(this, "updateDB: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.upd_db) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_db) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (updcount > 0) {
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -87,9 +87,7 @@ public class SectionW1aActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, PregnancyListActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -116,27 +114,30 @@ public class SectionW1aActivity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        int w105 = Integer.parseInt(bi.w105.getText().toString());
-        int w107 = Integer.parseInt(bi.w107.getText().toString());
-        int w108 = Integer.parseInt(bi.w108.getText().toString());
-        int w109 = Integer.parseInt(bi.w109.getText().toString());
-        int w110 = Integer.parseInt(bi.w110.getText().toString());
-        int w111 = Integer.parseInt(bi.w111.getText().toString());
+        if (bi.w103a.isChecked()) {
 
-        if (w109 < w105) {
-            return Validator.emptyCustomTextBox(this, bi.w109, "W109 cannot be less than W105");
-        }
+            int w105 = Integer.parseInt(bi.w105.getText().toString());
+            int w107 = Integer.parseInt(bi.w107.getText().toString());
+            int w108 = Integer.parseInt(bi.w108.getText().toString());
+            int w109 = Integer.parseInt(bi.w109.getText().toString());
+            int w110 = Integer.parseInt(bi.w110.getText().toString());
+            int w111 = Integer.parseInt(bi.w111.getText().toString());
 
-        if (w108 > w107) {
-            return Validator.emptyCustomTextBox(this, bi.w108, "W108 cannot be greater than W107");
-        }
+            if (w109 < w105) {
+                return Validator.emptyCustomTextBox(this, bi.w109, getString(R.string.w1E1));
+            }
 
-        if (w110 > w107) {
-            return Validator.emptyCustomTextBox(this, bi.w110, "W110 cannot be greater than W107");
-        }
+            if (w108 > w107) {
+                return Validator.emptyCustomTextBox(this, bi.w108, getString(R.string.w1E2));
+            }
 
-        if (w111 > w110) {
-            return Validator.emptyCustomTextBox(this, bi.w111, "W111 cannot be greater than W110");
+            if (w110 > w107) {
+                return Validator.emptyCustomTextBox(this, bi.w110, getString(R.string.w1E3));
+            }
+
+            if (w111 > w110) {
+                return Validator.emptyCustomTextBox(this, bi.w111, getString(R.string.w1E4));
+            }
         }
 
         return true;

@@ -911,6 +911,10 @@
     <string name="w112">Was there a live birth in last five years?</string>
     <string name="w112a">Yes</string>
     <string name="w112b">No</string>
+    <string name="w1E1">W109 cannot be less than W105</string>
+    <string name="w1E2">W108 cannot be greater than W107</string>
+    <string name="w1E3">W110 cannot be greater than W107</string>
+    <string name="w1E4">W111 cannot be greater than W110</string>
     <string name="secw1atitle">DETAILS OF ALL PREGNANCIES IN LAST FIVE YEARS</string>
     <string name="instrucw1a">THIS TABLE IS FOR SELECTED MWRA AGED BETWEEN 15-49 YEARS.  IT WILL BE REAPEATED DEPENDING ON THE NUMBER OFPREGNANCY ENTERED IN W107 YEAR OF OUTCOME IS MANDATORY TO RECORD</string>
     <string name="w113t">Pregnancy history number</string>
@@ -2588,6 +2592,31 @@
     <string name="title_child_dialog">Children Count</string>
     <string name="message_child_dialog_addmore">You have already entered %1$s Child(ren). \nAre you sure you want to add more Child?</string>
     <string name="message_child_dialog_proceeed">You have entered only %1$s of %2$s Child(ren) in the household. \nAre you sure you want to select aChild now?</string>
+
+    <string name="upd_db_form"> updateDB(Form):\t </string>
+    <string name="upd_db_error"> Updating Database… ERROR! </string>
+    <string name="db_excp_error"> Database Exception... ERROR! </string>
+    <string name="upd_db"> Updating Database...\t </string>
+    <string name="fail_db_upd"> Failed to Update Database! </string>
+    <string name="backPress"> Back Press Not Allowed </string>
+    <string name="invalid_response"> Invalid Response </string>
+    <string name="agecal">ageCal:\t</string>
+    <string name="network_conn_error"> Network connection not available ! </string>
+    <string name="no_mother_selected_child_list"> No Mother has been selected. Please select a mother before opening Child List </string>
+    <string name="sec_not_available_moment"> This section is not available at the moment. </string>
+    <string name="no_mother_selected_preg_list"> No Mother has been selected. Please select a mother before opening Pregnancy List </string>
+    <string name="h220_error"> H220: WRA count does not match Females 20–49. </string>
+    <string name="onitemselected"> onItemSelected(Samples):\t </string>
+    <string name="upd_samples"> updateDB(Samples):\t </string>
+    <string name="folder_not_created"> Folder Not Created </string>
+    <string name="invalid_password"> Invalid Password </string>
+    <string name="username_required"> Username is required. </string>
+    <string name="incorrect_username_or_password">Incorrect Username or Password</string>
+    <string name="open_hh_form"> Open Household Form </string>
+    <string name="open_anhtro_form">Open Anthro Form</string>
+    <string name="info_hh_form_not_exist">INFO: Household form does not exist.</string>
+    <string name="hh_not_found">Household not Found</string>
+    <string name="hh_exists_form"> hhExists(Form): \t </string>
 
 
 </resources>

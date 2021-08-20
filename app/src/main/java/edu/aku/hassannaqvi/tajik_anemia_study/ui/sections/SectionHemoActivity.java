@@ -41,7 +41,7 @@ public class SectionHemoActivity extends AppCompatActivity {
             db.updatesFormColumn(TableContracts.SamplesTable.COLUMN_UID, samples.getUid());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }*/
         return false;
@@ -53,7 +53,7 @@ public class SectionHemoActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -70,7 +70,7 @@ public class SectionHemoActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.backPress), Toast.LENGTH_SHORT).show();
     }
 
 

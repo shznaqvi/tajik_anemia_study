@@ -67,7 +67,7 @@ public class SectionH2cActivity extends AppCompatActivity {
             rowID = db.addMWRAList(mwra);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.db_excp_error), Toast.LENGTH_SHORT).show();
             return false;
         }
         mwra.setId(String.valueOf(rowID));
@@ -76,7 +76,7 @@ public class SectionH2cActivity extends AppCompatActivity {
             db.updatesMWRAListColumn(TableContracts.MWRAListTable.COLUMN_UID, mwra.getUid());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -88,7 +88,7 @@ public class SectionH2cActivity extends AppCompatActivity {
             setResult(RESULT_OK);
             finish();
         } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
         }
     }
 

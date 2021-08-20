@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -218,7 +218,7 @@ public class LoginActivity extends AppCompatActivity {
         if (networkInfo != null && networkInfo.isConnected()) {
             startActivity(new Intent(this, edu.aku.hassannaqvi.tajik_anemia_study.ui.SyncActivity.class).putExtra("login", true));
         } else {
-            Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.network_conn_error), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -242,14 +242,14 @@ public class LoginActivity extends AppCompatActivity {
 
             // Check for a valid password, if the user entered one.
             if (password.length() < 8) {
-                bi.password.setError("Invalid Password");
+                bi.password.setError(getString(R.string.invalid_password));
                 focusView = bi.password;
                 return;
             }
 
             // Check for a valid username address.
             if (TextUtils.isEmpty(username)) {
-                bi.username.setError("Username is required.");
+                bi.username.setError(getString(R.string.username_required));
                 focusView = bi.username;
                 return;
             }
@@ -264,7 +264,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent iLogin = new Intent(edu.aku.hassannaqvi.tajik_anemia_study.ui.LoginActivity.this, MainActivity.class);
                 startActivity(iLogin);
             } else {
-                bi.password.setError("Incorrect Username or Password");
+                bi.password.setError(getString(R.string.incorrect_username_or_password));
                 bi.password.requestFocus();
                 Toast.makeText(edu.aku.hassannaqvi.tajik_anemia_study.ui.LoginActivity.this, username + " " + password, Toast.LENGTH_SHORT).show();
             }
