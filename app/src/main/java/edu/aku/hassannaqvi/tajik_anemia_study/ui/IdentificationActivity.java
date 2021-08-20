@@ -60,22 +60,22 @@ public class IdentificationActivity extends AppCompatActivity {
         openIntent = new Intent();
         switch (MainApp.idType) {
             case 1:
-                bi.btnContinue.setText("Open Household Form");
+                bi.btnContinue.setText(R.string.open_hh_form);
                 MainApp.form = new Form();
                 openIntent = new Intent(this, SectionH1Activity.class);
                 break;
             case 2:
-                bi.btnContinue.setText("Open Anthro Form");
+                bi.btnContinue.setText(R.string.open_anhtro_form);
                 MainApp.anthro = new Anthro();
                 openIntent = new Intent(this, SectionAnthroActivity.class);
                 break;
             case 3:
-                bi.btnContinue.setText("Open Blood Form");
+                bi.btnContinue.setText(R.string.open_blood_form);
                 //     MainApp.sample = new Sample();
                 openIntent = new Intent(this, SectionSamplesActivity.class);
                 break;
             case 4:
-                bi.btnContinue.setText("Open Stool Form");
+                bi.btnContinue.setText(R.string.open_stool_form);
                 //    MainApp.sample = new Sample();
                 openIntent = new Intent(this, SectionSamplesActivity.class);
                 break;
@@ -229,7 +229,7 @@ public class IdentificationActivity extends AppCompatActivity {
                     finish();
                     startActivity(openIntent);
                 } else {
-                    Toast.makeText(this, "INFO: Household form does not exist.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
                 }
                 break;
 
@@ -297,7 +297,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         } else {
             bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
-            bi.hhhead.setText("Household not Found");
+            bi.hhhead.setText(R.string.hh_not_found);
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
             bi.btnContinue.setEnabled(false);
 
@@ -313,8 +313,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 try {
                     MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
                 } catch (JSONException e) {
-                    Log.d(TAG, "hhExists(Form): " + e.getMessage());
-                    Toast.makeText(this, "hhExists(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
+                    Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
                 return MainApp.form != null;
 
@@ -340,8 +340,8 @@ public class IdentificationActivity extends AppCompatActivity {
                     return MainApp.samples != null;
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.d(TAG, "hhExists(Form): " + e.getMessage());
-                    Toast.makeText(this, "hhExists(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
+                    Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
 

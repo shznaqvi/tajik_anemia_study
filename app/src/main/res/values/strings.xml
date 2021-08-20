@@ -2612,6 +2612,11 @@
     <string name="invalid_password"> Invalid Password </string>
     <string name="username_required"> Username is required. </string>
     <string name="incorrect_username_or_password">Incorrect Username or Password</string>
+    <string name="open_hh_form"> Open Household Form </string>
+    <string name="open_anhtro_form">Open Anthro Form</string>
+    <string name="info_hh_form_not_exist">INFO: Household form does not exist.</string>
+    <string name="hh_not_found">Household not Found</string>
+    <string name="hh_exists_form"> hhExists(Form): \t </string>
 
 
 </resources>
