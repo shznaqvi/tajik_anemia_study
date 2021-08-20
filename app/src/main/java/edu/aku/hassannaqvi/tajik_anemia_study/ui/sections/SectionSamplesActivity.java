@@ -79,8 +79,8 @@ public class SectionSamplesActivity extends AppCompatActivity {
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                        Log.d(TAG, "onItemSelected(Samples): " + e.getMessage());
-                        Toast.makeText(SectionSamplesActivity.this, "onItemSelected(Samples): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, getString(R.string.onitemselected) + e.getMessage());
+                        Toast.makeText(SectionSamplesActivity.this, getString(R.string.onitemselected) + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
                /* MainApp.samples.setE101("");
@@ -129,9 +129,9 @@ public class SectionSamplesActivity extends AppCompatActivity {
             rowId = db.addSamples(MainApp.samples);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "updateDB(Samples): " + e.getMessage());
-            Toast.makeText(this, "updateDB(Samples): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.db_excp_error), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.upd_samples) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_samples) + e.getMessage(), Toast.LENGTH_SHORT).show();
             return false;
         }
         MainApp.samples.setId(String.valueOf(rowId));
@@ -140,7 +140,7 @@ public class SectionSamplesActivity extends AppCompatActivity {
             db.updatesSampColumn(TableContracts.SamplesTable.COLUMN_UID, MainApp.samples.getUid());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -154,8 +154,8 @@ public class SectionSamplesActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.d(TAG, "updateDB(Samples): " + e.getMessage());
-            Toast.makeText(this, "updateDB(Samples): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.upd_samples) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_samples) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return false;
     }
@@ -168,16 +168,12 @@ public class SectionSamplesActivity extends AppCompatActivity {
         if (updateDB()) {
             MainApp.subjectNames.remove(bi.e104.getSelectedItemPosition());
             finish();
-            if (MainApp.subjectNames.size() == 1) {
+            if (MainApp.subjectNames.size() == 1)
                 startActivity(new Intent(this, IdentificationActivity.class).putExtra("complete", true));
-
-            } else {
+            else
                 startActivity(new Intent(this, SectionSamplesActivity.class).putExtra("complete", true));
 
-            }
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -206,7 +202,7 @@ public class SectionSamplesActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.backPress), Toast.LENGTH_SHORT).show();
     }
 
 

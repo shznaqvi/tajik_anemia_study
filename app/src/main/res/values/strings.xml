@@ -2606,6 +2606,8 @@
     <string name="sec_not_available_moment"> This section is not available at the moment. </string>
     <string name="no_mother_selected_preg_list"> No Mother has been selected. Please select a mother before opening Pregnancy List </string>
     <string name="h220_error"> H220: WRA count does not match Females 20–49. </string>
+    <string name="onitemselected"> onItemSelected(Samples):\t </string>
+    <string name="upd_samples">\"updateDB(Samples): \"</string>
 
 
 </resources>
