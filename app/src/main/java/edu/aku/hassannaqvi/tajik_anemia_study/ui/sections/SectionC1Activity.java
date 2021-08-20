@@ -103,7 +103,7 @@ public class SectionC1Activity extends AppCompatActivity {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SC1, form.sC1toString());
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.d(TAG, "updateDB(Form): " + e.getMessage());
+            Log.d(TAG, R.string.upd_db_form + e.getMessage());
             Toast.makeText(this, R.string.upd_db_form + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (updcount > 0) return true;
