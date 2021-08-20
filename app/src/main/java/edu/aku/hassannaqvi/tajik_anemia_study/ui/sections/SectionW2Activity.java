@@ -66,12 +66,12 @@ public class SectionW2Activity extends AppCompatActivity {
             updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SW2, form.sW2toString());
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.d(TAG, "updateDB: " + e.getMessage());
-            Toast.makeText(this, "updateDB: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.upd_db) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_db) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (updcount > 0) return true;
         else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -82,7 +82,7 @@ public class SectionW2Activity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             startActivity(new Intent(this, SectionW3Activity.class).putExtra("complete", true));
-        } else Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
     }
 
 
