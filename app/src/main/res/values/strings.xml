@@ -2607,7 +2607,11 @@
     <string name="no_mother_selected_preg_list"> No Mother has been selected. Please select a mother before opening Pregnancy List </string>
     <string name="h220_error"> H220: WRA count does not match Females 20–49. </string>
     <string name="onitemselected"> onItemSelected(Samples):\t </string>
-    <string name="upd_samples">\"updateDB(Samples): \"</string>
+    <string name="upd_samples"> updateDB(Samples):\t </string>
+    <string name="folder_not_created"> Folder Not Created </string>
+    <string name="invalid_password"> Invalid Password </string>
+    <string name="username_required"> Username is required. </string>
+    <string name="incorrect_username_or_password">Incorrect Username or Password</string>
 
 
 </resources>
