@@ -54,7 +54,7 @@ public class SectionW1bActivity extends AppCompatActivity {
             rowId = db.addPregnancy(MainApp.preg);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "Database Exception... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.db_excp_error), Toast.LENGTH_SHORT).show();
             return false;
         }
         MainApp.preg.setId(String.valueOf(rowId));
@@ -63,7 +63,7 @@ public class SectionW1bActivity extends AppCompatActivity {
             db.updatesPregColumn(TableContracts.PregnancyTable.COLUMN_UID, MainApp.preg.getUid());
             return true;
         } else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -76,9 +76,7 @@ public class SectionW1bActivity extends AppCompatActivity {
             setResult(RESULT_OK);
             finish();
             //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
     }
 
 
@@ -111,7 +109,7 @@ public class SectionW1bActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.backPress), Toast.LENGTH_SHORT).show();
     }
 
 */
