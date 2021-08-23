@@ -107,10 +107,7 @@ public class SectionH2dActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-
-        if (Validator.emptyCheckingContainer(this, bi.GrpName)) {
-            return false;
-        }
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
         if (Integer.parseInt(MainApp.child.getAge()) < 6) {
             Validator.emptyCustomTextBox(this, bi.h231m, "Child is younger than 6-months. Please enter a child 6-months or older");
