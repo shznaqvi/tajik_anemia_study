@@ -105,6 +105,7 @@ object CreateTable {
             + AnthroTable.COLUMN_HHID + " TEXT,"
             + AnthroTable.COLUMN_USERNAME + " TEXT,"
             + AnthroTable.COLUMN_SYSDATE + " TEXT,"
+            + AnthroTable.COLUMN_SUBJECTNAME + " TEXT,"
             + AnthroTable.COLUMN_ISTATUS + " TEXT,"
             + AnthroTable.COLUMN_DEVICEID + " TEXT,"
             + AnthroTable.COLUMN_DEVICETAGID + " TEXT,"

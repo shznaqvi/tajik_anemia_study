@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -15,6 +16,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -41,6 +43,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import javax.crypto.Cipher;
@@ -56,6 +59,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.TAJIKISTAN;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_COPY;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 
@@ -109,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
+        initializingCountry();
         Dexter.withContext(this)
                 .withPermissions(
                         Manifest.permission.ACCESS_NETWORK_STATE,
@@ -128,10 +133,17 @@ public class LoginActivity extends AppCompatActivity {
                 token.continuePermissionRequest();
             }
         }).check();
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
         bi.setCallback(this);
-        MainApp.appInfo = new AppInfo(this);
+
         db = MainApp.appInfo.getDbHelper();
+        sharedPref = getSharedPreferences(PROJECT_NAME, MODE_PRIVATE);
+        editor = sharedPref.edit();
+
+        settingCountryCode();
+
+        MainApp.appInfo = new AppInfo(this);
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
@@ -140,10 +152,54 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void settingCountryCode() {
+
+
+/*
+        bi.countrySwitch.setChecked(false);
+
+
+        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean showBounds) {
+               // prefs.setShowBounds(showBounds);
+            }
+        });
+*/
+  /*      editor
+                .putString("lang", bi.countrySwitch.isChecked()? "1" : "3")
+                .apply();*/
+        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
+
+        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+                changeLanguage(isChecked ? 1 : 3);
+
+                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+            }
+        });
+
+    }
+
+
+    /*
+     * Setting country code in Shared Preference
+     * */
+    private void initializingCountry() {
+ /*            countryCode = getCountryCode(this);
+            if (countryCode == 0) {
+                SharedStorage.setCountryCode(this@LoginActivity, PAKISTAN)
+            }*/
+
+        //changeLanguage(1);
+    }
+
     public void dbBackup() {
 
-        sharedPref = getSharedPreferences("dss01", MODE_PRIVATE);
-        editor = sharedPref.edit();
 
         if (sharedPref.getBoolean("flag", false)) {
 
@@ -321,5 +377,30 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    /*
+     * Toggle Language
+     * */
+    private void changeLanguage(int countryCode) {
+        String lang;
+        String country;
+        if (countryCode == TAJIKISTAN) {
+            lang = "tg";
+            country = "TJ";
+            editor
+                    .putString("lang", "3")
+                    .apply();
+        } else {
+            lang = "en";
+            country = "US";
+            editor
+                    .putString("lang", "1")
+                    .apply();
+        }
+        Locale locale = new Locale(lang, country);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
+    }
 }
 

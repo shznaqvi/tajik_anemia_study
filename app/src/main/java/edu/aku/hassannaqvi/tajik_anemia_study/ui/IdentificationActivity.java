@@ -219,12 +219,17 @@ public class IdentificationActivity extends AppCompatActivity {
                 startActivity(openIntent);
                 break;
             case 2:
-                if (!hhExists())
+                if (hhExists()) {
                     saveDraftAnthro();
+                    finish();
+                    startActivity(openIntent);
+                } else {
+                    Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
+                }
                 break;
             case 3:
             case 4:
-                if (!hhExists()) {
+                if (hhExists()) {
                     saveDraftSamples();
                     finish();
                     startActivity(openIntent);
@@ -234,8 +239,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 break;
 
         }
-        finish();
-        startActivity(openIntent);
+
 
     }
 
@@ -268,7 +272,10 @@ public class IdentificationActivity extends AppCompatActivity {
     private void saveDraftSamples() {
 
         MainApp.samples = new Samples();
-
+        MainApp.samples.setUserName(MainApp.user.getUserName());
+        MainApp.samples.setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
+        MainApp.samples.setDeviceId(MainApp.deviceid);
+        MainApp.samples.setAppver(MainApp.versionName + "." + MainApp.versionCode);
     }
 
 
@@ -318,32 +325,45 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
                 return MainApp.form != null;
 
-            //TODO: Antro & Samples will be multiple. Different logic will be required
-        /*    case 2:
-                anthro = new Anthro();
-                anthro = db.getAnthroByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
-                return anthro != null;
-             */
+            case 2:
             case 3:
             case 4:
                 MainApp.form = new Form();
                 try {
                     MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
                     // Populate Subject Names for spinner Adapter in Samples Activity.
-                    MainApp.subjectNames = new ArrayList<>();
-                    MainApp.subjectNames.add("...");
-                    MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
-                    MainApp.subjectNames.add(MainApp.form.getC100Name());
+                    if (MainApp.form != null) {
+                        MainApp.subjectNames = new ArrayList<>();
+                        MainApp.subjectNames.add("...");
 
+                        // Add woman if exist
+                        if (!MainApp.form.getW100Name().equals("")) {
+                            MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
+                            // Add child if both woman and child exist
+                            if (!MainApp.form.getC100Name().equals("")) {
+                                MainApp.subjectNames.add(MainApp.form.getC100Name());
+                            } else {
+                                Toast.makeText(this, R.string.child_info_missing, Toast.LENGTH_SHORT).show();
+                                return MainApp.form != null;
+
+                            }
+                        } else {
+                            Toast.makeText(this, R.string.woman_child_info_missing, Toast.LENGTH_SHORT).show();
+                            return MainApp.form != null;
+
+                        }
+                    } else {
+                        return MainApp.form != null;
+                    }
                     MainApp.samples = new Samples();
+                    MainApp.anthro = new Anthro();
                     //MainApp.samples = db.getSamplesByClusterHHNo(bi.h103.getText().toString(), bi.h103.getText().toString());
-                    return MainApp.samples != null;
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
                     Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
+                return MainApp.form != null && MainApp.subjectNames != null;
 
             default:
                 return false;

@@ -228,6 +228,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AnthroTable.COLUMN_HHID, anthro.getHhid());
         values.put(AnthroTable.COLUMN_USERNAME, anthro.getUserName());
         values.put(AnthroTable.COLUMN_SYSDATE, anthro.getSysDate());
+        values.put(AnthroTable.COLUMN_SUBJECTNAME, anthro.getSubjectName());
         values.put(AnthroTable.COLUMN_S1, anthro.getS1());
 
         values.put(AnthroTable.COLUMN_DEVICEID, anthro.getDeviceId());
@@ -938,9 +939,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedAnthro() {
+    public JSONArray getUnsyncedAnthro() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
+
         String[] columns = null;
         String whereClause;
         whereClause = AnthroTable.COLUMN_SYNCED + " is null ";
@@ -948,32 +950,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
         String orderBy = AnthroTable.COLUMN_ID + " ASC";
+
         JSONArray all = new JSONArray();
-        try {
-            c = db.query(
-                    AnthroTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Log.d(TAG, "getUnsyncedAnthro: " + c.getCount());
-                Anthro anthro = new Anthro();
-                all.put(anthro.Hydrate(c).toJSONObject());
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
+
+        c = db.query(
+                AnthroTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+
+        while (c.moveToNext()) {
+            Log.d(TAG, "getUnsyncedAnthro: " + c.getCount());
+            Anthro anthro = new Anthro();
+            all.put(anthro.Hydrate(c).toJSONObject());
         }
+
+        if (c != null) {
+            c.close();
+        }
+
+        if (db != null) {
+            db.close();
+        }
+
         Log.d(TAG, "getUnsyncedAnthro: " + all.toString().length());
         Log.d(TAG, "getUnsyncedAnthro: " + all);
+
         return all;
     }
 
@@ -1824,5 +1830,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return sampleByUID;
+    }
+
+    public Anthro getAnthrosByUUIDNameType(String uid, String subjectName) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = AnthroTable.COLUMN_UUID + "=? AND "
+                + AnthroTable.COLUMN_SUBJECTNAME + "=?";
+
+        String[] whereArgs = {uid, subjectName};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = AnthroTable.COLUMN_ID + " ASC";
+
+        Anthro anthroByUID = new Anthro();
+        try {
+            c = db.query(
+                    AnthroTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                anthroByUID = new Anthro().Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return anthroByUID;
     }
 }

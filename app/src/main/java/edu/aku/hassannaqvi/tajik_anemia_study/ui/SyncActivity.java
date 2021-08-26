@@ -160,7 +160,12 @@ public class SyncActivity extends AppCompatActivity {
 
                 // Anthro
                 uploadTables.add(new SyncModel(AnthroTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedAnthro());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedAnthro());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
                 /*// Blood
                 uploadTables.add(new SyncModel(BloodTable.TABLE_NAME));

@@ -22,6 +22,9 @@
     <string name="main_menu">Main Menu</string>
     <string name="only_for_testing">ONLY FOR TESTING</string>
     <string name="database">Database</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
     <string name="region">REGION</string>
     <string name="district">DISTRICT</string>
     <string name="uc">UC</string>
@@ -81,9 +84,6 @@
     <string name="never"> Never</string>
     <string name="na"> Applicable /Not Available  </string>
     <string name="nap"> Not Applicable </string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
     <string name="nav">Not Available </string>
     <string name="ref"> Refused </string>
     <string name="other"> Other </string>
@@ -2667,7 +2667,7 @@
     <string name="incorrect_username_or_password">Incorrect Username or Password</string>
     <string name="open_hh_form"> Open Household Form </string>
     <string name="open_anhtro_form">Open Anthro Form</string>
-    <string name="info_hh_form_not_exist">INFO: Household information does not exist.</string>
+    <string name="info_hh_form_not_exist">INFO: Household form does not exist.</string>
     <string name="hh_not_found">Household not Found</string>
     <string name="hh_exists_form"> hhExists(Form): \t </string>
     <string name="w202t2">Probe for the type of person seen and record all answers given.</string>

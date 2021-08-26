@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.models;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -30,6 +29,7 @@ public class Anthro extends BaseObservable {
     private String hhid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
+    private String subjectName = StringUtils.EMPTY;
 
     private String deviceId = StringUtils.EMPTY;
     private String deviceTag = StringUtils.EMPTY;
@@ -131,6 +131,13 @@ public class Anthro extends BaseObservable {
         this.sysDate = sysDate;
     }
 
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
 
     public String getDeviceId() {
         return deviceId;
@@ -307,7 +314,7 @@ public class Anthro extends BaseObservable {
     }
 
 
-    public Anthro Hydrate(Cursor cursor) {
+    public Anthro Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_UUID));
@@ -315,6 +322,7 @@ public class Anthro extends BaseObservable {
         this.hhid = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_HHID));
         this.userName = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_SYSDATE));
+        this.subjectName = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_SUBJECTNAME));
         this.deviceId = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_APPVERSION));
@@ -328,63 +336,56 @@ public class Anthro extends BaseObservable {
     }
 
 
-    public void s1Hydrate(String string) {
+    public void s1Hydrate(String string) throws JSONException {
 
         if (string != null) {
 
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.d101 = json.getString("d101");
-                this.d102 = json.getString("d102");
-                this.d103 = json.getString("d103");
-                this.d104 = json.getString("d104");
-                this.d105 = json.getString("d105");
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.d101 = json.getString("d101");
+            this.d102 = json.getString("d102");
+            this.d103 = json.getString("d103");
+            this.d104 = json.getString("d104");
+            this.d105 = json.getString("d105");
                 this.d106 = json.getString("d106");
                 this.d107 = json.getString("d107");
                 this.d108 = json.getString("d108");
                 this.d109 = json.getString("d109");
                 this.d110 = json.getString("d110");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("d101", d101)
-                    .put("d102", d102)
-                    .put("d103", d103)
-                    .put("d104", d104)
-                    .put("d105", d105)
-                    .put("d106", d106)
-                    .put("d107", d107)
-                    .put("d108", d108)
+        json.put("d101", d101)
+                .put("d102", d102)
+                .put("d103", d103)
+                .put("d104", d104)
+                .put("d105", d105)
+                .put("d106", d106)
+                .put("d107", d107)
+                .put("d108", d108)
                     .put("d109", d109)
                     .put("d110", d110);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(AnthroTable.COLUMN_ID, this.id);
-            json.put(AnthroTable.COLUMN_UID, this.uid);
-            json.put(AnthroTable.COLUMN_UUID, this.uuid);
-            json.put(AnthroTable.COLUMN_CLUSTER, this.cluster);
-            json.put(AnthroTable.COLUMN_HHID, this.hhid);
-            json.put(AnthroTable.COLUMN_USERNAME, this.userName);
+        json.put(AnthroTable.COLUMN_ID, this.id);
+        json.put(AnthroTable.COLUMN_UID, this.uid);
+        json.put(AnthroTable.COLUMN_UUID, this.uuid);
+        json.put(AnthroTable.COLUMN_CLUSTER, this.cluster);
+        json.put(AnthroTable.COLUMN_HHID, this.hhid);
+        json.put(AnthroTable.COLUMN_SUBJECTNAME, this.subjectName);
+        json.put(AnthroTable.COLUMN_USERNAME, this.userName);
             json.put(AnthroTable.COLUMN_SYSDATE, this.sysDate);
             json.put(AnthroTable.COLUMN_DEVICEID, this.deviceId);
             json.put(AnthroTable.COLUMN_DEVICETAGID, this.deviceTag);
@@ -394,10 +395,6 @@ public class Anthro extends BaseObservable {
 
             json.put(AnthroTable.COLUMN_S1, new JSONObject(s1toString()));
             return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "toJSONObject: " + e.getMessage());
-            return null;
-        }
+
     }
 }
