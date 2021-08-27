@@ -124,12 +124,14 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.##"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={anthro.d105}"
-                                app:maxValue="100"
-                                app:minValue="1"
+                                app:mask="###.##"
+                                app:maxValue="250.00"
+                                app:minValue="000.50"
+                                app:pattern="^(\\d{3,3}\\.\\d{2,2})$"
                                 app:type="range" />
 
                         </LinearLayout>
@@ -172,12 +174,14 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="###.#"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={anthro.d106}"
-                                app:maxValue="100"
-                                app:minValue="1"
+                                app:mask="###.#"
+                                app:maxValue="200.00"
+                                app:minValue="010.00"
+                                app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                 app:type="range" />
                         </LinearLayout>
                     </LinearLayout>
@@ -219,12 +223,14 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="###"
+                                android:hint="##.#"
                                 android:inputType="number"
                                 android:maxLength="3"
                                 android:text="@={anthro.d107}"
-                                app:maxValue="100"
-                                app:minValue="1"
+                                app:mask="##.#"
+                                app:maxValue="60.0"
+                                app:minValue="05.0"
+                                app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                 app:type="range" />
                         </LinearLayout>
                     </LinearLayout>
