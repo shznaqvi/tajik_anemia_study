@@ -222,10 +222,12 @@
                                 android:background="@drawable/all_round_corners"
                                 android:drawableStart="@drawable/ic_upload"
                                 android:drawablePadding="12dp"
+                                android:backgroundTint="@color/colorPrimaryLightOverlay"
                                 android:onClick="@{callback::onSyncDataClick}"
                                 android:paddingStart="12dp"
                                 android:paddingEnd="12dp"
                                 android:text="@string/downData"
+                                android:foregroundTint="@color/colorPrimary"
                                 android:textColor="@color/colorPrimary" />
                         </LinearLayout>
 

@@ -224,6 +224,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
@@ -236,6 +237,7 @@
                                 android:gravity="center"
                                 android:text="@={form.h203m}"
                                 android:hint="##"
+                                app:defaultValue="98"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:maxValue="12"
@@ -251,6 +253,7 @@
                                 android:text="@={form.h203y}"
                                 android:hint="####"
                                 android:inputType="number"
+                                app:defaultValue="9998"
                                 android:maxLength="4"
                                 app:maxValue="1990"
                                 app:minValue="1900"

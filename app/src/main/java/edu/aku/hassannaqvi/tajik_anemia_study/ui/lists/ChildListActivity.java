@@ -111,6 +111,7 @@ public class ChildListActivity extends AppCompatActivity {
             if (MainApp.form.getiStatus().equals("")) {
                 //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                 MainApp.child = new Child();
+                MainApp.child.setH228(String.valueOf(MainApp.childList.size() + 1));
                 addChild();
             } else {
                 Toast.makeText(ChildListActivity.this, "This form has been locked. You cannot add new children to locked forms", Toast.LENGTH_LONG).show();
@@ -200,7 +201,7 @@ public class ChildListActivity extends AppCompatActivity {
     private void displayProceedDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_mwra_dialog)
-                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size(), MainApp.mwra.getH226t()))
+                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size() + "", MainApp.mwra.getH226t()))
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.
