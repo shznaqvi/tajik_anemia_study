@@ -90,11 +90,13 @@ public class MwraListActivity extends AppCompatActivity {
         MainApp.mwraList = new ArrayList<>();
         Log.d(TAG, "onCreate: mwralist " + MainApp.mwraList.size());
         MainApp.mwraList = db.getMWRABYUID(MainApp.form.getUid());
-
+        MainApp.selectedFemale = "";
         // Set Selected MWRA
         for (int i = 0; i < MainApp.mwraList.size(); i++) {
             if (MainApp.mwraList.get(i).getIndexed().equals("1")) {
                 MainApp.selectedFemale = String.valueOf(i);
+                bi.btnRand.setVisibility(View.INVISIBLE);
+                bi.btnContinue.setVisibility(View.VISIBLE);
                 break;
             }
         }
@@ -132,9 +134,12 @@ public class MwraListActivity extends AppCompatActivity {
 
         //MainApp.mwra = new MWRA();
         //MainApp.child = new Child();
-        if (MainApp.mwraList.size() > 0) {
+        if (MainApp.mwraList.size() > 0 && MainApp.selectedFemale.equals("")) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
-            bi.btnRand.setVisibility(View.VISIBLE);
+            //  bi.btnRand.setVisibility(View.VISIBLE);
+        } else {
+            bi.btnRand.setVisibility(View.INVISIBLE);
+            bi.btnContinue.setVisibility(View.VISIBLE);
         }
         checkCompleteFm();
 
@@ -159,6 +164,7 @@ public class MwraListActivity extends AppCompatActivity {
     }
 
     public void addFemale() {
+
         if (MainApp.mwraList.size() >= Integer.parseInt(MainApp.form.getH220b())) {
             displayAddMoreDialog();
         } else {

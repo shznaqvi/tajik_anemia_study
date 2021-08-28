@@ -142,9 +142,6 @@ dependencies {
     // WorkManager(Java only)
     implementation "androidx.work:work-runtime:$work_version"
 
-    //Image Compressor
-    implementation 'id.zelory:compressor:3.0.1'
-
     // Permissions Handeling
     implementation 'com.karumi:dexter:6.2.3'
 }

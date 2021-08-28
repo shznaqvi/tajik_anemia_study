@@ -296,6 +296,9 @@ public class Child extends BaseObservable {
         this.h230y = h230y;
         if (h230y.equals("9998")) {
             setH230m("98");
+            setH231d("");
+            setH231m("");
+            setH231y("");
         }
         // Calculate age
         CaluculateAge();
