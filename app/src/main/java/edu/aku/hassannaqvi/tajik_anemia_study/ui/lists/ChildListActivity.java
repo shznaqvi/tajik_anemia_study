@@ -108,7 +108,7 @@ public class ChildListActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(view -> {
-            if (MainApp.form.getiStatus().equals("")) {
+            if (!MainApp.form.getiStatus().equals("1")) {
                 //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                 MainApp.child = new Child();
                 MainApp.child.setH228(String.valueOf(MainApp.childList.size() + 1));

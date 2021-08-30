@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui;
 
-import android.content.Intent;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -10,14 +11,11 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityEndingBinding;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
 public class EndingActivity extends AppCompatActivity {
@@ -64,8 +62,10 @@ public class EndingActivity extends AppCompatActivity {
 
             cleanupProcess();
             finish();
-            Intent i = new Intent(this, MainActivity.class);
+            setResult(RESULT_OK);
+           /* Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
+           */
             Toast.makeText(this, "Data has been updated.", Toast.LENGTH_SHORT).show();
 
         } else {

@@ -54,6 +54,9 @@ public class Anthro extends BaseObservable {
     private String d108 = StringUtils.EMPTY;
     private String d109 = StringUtils.EMPTY;
     private String d110 = StringUtils.EMPTY;
+    private String fileNameW = StringUtils.EMPTY;
+    private String fileNameH = StringUtils.EMPTY;
+    private String fileNameM = StringUtils.EMPTY;
 
 
     public Anthro() {
@@ -313,6 +316,35 @@ public class Anthro extends BaseObservable {
         notifyPropertyChanged(BR.d110);
     }
 
+    @Bindable
+    public String getFileNameW() {
+        return fileNameW;
+    }
+
+    public void setFileNameW(String fileNameW) {
+        this.fileNameW = fileNameW;
+        notifyPropertyChanged(BR.fileNameW);
+    }
+
+    @Bindable
+    public String getFileNameH() {
+        return fileNameH;
+    }
+
+    public void setFileNameH(String fileNameH) {
+        this.fileNameH = fileNameH;
+        notifyPropertyChanged(BR.fileNameH);
+    }
+
+    @Bindable
+    public String getFileNameM() {
+        return fileNameM;
+    }
+
+    public void setFileNameM(String fileNameM) {
+        this.fileNameM = fileNameM;
+        notifyPropertyChanged(BR.fileNameM);
+    }
 
     public Anthro Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(AnthroTable.COLUMN_ID));
@@ -347,11 +379,14 @@ public class Anthro extends BaseObservable {
             this.d103 = json.getString("d103");
             this.d104 = json.getString("d104");
             this.d105 = json.getString("d105");
-                this.d106 = json.getString("d106");
-                this.d107 = json.getString("d107");
-                this.d108 = json.getString("d108");
-                this.d109 = json.getString("d109");
-                this.d110 = json.getString("d110");
+            this.d106 = json.getString("d106");
+            this.d107 = json.getString("d107");
+            this.d108 = json.getString("d108");
+            this.d109 = json.getString("d109");
+            this.d110 = json.getString("d110");
+            this.fileNameM = json.getString("fileNameM");
+            this.fileNameH = json.getString("fileNameH");
+            this.fileNameW = json.getString("fileNameW");
 
         }
     }
@@ -368,8 +403,12 @@ public class Anthro extends BaseObservable {
                 .put("d106", d106)
                 .put("d107", d107)
                 .put("d108", d108)
-                    .put("d109", d109)
-                    .put("d110", d110);
+                .put("d109", d109)
+                .put("d110", d110)
+                .put("fileNameH", fileNameH)
+                .put("fileNameW", fileNameW)
+                .put("fileNameM", fileNameM)
+        ;
 
         return json.toString();
     }
@@ -386,15 +425,17 @@ public class Anthro extends BaseObservable {
         json.put(AnthroTable.COLUMN_HHID, this.hhid);
         json.put(AnthroTable.COLUMN_SUBJECTNAME, this.subjectName);
         json.put(AnthroTable.COLUMN_USERNAME, this.userName);
-            json.put(AnthroTable.COLUMN_SYSDATE, this.sysDate);
-            json.put(AnthroTable.COLUMN_DEVICEID, this.deviceId);
-            json.put(AnthroTable.COLUMN_DEVICETAGID, this.deviceTag);
-            json.put(AnthroTable.COLUMN_ISTATUS, this.iStatus);
-            //  json.put(AnthroTable.COLUMN_SYNCED, this.synced);
-            //  json.put(AnthroTable.COLUMN_SYNCED_DATE, this.syncDate);
+        json.put(AnthroTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(AnthroTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(AnthroTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(AnthroTable.COLUMN_ISTATUS, this.iStatus);
+        //  json.put(AnthroTable.COLUMN_SYNCED, this.synced);
+        //  json.put(AnthroTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-            json.put(AnthroTable.COLUMN_S1, new JSONObject(s1toString()));
-            return json;
+        json.put(AnthroTable.COLUMN_S1, new JSONObject(s1toString()));
+        return json;
 
     }
+
+
 }

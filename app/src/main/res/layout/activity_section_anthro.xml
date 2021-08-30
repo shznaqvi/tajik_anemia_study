@@ -111,17 +111,23 @@
                                 android:text="@string/Q_d105" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d105" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/d105"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="###.##"
@@ -134,7 +140,30 @@
                                 app:pattern="^(\\d{3,3}\\.\\d{2,2})$"
                                 app:type="range" />
 
+
+                            <Button
+                                android:id="@+id/btnWeightCamera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/camera"
+                                android:onClick="takePhoto"
+                                android:drawablePadding="8dp"
+                                android:text="Take Photo" />
+
+
                         </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/fileNameW"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameW}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameW.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -161,12 +190,19 @@
                                 android:text="@string/Q_d106" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d106" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/d106"
@@ -183,8 +219,33 @@
                                 app:minValue="010.00"
                                 app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                                 app:type="range" />
+
+
+                            <Button
+                                android:id="@+id/btnHeightCamera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/camera"
+                                android:drawablePadding="8dp"
+                                android:onClick="takePhoto"
+                                android:text="Take Photo" />
+
+
                         </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/fileNameH"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameH}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameH.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- d107  Input-Numeric   -->
@@ -210,12 +271,18 @@
                                 android:text="@string/Q_d107" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d107" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/d107"
@@ -232,7 +299,31 @@
                                 app:minValue="05.0"
                                 app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                 app:type="range" />
+
+
+                            <Button
+                                android:id="@+id/btnMUACCamera"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/camera"
+                                android:drawablePadding="8dp"
+                                android:onClick="takePhoto"
+                                android:text="Take Photo" />
+
+
                         </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/fileNameM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameM}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameM.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

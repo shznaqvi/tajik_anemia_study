@@ -344,12 +344,12 @@ public class IdentificationActivity extends AppCompatActivity {
                                 MainApp.subjectNames.add(MainApp.form.getC100Name());
                             } else {
                                 Toast.makeText(this, R.string.child_info_missing, Toast.LENGTH_SHORT).show();
-                                return MainApp.form != null;
+                                return false;
 
                             }
                         } else {
                             Toast.makeText(this, R.string.woman_child_info_missing, Toast.LENGTH_SHORT).show();
-                            return MainApp.form != null;
+                            return false;
 
                         }
                     } else {
@@ -363,7 +363,7 @@ public class IdentificationActivity extends AppCompatActivity {
                     Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
                     Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-                return MainApp.form != null && MainApp.subjectNames != null;
+                return MainApp.form != null;
 
             default:
                 return false;
