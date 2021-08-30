@@ -132,7 +132,7 @@ dependencies {
     // EditText Picker (Ali)
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
     //Image Compressor
-    implementation 'id.zelory:compressor:3.0.1'
+    implementation 'id.zelory:compressor:2.1.1'
 
     // Datepicker
     implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.4.0'

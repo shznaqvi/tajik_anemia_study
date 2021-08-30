@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -22,13 +27,47 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionAnthroBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.TakePhoto;
 
 
 public class SectionAnthroActivity extends AppCompatActivity {
     private static final String TAG = "SectionAnthroActivity";
     ActivitySectionAnthroBinding bi;
     private DatabaseHelper db;
+    private int PhotoSerial;
 
+    ActivityResultLauncher<Intent> TakePhotoLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        // There are no request codes
+                        //Intent data = result.getData();
+                        Intent data = result.getData();
+                        Toast.makeText(SectionAnthroActivity.this, "Photo Taken", Toast.LENGTH_SHORT).show();
+                        String fileName = data.getStringExtra("FileName");
+                        String fileType = data.getStringExtra("FileType");
+                        switch (fileType) {
+                            case "W":
+                                bi.fileNameW.setText(fileName);
+                                break;
+                            case "H":
+                                bi.fileNameH.setText(fileName);
+                                break;
+                            case "M":
+                                bi.fileNameM.setText(fileName);
+                                break;
+
+                        }
+                        PhotoSerial++;
+                    }
+                    if (result.getResultCode() == Activity.RESULT_CANCELED) {
+                        Toast.makeText(SectionAnthroActivity.this, "No Photo Taken!", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +92,8 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
         populateSpinner();
         setupSkips();
+        PhotoSerial = 1;
+
     }
 
     private void populateSpinner() {
@@ -150,5 +191,30 @@ public class SectionAnthroActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.backPress, Toast.LENGTH_SHORT).show();
     }
 
+    public void TakePhoto(int id) {
+
+        Intent intent = new Intent(this, TakePhoto.class);
+        intent.putExtra("picID",
+                MainApp.form.getH101() + "_" +
+                        MainApp.form.getH102() + "_" +
+                        MainApp.form.getH103() + "_" +
+                        MainApp.form.getH104() + "_" +
+                        +PhotoSerial
+        );
+
+        intent.putExtra("childName", "");
+
+        intent.putExtra("picView", "Trees".toUpperCase());
+        if (id == 1) {
+            intent.putExtra("viewFacing", "1");
+        } else {
+            intent.putExtra("viewFacing", "2");
+        }
+
+        startActivityForResult(intent, 1); // Activity is started with requestCode 1 = Front
+
+
+        //Toast.makeText(this, ""+PhotoSerial, Toast.LENGTH_SHORT).show();
+    }
 
 }
