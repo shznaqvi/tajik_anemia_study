@@ -111,11 +111,9 @@
                                 android:text="@string/Q_d105" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d105" />
 
 
@@ -149,6 +147,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:drawableStart="@drawable/camera"
+                                android:onClick="takePhoto"
                                 android:drawablePadding="8dp"
                                 android:text="Take Photo" />
 
@@ -160,8 +159,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text=""
-                            android:visibility="gone" />
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameW}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameW.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -188,11 +190,9 @@
                                 android:text="@string/Q_d106" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d106" />
 
 
@@ -228,6 +228,7 @@
                                 android:layout_gravity="center"
                                 android:drawableStart="@drawable/camera"
                                 android:drawablePadding="8dp"
+                                android:onClick="takePhoto"
                                 android:text="Take Photo" />
 
 
@@ -238,8 +239,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text=""
-                            android:visibility="gone" />
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameH}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameH.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -267,11 +271,9 @@
                                 android:text="@string/Q_d107" />
 
                             <TextView
-                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:text="@string/d107" />
 
 
@@ -306,6 +308,7 @@
                                 android:layout_gravity="center"
                                 android:drawableStart="@drawable/camera"
                                 android:drawablePadding="8dp"
+                                android:onClick="takePhoto"
                                 android:text="Take Photo" />
 
 
@@ -316,8 +319,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text=""
-                            android:visibility="gone" />
+                            android:enabled="false"
+                            android:text="@={anthro.fileNameM}"
+                            android:textColor="@color/gray"
+                            android:textSize="12dp"
+                            android:visibility="@{anthro.fileNameM.equals(``)?View.GONE:View.VISIBLE}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

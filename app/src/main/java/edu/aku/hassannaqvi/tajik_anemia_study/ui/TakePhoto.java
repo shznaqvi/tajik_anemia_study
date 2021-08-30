@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,6 +71,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
     String picView;
     String childName;
     TextView picInfo;
+    ImageView cameraLense;
     private boolean previewFlag;
     private String tmpFile = null;
 
@@ -81,9 +83,10 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         Intent intent = getIntent();
         picID = intent.getStringExtra("picID");
         picView = intent.getStringExtra("picView");
-        childName = intent.getStringExtra("childName");
+        childName = intent.getStringExtra("personName");
 
         picInfo = findViewById(R.id.picInfo);
+        cameraLense = findViewById(R.id.CameraLense);
         btnGrp = findViewById(R.id.btnGrp);
         btnGrp.setVisibility(View.GONE);
         hideSystemUI();
@@ -114,7 +117,10 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (previewFlag == false) {
+                    cameraLense.setVisibility(View.VISIBLE);
                     mCamera.cancelAutoFocus();
+                    cameraLense.setElevation(50);
+                    cameraLense.setAlpha(0.8f);
                     Camera.Parameters parameters = mCamera.getParameters();
                     //parameters.setJpegQuality(88);
 
@@ -128,11 +134,14 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
                     parameters.setPictureFormat(ImageFormat.JPEG);
                     mCamera.setParameters(parameters);
                     mCamera.autoFocus(new Camera.AutoFocusCallback() {
+
                         @Override
                         public void onAutoFocus(boolean b, Camera camera) {
                             previewFlag = true;
                             camera.takePicture(null, null, null, TakePhoto.this);
                             btnGrp.setVisibility(View.VISIBLE);
+                            cameraLense.setVisibility(View.GONE);
+
                         }
                     });
 
@@ -336,7 +345,8 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
             tmpFile = null;
             Intent intent = new Intent();
             intent.putExtra("FileName", "");
-            setResult(0, intent);
+            intent.putExtra("FileType", picView);
+            setResult(RESULT_CANCELED, intent);
             finish();//finishing activity
         }
     }
@@ -352,7 +362,8 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
             tmpFile = null;
             Intent intent = new Intent();
             intent.putExtra("FileName", fileName);
-            setResult(1, intent);
+            intent.putExtra("FileType", picView);
+            setResult(RESULT_OK, intent);
             finish();//finishing activity
             //previewFlag = false;
         }

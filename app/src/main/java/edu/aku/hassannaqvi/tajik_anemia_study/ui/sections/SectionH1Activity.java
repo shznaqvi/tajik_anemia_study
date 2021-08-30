@@ -1,5 +1,9 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.pregList;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.AndroidUtilityKt.isNetworkConnected;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,10 +34,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.SyncActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.ChildListActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.pregList;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.AndroidUtilityKt.isNetworkConnected;
 
 
 public class SectionH1Activity extends AppCompatActivity {
@@ -117,42 +117,51 @@ public class SectionH1Activity extends AppCompatActivity {
                     Toast.makeText(this, R.string.network_conn_error, Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.secH1:
+
                 startActivity(new Intent(this, SectionH1Activity.class));
                 return true;
             case R.id.secH2b:
+                finish();
                 startActivity(new Intent(this, SectionH2bActivity.class));
                 return true;
             case R.id.mwraList:
+                finish();
                 startActivity(new Intent(this, MwraListActivity.class));
                 return true;
             case R.id.childList:
                 MainApp.mwra = db.getSelectedMwraBYUID(MainApp.form.getUid());
                 if (MainApp.mwra != null) {
+                    finish();
                     startActivity(new Intent(this, ChildListActivity.class));
                 } else {
                     Toast.makeText(this, R.string.no_mother_selected_child_list, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secH3a:
+                finish();
                 startActivity(new Intent(this, SectionH3aActivity.class));
                 return true;
 
             case R.id.secH4:
-
+                finish();
                 startActivity(new Intent(this, SectionH4Activity.class));
                 return true;
             case R.id.secH5:
+                finish();
                 startActivity(new Intent(this, SectionH5Activity.class));
                 return true;
             case R.id.secH6:
+                finish();
                 startActivity(new Intent(this, SectionH6Activity.class));
                 return true;
             case R.id.secH7:
+                finish();
                 startActivity(new Intent(this, SectionH7Activity.class));
                 return true;
 
             case R.id.secW1:
                 if (!form.getW101d().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionW1aActivity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
@@ -161,6 +170,7 @@ public class SectionH1Activity extends AppCompatActivity {
             case R.id.secW1b:
                 if (MainApp.mwra != null) {
                     pregList = db.getPregBYMUID(MainApp.mwra.getUid());
+                    finish();
                     startActivity(new Intent(this, SectionW1bActivity.class));
                 } else {
                     Toast.makeText(this, R.string.no_mother_selected_preg_list, Toast.LENGTH_LONG).show();
@@ -170,13 +180,16 @@ public class SectionH1Activity extends AppCompatActivity {
 
             case R.id.secW2:
                 if (!form.getW201().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionW2Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.secW3:
+
                 if (!form.getW301().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionW3Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
@@ -184,6 +197,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 return true;
             case R.id.secW4:
                 if (!form.getW401().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionW4Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
@@ -191,6 +205,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 return true;
             case R.id.secC1:
                 if (!form.getC101().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionC1Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
@@ -198,6 +213,7 @@ public class SectionH1Activity extends AppCompatActivity {
                 return true;
             case R.id.secC2:
                 if (!form.getC201().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionC2Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();
@@ -206,6 +222,7 @@ public class SectionH1Activity extends AppCompatActivity {
             case R.id.secC3:
                 Log.d(TAG, "onOptionsItemSelected: C3 " + form.getC301().equals(""));
                 if (!form.getC301().equals("")) {
+                    finish();
                     startActivity(new Intent(this, SectionC3Activity.class));
                 } else {
                     Toast.makeText(this, R.string.sec_not_available_moment, Toast.LENGTH_LONG).show();

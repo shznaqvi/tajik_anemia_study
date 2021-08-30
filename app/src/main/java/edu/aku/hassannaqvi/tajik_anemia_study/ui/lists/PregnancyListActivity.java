@@ -105,9 +105,11 @@ public class PregnancyListActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(view -> {
-            if (MainApp.form.getiStatus().equals("")) {
+            if (!MainApp.form.getiStatus().equals("1")) {
                 //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                 MainApp.preg = new Pregnancy();
+                MainApp.preg.setW113(String.valueOf(MainApp.pregList.size() + 1));
+
                 addPreg();
             } else {
                 Toast.makeText(PregnancyListActivity.this, "This form has been locked. You cannot add new pregren to locked forms", Toast.LENGTH_LONG).show();

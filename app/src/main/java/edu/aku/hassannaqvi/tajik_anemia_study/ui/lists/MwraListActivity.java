@@ -114,7 +114,7 @@ public class MwraListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (MainApp.form.getiStatus().equals("")) {
+                if (!MainApp.form.getiStatus().equals("1")) {
                     //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
                     MainApp.mwra = new MWRA();
                     addFemale();

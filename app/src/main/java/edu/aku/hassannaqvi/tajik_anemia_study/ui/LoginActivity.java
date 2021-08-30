@@ -1,5 +1,10 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.TAJIKISTAN;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_COPY;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -58,11 +63,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.TAJIKISTAN;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_COPY;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
-
 public class LoginActivity extends AppCompatActivity {
 
     protected static LocationManager locationManager;
@@ -119,7 +119,11 @@ public class LoginActivity extends AppCompatActivity {
                         Manifest.permission.ACCESS_NETWORK_STATE,
                         Manifest.permission.WAKE_LOCK,
                         Manifest.permission.INTERNET,
-                        Manifest.permission.READ_PHONE_STATE
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.CAMERA
                 ).withListener(new MultiplePermissionsListener() {
             @Override
             public void onPermissionsChecked(MultiplePermissionsReport report) {
