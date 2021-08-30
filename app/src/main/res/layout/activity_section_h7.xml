@@ -78,50 +78,44 @@
                                 android:text="H701" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/ques" />
+
                         </LinearLayout>
 
-
-                        <LinearLayout
+                        <RadioGroup
+                            android:id="@+id/h701"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_weight="4"
                                 android:text="@string/h701" />
 
+                            <RadioButton
+                                android:id="@+id/h701a"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.h701.equals(`1`)}"
+                                android:onClick="@{()->form.setH701(`1`)}"
+                                android:text="@string/h701a" />
 
-                            <RadioGroup
-                                android:id="@+id/h701"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/h701b"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.h701.equals(`2`)}"
+                                android:onClick="@{()->form.setH701(`2`)}"
+                                android:text="@string/h701b" />
 
-                                <RadioButton
-                                    android:id="@+id/h701a"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:checked='@{form.h701.equals("1")}'
-                                    android:onClick='@{()->form.setH701("1")}'
-                                    android:text="@string/h701a" />
-
-                                <RadioButton
-                                    android:id="@+id/h701b"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:checked='@{form.h701.equals("2")}'
-                                    android:onClick='@{()->form.setH701("2")}'
-                                    android:text="@string/h701b" />
-                            </RadioGroup>
-                        </LinearLayout>
+                        </RadioGroup>
 
                         <LinearLayout
                             android:id="@+id/fldGrpCVh701t"
@@ -142,7 +136,6 @@
                                     android:layout_weight="1"
                                     android:text="@string/h701t1" />
 
-
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/h701q"
                                     android:layout_width="0dp"
@@ -155,6 +148,7 @@
                                     app:minValue="0"
                                     android:text="@={form.H701q}"
                                     app:type="range" />
+
                             </LinearLayout>
 
 
@@ -178,7 +172,9 @@
                                     android:layout_weight="1"
                                     android:text="@={form.H701s}"
                                     android:hint="@string/h701s" />
+
                             </LinearLayout>
+
                         </LinearLayout>
 
 
