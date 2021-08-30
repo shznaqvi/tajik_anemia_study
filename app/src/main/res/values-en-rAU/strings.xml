@@ -413,6 +413,7 @@
     <string name="h226t1">Number of Children between 6-59 months of age</string>
     <string name="h226t1_info">TOTAL NUMBERS WILL BE AUTO CALCULATED</string>
     <string name="h226t">Total Number of children between 6-59</string>
+    <string name="h226tError">Total Number of children cannot be equal to Zero</string>
     <string name="h226m">Male</string>
     <string name="h226f">Female</string>
     <string name="h227">Availability</string>

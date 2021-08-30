@@ -82,6 +82,7 @@
                             android:text="@={mwra.h221}"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
                             android:hint="@string/h221" />
 
                     </LinearLayout>
@@ -161,6 +162,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                app:defaultValue="98"
                                 app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
@@ -175,6 +177,7 @@
                                 android:text="@={mwra.h222m}"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                app:defaultValue="98"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
@@ -190,6 +193,7 @@
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
+                                app:defaultValue="9998"
                                 app:maxValue="2006"
                                 app:minValue="1972"
                                 app:type="range" />
@@ -610,6 +614,7 @@
                                 android:maxLength="2"
                                 app:maxValue="99"
                                 app:minValue="0"
+                                android:enabled="false"
                                 android:editable="false"
                                 app:type="range" />
 

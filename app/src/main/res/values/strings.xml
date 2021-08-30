@@ -415,6 +415,7 @@
     <string name="h226t">Total Number of children between 6-59</string>
     <string name="h226m">Male</string>
     <string name="h226f">Female</string>
+    <string name="h226tError">Total Number of children cannot be equal to Zero</string>
     <string name="h227">Availability</string>
     <string name="h227a">Yes</string>
     <string name="h227b">No</string>

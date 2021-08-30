@@ -113,7 +113,19 @@ public class SectionH2cActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        int totalchilds = Integer.parseInt(bi.h226m.getText().toString())
+                + Integer.parseInt(bi.h226f.getText().toString());
+
+        bi.h226t.setText(totalchilds);
+
+        if (totalchilds == 0) {
+            return Validator.emptyCustomTextBox(this, bi.h226t, getString(R.string.h226tError));
+        }
+
+        return true;
     }
 
     @Override
