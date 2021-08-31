@@ -1,5 +1,19 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.database;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ANTHRO;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CHILDLIST;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_MWRALIST;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_PREGNANCY;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_SAMPLES;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
+import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -45,20 +59,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.models.Stool;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Users;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.VersionApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.ZStandard;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_VERSION;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ANTHRO;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CHILDLIST;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_CLUSTERS;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_FORMS;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_MWRALIST;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_PREGNANCY;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_RANDOM;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_SAMPLES;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_USERS;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_VERSIONAPP;
-import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.SQL_CREATE_ZSTANDARD;
 
 
 
@@ -218,7 +218,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public Long addAnthro(Anthro anthro) {
+    public Long addAnthro(Anthro anthro) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(AnthroTable.COLUMN_PROJECT_NAME, anthro.getProjectName());
@@ -229,7 +229,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(AnthroTable.COLUMN_USERNAME, anthro.getUserName());
         values.put(AnthroTable.COLUMN_SYSDATE, anthro.getSysDate());
         values.put(AnthroTable.COLUMN_SUBJECTNAME, anthro.getSubjectName());
-        values.put(AnthroTable.COLUMN_S1, anthro.getS1());
+        values.put(AnthroTable.COLUMN_S1, anthro.s1toString());
 
         values.put(AnthroTable.COLUMN_DEVICEID, anthro.getDeviceId());
         values.put(AnthroTable.COLUMN_DEVICETAGID, anthro.getDeviceTag());
@@ -900,7 +900,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedChildList() {
+    public JSONArray getUnsyncedChildList() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -983,7 +983,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedBlood() {
+    public JSONArray getUnsyncedBlood() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1622,7 +1622,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mwraByUID;
     }
 
-    public List<Child> getChildBYMUID(String muid) {
+    public List<Child> getChildBYMUID(String muid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1664,7 +1664,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return childByUID;
     }
 
-    public Child getYoungestChildByMUID(String muid) {
+    public Child getYoungestChildByMUID(String muid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1872,4 +1872,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return anthroByUID;
     }
+
+
 }

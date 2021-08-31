@@ -5,6 +5,7 @@ import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.Observable;
 import androidx.databinding.PropertyChangeRegistry;
 
 import org.apache.commons.lang3.StringUtils;
@@ -15,7 +16,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
-public class Form extends BaseObservable {
+public class Form extends BaseObservable implements Observable {
 
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
@@ -24,6 +25,8 @@ public class Form extends BaseObservable {
     // APP VARIABLES
     private String id = StringUtils.EMPTY;
     private String uid = StringUtils.EMPTY;
+    private String wuid = StringUtils.EMPTY;
+    private String cuid = StringUtils.EMPTY;
     private String userName = StringUtils.EMPTY;
     private String sysDate = StringUtils.EMPTY;
     private String cluster = StringUtils.EMPTY;
@@ -9955,6 +9958,26 @@ public class Form extends BaseObservable {
         notifyPropertyChanged(BR.c323dx);
     }
 
+    @Bindable
+    public String getWuid() {
+        return wuid;
+    }
+
+    public void setWuid(String wuid) {
+        this.wuid = wuid;
+        notifyPropertyChanged(BR.wuid);
+    }
+
+    @Bindable
+    public String getCuid() {
+        return cuid;
+    }
+
+    public void setCuid(String cuid) {
+        this.cuid = cuid;
+        notifyPropertyChanged(BR.cuid);
+    }
+
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
@@ -10297,6 +10320,7 @@ public class Form extends BaseObservable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.w100name = json.getString("w100name");
+            this.wuid = json.has("wuid") ? json.getString("wuid") : "";
             this.w101d = json.getString("w101d");
             this.w101m = json.getString("w101m");
             this.w101y = json.getString("w101y");
@@ -10619,6 +10643,7 @@ public class Form extends BaseObservable {
             JSONObject json = null;
             json = new JSONObject(string);
             this.c100name = json.getString("c100name");
+            this.cuid = json.has("cuid") ? json.getString("cuid") : "";
             this.c101 = json.getString("c101");
             this.c102 = json.getString("c102");
             this.c103 = json.getString("c103");
@@ -11193,6 +11218,7 @@ public class Form extends BaseObservable {
         json.put("w101d", w101d)
 
                 .put("w100name", w100name)
+                .put("wuid", wuid)
                 .put("w101m", w101m)
                 .put("w101y", w101y)
                 .put("w102", w102)
@@ -11511,6 +11537,7 @@ public class Form extends BaseObservable {
         json.put("c101", c101)
                 .put("c102", c102)
                 .put("c100name", c100name)
+                .put("cuid", cuid)
                 .put("c103", c103)
                 .put("c104", c104)
                 .put("c105", c105)
@@ -11874,4 +11901,6 @@ public class Form extends BaseObservable {
         }
 
     }
+
+
 }

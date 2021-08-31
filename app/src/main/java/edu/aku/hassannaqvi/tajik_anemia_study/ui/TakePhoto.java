@@ -34,7 +34,7 @@ import id.zelory.compressor.Compressor;
 
 public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camera.PictureCallback {
 
-    /*
+    /**
     FILES:
         - TakePhoto.java
         - activity_camera.xml
@@ -50,18 +50,16 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
 
     RETURNS:
         onActivityResult(resultCode) 0= Photo Cancel, 1=Photo Taken
-        if resultCode = 1 than also returns -> Intent Extra (FileName)
+     if resultCode = 1 than also returns -> Intent Extra (FileName)
 
-    USAGE:
+     USAGE:
 
-
-        Intent intent=new Intent(MainActivity.this,TakePhoto.class);
-        intent.putExtra("picID",editText1.getText().toString());
-        intent.putExtra("picView","front".toUpperCase());
-        intent.putExtra("childName",editText2.getText().toString());
-        startActivityForResult(intent, 2);
-
-     */
+     Intent intent=new Intent(MainActivity.this,TakePhoto.class);
+     intent.putExtra("picID",editText1.getText().toString());
+     intent.putExtra("picView","front".toUpperCase());
+     intent.putExtra("childName",editText2.getText().toString());
+     startActivityForResult(intent, 2);
+     **/
 
     private static final String TAG = "Photo Capture";
     Camera mCamera;
@@ -72,6 +70,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
     String childName;
     TextView picInfo;
     ImageView cameraLense;
+    ImageView cameraFrame;
     private boolean previewFlag;
     private String tmpFile = null;
 
@@ -87,6 +86,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
 
         picInfo = findViewById(R.id.picInfo);
         cameraLense = findViewById(R.id.CameraLense);
+        cameraFrame = findViewById(R.id.CameraFrame);
         btnGrp = findViewById(R.id.btnGrp);
         btnGrp.setVisibility(View.GONE);
         hideSystemUI();
@@ -117,7 +117,9 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (previewFlag == false) {
+                    cameraFrame.setVisibility(View.GONE);
                     cameraLense.setVisibility(View.VISIBLE);
+
                     mCamera.cancelAutoFocus();
                     cameraLense.setElevation(50);
                     cameraLense.setAlpha(0.8f);

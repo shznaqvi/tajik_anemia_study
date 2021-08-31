@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.MainActivity;
@@ -69,7 +71,7 @@ public class ChildListActivity extends AppCompatActivity {
 
                         //        }
 
-                     //   checkCompleteFm();
+                        //   checkCompleteFm();
                     }
                     if (result.getResultCode() == Activity.RESULT_CANCELED) {
                         Toast.makeText(ChildListActivity.this, "No child added.", Toast.LENGTH_SHORT).show();
@@ -89,7 +91,12 @@ public class ChildListActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         MainApp.childList = new ArrayList<>();
         Log.d(TAG, "onCreate: childlist " + MainApp.childList.size());
-        MainApp.childList = db.getChildBYMUID(MainApp.mwra.getUid());
+        try {
+            MainApp.childList = db.getChildBYMUID(MainApp.mwra.getUid());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CHILD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
         // Set Selected Child
         for (int i = 0; i < MainApp.childList.size(); i++) {
@@ -167,7 +174,12 @@ public class ChildListActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
 
-        MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
+        try {
+            MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CHILD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         MainApp.childList = new ArrayList<>();
         finish();
 
@@ -230,30 +242,36 @@ public class ChildListActivity extends AppCompatActivity {
 
         int aCount = 0;
 
-        String childUid = db.getYoungestChildByMUID(MainApp.mwra.getUid()).getUid();
-        for (int i = 0; i < MainApp.childList.size(); i++) {
+        String childUid = null;
+        try {
+            childUid = db.getYoungestChildByMUID(MainApp.mwra.getUid()).getUid();
 
-            MainApp.child = MainApp.childList.get(i);
-            // Get Child from list
-            String curChildUid = MainApp.child.getUid();
+            for (int i = 0; i < MainApp.childList.size(); i++) {
 
-            // Unselect and Disable if MWRA has been previously selected and refused
-            if (childUid.equals(curChildUid)) {
-                MainApp.selectedChild = String.valueOf(i);
-                MainApp.child.setIndexed("1");
-                childAdapter.notifyDataSetChanged();
+                MainApp.child = MainApp.childList.get(i);
+                // Get Child from list
+                String curChildUid = MainApp.child.getUid();
 
-                // Updating database to mark indexed mother
-                db.updatesChildListColumn(TableContracts.ChildListTable.COLUMN_INDEX, "1");
+                // Unselect and Disable if MWRA has been previously selected and refused
+                if (childUid.equals(curChildUid)) {
+                    MainApp.selectedChild = String.valueOf(i);
+                    MainApp.child.setIndexed("1");
+                    childAdapter.notifyDataSetChanged();
 
-                // Updating adapter
-                bi.btnRand.setVisibility(View.INVISIBLE);
-                bi.btnContinue.setVisibility(View.VISIBLE);
-                bi.btnContinue.setEnabled(true);
+                    // Updating database to mark indexed mother
+                    db.updatesChildListColumn(TableContracts.ChildListTable.COLUMN_INDEX, "1");
+
+                    // Updating adapter
+                    bi.btnRand.setVisibility(View.INVISIBLE);
+                    bi.btnContinue.setVisibility(View.VISIBLE);
+                    bi.btnContinue.setEnabled(true);
+                }
+
             }
-
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CHILD)" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
     }
 
 

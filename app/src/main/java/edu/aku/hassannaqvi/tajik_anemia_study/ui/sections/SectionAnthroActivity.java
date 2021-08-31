@@ -28,7 +28,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionAnthroBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.TakePhoto;
 
 
@@ -93,7 +93,6 @@ public class SectionAnthroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_anthro);
-        bi.setCallback(this);
 
         db = MainApp.appInfo.getDbHelper();
         MainApp.anthro = new Anthro();
@@ -158,29 +157,35 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
 
     private boolean updateDB() {
-        db = MainApp.appInfo.getDbHelper();
-        long updcount = db.addAnthro(MainApp.anthro);
-        MainApp.anthro.setId(String.valueOf(updcount));
-        if (updcount > 0) {
-            MainApp.anthro.setUid(MainApp.anthro.getDeviceId() + MainApp.anthro.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.anthro.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-            return false;
+        long updcount = 0;
+        try {
+            updcount = db.updatesAnthroColumn(TableContracts.AnthroTable.COLUMN_S1, MainApp.anthro.s1toString());
+            if (updcount > 0) {
+                return true;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, getString(R.string.upd_anthro) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_anthro) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+        return false;
     }
 
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         saveDraft();
         if (updateDB()) {
+            MainApp.subjectNames.remove(bi.d104.getSelectedItemPosition());
             finish();
-            startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+            if (MainApp.subjectNames.size() == 1)
+                startActivity(new Intent(this, IdentificationActivity.class).putExtra("complete", true));
+            else
+                startActivity(new Intent(this, SectionAnthroActivity.class).putExtra("complete", true));
+
+        } else Toast.makeText(this, getString(R.string.fail_db_upd), Toast.LENGTH_SHORT).show();
+
     }
 
 
@@ -263,5 +268,26 @@ public class SectionAnthroActivity extends AppCompatActivity {
         }
     }
 
-
+    private boolean insertNewRecord() {
+        if (!MainApp.anthro.getUid().equals("")) return true;
+        long rowId = 0;
+        try {
+            rowId = db.addAnthro(MainApp.anthro);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, getString(R.string.db_excp_error), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, getString(R.string.upd_anthro) + e.getMessage());
+            Toast.makeText(this, getString(R.string.upd_anthro) + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.anthro.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.anthro.setUid(MainApp.anthro.getDeviceId() + MainApp.anthro.getId());
+            db.updatesAnthroColumn(TableContracts.AnthroTable.COLUMN_UID, MainApp.anthro.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
 }

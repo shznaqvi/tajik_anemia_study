@@ -136,7 +136,9 @@ public class MwraListActivity extends AppCompatActivity {
         //MainApp.child = new Child();
         if (MainApp.mwraList.size() > 0 && MainApp.selectedFemale.equals("")) {
             //MainApp.fm.get(Integer.parseInt(String.valueOf(MainApp.selectedFemale))).setStatus("1");
-            //  bi.btnRand.setVisibility(View.VISIBLE);
+            bi.btnRand.setVisibility(View.VISIBLE);
+            bi.btnContinue.setVisibility(View.INVISIBLE);
+
         } else {
             bi.btnRand.setVisibility(View.INVISIBLE);
             bi.btnContinue.setVisibility(View.VISIBLE);
@@ -277,7 +279,7 @@ public class MwraListActivity extends AppCompatActivity {
     private void displayProceedDialog() {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.title_mwra_dialog)
-                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size(), MainApp.form.getH220b()))
+                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size() + "", MainApp.form.getH220b()))
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.

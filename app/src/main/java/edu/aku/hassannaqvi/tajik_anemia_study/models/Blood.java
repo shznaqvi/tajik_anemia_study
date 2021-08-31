@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.models;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -411,7 +410,7 @@ public class Blood extends BaseObservable {
 
 
 
-    public Blood Hydrate(Cursor cursor) {
+    public Blood Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UUID));
@@ -432,18 +431,17 @@ public class Blood extends BaseObservable {
     }
 
 
-    public void s1Hydrate(String string) {
+    public void s1Hydrate(String string) throws JSONException {
 
         if (string != null) {
 
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.e101 = json.getString("e101");
-                this.e102 = json.getString("e102");
-                this.e103 = json.getString("e103");
-                this.e104 = json.getString("e104");
-                this.e105 = json.getString("e105");
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.e101 = json.getString("e101");
+            this.e102 = json.getString("e102");
+            this.e103 = json.getString("e103");
+            this.e104 = json.getString("e104");
+            this.e105 = json.getString("e105");
                 this.e106 = json.getString("e106");
                 this.e107 = json.getString("e107");
                 this.e018 = json.getString("e018");
@@ -458,25 +456,22 @@ public class Blood extends BaseObservable {
                 this.e117 = json.getString("e117");
                 this.e118 = json.getString("e118");
                 this.e119 = json.getString("e119");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
 
-    public String s1toString() {
+    public String s1toString() throws JSONException {
         JSONObject json = new JSONObject();
 
-        try {
-            json.put("e101", e101)
-                    .put("e102", e102)
-                    .put("e103", e103)
-                    .put("e104", e104)
-                    .put("e105", e105)
-                    .put("e106", e106)
-                    .put("e107", e107)
-                    .put("e018", e018)
+        json.put("e101", e101)
+                .put("e102", e102)
+                .put("e103", e103)
+                .put("e104", e104)
+                .put("e105", e105)
+                .put("e106", e106)
+                .put("e107", e107)
+                .put("e018", e018)
                     .put("e109", e109)
                     .put("e110", e110)
                     .put("e111", e111)
@@ -488,26 +483,22 @@ public class Blood extends BaseObservable {
                     .put("e117", e117)
                     .put("e118", e118)
                     .put("e119", e119);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "\"error\":, \"" + e.getMessage() + "\"";
-        }
+
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(BloodTable.COLUMN_ID, this.id);
-            json.put(BloodTable.COLUMN_UID, this.uid);
-            json.put(BloodTable.COLUMN_UUID, this.uuid);
-            json.put(BloodTable.COLUMN_CLUSTER, this.cluster);
-            json.put(BloodTable.COLUMN_HHID, this.hhid);
-            json.put(BloodTable.COLUMN_USERNAME, this.userName);
-            json.put(BloodTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(BloodTable.COLUMN_ID, this.id);
+        json.put(BloodTable.COLUMN_UID, this.uid);
+        json.put(BloodTable.COLUMN_UUID, this.uuid);
+        json.put(BloodTable.COLUMN_CLUSTER, this.cluster);
+        json.put(BloodTable.COLUMN_HHID, this.hhid);
+        json.put(BloodTable.COLUMN_USERNAME, this.userName);
+        json.put(BloodTable.COLUMN_SYSDATE, this.sysDate);
             json.put(BloodTable.COLUMN_DEVICEID, this.deviceId);
             json.put(BloodTable.COLUMN_DEVICETAGID, this.deviceTag);
             json.put(BloodTable.COLUMN_ISTATUS, this.iStatus);
@@ -516,10 +507,6 @@ public class Blood extends BaseObservable {
 
             json.put(BloodTable.COLUMN_S1, new JSONObject(s1toString()));
             return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "toJSONObject: " + e.getMessage());
-            return null;
-        }
+
     }
 }

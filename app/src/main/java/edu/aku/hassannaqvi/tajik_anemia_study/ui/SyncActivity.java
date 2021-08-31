@@ -1,5 +1,10 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.sdDir;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.uploadData;
+import static edu.aku.hassannaqvi.tajik_anemia_study.utils.AndroidUtilityKt.isNetworkConnected;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
@@ -60,11 +65,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.workers.DataDownWorkerALL;
 import edu.aku.hassannaqvi.tajik_anemia_study.workers.DataUpWorkerALL;
 import edu.aku.hassannaqvi.tajik_anemia_study.workers.PhotoUploadWorker2;
 import edu.aku.hassannaqvi.tajik_anemia_study.workers.ReadJSONWorker;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.sdDir;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.uploadData;
-import static edu.aku.hassannaqvi.tajik_anemia_study.utils.AndroidUtilityKt.isNetworkConnected;
 
 
 public class SyncActivity extends AppCompatActivity {
@@ -156,7 +156,12 @@ public class SyncActivity extends AppCompatActivity {
 
                 // Child
                 uploadTables.add(new SyncModel(ChildListTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedChildList());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedChildList());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
                 // Anthro
                 uploadTables.add(new SyncModel(AnthroTable.TABLE_NAME));
@@ -164,7 +169,7 @@ public class SyncActivity extends AppCompatActivity {
                     MainApp.uploadData.add(db.getUnsyncedAnthro());
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(this, "JSONException: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "JSONException(Anthro): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 /*// Blood

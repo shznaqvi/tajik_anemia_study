@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -23,8 +25,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionSamples
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
 public class SectionSamplesActivity extends AppCompatActivity {
@@ -55,6 +55,8 @@ public class SectionSamplesActivity extends AppCompatActivity {
 
         populateSpinner();
         setupSkips();
+        // new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
+
     }
 
     private void populateSpinner() {
@@ -136,8 +138,14 @@ public class SectionSamplesActivity extends AppCompatActivity {
         }
         MainApp.samples.setId(String.valueOf(rowId));
         if (rowId > 0) {
-            MainApp.samples.setUid(MainApp.samples.getDeviceId() + form.getId());
-            db.updatesSampColumn(TableContracts.SamplesTable.COLUMN_UID, MainApp.samples.getUid());
+            rowId = 0;
+            MainApp.samples.setUid(MainApp.samples.getDeviceId() + MainApp.samples.getId());
+            rowId = db.updatesSampColumn(TableContracts.SamplesTable.COLUMN_UID, MainApp.samples.getUid());
+            if (rowId > 0) {
+                return true;
+            } else {
+                Toast.makeText(this, "UID ERROR", Toast.LENGTH_SHORT).show();
+            }
             return true;
         } else {
             Toast.makeText(this, getString(R.string.upd_db_error), Toast.LENGTH_SHORT).show();
@@ -206,4 +214,31 @@ public class SectionSamplesActivity extends AppCompatActivity {
     }
 
 
+    // https://github.com/journeyapps/zxing-android-embedded
+    public void scanQR(View view) {
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
+        integrator.setPrompt("Scan a QR-Code");
+        integrator.setCameraId(0);  // Use a specific camera of the device
+        integrator.setBeepEnabled(false);
+        integrator.setBarcodeImageEnabled(true);
+        integrator.initiateScan();
+    }
+
+
+    // Get the results:
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                bi.e018.setText(result.getContents());
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }

@@ -338,7 +338,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
                         // Add woman if exist
                         if (!MainApp.form.getW100Name().equals("")) {
-                            MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW105() + ")");
+                            MainApp.subjectNames.add(MainApp.form.getW100Name() + " (" + MainApp.form.getW102() + ")");
                             // Add child if both woman and child exist
                             if (!MainApp.form.getC100Name().equals("")) {
                                 MainApp.subjectNames.add(MainApp.form.getC100Name());

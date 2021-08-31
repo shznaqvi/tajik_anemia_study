@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -23,8 +25,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.PregnancyListActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-
 
 public class SectionW1aActivity extends AppCompatActivity {
     private static final String TAG = "SectionW1aActivity";
@@ -41,6 +41,7 @@ public class SectionW1aActivity extends AppCompatActivity {
         bi.setForm(form);
 
         form.setW100Name(MainApp.mwra.getH221());
+        form.setWuid(MainApp.mwra.getUid());
 
         setupSkips();
     }

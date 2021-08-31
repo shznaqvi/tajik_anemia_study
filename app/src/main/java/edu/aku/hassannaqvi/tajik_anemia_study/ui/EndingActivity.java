@@ -49,7 +49,11 @@ public class EndingActivity extends AppCompatActivity {
     private void saveDraft() {
         form.setiStatus(bi.istatusa.isChecked() ? "1"
                 : bi.istatusb.isChecked() ? "2"
-                : bi.istatusc.isChecked() ? "9"
+                : bi.istatusc.isChecked() ? "3"
+                : bi.istatusd.isChecked() ? "4"
+                : bi.istatuse.isChecked() ? "5"
+                : bi.istatusf.isChecked() ? "6"
+                : bi.istatus96.isChecked() ? "96"
                 : "-1");
         // form.setEndTime(new SimpleDateFormat("dd-MM-yy HH:mm", Locale.ENGLISH).format(new Date().getTime()));
     }

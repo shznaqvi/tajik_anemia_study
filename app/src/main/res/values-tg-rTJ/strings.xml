@@ -2682,6 +2682,7 @@
     <string name="open_household_form">OPEN HOUSEHOLD FORM</string>
     <string name="woman_child_info_missing">Please fill woman and child sections before entering this information</string>
     <string name="child_info_missing">Please fill child sections before entering this information</string>
+    <string name="upd_anthro">" updateDB(Anthro):"</string>
 
 
 </resources>

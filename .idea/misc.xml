@@ -8,9 +8,14 @@
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_camera_lense.xml" value="0.34296875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_check_circle.xml" value="0.5875" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_qr_code_scanner.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_camera.xml" value="0.56328125" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_ending.xml" value="0.56328125" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_main.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_anthro.xml" value="0.5432756324900133" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_c1.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_h1.xml" value="0.56328125" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_samples.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_w1a.xml" value="0.56328125" />
       </map>
     </option>

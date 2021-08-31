@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
+import edu.aku.hassannaqvi.tajik_anemia_study.database.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
@@ -155,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.secc3:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionC3Activity.class));
+                break;
+            case R.id.dbManager:
+                startActivity(new Intent(this, AndroidDatabaseManager.class));
                 break;
 
 

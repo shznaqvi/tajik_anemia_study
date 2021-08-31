@@ -5,7 +5,6 @@ import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-import androidx.databinding.PropertyChangeRegistry;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
@@ -23,7 +22,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 public class Child extends BaseObservable {
 
     private final String TAG = "Child";
-    private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
 
     // APP VARIABLES
     private String projectName = MainApp.PROJECT_NAME;
@@ -400,7 +398,7 @@ public class Child extends BaseObservable {
     }
 
 
-    public Child Hydrate(Cursor cursor) {
+    public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UUID));
@@ -423,26 +421,23 @@ public class Child extends BaseObservable {
         return this;
     }
 
-    public void s1Hydrate(String string) {
+    public void s1Hydrate(String string) throws JSONException {
 
         if (string != null) {
 
-            try {
-                JSONObject json = null;
-                json = new JSONObject(string);
-                this.h228 = json.getString("h228");
-                this.h229 = json.getString("h229");
-                this.h230d = json.getString("h230d");
-                this.h230m = json.getString("h230m");
-                this.h230y = json.getString("h230y");
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.h228 = json.getString("h228");
+            this.h229 = json.getString("h229");
+            this.h230d = json.getString("h230d");
+            this.h230m = json.getString("h230m");
+            this.h230y = json.getString("h230y");
                 this.h231y = json.getString("h231y");
                 this.h231m = json.getString("h231m");
                 this.h231d = json.getString("h231d");
                 this.h232 = json.getString("h232");
                 this.h233 = json.getString("h233");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 
@@ -466,18 +461,17 @@ public class Child extends BaseObservable {
     }
 
 
-    public JSONObject toJSONObject() {
+    public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
 
-        try {
-            json.put(ChildListTable.COLUMN_ID, this.id);
-            json.put(ChildListTable.COLUMN_UID, this.uid);
-            json.put(ChildListTable.COLUMN_UUID, this.uuid);
-            json.put(ChildListTable.COLUMN_MUID, this.muid);
-            json.put(ChildListTable.COLUMN_CLUSTER, this.cluster);
-            json.put(ChildListTable.COLUMN_HHID, this.hhid);
-            json.put(ChildListTable.COLUMN_USERNAME, this.userName);
+        json.put(ChildListTable.COLUMN_ID, this.id);
+        json.put(ChildListTable.COLUMN_UID, this.uid);
+        json.put(ChildListTable.COLUMN_UUID, this.uuid);
+        json.put(ChildListTable.COLUMN_MUID, this.muid);
+        json.put(ChildListTable.COLUMN_CLUSTER, this.cluster);
+        json.put(ChildListTable.COLUMN_HHID, this.hhid);
+        json.put(ChildListTable.COLUMN_USERNAME, this.userName);
             json.put(ChildListTable.COLUMN_SYSDATE, this.sysDate);
             json.put(ChildListTable.COLUMN_AGE, this.age);
             json.put(ChildListTable.COLUMN_INDEX, this.indexed);
@@ -489,10 +483,6 @@ public class Child extends BaseObservable {
 
             json.put(ChildListTable.COLUMN_S1, new JSONObject(s1toString()));
             return json;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Log.d(TAG, "toJSONObject: " + e.getMessage());
-            return null;
-        }
+
     }
 }

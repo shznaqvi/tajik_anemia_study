@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,8 +23,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionC1Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-
 
 public class SectionC1Activity extends AppCompatActivity {
     private static final String TAG = "SectionC1Activity";
@@ -37,6 +37,7 @@ public class SectionC1Activity extends AppCompatActivity {
         bi.setCallback(this);
         bi.setForm(form);
         form.setC100Name(MainApp.child.getH229());
+        form.setCuid(MainApp.child.getUid());
         setupSkips();
     }
 
@@ -332,7 +333,25 @@ public class SectionC1Activity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        if (bi.c108a.isChecked() && (!bi.c107aa.isChecked() || !bi.c107ra.isChecked())) {
+        if (bi.c108a.isChecked() && (
+                !bi.c107aa.isChecked()
+                        || !bi.c107ca.isChecked()
+                        || !bi.c107da.isChecked()
+                        || !bi.c107ea.isChecked()
+                        || !bi.c107fa.isChecked()
+                        || !bi.c107ga.isChecked()
+                        || !bi.c107ha.isChecked()
+                        || !bi.c107ia.isChecked()
+                        || !bi.c107ja.isChecked()
+                        || !bi.c107ka.isChecked()
+                        || !bi.c107la.isChecked()
+                        || !bi.c107ma.isChecked()
+                        || !bi.c107na.isChecked()
+                        || !bi.c107oa.isChecked()
+                        || !bi.c107pa.isChecked()
+                        || !bi.c107qa.isChecked()
+                        || !bi.c107ra.isChecked()
+        )) {
             bi.fldGrpCVc107a.setFocusable(true);
             bi.fldGrpCVc107r.setFocusable(true);
             Toast.makeText(this, R.string.invalid_response, Toast.LENGTH_SHORT).show();
