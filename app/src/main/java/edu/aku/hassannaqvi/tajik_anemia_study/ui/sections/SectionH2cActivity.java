@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,9 +23,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2cBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.MWRA;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.mwra;
 
 
 public class SectionH2cActivity extends AppCompatActivity {
@@ -116,14 +116,9 @@ public class SectionH2cActivity extends AppCompatActivity {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName))
             return false;
 
-        int totalchilds = Integer.parseInt(bi.h226m.getText().toString())
-                + Integer.parseInt(bi.h226f.getText().toString());
-
-        bi.h226t.setText(totalchilds);
-
-        if (totalchilds == 0) {
+        if (Integer.parseInt(bi.h226m.getText().toString())
+                + Integer.parseInt(bi.h226f.getText().toString()) == 0)
             return Validator.emptyCustomTextBox(this, bi.h226t, getString(R.string.h226tError));
-        }
 
         return true;
     }
