@@ -438,18 +438,14 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <EditText
                                 android:id="@+id/e018"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:hint="@string/e018"
-                                android:inputType="number"
-                                android:maxLength="3"
-                                app:maxValue="100"
-                                app:minValue="1"
-                                android:text="@={samples.e108}"
-                                app:type="range" />
+                                android:enabled="false"
+                                android:text="@={samples.e108}" />
 
                             <Button
                                 android:id="@+id/btnWeightCamera"

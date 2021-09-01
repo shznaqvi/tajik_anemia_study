@@ -1838,18 +1838,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
 
         String whereClause;
-        whereClause = AnthroTable.COLUMN_UUID + "=? AND "
-                + AnthroTable.COLUMN_SUBJECTNAME + "=?";
+        whereClause = AnthroTable.COLUMN_UUID + " = ? AND "
+                + AnthroTable.COLUMN_SUBJECTNAME + " = ? ";
 
         String[] whereArgs = {uid, subjectName};
 
         String groupBy = null;
         String having = null;
 
-        String orderBy = AnthroTable.COLUMN_ID + " ASC";
+        String orderBy = AnthroTable.COLUMN_ID + " ASC ";
 
         Anthro anthroByUID = new Anthro();
-        try {
+
             c = db.query(
                     AnthroTable.TABLE_NAME,  // The table to query
                     columns,                   // The columns to return
@@ -1862,14 +1862,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (c.moveToNext()) {
                 anthroByUID = new Anthro().Hydrate(c);
             }
-        } finally {
-            if (c != null) {
+
                 c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
+
+
+        db.close();
+
+
         return anthroByUID;
     }
 

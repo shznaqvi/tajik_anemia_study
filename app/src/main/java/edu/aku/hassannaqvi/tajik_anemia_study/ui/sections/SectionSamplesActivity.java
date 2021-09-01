@@ -23,7 +23,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionSamplesBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
-import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
 
 
@@ -198,8 +197,10 @@ public class SectionSamplesActivity extends AppCompatActivity {
     }
 
     public void btnEnd(View view) {
+
+        setResult(RESULT_CANCELED);
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        // startActivity(new Intent(this, IdentificationActivity.class).putExtra("complete", true));
     }
 
 

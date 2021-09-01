@@ -1,13 +1,21 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.media.ThumbnailUtils;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -21,6 +29,8 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
+
+import java.io.File;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
@@ -37,6 +47,9 @@ public class SectionAnthroActivity extends AppCompatActivity {
     ActivitySectionAnthroBinding bi;
     private DatabaseHelper db;
     private int PhotoSerial;
+    Drawable checkedDrawable;
+    boolean isImageFitToScreen = false;
+
 
     ActivityResultLauncher<Intent> TakePhotoLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -45,38 +58,46 @@ public class SectionAnthroActivity extends AppCompatActivity {
                 public void onActivityResult(ActivityResult result) {
                     if (result.getResultCode() == Activity.RESULT_OK) {
 
-                        Drawable checkedDrawable = ContextCompat.getDrawable(SectionAnthroActivity.this, R.drawable.camera_checked);
+                        checkedDrawable = ContextCompat.getDrawable(SectionAnthroActivity.this, R.drawable.camera_checked);
                         // There are no request codes
                         //Intent data = result.getData();
                         Intent data = result.getData();
                         Toast.makeText(SectionAnthroActivity.this, "Photo Taken", Toast.LENGTH_SHORT).show();
                         String fileName = data.getStringExtra("FileName");
                         String fileType = data.getStringExtra("FileType");
+
                         switch (fileType) {
                             case "WEIGHT":
                                 bi.fileNameW.setText(fileName);
                                 bi.fileNameW.setVisibility(View.VISIBLE);
 
-                                bi.btnWeightCamera.setText("");
+                                // bi.btnWeightCamera.setText("");
                                 bi.btnWeightCamera.setEnabled(false);
                                 bi.btnWeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(fileName, bi.imageW);
+
 
                                 break;
                             case "HEIGHT":
                                 bi.fileNameH.setText(fileName);
                                 bi.fileNameH.setVisibility(View.VISIBLE);
 
-                                bi.btnHeightCamera.setText("");
+                                //  bi.btnHeightCamera.setText("");
                                 bi.btnHeightCamera.setEnabled(false);
                                 bi.btnHeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(fileName, bi.imageH);
+
+
                                 break;
                             case "MUAC":
                                 bi.fileNameM.setText(fileName);
                                 bi.fileNameM.setVisibility(View.VISIBLE);
 
-                                bi.btnMUACCamera.setText("");
+                                //    bi.btnMUACCamera.setText("");
                                 bi.btnMUACCamera.setEnabled(false);
                                 bi.btnMUACCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(fileName, bi.imageM);
+
                                 break;
 
                         }
@@ -115,6 +136,7 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
     }
 
+
     private void populateSpinner() {
 
         bi.d104.setAdapter(new ArrayAdapter(this, R.layout.custom_spinner, MainApp.subjectNames));
@@ -128,10 +150,38 @@ public class SectionAnthroActivity extends AppCompatActivity {
                         if (!tempAnthros.getUid().equals("")) {
 
                             MainApp.anthro.s1Hydrate(tempAnthros.s1toString());
+                            File sdDir = new File(getApplicationContext().getExternalFilesDir(
+                                    Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+                            final int THUMBSIZE = 64;
 
                             // uid is important because it will be checked in insertRecord() to check if this is new record or already exist
                             MainApp.anthro.setUid(tempAnthros.getUid());
                             MainApp.anthro.setId(tempAnthros.getId());
+
+                            // Reset drawable on Camera Buttons.
+                            checkedDrawable = ContextCompat.getDrawable(SectionAnthroActivity.this, R.drawable.camera);
+                            bi.btnWeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                            bi.btnHeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                            bi.btnMUACCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+
+                            checkedDrawable = ContextCompat.getDrawable(SectionAnthroActivity.this, R.drawable.camera_checked);
+
+                            if (!MainApp.anthro.getFileNameW().equals("")) {
+                                bi.btnWeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(MainApp.anthro.getFileNameW(), bi.imageW);
+                            }
+                            if (!MainApp.anthro.getFileNameH().equals("")) {
+                                bi.btnHeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(MainApp.anthro.getFileNameH(), bi.imageH);
+
+                            }
+
+                            if (!MainApp.anthro.getFileNameM().equals("")) {
+                                bi.btnMUACCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
+                                setAnthroImage(MainApp.anthro.getFileNameM(), bi.imageM);
+
+                            }
+
                         } else {
                             MainApp.anthro.setD104(bi.d104.getSelectedItem().toString());
                         }
@@ -290,4 +340,37 @@ public class SectionAnthroActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    private void setAnthroImage(String imageFile, ImageView v) {
+
+        File sdDir = new File(getApplicationContext().getExternalFilesDir(
+                Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+        final int THUMBSIZE = 64;
+
+        Bitmap fullImage = BitmapFactory.decodeFile(sdDir + File.separator + imageFile);
+        Bitmap ThumbImage = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(sdDir + File.separator + imageFile),
+                THUMBSIZE, THUMBSIZE);
+        v.setImageBitmap(ThumbImage);
+        v.setVisibility(View.VISIBLE);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView iv = new ImageView(SectionAnthroActivity.this);
+                iv = (ImageView) v;
+                if (isImageFitToScreen) {
+                    isImageFitToScreen = false;
+                    iv.setImageBitmap(ThumbImage);
+                    iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    iv.setAdjustViewBounds(true);
+                } else {
+                    isImageFitToScreen = true;
+                    iv.setImageBitmap(fullImage);
+                    iv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                }
+            }
+        });
+    }
+
+
 }

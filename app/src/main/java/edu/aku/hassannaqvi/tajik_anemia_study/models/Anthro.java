@@ -253,6 +253,7 @@ public class Anthro extends BaseObservable {
 
     public void setD104(String d104) {
         this.d104 = d104;
+        this.subjectName = d104;
         notifyPropertyChanged(BR.d104);
     }
 
@@ -387,7 +388,7 @@ public class Anthro extends BaseObservable {
             this.fileNameM = json.getString("fileNameM");
             this.fileNameH = json.getString("fileNameH");
             this.fileNameW = json.getString("fileNameW");
-
+            notifyChange();
         }
     }
 

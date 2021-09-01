@@ -1055,7 +1055,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked='@{form.w311.equals("1")}'
-                                android:onClick='@{()->form.setW310("1")}'
+                                android:onClick='@{()->form.setW311("1")}'
                                 android:text="@string/w311a" />
 
                             <RadioButton
