@@ -2,13 +2,13 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.TAJIKISTAN;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.sharedPref;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_COPY;
 import static edu.aku.hassannaqvi.tajik_anemia_study.database.CreateTable.DATABASE_NAME;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
@@ -71,12 +71,11 @@ public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding bi;
     Spinner spinnerDistrict;
-    SharedPreferences sharedPref;
-    SharedPreferences.Editor editor;
     String DirectoryName;
     DatabaseHelper db;
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
+    private int countryCode;
 
     public static String encrypt(String plain) {
         try {
@@ -142,8 +141,7 @@ public class LoginActivity extends AppCompatActivity {
         bi.setCallback(this);
 
         db = MainApp.appInfo.getDbHelper();
-        sharedPref = getSharedPreferences(PROJECT_NAME, MODE_PRIVATE);
-        editor = sharedPref.edit();
+
 
         settingCountryCode();
 
@@ -152,14 +150,12 @@ public class LoginActivity extends AppCompatActivity {
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
         dbBackup();
-
-
     }
 
-    private void settingCountryCode() {
+    /*    private void settingCountryCode() {
 
 
-/*
+     *//*
         bi.countrySwitch.setChecked(false);
 
 
@@ -169,10 +165,10 @@ public class LoginActivity extends AppCompatActivity {
                // prefs.setShowBounds(showBounds);
             }
         });
-*/
-  /*      editor
+*//*
+     *//*      editor
                 .putString("lang", bi.countrySwitch.isChecked()? "1" : "3")
-                .apply();*/
+                .apply();*//*
         bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
 
         bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -187,20 +183,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 
 
-    /*
+    /*    *//*
      * Setting country code in Shared Preference
-     * */
+     * *//*
     private void initializingCountry() {
- /*            countryCode = getCountryCode(this);
+        countryCode= Integer.parseInt(sharedPref.getString("lang", "0"));
             if (countryCode == 0) {
-                SharedStorage.setCountryCode(this@LoginActivity, PAKISTAN)
-            }*/
+               MainApp.editor.putString("lang","1").apply();
+            }
 
-        //changeLanguage(1);
-    }
+        changeLanguage(1);
+    }*/
 
     public void dbBackup() {
 
@@ -210,8 +206,8 @@ public class LoginActivity extends AppCompatActivity {
             String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
             if (!dt.equals(new SimpleDateFormat("dd-MM-yy").format(new Date()))) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
-                editor.apply();
+                MainApp.editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+                MainApp.editor.apply();
             }
 
             File folder = new File(Environment.getExternalStorageDirectory() + File.separator + PROJECT_NAME);
@@ -390,21 +386,53 @@ public class LoginActivity extends AppCompatActivity {
         if (countryCode == TAJIKISTAN) {
             lang = "tg";
             country = "TJ";
-            editor
+            MainApp.editor
                     .putString("lang", "3")
                     .apply();
         } else {
             lang = "en";
             country = "US";
-            editor
+            MainApp.editor
                     .putString("lang", "1")
                     .apply();
         }
         Locale locale = new Locale(lang, country);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
-        config.locale = locale;
+        config.setLocale(locale);
+        config.setLayoutDirection(new Locale(lang, country));
         this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
+
+    }
+
+    private void settingCountryCode() {
+
+        bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
+
+        bi.countrySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // do something, the isChecked will be
+                // true if the switch is in the On position
+                changeLanguage(isChecked ? 1 : 3);
+
+                startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+            }
+        });
+
+    }
+
+    /*
+     * Setting country code in Shared Preference
+     * */
+    private void initializingCountry() {
+        countryCode = Integer.parseInt(sharedPref.getString("lang", "0"));
+        if (countryCode == 0) {
+            MainApp.editor.putString("lang", "1").apply();
+        }
+
+        changeLanguage(Integer.parseInt(sharedPref.getString("lang", "0")));
     }
 }
 

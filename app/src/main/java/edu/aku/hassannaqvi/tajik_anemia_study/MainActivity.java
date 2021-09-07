@@ -3,6 +3,8 @@ package edu.aku.hassannaqvi.tajik_anemia_study;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,10 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.IdentificationActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.SyncActivity;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.FormsReportCluster;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.FormsReportDate;
+import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC1Activity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC2Activity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionC3Activity;
@@ -44,8 +50,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
+        setSupportActionBar(bi.toolbar);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //getSupportActionBar().setIcon(R.drawable.app_icon);
         bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
-        bi.username.setText("Welcome, " + MainApp.user.getFullname() + "!");
+        bi.toolbar.setSubtitle("Welcome, " + MainApp.user.getFullname() + (MainApp.admin ? " (Admin)" : "") + "!");
     }
 
     public void sectionPress(View view) {
@@ -164,4 +173,40 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.id.action_database:
+                intent = new Intent(MainActivity.this, AndroidDatabaseManager.class);
+                startActivity(intent);
+                break;
+            case R.id.onSync:
+                intent = new Intent(MainActivity.this, SyncActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.checkPendingForms:
+                intent = new Intent(MainActivity.this, FormsReportPending.class);
+                startActivity(intent);
+                break;
+            case R.id.formsReportDate:
+                intent = new Intent(MainActivity.this, FormsReportDate.class);
+                startActivity(intent);
+                break;
+            case R.id.formsReportCluster:
+                intent = new Intent(MainActivity.this, FormsReportCluster.class);
+                startActivity(intent);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.item_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 }

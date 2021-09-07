@@ -572,6 +572,8 @@ public class Form extends BaseObservable implements Observable {
     private String c100name = StringUtils.EMPTY;
     private String c101 = StringUtils.EMPTY;
     private String c102 = StringUtils.EMPTY;
+    private float c102max = 99;
+    private String c102x = StringUtils.EMPTY;
     private String c103 = StringUtils.EMPTY;
     private String c104 = StringUtils.EMPTY;
     private String c105 = StringUtils.EMPTY;
@@ -6880,8 +6882,31 @@ public class Form extends BaseObservable implements Observable {
 
     public void setC102(String c102) {
         this.c102 = c102;
+        setC102x(this.c102.equals("3") ? "" : this.c102x);
+        setC102max(c101.equals("2") ? 23f : 99f);
         notifyPropertyChanged(BR.c102);
     }
+
+    @Bindable
+    public String getC102x() {
+        return c102x;
+    }
+
+    public void setC102x(String c102x) {
+        this.c102x = c102x;
+        notifyPropertyChanged(BR.c102x);
+    }
+
+    @Bindable
+    public float getC102max() {
+        return c102max;
+    }
+
+    public void setC102max(float c102max) {
+        this.c102max = c102max;
+        notifyPropertyChanged(BR.c102max);
+    }
+
 
     @Bindable
     public String getC103() {
@@ -10646,6 +10671,7 @@ public class Form extends BaseObservable implements Observable {
             this.cuid = json.has("cuid") ? json.getString("cuid") : "";
             this.c101 = json.getString("c101");
             this.c102 = json.getString("c102");
+            this.c102x = json.getString("c102x");
             this.c103 = json.getString("c103");
             this.c104 = json.getString("c104");
             this.c105 = json.getString("c105");
@@ -11536,6 +11562,7 @@ public class Form extends BaseObservable implements Observable {
 
         json.put("c101", c101)
                 .put("c102", c102)
+                .put("c102x", c102x)
                 .put("c100name", c100name)
                 .put("cuid", cuid)
                 .put("c103", c103)

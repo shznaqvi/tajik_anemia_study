@@ -13,7 +13,6 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BuildConfig;
-import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
@@ -42,7 +41,6 @@ public class MainApp extends Application {
     //COUNTRIES
     public static int PAKISTAN = 1;
     public static int TAJIKISTAN = 3;
-
 
     public static File sdDir;
     public static String[] downloadData;
@@ -129,11 +127,8 @@ public class MainApp extends Application {
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
-        sharedPref = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
+        sharedPref = getSharedPreferences(PROJECT_NAME, MODE_PRIVATE);
         editor = sharedPref.edit();
-        MainApp.editor
-                .putString("mh01", "")
-                .apply();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
     }

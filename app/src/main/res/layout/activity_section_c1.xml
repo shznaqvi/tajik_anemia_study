@@ -189,6 +189,20 @@
 
                         </RadioGroup>
 
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/c102x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.c102x}"
+                            android:visibility="@{!form.c102.equals(`3`)?View.VISIBLE:View.GONE}"
+                            app:minValue="1"
+                            app:type="range" />
+
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>

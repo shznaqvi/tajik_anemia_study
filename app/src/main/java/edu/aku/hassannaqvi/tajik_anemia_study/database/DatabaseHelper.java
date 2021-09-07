@@ -814,7 +814,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String whereClause;
         //whereClause = null;
-        whereClause = FormsTable.COLUMN_SYNCED + " is null ";
+        whereClause = FormsTable.COLUMN_SYNCED + " is null AND " +
+                FormsTable.COLUMN_ISTATUS + "!= ''";
 
         String[] whereArgs = null;
 
@@ -1863,7 +1864,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 anthroByUID = new Anthro().Hydrate(c);
             }
 
-                c.close();
+        c.close();
 
 
         db.close();
@@ -1872,5 +1873,266 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return anthroByUID;
     }
 
+
+    public Collection<Form> getFormsByCluster(String cluster) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = FormsTable.COLUMN_CLUSTER + " = ? ";
+        String[] whereArgs = new String[]{cluster};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                FormsTable.COLUMN_ID + " ASC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhid(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHID)));
+                fc.setiStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public Collection<Form> getTodayForms(String sysdate) {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = FormsTable.COLUMN_SYSDATE + " Like ? ";
+        String[] whereArgs = new String[]{"%" + sysdate + " %"};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " DESC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhid(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHID)));
+                fc.setiStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+
+    public Collection<Form> getPendingForms() {
+
+        // String sysdate =  spDateT.substring(0, 8).trim()
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = FormsTable.COLUMN_ISTATUS + " = ?";
+        String[] whereArgs = new String[]{""};
+//        String[] whereArgs = new String[]{"%" + spDateT.substring(0, 8).trim() + "%"};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " DESC";
+
+        Collection<Form> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Form fc = new Form();
+                fc.setId(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
+                fc.setUid(c.getString(c.getColumnIndex(FormsTable.COLUMN_UID)));
+                fc.setSysDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYSDATE)));
+                fc.setCluster(c.getString(c.getColumnIndex(FormsTable.COLUMN_CLUSTER)));
+                fc.setHhid(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHID)));
+                fc.setiStatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
+                fc.setSynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
+                allFC.add(fc);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public int checkAnthro(String UID) {
+        String countQuery = "SELECT  * FROM " + AnthroTable.TABLE_NAME +
+                " WHERE " + AnthroTable.COLUMN_UUID + " = '" + UID + "'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int checkBlood(String UID) {
+        String countQuery = "SELECT  * FROM " + SamplesTable.TABLE_NAME +
+                " WHERE " + SamplesTable.COLUMN_UUID + " = '" + UID + "' AND " +
+                SamplesTable.COLUMN_SAMPLE_TYPE + " = '3'  ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int checkStool(String UID) {
+        String countQuery = "SELECT  * FROM " + SamplesTable.TABLE_NAME +
+                " WHERE " + SamplesTable.COLUMN_UUID + " = '" + UID + "' AND " +
+                SamplesTable.COLUMN_SAMPLE_TYPE + " = '4'  ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public String getWraName(String uid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {FormsTable.COLUMN_SW1A};
+
+        String whereClause;
+        whereClause = FormsTable.COLUMN_UID + "=?  ";
+
+        String[] whereArgs = {uid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Form form = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                form = new Form();
+                form.sW1aHydrate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SW1A)));
+
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return form.getW100Name();
+    }
+
+    public String getChildName(String uid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {FormsTable.COLUMN_SC1};
+
+        String whereClause;
+        whereClause = FormsTable.COLUMN_UID + "=?  ";
+
+        String[] whereArgs = {uid};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = FormsTable.COLUMN_ID + " ASC";
+
+        Form form = null;
+        try {
+            c = db.query(
+                    FormsTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                form = new Form();
+                form.sC1Hydrate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SC1)));
+
+
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return form.getC100Name();
+    }
 
 }

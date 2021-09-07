@@ -2344,7 +2344,7 @@
                                     android:id="@+id/w324b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:checked='@{form.w324b.equals("1")}'
+                                    android:checked='@{form.w324b.equals("2")}'
                                     android:onClick="@{()->form.setW324b(form.w324b.equals(`2`)?``:`2`)}"
                                     android:text="@string/w324b" />
 

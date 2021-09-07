@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.models;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 import android.database.Cursor;
 import android.util.Log;
 
@@ -323,19 +325,25 @@ public class Child extends BaseObservable {
                 long millis = System.currentTimeMillis() - cal.getTimeInMillis();
                 cal.setTimeInMillis(millis);
 
-                int mYear = cal.get(Calendar.YEAR);
+             /*   int mYear = cal.get(Calendar.YEAR)-1970;
                 int mMonth = cal.get(Calendar.MONTH);
-                int mDay = cal.get(Calendar.DAY_OF_MONTH);
+                int mDay = cal.get(Calendar.DAY_OF_MONTH)-1;
 
-                Log.d(TAG, "CaluculateAge: " + (mYear - 1970) + "-" + mMonth + "-" + mDay);
+                Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
+*/
+                long tYear = MILLISECONDS.toDays(millis) / 365;
+                long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
+                long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
 
-                setH231d(String.valueOf(mDay));
-                setH231m(String.valueOf(mMonth));
-                setH231y(String.valueOf(mYear - 1970));
-                setAge(String.valueOf(((mYear - 1970) * 12) + mMonth));
+                Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
+                setH231d(String.valueOf(tDay));
+                setH231m(String.valueOf(tMonth));
+                setH231y(String.valueOf(tYear));
+                setAge(String.valueOf(((tYear) * 12) + tMonth));
 
-               /* String.format("%d min, %d sec",
-                        TimeUnit.MILLISECONDS.toMinutes(millis),
+
+        /*        String.format("%d min, %d sec",
+                        ,
                         TimeUnit.MILLISECONDS.toSeconds(millis) -
                                 TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))
                 );*/

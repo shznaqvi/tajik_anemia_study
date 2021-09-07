@@ -39,9 +39,12 @@ public class EndingActivity extends AppCompatActivity {
         //sectionMainCheck = getIntent().getIntExtra("status", 0);
 
 
-        bi.istatusa.setEnabled(check && !form.getiStatus().equals("9")); // form is complete and  patient not on hold
+        bi.istatusa.setEnabled(check);
         bi.istatusb.setEnabled(!check);
-        bi.istatusc.setEnabled(check && form.getiStatus().equals("9")); // form is complete and  patient not on hold
+        bi.istatusc.setEnabled(!check);
+        bi.istatusd.setEnabled(!check);
+        bi.istatuse.setEnabled(!check);
+        bi.istatusf.setEnabled(!check);
 
 
     }

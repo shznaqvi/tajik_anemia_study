@@ -39,6 +39,14 @@ public class SectionC1Activity extends AppCompatActivity {
         form.setC100Name(MainApp.child.getH229());
         form.setCuid(MainApp.child.getUid());
         setupSkips();
+
+        bi.c102.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                bi.c102x.setMaxvalue(form.getC102().equals("2") ? 23f : 99f);
+            }
+        });
+
     }
 
 
