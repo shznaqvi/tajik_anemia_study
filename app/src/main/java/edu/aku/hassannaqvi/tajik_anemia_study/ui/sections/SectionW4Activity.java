@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,8 +21,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW4Binding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 
 public class SectionW4Activity extends AppCompatActivity {
@@ -83,6 +83,13 @@ public class SectionW4Activity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        setResult(RESULT_CANCELED);
     }
 
 
