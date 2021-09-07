@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,8 +22,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionH2bBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.EndingActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.lists.MwraListActivity;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
 
 public class SectionH2bActivity extends AppCompatActivity {
     private static final String TAG = "SectionH2bActivity";
@@ -177,6 +177,13 @@ public class SectionH2bActivity extends AppCompatActivity {
 */
         return true;
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        setResult(RESULT_CANCELED);
     }
 
    /* private boolean validateMembers(EditTextPicker t, EditTextPicker m, EditTextPicker f, String q) {

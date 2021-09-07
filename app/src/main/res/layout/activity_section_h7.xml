@@ -94,23 +94,21 @@
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="4"
+                                android:layout_weight="1"
                                 android:text="@string/h701" />
 
                             <RadioButton
                                 android:id="@+id/h701a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.h701.equals(`1`)}"
                                 android:onClick="@{()->form.setH701(`1`)}"
                                 android:text="@string/h701a" />
 
                             <RadioButton
                                 android:id="@+id/h701b"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.h701.equals(`2`)}"
                                 android:onClick="@{()->form.setH701(`2`)}"
                                 android:text="@string/h701b" />

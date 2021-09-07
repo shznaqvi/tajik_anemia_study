@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -17,8 +19,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1bBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
 
 
 public class SectionW1bActivity extends AppCompatActivity {
@@ -103,6 +103,13 @@ public class SectionW1bActivity extends AppCompatActivity {
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        setResult(RESULT_CANCELED);
     }
 
 /*
