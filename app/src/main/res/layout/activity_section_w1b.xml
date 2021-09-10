@@ -239,7 +239,8 @@
                         <RadioGroup
                             android:id="@+id/w115"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{()->w116.clearCheck()}">
 
                             <RadioButton
                                 android:id="@+id/w115a"
