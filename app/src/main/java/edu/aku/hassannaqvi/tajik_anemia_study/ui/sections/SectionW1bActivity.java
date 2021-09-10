@@ -35,16 +35,8 @@ public class SectionW1bActivity extends AppCompatActivity {
             preg = new Pregnancy(); // MUST and ONLY for every insertNewRecord() NOT with UpdateDB();
         bi.setPreg(preg);
         bi.setCallback(this);
-
         db = MainApp.appInfo.dbHelper;
 
-        setupSkips();
-    }
-
-
-    private void setupSkips() {
-        /*  rgLsnr(bi.w116, bi.w116b, new ViewGroup[]{bi.fldGrpCVw117t});*/
-        /* rgLsnr(bi.w116, bi.w116b, new ViewGroup[]{bi.fldGrpCVh602});*/
     }
 
 
