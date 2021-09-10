@@ -54,11 +54,6 @@
                     android:id="@+id/fldGrpCVw113t"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -72,26 +67,20 @@
                                 android:text="@string/Q_w113" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/w113" />
 
+                            <TextView
+                                android:id="@+id/w113"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@={preg.w113}" />
+
                         </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/w113"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={preg.w113}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -164,6 +153,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:onTextChanged="@{callback::edxAgeCal}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -178,6 +168,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:onTextChanged="@{callback::edxAgeCal}"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -192,6 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
+                                android:onTextChanged="@{callback::edxAgeCal}"
                                 android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
@@ -331,6 +323,7 @@
                             android:id="@+id/w116"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{callback::rgAgeCal}"
                             android:orientation="horizontal">
 
                             <RadioButton

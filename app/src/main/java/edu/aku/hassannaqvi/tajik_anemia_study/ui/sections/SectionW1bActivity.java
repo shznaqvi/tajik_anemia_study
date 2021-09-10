@@ -3,7 +3,9 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivitySectionW1bBinding;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Pregnancy;
+import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
 
 public class SectionW1bActivity extends AppCompatActivity {
@@ -37,6 +40,32 @@ public class SectionW1bActivity extends AppCompatActivity {
         bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
 
+    }
+
+
+    public void edxAgeCal(CharSequence s, int i, int i1, int i2) {
+        if (!s.equals(0)) ageCal();
+    }
+
+
+    public void rgAgeCal(RadioGroup radioGroup, int i) {
+        ageCal();
+    }
+
+    public void ageCal() {
+        preg.setW117y("");
+        preg.setW117m("");
+        preg.setW117d("");
+        if (TextUtils.isEmpty(bi.w114d.getText())
+                || TextUtils.isEmpty(bi.w114m.getText())
+                || TextUtils.isEmpty(bi.w114y.getText())
+                || bi.w114y.getText().toString().length() < 4
+                || bi.w115.getCheckedRadioButtonId() == -1
+                || bi.w116.getCheckedRadioButtonId() == -1) return;
+        long x = DateUtilsKt.ageInDaysByDOB(bi.w114y.getText().toString() + "-" + bi.w114m.getText().toString() + "-" + bi.w114d.getText().toString());
+        preg.setW117y(String.valueOf(x > 365 ? x / 365 : 0));
+        preg.setW117m(String.valueOf((x % 365) / 30 > 0 ? (x % 365) / 30 : 0));
+        preg.setW117d(String.valueOf((x % (365 * 30)) > 0 ? (x % (365 * 30)) : 0));
     }
 
 
