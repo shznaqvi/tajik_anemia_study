@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.tajik_anemia_study.BR;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts.PregnancyTable;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
+import edu.aku.hassannaqvi.tajik_anemia_study.utils.DateUtilsKt;
 
 public class Pregnancy extends BaseObservable {
 
@@ -234,6 +235,7 @@ public class Pregnancy extends BaseObservable {
 
     public void setW114d(String w114d) {
         this.w114d = w114d;
+        setAge();
         notifyPropertyChanged(BR.w114d);
     }
 
@@ -244,6 +246,7 @@ public class Pregnancy extends BaseObservable {
 
     public void setW114m(String w114m) {
         this.w114m = w114m;
+        setAge();
         notifyPropertyChanged(BR.w114m);
     }
 
@@ -254,7 +257,27 @@ public class Pregnancy extends BaseObservable {
 
     public void setW114y(String w114y) {
         this.w114y = w114y;
+        setAge();
         notifyPropertyChanged(BR.w114y);
+    }
+
+    public void setAge() {
+        if ((this.w114y.length() == 4
+                || !this.w114m.isEmpty()
+                || !this.w114d.isEmpty())
+                && (this.w115.equals("1")
+                || this.w115.equals("3")
+                || this.w115.equals("4"))
+                && this.w116.equals("1")) {
+            long x = DateUtilsKt.ageInDaysByDOB(this.w114y + "-" + this.w114m + "-" + this.w114d);
+            setW117y(String.valueOf(x > 365 ? x / 365 : 0));
+            setW117m(String.valueOf(((x % 365) / 30) > 0 ? ((x % 365) / 30) : 0));
+            setW117d(String.valueOf(((x % 365) % 30) > 0 ? ((x % 365) % 30) : 0));
+        } else {
+            setW117y("");
+            setW117m("");
+            setW117d("");
+        }
     }
 
     @Bindable
@@ -264,22 +287,11 @@ public class Pregnancy extends BaseObservable {
 
     public void setW115(String w115) {
         this.w115 = w115;
-        if (this.w115 == "2" || this.w115 == "5" || this.w115 == "6") {
-            setW116("");
-            setW117d("");
-            setW117m("");
-            setW117y("");
-
-        } else {
-            setW116(this.w116);
-            setW117d(this.w117d);
-            setW117m(this.w117m);
-            setW117y(this.w117y);
-            setW118d(this.w118d);
-            setW118m(this.w118m);
-            setW118y(this.w118y);
-        }
-
+        setW116(w115.equals("1") ? this.w116
+                : w115.equals("3") ? this.w116
+                : w115.equals("4") ? this.w116
+                : "");
+        setAge();
         notifyPropertyChanged(BR.w115);
     }
 
@@ -290,30 +302,13 @@ public class Pregnancy extends BaseObservable {
 
     public void setW116(String w116) {
         this.w116 = w116;
-        if (this.w116.equals("2")) {
-            setW117d("");
-            setW117m("");
-            setW117y("");
-            setW118d(this.w118d);
-            setW118m(this.w118m);
-            setW118y(this.w118y);
-        } else if (this.w116.equals("1")) {
-            setW117d(this.w117d);
-            setW117m(this.w117m);
-            setW117y(this.w117y);
-            setW118d("");
-            setW118m("");
-            setW118y("");
-        } else {
-            setW117d("");
-            setW117m("");
-            setW117y("");
-            setW118d("");
-            setW118m("");
-            setW118y("");
-        }
-
-
+        setW117d(w116.equals("1") ? this.w117d : "");
+        setW117m(w116.equals("1") ? this.w117m : "");
+        setW117y(w116.equals("1") ? this.w117y : "");
+        setW118d(w116.equals("2") ? this.w118d : "");
+        setW118m(w116.equals("2") ? this.w118m : "");
+        setW118y(w116.equals("2") ? this.w118y : "");
+        setAge();
         notifyPropertyChanged(BR.w116);
     }
 
