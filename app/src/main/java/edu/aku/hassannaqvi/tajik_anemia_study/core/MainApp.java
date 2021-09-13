@@ -52,6 +52,7 @@ public class MainApp extends Application {
     //public static Samples samples;
     public static Stool stool;
     public static Pregnancy preg;
+    public static int pregSr = 1;
     public static Samples samples;
     public static String DeviceURL = "devices.php";
     public static AppInfo appInfo;

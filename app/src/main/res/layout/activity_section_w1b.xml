@@ -78,6 +78,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
                                 android:text="@={preg.w113}" />
 
                         </LinearLayout>
@@ -410,50 +412,32 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 android:id="@+id/w117y"
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:enabled="false"
-                                android:hint="#"
-                                android:inputType="number"
-                                android:maxLength="1"
                                 android:text="@={preg.w117y}"
-                                app:maxValue="5"
-                                app:minValue="0"
-                                app:type="range" />
+                                android:textSize="20sp" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 android:id="@+id/w117m"
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:enabled="false"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
                                 android:text="@={preg.w117m}"
-                                app:maxValue="11"
-                                app:minValue="0"
-                                app:type="range" />
+                                android:textSize="20sp" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
+                            <TextView
                                 android:id="@+id/w117d"
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:enabled="false"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
                                 android:text="@={preg.w117d}"
-                                app:maxValue="31"
-                                app:minValue="1"
-                                app:type="range" />
+                                android:textSize="20sp" />
 
                         </LinearLayout>
 

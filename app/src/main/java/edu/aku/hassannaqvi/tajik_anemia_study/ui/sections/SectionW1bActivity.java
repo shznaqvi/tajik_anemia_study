@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.sections;
 
 import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.preg;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.pregSr;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,6 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
-
-import java.util.Calendar;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
@@ -38,10 +37,7 @@ public class SectionW1bActivity extends AppCompatActivity {
         bi.setPreg(preg);
         bi.setCallback(this);
         db = MainApp.appInfo.dbHelper;
-        bi.w114y.setMinvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR) - 6)));
-        bi.w114y.setMaxvalue(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR))));
-        bi.w114m.setMaxvalue(bi.w114y.equals(Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)))) ?
-                Float.parseFloat(String.valueOf(Calendar.getInstance().get(Calendar.MONTH + 1))) : 12);
+        preg.setW113(String.valueOf(pregSr++));
 
     }
 

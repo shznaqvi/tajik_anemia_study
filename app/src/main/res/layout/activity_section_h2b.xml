@@ -418,9 +418,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.5"
-                                android:text="Total Memebers"
-                                android:textAllCaps="true"
-                                android:gravity="center"
+                                android:text="TOTAL MEMBERS"
                                 android:textStyle="bold" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -429,15 +427,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:enabled="false"
                                 android:gravity="center"
                                 android:hint="###"
                                 android:inputType="number"
                                 android:maxLength="3"
-                                android:enabled="false"
-                                app:maxValue="99"
-                                app:minValue="0"
                                 android:text="@={form.h209m}"
                                 android:textStyle="bold"
+                                app:maxValue="99"
+                                app:minValue="0"
                                 app:type="range" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -606,8 +604,8 @@
                                 android:text="@={form.h220a}"
                                 app:minValue="0"
                                 app:type="range" />
-                        </LinearLayout>
 
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -656,6 +654,7 @@
             </LinearLayout>
 
         </ScrollView>
+
     </LinearLayout>
 
 </layout>
