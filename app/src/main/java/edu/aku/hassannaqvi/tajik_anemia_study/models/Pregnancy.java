@@ -79,7 +79,6 @@ public class Pregnancy extends BaseObservable {
 
     public void setId(String id) {
         this.id = id;
-        setW113(id);
     }
 
     public String getUid() {
