@@ -173,13 +173,11 @@ public class SectionAnthroActivity extends AppCompatActivity {
                             if (!MainApp.anthro.getFileNameH().equals("")) {
                                 bi.btnHeightCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
                                 setAnthroImage(MainApp.anthro.getFileNameH(), bi.imageH);
-
                             }
 
                             if (!MainApp.anthro.getFileNameM().equals("")) {
                                 bi.btnMUACCamera.setCompoundDrawablesWithIntrinsicBounds(checkedDrawable, null, null, null);
                                 setAnthroImage(MainApp.anthro.getFileNameM(), bi.imageM);
-
                             }
 
                         } else {

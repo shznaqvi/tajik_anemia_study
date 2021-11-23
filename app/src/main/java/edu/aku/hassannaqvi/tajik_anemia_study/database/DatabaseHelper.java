@@ -1269,7 +1269,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedSamp(String id) {
+    public void updateSyncedSamples(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put(SamplesTable.COLUMN_SYNCED, true);

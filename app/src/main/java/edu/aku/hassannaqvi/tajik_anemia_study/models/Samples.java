@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.models;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -373,24 +374,23 @@ public class Samples extends BaseObservable {
 
         if (string != null) {
 
-
-            JSONObject json = null;
-            json = new JSONObject(string);
-            this.e101 = json.getString("e101");
-            this.e102 = json.getString("e102");
-            this.e103 = json.getString("e103");
-            this.e104 = json.getString("e104");
-            this.e105 = json.getString("e105");
-            this.e106 = json.getString("e106");
-            this.e107 = json.getString("e107");
-            this.e108 = json.getString("e108");
-            this.e109 = json.getString("e109");
-            this.e110 = json.getString("e110");
-            this.e111 = json.getString("e111");
-
-
-            notifyChange();
-
+            try {
+                JSONObject json = null;
+                json = new JSONObject(string);
+                this.e101 = json.getString("e101");
+                this.e102 = json.getString("e102");
+                this.e103 = json.getString("e103");
+                this.e104 = json.getString("e104");
+                this.e105 = json.getString("e105");
+                this.e106 = json.getString("e106");
+                this.e107 = json.getString("e107");
+                this.e108 = json.getString("e108");
+                this.e109 = json.getString("e109");
+                this.e110 = json.getString("e110");
+                this.e111 = json.getString("e111");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -415,28 +415,33 @@ public class Samples extends BaseObservable {
     }
 
 
-    public JSONObject toJSONObject() throws JSONException {
+    public JSONObject toJSONObject() {
 
         JSONObject json = new JSONObject();
 
-        json.put(SamplesTable.COLUMN_ID, this.id);
-        json.put(SamplesTable.COLUMN_UID, this.uid);
-        json.put(SamplesTable.COLUMN_UUID, this.uuid);
-        json.put(SamplesTable.COLUMN_CLUSTER, this.cluster);
-        json.put(SamplesTable.COLUMN_HHID, this.hhid);
-        json.put(SamplesTable.COLUMN_USERNAME, this.userName);
-        json.put(SamplesTable.COLUMN_SUBJECTNAME, this.subjectName);
-        json.put(SamplesTable.COLUMN_SAMPLE_TYPE, this.sampleType);
-        json.put(SamplesTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(SamplesTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(SamplesTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(SamplesTable.COLUMN_ISTATUS, this.iStatus);
-        //  json.put(SamplesTable.COLUMN_SYNCED, this.synced);
-        //  json.put(SamplesTable.COLUMN_SYNCED_DATE, this.syncDate);
+        try {
+            json.put(SamplesTable.COLUMN_ID, this.id);
+            json.put(SamplesTable.COLUMN_UID, this.uid);
+            json.put(SamplesTable.COLUMN_UUID, this.uuid);
+            json.put(SamplesTable.COLUMN_CLUSTER, this.cluster);
+            json.put(SamplesTable.COLUMN_HHID, this.hhid);
+            json.put(SamplesTable.COLUMN_USERNAME, this.userName);
+            json.put(SamplesTable.COLUMN_SUBJECTNAME, this.subjectName);
+            json.put(SamplesTable.COLUMN_SAMPLE_TYPE, this.sampleType);
+            json.put(SamplesTable.COLUMN_SYSDATE, this.sysDate);
+            json.put(SamplesTable.COLUMN_DEVICEID, this.deviceId);
+            json.put(SamplesTable.COLUMN_DEVICETAGID, this.deviceTag);
+            json.put(SamplesTable.COLUMN_ISTATUS, this.iStatus);
+            //  json.put(SamplesTable.COLUMN_SYNCED, this.synced);
+            //  json.put(SamplesTable.COLUMN_SYNCED_DATE, this.syncDate);
 
-        json.put(SamplesTable.COLUMN_S1, new JSONObject(s1toString()));
-
-        return null;
+            json.put(SamplesTable.COLUMN_S1, new JSONObject(s1toString()));
+            return json;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, "toJSONObject: " + e.getMessage());
+            return null;
+        }
     }
 
 }
