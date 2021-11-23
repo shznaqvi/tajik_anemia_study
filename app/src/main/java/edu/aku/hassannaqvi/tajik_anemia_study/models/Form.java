@@ -9917,6 +9917,7 @@ public class Form extends BaseObservable implements Observable {
     public void setC319(String c319) {
         this.c319 = c319;
         setC320(c319.equals("1") ? this.c320 : "");
+        setC321(c319.equals("1") ? this.c321 : "");
         notifyPropertyChanged(BR.c319);
     }
 

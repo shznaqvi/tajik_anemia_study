@@ -175,41 +175,43 @@
                                     android:text="@string/Q_e105" />
 
                                 <TextView
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="match_parent"
                                     android:text="@string/e105" />
 
+                                <RadioGroup
+                                    android:id="@+id/e105"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <RadioButton
+                                        android:id="@+id/e105a"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{samples.e105.equals(`1`)}"
+                                        android:onClick="@{()->samples.setE105(`1`)}"
+                                        android:text="@string/e105a" />
+
+                                    <RadioButton
+                                        android:id="@+id/e105b"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:checked="@{samples.e105.equals(`2`)}"
+                                        android:onClick="@{()->samples.setE105(`2`)}"
+                                        android:text="@string/e105b" />
+
+                                </RadioGroup>
+
                             </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/e105"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                        </LinearLayout>
 
-                            <RadioButton
-                                android:id="@+id/e105a"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="@{samples.e105.equals(`1`)}"
-                                android:onClick="@{()->samples.setE105(`1`)}"
-                                android:text="@string/e105a" />
-
-                            <RadioButton
-                                android:id="@+id/e105b"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="@{samples.e105.equals(`2`)}"
-                                android:onClick="@{()->samples.setE105(`2`)}"
-                                android:text="@string/e105b" />
-
-                        </RadioGroup>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
                     <!-- e106t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe106t"
@@ -233,23 +235,27 @@
                                 android:text="@string/Q_e106" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e106" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/e106"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:enabled="@{!samples.e105.equals(`2`)}"
+                                android:gravity="center"
+                                android:hint="@string/e106"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={samples.e106}"
+                                app:maxValue="50"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e106"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/e106"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={samples.e106}"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -282,32 +288,33 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/e109" />
+
+                            <RadioGroup
+                                android:id="@+id/e109"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/e109a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="@{samples.e109.equals(`1`)}"
+                                    android:onClick="@{()->samples.setE109(`1`)}"
+                                    android:text="@string/e109a" />
+
+                                <RadioButton
+                                    android:id="@+id/e109b"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="@{samples.e109.equals(`2`)}"
+                                    android:onClick="@{()->samples.setE109(`2`)}"
+                                    android:text="@string/e109b" />
+                            </RadioGroup>
                         </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/e109"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/e109a"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="@{samples.e109.equals(`1`)}"
-                                android:onClick="@{()->samples.setE109(`1`)}"
-                                android:text="@string/e109a" />
-
-                            <RadioButton
-                                android:id="@+id/e109b"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="@{samples.e109.equals(`2`)}"
-                                android:onClick="@{()->samples.setE109(`2`)}"
-                                android:text="@string/e109b" />
-                        </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -335,23 +342,26 @@
                                 android:text="@string/Q_e101" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e101" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/e101"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:enabled="@{!samples.e105.equals(`2`) &amp;&amp; !samples.e109.equals(`2`)}"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="YYYY/MM/DD"
+                                android:text="@={samples.e101}"
+                                app:dateFormat="yyyy-MM-dd"
+                                app:maxDate="CR_DATE"
+                                app:minDate="01/01/2020" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                            android:id="@+id/e101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="YYYY/MM/DD"
-                            android:text="@={samples.e101}"
-                            app:dateFormat="yyyy-MM-dd"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -381,23 +391,23 @@
                                 android:text="@string/Q_e107" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e107" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/e107"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:enabled="@{!samples.e105.equals(`2`) &amp;&amp; !samples.e109.equals(`2`)}"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={samples.e107}"
+                                app:timeFormat="HH:mm" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e107"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/e107"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            android:text="@={samples.e107}"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -455,6 +465,7 @@
                                 android:drawableStart="@drawable/ic_qr_code_scanner"
                                 android:drawablePadding="8dp"
                                 android:onClick="scanQR"
+                                android:enabled="@{!samples.e105.equals(`2`) &amp;&amp; !samples.e109.equals(`2`)}"
                                 android:text="Scan QR-Code" />
                         </LinearLayout>
 

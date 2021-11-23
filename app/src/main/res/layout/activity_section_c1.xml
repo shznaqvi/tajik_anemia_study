@@ -200,6 +200,7 @@
                             android:text="@={form.c102x}"
                             android:visibility="@{!form.c102.equals(`3`)?View.VISIBLE:View.GONE}"
                             app:minValue="1"
+                            app:maxValue="0"
                             app:type="range" />
 
 

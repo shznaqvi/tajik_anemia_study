@@ -187,7 +187,7 @@ public class SyncActivity extends AppCompatActivity {
                 // Samples
                 uploadTables.add(new SyncModel(SamplesTable.TABLE_NAME));
                 try {
-                    MainApp.uploadData.add(db.getUnsyncedSamp());
+                    MainApp.uploadData.add(db.getUnsyncedSamples());
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.d(TAG, "ProcessStart(getUnsyncedSamp): " + e.getMessage());

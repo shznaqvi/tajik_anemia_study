@@ -1887,7 +1887,8 @@
                 <!-- c321  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc321"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.c319.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

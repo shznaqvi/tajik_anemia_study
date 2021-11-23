@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.BuildConfig;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Blood;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Child;
@@ -29,8 +30,8 @@ public class MainApp extends Application {
     public static final String PROJECT_NAME = "Tajik_Anemia_Study";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
-    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
-    //public static final String _IP = "http://f38158/prosystem";// .TEST server
+    //    public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
+    public static final String _IP = "http://cls-pae-fp51764";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/anemia_study_tj/api/";// .TEST server;
     public static final String _SERVER_URL = "sync.php";
@@ -84,6 +85,9 @@ public class MainApp extends Application {
     public static int childCountComplete = 0;
     public static int pregCountComplete = 0;
     public static List<String> subjectNames;
+    public static List<String> childAge;
+
+    public static TableContracts.ChildListTable childListTable;
 
 
     public static void hideSystemUI(View decorView) {

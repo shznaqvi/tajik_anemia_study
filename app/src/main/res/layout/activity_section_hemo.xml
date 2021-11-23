@@ -73,23 +73,25 @@
                                 android:text="@string/Q_e101" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e101" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                android:id="@+id/e101"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="YYYY/MM/DD"
+                                android:text="@={blood.e101}"
+                                app:dateFormat="yyyy-MM-dd"
+                                app:maxDate="CR_DATE"
+                                app:minDate="01/01/2020" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                            android:id="@+id/e101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:text="@={blood.e101}"
-                            android:hint="YYYY/MM/DD"
-                            app:dateFormat="yyyy-MM-dd"
-                            app:maxDate="CR_DATE"
-                            app:minDate="01/01/2020" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -224,24 +226,26 @@
                                 android:text="@string/Q_e106" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e106" />
 
-                        </LinearLayout>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/e106"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="###"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={blood.e106}"
+                                app:maxValue="50"
+                                app:minValue="1"
+                                app:type="range" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e106"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:text="@={blood.e106}"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -271,24 +275,22 @@
                                 android:text="@string/Q_e107" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e107" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/e107"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={blood.e107}"
+                                app:timeFormat="HH:mm" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e107"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:text="@={blood.e107}"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -425,24 +427,22 @@
                                 android:text="@string/Q_e110" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/e110" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/e110"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={blood.e110}"
+                                app:timeFormat="HH:mm" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/e110"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:text="@={blood.e110}"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
-                            app:minValue="1"
-                            app:type="range" />
+                        </LinearLayout>
 
                     </LinearLayout>
 

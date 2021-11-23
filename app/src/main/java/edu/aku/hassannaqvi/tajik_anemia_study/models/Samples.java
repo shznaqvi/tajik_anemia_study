@@ -275,6 +275,10 @@ public class Samples extends BaseObservable {
     public void setE105(String e105) {
         this.e105 = e105;
         setSampleType(!e105.equals("") ? "3" : this.sampleType);
+        setE106(e105.equals("1") ? this.e106 : "");
+        setE101(e105.equals("1") ? this.e101 : "");
+        setE107(e105.equals("1") ? this.e107 : "");
+        setE108(e105.equals("1") ? this.e108 : "");
         notifyPropertyChanged(BR.e105);
     }
 
@@ -316,6 +320,9 @@ public class Samples extends BaseObservable {
     public void setE109(String e109) {
         this.e109 = e109;
         setSampleType(!e109.equals("") ? "4" : this.sampleType);
+        setE107(e109.equals("1") ? this.e107 : "");
+        setE101(e109.equals("1") ? this.e101 : "");
+        setE108(e109.equals("1") ? this.e108 : "");
         notifyPropertyChanged(BR.e109);
     }
 

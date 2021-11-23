@@ -514,7 +514,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String having = null;
         String orderBy = UsersTable.COLUMN_ID + " ASC";
 
-        Users loggedInUser = null;
+        Users loggedInUser = new Users();
         try {
             c = db.query(
                     UsersTable.TABLE_NAME,  // The table to query
@@ -1101,7 +1101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return all;
     }
 
-    public JSONArray getUnsyncedSamp() throws JSONException {
+    public JSONArray getUnsyncedSamples() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = null;
@@ -1180,7 +1180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedChildList(String id) {
+    public void updateSyncedChild(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -1253,7 +1253,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedPreg(String id) {
+    public void updateSyncedPregnancy(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues values = new ContentValues();
         values.put(PregnancyTable.COLUMN_SYNCED, true);
