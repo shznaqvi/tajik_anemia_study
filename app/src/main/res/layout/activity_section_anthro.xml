@@ -421,6 +421,15 @@
                                 android:checked='@{anthro.d108.equals("2")}'
                                 android:onClick='@{()->anthro.setD108("2")}'
                                 android:text="@string/d108b" />
+
+                            <RadioButton
+                                android:id="@+id/d108c"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked='@{anthro.d108.equals("99")}'
+                                android:onClick='@{()->anthro.setD108("99")}'
+                                android:text="@string/d108c" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -477,6 +486,15 @@
                                 android:checked='@{anthro.d109.equals("2")}'
                                 android:onClick='@{()->anthro.setD109("2")}'
                                 android:text="@string/d109b" />
+
+                            <RadioButton
+                                android:id="@+id/d109c"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked='@{anthro.d109.equals("99")}'
+                                android:onClick='@{()->anthro.setD109("99")}'
+                                android:text="@string/d109c" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

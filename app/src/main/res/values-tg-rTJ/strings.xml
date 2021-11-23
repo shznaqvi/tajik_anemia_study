@@ -1980,9 +1980,11 @@
     <string name="d108">БЦЖ (барои 06-59 моҳа)</string>
     <string name="d108a">Ҳа</string>
     <string name="d108b">Не</string>
+    <string name="d108c">Not Applicable</string>
     <string name="d109">Одема (барои 06-59 моҳа)</string>
     <string name="d109a">Ҳа</string>
     <string name="d109b">Не</string>
+    <string name="d109c">Not Applicable</string>
     <string name="d110">Ҳолати арзёбӣ</string>
     <string name="d110a">Анҷом</string>
     <string name="d110b">Анҷом наёфт</string>

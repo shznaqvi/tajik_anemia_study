@@ -2007,9 +2007,11 @@
     <string name="d108">BCG Scar (For 06-59 Months Only)</string>
     <string name="d108a">Yes</string>
     <string name="d108b">No</string>
+    <string name="d108c">Not Applicable</string>
     <string name="d109">Odeama (For 06-59 Months Only)</string>
     <string name="d109a">Yes</string>
     <string name="d109b">No</string>
+    <string name="d109c">Not Applicable</string>
     <string name="d110">Assessment Status</string>
     <string name="d110a">Done </string>
     <string name="d110b">Not Done  </string>
