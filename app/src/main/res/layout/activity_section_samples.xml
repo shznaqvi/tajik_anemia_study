@@ -247,12 +247,14 @@
                                 android:layout_weight="1"
                                 android:enabled="@{!samples.e105.equals(`2`)}"
                                 android:gravity="center"
-                                android:hint="@string/e106"
+                                android:hint="##.#"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={samples.e106}"
-                                app:maxValue="50"
-                                app:minValue="1"
+                                app:mask="##.#"
+                                app:maxValue="50.0"
+                                app:minValue="01.0"
+                                app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                 app:type="range" />
 
                         </LinearLayout>

@@ -2095,7 +2095,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public String getChildName(String uid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
-        String[] columns = {FormsTable.COLUMN_SC1};
+        String[] columns = {FormsTable.COLUMN_SC3};
 
         String whereClause;
         whereClause = FormsTable.COLUMN_UID + "=?  ";
@@ -2120,7 +2120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 form = new Form();
-                form.sC1Hydrate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SC1)));
+                form.sC3Hydrate(c.getString(c.getColumnIndex(FormsTable.COLUMN_SC3)));
 
 
             }

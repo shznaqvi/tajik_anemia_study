@@ -205,7 +205,15 @@ public class SectionSamplesActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (bi.e018.getText().toString().isEmpty()) {
+            Validator.emptyCustomTextBox(this, bi.e018, "Scan BarCode");
+            return false;
+        }
+
+        return true;
     }
 
 

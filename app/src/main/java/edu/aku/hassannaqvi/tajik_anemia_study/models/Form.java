@@ -2721,6 +2721,12 @@ public class Form extends BaseObservable implements Observable {
         setH403a(h403d.equals("97") ? "" : this.h403a); // for all skips, mention all skipped questions
         setH403b(h403d.equals("97") ? "" : this.h403b); // for all skips, mention all skipped questions
         setH403c(h403d.equals("97") ? "" : this.h403c); // for all skips, mention all skipped questions
+
+        setH404(h403d.equals("97") ? this.h404 : ""); // for all skips, mention all skipped questions
+        setH405a(h403d.equals("97") ? this.h405a : ""); // for all skips, mention all skipped questions
+        setH405b(h403d.equals("97") ? this.h405b : ""); // for all skips, mention all skipped questions
+        setH405c(h403d.equals("97") ? this.h405c : ""); // for all skips, mention all skipped questions
+        setH405d(h403d.equals("97") ? this.h405d : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.h403d);
     }
 
@@ -10889,6 +10895,7 @@ public class Form extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+            this.c100name = json.getString("c100name");
             this.c301 = json.getString("c301");
             this.c302 = json.getString("c302");
             this.c303 = json.getString("c303");
@@ -11782,6 +11789,7 @@ public class Form extends BaseObservable implements Observable {
 
         json.put("c301", c301)
                 .put("c302", c302)
+                .put("c100name", c100name)
                 .put("c303", c303)
                 .put("c30396x", c30396x)
                 .put("c304", c304)

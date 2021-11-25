@@ -256,7 +256,25 @@ public class SectionAnthroActivity extends AppCompatActivity {
 
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+            return false;
+
+        if (bi.d105.getText().toString().isEmpty()) {
+            Validator.emptyCustomTextBox(this, bi.d105, "Take picture");
+            return false;
+        }
+
+        if (bi.d106.getText().toString().isEmpty()) {
+            Validator.emptyCustomTextBox(this, bi.d106, "Take picture");
+            return false;
+        }
+
+        if (bi.d107.getText().toString().isEmpty()) {
+            Validator.emptyCustomTextBox(this, bi.d107, "Take picture");
+            return false;
+        }
+
+        return true;
     }
 
 

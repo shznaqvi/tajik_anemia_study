@@ -427,8 +427,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{anthro.d108.equals("99")}'
-                                android:onClick='@{()->anthro.setD108("99")}'
+                                android:checked='@{anthro.d108.equals("97")}'
+                                android:onClick='@{()->anthro.setD108("97")}'
                                 android:text="@string/d108c" />
                         </RadioGroup>
                     </LinearLayout>
@@ -492,8 +492,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked='@{anthro.d109.equals("99")}'
-                                android:onClick='@{()->anthro.setD109("99")}'
+                                android:checked='@{anthro.d109.equals("97")}'
+                                android:onClick='@{()->anthro.setD109("97")}'
                                 android:text="@string/d109c" />
                         </RadioGroup>
                     </LinearLayout>
