@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.ui.lists;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -176,6 +178,8 @@ public class ChildListActivity extends AppCompatActivity {
 
         try {
             MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
+            form.setC100Name(MainApp.child.getH229());
+            form.setCuid(MainApp.child.getUid());
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(CHILD)" + e.getMessage(), Toast.LENGTH_SHORT).show();

@@ -97,8 +97,8 @@ public class SyncActivity extends AppCompatActivity {
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
-        listActivityCreated = true;
-        uploadlistActivityCreated = true;
+        //listActivityCreated = true;
+        //uploadlistActivityCreated = true;
 
         db = MainApp.appInfo.dbHelper;
         //dbBackup(this);
