@@ -216,8 +216,8 @@ public class ChildListActivity extends AppCompatActivity {
 
     private void displayProceedDialog() {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.title_mwra_dialog)
-                .setMessage(String.format(getString(R.string.message_mwra_dialog_proceeed), MainApp.mwraList.size() + "", MainApp.mwra.getH226t()))
+                .setTitle(R.string.title_child_dialog)
+                .setMessage(String.format(getString(R.string.message_child_dialog_proceeed), MainApp.childList.size() + "", MainApp.mwra.getH226t()))
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.
