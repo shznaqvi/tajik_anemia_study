@@ -11788,8 +11788,9 @@ public class Form extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
 
         json.put("c301", c301)
-                .put("c302", c302)
                 .put("c100name", c100name)
+                .put("cuid", cuid)
+                .put("c302", c302)
                 .put("c303", c303)
                 .put("c30396x", c30396x)
                 .put("c304", c304)
