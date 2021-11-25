@@ -155,7 +155,7 @@
                         android:elevation="1dp"
                         android:gravity="center_horizontal"
                         android:paddingBottom="1dp"
-                        android:shadowColor="@color/grayLight"
+                        android:textColor="@color/colorPrimaryDark"
                         android:shadowDx="1"
                         android:shadowDy="1"
                         android:shadowRadius="1"

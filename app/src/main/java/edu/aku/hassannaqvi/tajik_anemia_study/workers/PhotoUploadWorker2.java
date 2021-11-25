@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.workers;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp._PHOTO_UPLOAD_URL;
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.sdDir;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -34,15 +37,12 @@ import java.util.Random;
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp._PHOTO_UPLOAD_URL;
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.sdDir;
-
 public class PhotoUploadWorker2 extends Worker {
 
     private final String TAG = "PhotoUploadWorker2()";
     private final Context mContext;
     private final int photoid;
-    private final String nTitle = "Naunehal: Photo Upload";
+    private final String nTitle = "Tajik Anemia: Photo Upload";
     public Boolean errMsg = false;
     HttpURLConnection urlConnection;
     File fileZero;
