@@ -35,6 +35,8 @@ public class SectionC3Activity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_c3);
         bi.setCallback(this);
         bi.setForm(form);
+        form.setC100Name(MainApp.child.getH229());
+        form.setCuid(MainApp.child.getUid());
     }
 
 
