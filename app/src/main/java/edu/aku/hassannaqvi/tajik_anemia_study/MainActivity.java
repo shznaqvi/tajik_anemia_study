@@ -1,14 +1,18 @@
 package edu.aku.hassannaqvi.tajik_anemia_study;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+
+import java.lang.reflect.Method;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.AndroidDatabaseManager;
@@ -174,6 +178,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public static void showDebugDBAddressLogToast(Context context) {
+        if (BuildConfig.DEBUG) {
+            try {
+                Class<?> debugDB = Class.forName("com.amitshekhar.DebugDB");
+                Method getAddressLog = debugDB.getMethod("getAddressLog");
+                Object value = getAddressLog.invoke(null);
+                Toast.makeText(context, (String) value, Toast.LENGTH_LONG).show();
+            } catch (Exception ignore) {
+
+            }
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.item_menu, menu);
+        MenuItem action_database = menu.findItem(R.id.action_database);
+
+        action_database.setVisible(MainApp.admin);
+        return super.onCreateOptionsMenu(menu);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
@@ -198,18 +224,13 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, FormsReportCluster.class);
                 startActivity(intent);
                 break;
+            case R.id.showDebugAddress:
+                showDebugDBAddressLogToast(getApplicationContext());
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.item_menu, menu);
-        MenuItem action_database = menu.findItem(R.id.action_database);
-
-        action_database.setVisible(MainApp.admin);
-        return super.onCreateOptionsMenu(menu);
     }
 
 }

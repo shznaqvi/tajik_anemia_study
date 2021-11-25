@@ -150,6 +150,9 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    // for Debug Database
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 }
 repositories {
     mavenCentral()
