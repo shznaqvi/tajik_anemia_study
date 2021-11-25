@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.workers;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.ProgressDialog;
@@ -27,8 +29,6 @@ import java.net.URL;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
-
-import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.PROJECT_NAME;
 
 
 public class DataUpWorkerALL extends Worker {
@@ -251,7 +251,7 @@ public class DataUpWorkerALL extends Worker {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), "scrlog")
                 .setContentTitle(title)
                 .setContentText(task)
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.drawable.app_icon);
 
         final int maxProgress = 100;
         int curProgress = 0;
