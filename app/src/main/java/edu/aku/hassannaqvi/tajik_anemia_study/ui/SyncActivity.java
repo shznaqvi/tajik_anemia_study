@@ -8,6 +8,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -93,8 +94,14 @@ public class SyncActivity extends AppCompatActivity {
         uploadTables = new ArrayList<>();
         downloadTables = new ArrayList<>();
         MainApp.uploadData = new ArrayList<>();
-        sdDir = new File(this.getExternalFilesDir(
-                Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+        /*sdDir = new File(this.getExternalFilesDir(
+                Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
+
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
+            sdDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+        else
+            sdDir = new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
@@ -198,6 +205,7 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "ProcessStart(getUnsyncedSamp): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
+
                 MainApp.downloadData = new String[uploadData.size()];
 
                 setAdapter(uploadTables);
@@ -214,21 +222,17 @@ public class SyncActivity extends AppCompatActivity {
                 bi.pBar.setVisibility(View.GONE);
                 downloadTables.clear();
                 boolean sync_flag = getIntent().getBooleanExtra("login", false);
-                if (sync_flag) {
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(ClustersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
-                } else {
-                    // Set tables to DOWNLOAD
-                    downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
-                    downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(UsersTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(ClustersTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(RandomTable.TABLE_NAME));
+                downloadTables.add(new SyncModel(VersionTable.TABLE_NAME));
+
 
                  /*   String select = " idCamp, camp_no, dist_id, district, ucCode, ucName, area_name, plan_date ";
                     String filter = " camp_status = 'Planned' AND locked = 0 ";
                     downloadTables.add(new SyncModel(Camps.TableCamp.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(Doctor.TableDoctor.TABLE_NAME));*/
-                }
+
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);
                 BeginDownload();
