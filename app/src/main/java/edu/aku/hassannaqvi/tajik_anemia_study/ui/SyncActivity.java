@@ -159,11 +159,20 @@ public class SyncActivity extends AppCompatActivity {
 
                 // Forms
                 uploadTables.add(new SyncModel(FormsTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedForms());
-
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedForms());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
                 // MWRA
                 uploadTables.add(new SyncModel(MWRAListTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedMWRAList());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedMWRAList());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(MWRA): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
                 // Child
                 uploadTables.add(new SyncModel(ChildListTable.TABLE_NAME));
@@ -193,7 +202,12 @@ public class SyncActivity extends AppCompatActivity {
 
                 // Pregnancy
                 uploadTables.add(new SyncModel(PregnancyTable.TABLE_NAME));
-                MainApp.uploadData.add(db.getUnsyncedPreg());
+                try {
+                    MainApp.uploadData.add(db.getUnsyncedPreg());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, "JSONException(Pregnancy): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
                 // Samples
                 uploadTables.add(new SyncModel(SamplesTable.TABLE_NAME));

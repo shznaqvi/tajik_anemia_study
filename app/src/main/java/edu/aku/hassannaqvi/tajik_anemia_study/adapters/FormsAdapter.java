@@ -1,11 +1,15 @@
 package edu.aku.hassannaqvi.tajik_anemia_study.adapters;
 
+import static edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp.form;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
+import edu.aku.hassannaqvi.tajik_anemia_study.contracts.TableContracts;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
 import edu.aku.hassannaqvi.tajik_anemia_study.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
@@ -128,8 +133,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         holder.hhno.setText(fc.get(position).getHhid());
         holder.cluster.setText(fc.get(position).getCluster());
-        holder.cluster.setText(fc.get(position).getCluster());
-        holder.cluster.setText(fc.get(position).getCluster());
+        holder.formComplete.setChecked(fc.get(holder.getBindingAdapterPosition()).getFormComplete().equals("1"));
+        holder.formComplete.setEnabled(!fc.get(holder.getBindingAdapterPosition()).getFormComplete().equals("1"));
         holder.istatus.setText(iStatus);
         holder.fatherName.setText(motherName + " / " + childName);
         holder.secStatusAnthro.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
@@ -142,13 +147,25 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.sysdate.setText(fc.get(position).getSysDate());
         holder.istatus.setTextColor(iColor);
 
+        holder.formComplete.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                MainApp.form = fc.get(holder.getBindingAdapterPosition());
+                if (b) {
+                    MainApp.form.setFormComplete("1");
+                } else {
+                    MainApp.form.setFormComplete("");
 
-      /*  holder.itemView.setOnClickListener(v -> {
+                }
+                db.updatesFormColumn(TableContracts.FormsTable.COLUMN_FORM_COMPLETE, form.getFormComplete());
+            }
+        });
+        holder.itemView.setOnClickListener(v -> {
             // Get the current state of the item
 
-            MainApp.form = fc.get(position);
+
             //MainApp.households.setVisitNo(String.valueOf(Integer.parseInt(MainApp.households.getVisitNo())+1));
-            if (!MainApp.form.getiStatus().equals("1")) {
+            if (MainApp.form.getSynced().equals("")) {
 
                 editHousehold(position);
 
@@ -158,7 +175,6 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
 
         });
-*/
     }
 
 
@@ -171,7 +187,9 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
     private void editHousehold(int position) {
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByClusterHHNo(fc.get(position).getCluster(), fc.get(position).getHhid());
+            MainApp.form = db.getFormByClusterHHNo(fc.get(position).getH103(), fc.get(position).getH104());
+
+            // MainApp.form = db.getFormByClusterHHNo(fc.get(position).getCluster(), fc.get(position).getHhid());
         } catch (JSONException e) {
             Log.d(TAG, c.getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(c, c.getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -191,6 +209,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         public TextView secStatusBlood;
         public TextView secStatusStool;
         public TextView fatherName;
+        public CheckBox formComplete;
         // each data item is just a string in this case
 
         public ViewHolder(View v) {
@@ -204,6 +223,7 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
             secStatusAnthro = v.findViewById(R.id.secStatusAnthro);
             secStatusBlood = v.findViewById(R.id.secStatusBlood);
             secStatusStool = v.findViewById(R.id.secStatusStool);
+            formComplete = v.findViewById(R.id.formComplete);
 
         }
 

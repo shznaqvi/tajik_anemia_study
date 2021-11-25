@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/parentLayout"
@@ -24,7 +25,7 @@
                 android:background="@color/colorPrimary"
                 android:padding="12dp"
                 android:src="@android:drawable/ic_dialog_map"
-                android:tint="@color/colorAccent" />
+                app:tint="@color/colorAccent" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -65,6 +66,18 @@
                             android:text="CLUSTER NO:"
                             android:textColor="@color/gray"
                             android:textSize="18sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <CheckBox
+                            android:id="@+id/formComplete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="end" />
                     </LinearLayout>
 
                     <TextView

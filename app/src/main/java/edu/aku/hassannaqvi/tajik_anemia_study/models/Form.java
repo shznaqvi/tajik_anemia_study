@@ -39,6 +39,7 @@ public class Form extends BaseObservable implements Observable {
     private String iStatus96x = StringUtils.EMPTY;
     private String synced = StringUtils.EMPTY;
     private String syncDate = StringUtils.EMPTY;
+    private String formComplete = StringUtils.EMPTY;
     // SECTION VARIABLES
     private String sH1 = StringUtils.EMPTY;
     //private String sH2a = StringUtils.EMPTY;
@@ -1004,6 +1005,14 @@ public class Form extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
+    public String getFormComplete() {
+        return formComplete;
+    }
+
+    public void setFormComplete(String formComplete) {
+        this.formComplete = formComplete;
+    }
+
    /* public String getsH2a() {
         return sH2a;
     }
@@ -1271,6 +1280,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setH110(String h110) {
         this.h110 = h110;
+        setH201(h110.equals("1") ? this.h108 : "");
         notifyPropertyChanged(BR.h110);
     }
 
@@ -1281,7 +1291,10 @@ public class Form extends BaseObservable implements Observable {
 
     public void setH111(String h111) {
         this.h111 = h111;
-        setH201(h111.equals("1") ? this.h201 : "");
+
+        setH201(this.h110.equals("1") ? this.h108 : "");
+        setH201(h111.equals("1") ? this.h201 : ""); // order of this two statements is very critical
+
         setH202(h111.equals("1") ? this.h202 : "");
         setH203d(h111.equals("1") ? this.h203d : "");
         setH203m(h111.equals("1") ? this.h203m : "");
@@ -10011,42 +10024,43 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public Form Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HHID));
-        this.userName = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
+        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED_DATE));
+        this.formComplete = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_FORM_COMPLETE));
 
-        sH1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH1)));
-        sH2bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2B)));
+        sH1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH1)));
+        sH2bHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH2B)));
 
-        /*sH2cHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2c)));
-        sH2dHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH2d)));
+        /*sH2cHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH2c)));
+        sH2dHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH2d)));
         */
 
-        sH3aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3A)));
-        sH3bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH3B)));
-        sH4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH4)));
-        sH5Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH5)));
-        sH6Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH6)));
-        sH7Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SH7)));
+        sH3aHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH3A)));
+        sH3bHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH3B)));
+        sH4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH4)));
+        sH5Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH5)));
+        sH6Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH6)));
+        sH7Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SH7)));
 
-        sW1aHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1A)));
-        /*sW1bHydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW1B)));*/
-        sW2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW2)));
-        sW3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW3)));
-        sW4Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SW4)));
+        sW1aHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SW1A)));
+        /*sW1bHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SW1B)));*/
+        sW2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SW2)));
+        sW3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SW3)));
+        sW4Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SW4)));
 
-        sC1Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC1)));
-        sC2Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC2)));
-        sC3Hydrate(cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SC3)));
+        sC1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SC1)));
+        sC2Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SC2)));
+        sC3Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SC3)));
 
         return this;
     }

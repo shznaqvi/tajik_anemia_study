@@ -2,11 +2,14 @@ package edu.aku.hassannaqvi.tajik_anemia_study.ui.lists;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONException;
 
 import java.text.SimpleDateFormat;
 import java.util.Collection;
@@ -35,17 +38,24 @@ public class FormsReportPending extends AppCompatActivity {
         bi.setPendingReport(this);
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        setTitle("Pending Forms");
+        getSupportActionBar().setSubtitle("Below forms need to be completed for uploading.");
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        bi.fcRecyclerView.setHasFixedSize(true);
+        // bi.fcRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
         bi.fcRecyclerView.setLayoutManager(layoutManager);
         bi.filter.setVisibility(View.GONE);
         db = MainApp.appInfo.dbHelper;
-        fc = db.getPendingForms();
+        try {
+            fc = db.getPendingForms();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(Forms)", Toast.LENGTH_SHORT).show();
+        }
 
         // specify an adapter (see also next example)
         formsAdapter = new FormsAdapter((List<Form>) fc, this);

@@ -407,24 +407,24 @@ public class Child extends BaseObservable {
 
 
     public Child Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_UUID));
-        this.muid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_MUID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_HHID));
-        this.userName = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_SYSDATE));
-        this.age = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_AGE));
-        this.indexed = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_INDEX));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_MUID));
+        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_HHID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_SYSDATE));
+        this.age = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_AGE));
+        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_INDEX));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(ChildListTable.COLUMN_S1)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(ChildListTable.COLUMN_S1)));
 
         return this;
     }

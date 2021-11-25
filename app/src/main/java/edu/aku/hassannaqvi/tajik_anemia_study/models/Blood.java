@@ -411,21 +411,21 @@ public class Blood extends BaseObservable {
 
 
     public Blood Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_UUID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_HHID));
-        this.userName = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_UUID));
+        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_HHID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(BloodTable.COLUMN_S1)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(BloodTable.COLUMN_S1)));
 
         return this;
     }

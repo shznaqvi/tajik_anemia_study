@@ -374,22 +374,22 @@ public class Pregnancy extends BaseObservable {
 
 
     public Pregnancy Hydrate(Cursor cursor) {
-        this.id = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_UUID));
-        this.muid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_MUID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_HHID));
-        this.userName = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_USERNAME));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_UUID));
+        this.muid = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_MUID));
+        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_HHID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_USERNAME));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(PregnancyTable.COLUMN_S1)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(PregnancyTable.COLUMN_S1)));
 
         return this;
     }

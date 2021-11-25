@@ -31,11 +31,11 @@ class RandomHH {
     }
 
     fun hydrate(cursor: Cursor): RandomHH {
-        ID = cursor.getLong(cursor.getColumnIndex(RandomTable.COLUMN_ID))
-        sno = cursor.getString(cursor.getColumnIndex(RandomTable.COLUMN_SNO))
-        clusterNo = cursor.getString(cursor.getColumnIndex(RandomTable.COLUMN_CLUSTER_NO))
-        hhno = cursor.getString(cursor.getColumnIndex(RandomTable.COLUMN_HH_NO))
-        headhh = cursor.getString(cursor.getColumnIndex(RandomTable.COLUMN_HEAD_HH))
+        ID = cursor.getLong(cursor.getColumnIndexOrThrow(RandomTable.COLUMN_ID))
+        sno = cursor.getString(cursor.getColumnIndexOrThrow(RandomTable.COLUMN_SNO))
+        clusterNo = cursor.getString(cursor.getColumnIndexOrThrow(RandomTable.COLUMN_CLUSTER_NO))
+        hhno = cursor.getString(cursor.getColumnIndexOrThrow(RandomTable.COLUMN_HH_NO))
+        headhh = cursor.getString(cursor.getColumnIndexOrThrow(RandomTable.COLUMN_HEAD_HH))
         return this
     }
 

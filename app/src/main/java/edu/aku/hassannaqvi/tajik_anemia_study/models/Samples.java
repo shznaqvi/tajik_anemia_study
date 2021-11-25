@@ -349,23 +349,23 @@ public class Samples extends BaseObservable {
 
 
     public Samples Hydrate(Cursor cursor) throws JSONException {
-        this.id = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_ID));
-        this.uid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_UID));
-        this.uuid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_UUID));
-        this.cluster = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_CLUSTER));
-        this.hhid = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_HHID));
-        this.userName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_USERNAME));
-        this.subjectName = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SUBJECTNAME));
-        this.sampleType = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SAMPLE_TYPE));
-        this.sysDate = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYSDATE));
-        this.deviceId = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICEID));
-        this.deviceTag = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_DEVICETAGID));
-        this.appver = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_ISTATUS));
-        this.synced = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYNCED));
-        this.syncDate = cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_SYNCED_DATE));
+        this.id = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_ID));
+        this.uid = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_UID));
+        this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_UUID));
+        this.cluster = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_CLUSTER));
+        this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_HHID));
+        this.userName = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_USERNAME));
+        this.subjectName = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_SUBJECTNAME));
+        this.sampleType = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_SAMPLE_TYPE));
+        this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_SYSDATE));
+        this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_DEVICEID));
+        this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_DEVICETAGID));
+        this.appver = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_APPVERSION));
+        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_ISTATUS));
+        this.synced = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_SYNCED));
+        this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_SYNCED_DATE));
 
-        s1Hydrate(cursor.getString(cursor.getColumnIndex(SamplesTable.COLUMN_S1)));
+        s1Hydrate(cursor.getString(cursor.getColumnIndexOrThrow(SamplesTable.COLUMN_S1)));
         return this;
     }
 
