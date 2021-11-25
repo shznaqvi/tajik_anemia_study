@@ -80,7 +80,7 @@ public class SectionW1bActivity extends AppCompatActivity {
         preg.setUserName(MainApp.user.getUserName());
         preg.setSysDate(MainApp.form.getSysDate());
         preg.setDeviceId(MainApp.deviceid);
-        preg.setUid(MainApp.form.getUid());
+        preg.setUuid(MainApp.form.getUid());
         preg.setMuid(MainApp.mwra.getUid());
         preg.setAppver(MainApp.versionName + "." + MainApp.versionCode);
 
