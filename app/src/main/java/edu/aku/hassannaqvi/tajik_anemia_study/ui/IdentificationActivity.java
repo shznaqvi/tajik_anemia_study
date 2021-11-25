@@ -59,24 +59,25 @@ public class IdentificationActivity extends AppCompatActivity {
 
         openIntent = new Intent();
         switch (MainApp.idType) {
-            case 1:
+
+            case 1: // Form
                 bi.btnContinue.setText(R.string.open_hh_form);
                 MainApp.form = new Form();
                 openIntent = new Intent(this, SectionH1Activity.class);
                 break;
-            case 2:
+            case 2: // Anthro
                 bi.btnContinue.setText(R.string.open_anhtro_form);
                 MainApp.anthro = new Anthro();
                 openIntent = new Intent(this, SectionAnthroActivity.class);
                 break;
-            case 3:
+            case 3: // Blood
                 bi.btnContinue.setText(R.string.open_blood_form);
-                //     MainApp.sample = new Sample();
+                MainApp.samples = new Samples();
                 openIntent = new Intent(this, SectionSamplesActivity.class);
                 break;
-            case 4:
+            case 4: // Stool
                 bi.btnContinue.setText(R.string.open_stool_form);
-                //    MainApp.sample = new Sample();
+                MainApp.samples = new Samples();
                 openIntent = new Intent(this, SectionSamplesActivity.class);
                 break;
 
@@ -215,14 +216,22 @@ public class IdentificationActivity extends AppCompatActivity {
             case 1:
                 if (!hhExists())
                     saveDraftForm();
-                finish();
-                startActivity(openIntent);
+                if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                    Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+                } else {
+                    finish();
+                    startActivity(openIntent);
+                }
                 break;
             case 2:
                 if (hhExists()) {
                     saveDraftAnthro();
-                    finish();
-                    startActivity(openIntent);
+                    if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                        Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        finish();
+                        startActivity(openIntent);
+                    }
                 } else {
                     Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
                 }
@@ -231,8 +240,12 @@ public class IdentificationActivity extends AppCompatActivity {
             case 4:
                 if (hhExists()) {
                     saveDraftSamples();
-                    finish();
-                    startActivity(openIntent);
+                    if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                        Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        finish();
+                        startActivity(openIntent);
+                    }
                 } else {
                     Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
                 }
@@ -315,7 +328,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private boolean hhExists() {
 
         switch (MainApp.idType) {
-            case 1:
+            case 1: // Form
                 MainApp.form = new Form();
                 try {
                     MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());
@@ -325,9 +338,9 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
                 return MainApp.form != null;
 
-            case 2:
-            case 3:
-            case 4:
+            case 2: // Anthro
+            case 3: // Blood
+            case 4: // Stool
                 MainApp.form = new Form();
                 try {
                     MainApp.form = db.getFormByClusterHHNo(bi.h103.getText().toString(), bi.h104.getText().toString());

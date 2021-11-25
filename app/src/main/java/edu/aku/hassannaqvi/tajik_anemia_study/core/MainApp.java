@@ -92,6 +92,7 @@ public class MainApp extends Application {
     public static List<String> childAge;
 
     public static TableContracts.ChildListTable childListTable;
+    public static boolean superuser = false;
 
 
     public static void hideSystemUI(View decorView) {
