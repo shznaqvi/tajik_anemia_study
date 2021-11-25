@@ -8,6 +8,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -95,7 +96,12 @@ public class SyncActivity extends AppCompatActivity {
         MainApp.uploadData = new ArrayList<>();
         /*sdDir = new File(this.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
-        sdDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
+            sdDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+        else
+            sdDir = new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
