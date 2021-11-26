@@ -8,7 +8,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -98,10 +97,12 @@ public class SyncActivity extends AppCompatActivity {
                 Environment.DIRECTORY_PICTURES), PROJECT_NAME);*/
 
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
-            sdDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
-        else
-            sdDir = new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+/*        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q){
+            sdDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), PROJECT_NAME);}
+        else{*/
+        sdDir = new File(this.getExternalFilesDir(Environment.DIRECTORY_PICTURES), PROJECT_NAME);
+        //}
+
 
         //bi.noItem.setVisibility(View.VISIBLE);
         bi.noDataItem.setVisibility(View.VISIBLE);
@@ -575,7 +576,7 @@ public class SyncActivity extends AppCompatActivity {
             bi.pBar.setProgress(0);
             Log.d("Files", "Count: " + files.length);
             if (files.length > 0) {
-
+                totalFiles = files.length;
                 int fcount = Math.min(files.length, 300);
                 for (int i = 0; i < fcount; i++) {
                     TextView textView = new TextView(SyncActivity.this);
@@ -589,7 +590,7 @@ public class SyncActivity extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            totalFiles = files.length;
+
 
 
                             File fileZero = files[finalI];
@@ -689,7 +690,7 @@ public class SyncActivity extends AppCompatActivity {
                 Toast.makeText(this, "No photos to upload.", Toast.LENGTH_SHORT).show();
             }
         } else {
-            bi.mTextViewS.setText("No photots were taken.");
+            bi.mTextViewS.setText("No photos were taken.");
 
             Toast.makeText(this, "No photos were taken", Toast.LENGTH_SHORT).show();
         }
@@ -724,7 +725,7 @@ public class SyncActivity extends AppCompatActivity {
                 );
 
                 // WORK MANAGER
-                progress = files.length + "/" + totalFiles + " Photos remaining \r\nTime remaining: " + tRemain;
+                progress = totalFiles + " Photos uploaded \r\nTime remaining: " + tRemain;
                 if (absTimeRemaining > 0 && files.length > 0) {
                     if (TimeUnit.MILLISECONDS.toMinutes(absTimeRemaining / files.length) > 1) {
                         progress += "\r\n (!) - slow internet detected";

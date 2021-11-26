@@ -434,5 +434,13 @@ public class LoginActivity extends AppCompatActivity {
 
         changeLanguage(Integer.parseInt(sharedPref.getString("lang", "0")));
     }
+
+    public void takePhoto(View view) {
+        Intent intent = new Intent(LoginActivity.this, TakePhoto.class);
+        intent.putExtra("picID", "picid");
+        intent.putExtra("picView", "front".toUpperCase());
+        intent.putExtra("personName", "personName");
+        startActivityForResult(intent, 2);
+    }
 }
 

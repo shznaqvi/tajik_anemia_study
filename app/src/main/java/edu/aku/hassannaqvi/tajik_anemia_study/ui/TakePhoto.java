@@ -57,7 +57,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
      Intent intent=new Intent(MainActivity.this,TakePhoto.class);
      intent.putExtra("picID",editText1.getText().toString());
      intent.putExtra("picView","front".toUpperCase());
-     intent.putExtra("childName",editText2.getText().toString());
+     intent.putExtra("personName",editText2.getText().toString());
      startActivityForResult(intent, 2);
      **/
 
