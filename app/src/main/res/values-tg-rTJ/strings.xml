@@ -2594,7 +2594,7 @@
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="btnDownload">Download Data</string>
+    <string name="btnDownload">Скачать Данные</string>
 
     <!--Z-Score-->
     <string name="zScoreMsg">"Please click on Z-Score Button"</string>
@@ -2686,6 +2686,7 @@
     <string name="child_info_missing">Please fill child sections before entering this information</string>
     <string name="upd_anthro">" updateDB(Anthro):"</string>
     <string name="options">Options</string>
+    <string name="upload_photos">Загрузить фото</string>
 
 
 </resources>

@@ -214,10 +214,10 @@
                             android:gravity="center"
                             android:hint="###"
                             android:inputType="number"
-                            android:maxLength="3"
-                            app:maxValue="100"
+                            android:maxLength="2"
+                            app:maxValue="99"
                             android:text="@={form.h109}"
-                            app:minValue="0"
+                            app:minValue="15"
                             app:type="range" />
 
                     </LinearLayout>
@@ -582,7 +582,7 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     app:defaultValue="9998"
-                                    app:maxValue="1990"
+                                    app:maxValue="2010"
                                     app:minValue="1900"
                                     app:type="range" />
 

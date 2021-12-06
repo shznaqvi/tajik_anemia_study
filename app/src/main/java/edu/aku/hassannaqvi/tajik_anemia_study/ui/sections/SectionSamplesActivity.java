@@ -52,8 +52,7 @@ public class SectionSamplesActivity extends AppCompatActivity {
         MainApp.samples.setE102(MainApp.form.getH103());
         MainApp.samples.setE103(MainApp.form.getH104());
 
-        populateSpinner();
-        setupSkips();
+        //setupSkips();
         // new IntentIntegrator(this).initiateScan(); // `this` is the current Activity
 
     }
@@ -105,6 +104,13 @@ public class SectionSamplesActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateSpinner();
+
+        setupSkips();
+    }
 
     private void setupSkips() {
 

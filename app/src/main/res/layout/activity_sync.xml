@@ -102,7 +102,7 @@
                     android:elevation="2dp"
                     android:onClick="UploadPhotos"
                     android:padding="16dp"
-                    android:text="Upload Photos"
+                    android:text="@string/upload_photos"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
