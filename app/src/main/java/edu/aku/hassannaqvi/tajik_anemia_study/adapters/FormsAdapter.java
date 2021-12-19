@@ -150,6 +150,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         holder.formComplete.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                // Populated MainApp.form to use db.updateformcolumn()
                 MainApp.form = fc.get(holder.getBindingAdapterPosition());
                 if (b) {
                     MainApp.form.setFormComplete("1");
@@ -165,10 +167,8 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
 
             //MainApp.households.setVisitNo(String.valueOf(Integer.parseInt(MainApp.households.getVisitNo())+1));
-            if (MainApp.form.getSynced().equals("")) {
-
-                editHousehold(position);
-
+            if (fc.get(position).getSynced().equals("")) {
+                //   editHousehold(position);
             } else {
                 Toast.makeText(c, "This households has been locked. You cannot edit household for locked households", Toast.LENGTH_LONG).show();
             }

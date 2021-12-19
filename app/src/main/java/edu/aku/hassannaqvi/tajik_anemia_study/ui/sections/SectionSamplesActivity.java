@@ -248,9 +248,12 @@ public class SectionSamplesActivity extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                bi.e018.setText("");
+                bi.e018.setEnabled(true);
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-                bi.e018.setText(result.getContents());
+                bi.e018.setText("§canded: " + result.getContents());
+                bi.e018.setEnabled(false);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 import edu.aku.hassannaqvi.tajik_anemia_study.R;
 import edu.aku.hassannaqvi.tajik_anemia_study.core.MainApp;
@@ -132,8 +133,8 @@ public class DataUpWorkerALL extends Worker {
             Log.d(TAG, "Upload Begins: " + jsonParam);
 
 
-            //wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
-            wr.writeBytes(jsonParam.toString());
+            wr.writeBytes(URLEncoder.encode(jsonParam.toString(), "utf-8"));
+            //wr.writeBytes(jsonParam.toString().replace("\uFEFF", "") + "\n");
             wr.flush();
             wr.close();
 
