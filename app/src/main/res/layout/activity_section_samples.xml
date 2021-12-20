@@ -217,6 +217,7 @@
                     <!-- e106t  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe106t"
+                    android:visibility="gone"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -468,6 +469,7 @@
                                 android:layout_gravity="center"
                                 android:drawableStart="@drawable/ic_qr_code_scanner"
                                 android:drawablePadding="8dp"
+                                android:visibility="gone"
                                 android:onClick="scanQR"
                                 android:enabled="@{!samples.e105.equals(`2`) &amp;&amp; !samples.e109.equals(`2`)}"
                                 android:text="Scan QR-Code" />
