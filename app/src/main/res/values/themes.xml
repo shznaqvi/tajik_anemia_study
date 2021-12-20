@@ -85,7 +85,7 @@
     </style>
 
     <style name="BackgroundStyle" parent="android:Widget.ScrollView">
-        <item name="android:background">@drawable/app_bg_gray</item>
+        <item name="android:background">@drawable/app_bg_effect</item>
         <item name="android:padding">24dp</item>
     </style>
 
@@ -227,7 +227,7 @@
         <item name="android:background">@color/grayLight</item>
         <!-- <item name="android:layout_marginRight">15dp</item>
          <item name="android:layout_marginLeft">15dp</item>-->
-        <item name="cardCornerRadius">7dp</item>
+        <item name="cardCornerRadius">8dp</item>
         <item name="cardElevation">2dp</item>
     </style>
 

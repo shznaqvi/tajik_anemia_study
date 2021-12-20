@@ -32,7 +32,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@drawable/app_bg_gray"
+        android:background="@drawable/app_bg_effect"
 
         android:layout_height="wrap_content">
 

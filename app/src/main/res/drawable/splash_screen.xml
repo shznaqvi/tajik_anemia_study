@@ -7,7 +7,7 @@
     <item>
         <bitmap
             android:gravity="fill"
-            android:src="@drawable/app_bg_gray" />
+            android:src="@drawable/app_bg_effect" />
     </item>
     <!-- logo -->
     <item>
