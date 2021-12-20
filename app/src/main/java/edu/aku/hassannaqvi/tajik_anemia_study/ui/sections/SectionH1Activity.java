@@ -404,7 +404,7 @@ public class SectionH1Activity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+       // startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -417,6 +417,7 @@ public class SectionH1Activity extends AppCompatActivity {
     public void onBackPressed() {
         // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
+        finish();
     }
 
 

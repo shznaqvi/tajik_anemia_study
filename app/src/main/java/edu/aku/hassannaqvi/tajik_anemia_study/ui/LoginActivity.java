@@ -21,6 +21,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -142,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
 
 
-       // settingCountryCode();
+        settingCountryCode();
 
         MainApp.appInfo = new AppInfo(this);
         MainApp.user = new Users();
@@ -404,7 +405,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-/*    private void settingCountryCode() {
+    private void settingCountryCode() {
 
         bi.countrySwitch.setChecked(sharedPref.getString("lang", "1").equals("1"));
 
@@ -420,7 +421,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-    }*/
+    }
 
     /*
      * Setting country code in Shared Preference

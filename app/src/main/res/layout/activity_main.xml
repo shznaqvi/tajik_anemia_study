@@ -32,8 +32,10 @@
                 android:textAlignment="center"
                 app:menu="@menu/item_menu"
                 app:title="@string/app_name"
+                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:subtitleTextColor="@color/colorAccentLight"
                 app:titleTextColor="@color/colorPrimaryLight" />
 
 

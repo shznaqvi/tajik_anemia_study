@@ -1558,26 +1558,26 @@ if(anthroCheck && samplesCheck)*/
         String orderBy = FormsTable.COLUMN_ID + " ASC";
 
         Form form = null;
-            c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
+        c = db.query(
+                FormsTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
 
 
-                form = new Form().Hydrate(c);
+            form = new Form().Hydrate(c);
 
 
-            }
+        }
 
-                c.close();
+        c.close();
 
-                db.close();
+        db.close();
 
         return form;
     }
@@ -1680,7 +1680,7 @@ if(anthroCheck && samplesCheck)*/
         String having = null;
 
         String orderBy = ChildListTable.COLUMN_AGE + " ASC";
-        String limit = "1";
+        String limit = "1000";
 
         Child child = new Child();
         try {
@@ -1694,8 +1694,11 @@ if(anthroCheck && samplesCheck)*/
                     orderBy,
                     limit// The sort order
             );
+            int randomNum = (int) ((Math.random() * (c.getCount() - 1)) + 1);
             while (c.moveToNext()) {
-                child = new Child().Hydrate(c);
+                if (c.getPosition() == randomNum) {
+                    child = new Child().Hydrate(c);
+                }
             }
         } finally {
             if (c != null) {
@@ -1988,32 +1991,32 @@ if(anthroCheck && samplesCheck)*/
         String orderBy = FormsTable.COLUMN_ID + " DESC";
 
         Collection<Form> allFC = new ArrayList<>();
-            c = db.query(
-                    FormsTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                Form fc = new Form();
+        c = db.query(
+                FormsTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            Form fc = new Form();
 
-                fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
-                fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
-                fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                fc.setCluster(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER)));
-                fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
-                fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
-                fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
-                fc.setFormComplete(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_FORM_COMPLETE)));
+            fc.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            fc.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
+            fc.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
+            fc.setCluster(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_CLUSTER)));
+            fc.setHhid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_HHID)));
+            fc.setiStatus(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS)));
+            fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
+            fc.setFormComplete(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_FORM_COMPLETE)));
 
-                boolean anthroCheck = checkAnthroStatus(fc.getUid());
-                boolean samplesCheck = checkSamplesStatus(fc.getUid());
-                if (!anthroCheck || !samplesCheck)
-                    allFC.add(fc);
-            }
+            boolean anthroCheck = checkAnthroStatus(fc.getUid());
+            boolean samplesCheck = checkSamplesStatus(fc.getUid());
+            if (!anthroCheck || !samplesCheck)
+                allFC.add(fc);
+        }
 
         c.close();
 
