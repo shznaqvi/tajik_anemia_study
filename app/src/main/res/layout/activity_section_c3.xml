@@ -2117,12 +2117,12 @@
                                     android:layout_marginTop="6dp"
                                     android:enabled="@{form.c323.equals(`2`)}"
                                     android:gravity="center"
-                                    android:hint="##"
+                                    android:hint="###"
                                     android:inputType="number"
-                                    android:maxLength="2"
+                                    android:maxLength="3"
                                     android:tag="c323d"
                                     android:text='@={form.c323dx}'
-                                    app:maxValue="31"
+                                    app:maxValue="180"
                                     app:minValue="1"
                                     app:type="range" />
 
