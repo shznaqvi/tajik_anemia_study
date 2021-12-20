@@ -31,7 +31,6 @@ import edu.aku.hassannaqvi.tajik_anemia_study.databinding.ActivityIdentification
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Anthro;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Clusters;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Form;
-import edu.aku.hassannaqvi.tajik_anemia_study.models.RandomHH;
 import edu.aku.hassannaqvi.tajik_anemia_study.models.Samples;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionAnthroActivity;
 import edu.aku.hassannaqvi.tajik_anemia_study.ui.sections.SectionH1Activity;
@@ -166,6 +165,7 @@ public class IdentificationActivity extends AppCompatActivity {
                 cityCodes = new ArrayList<>();
                 cityNames.add("...");
                 cityCodes.add("...");
+                bi.hhhead.setText(districtNames.get(position));
                 for (Clusters c : city) {
                     cityNames.add(c.getCityName());
                     cityCodes.add(c.getCityCode());
@@ -188,9 +188,10 @@ public class IdentificationActivity extends AppCompatActivity {
 
                 bi.h103.setText(null);
                 bi.h104.setText(null);
-                bi.hhhead.setText(null);
+                if (bi.h101.getSelectedItemPosition() == 0)
+                    //               bi.hhhead.setText(null);
 
-                bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+                    bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
                 bi.btnContinue.setEnabled(false);
                 bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
                 bi.checkHousehold.setEnabled(true);
@@ -199,6 +200,8 @@ public class IdentificationActivity extends AppCompatActivity {
                 if (position == 0) return;
                 bi.h103.setEnabled(true);
                 bi.h104.setEnabled(true);
+//                bi.hhhead.setText(bi.h101.getSelectedItem()+" - "+cityNames.get(position));
+
             }
 
             @Override
@@ -303,7 +306,20 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void checkHousehold(View view) {
-        RandomHH hhFound = db.checkHousehold(bi.h103.getText().toString(), bi.h104.getText().toString());
+        if (formValidation()) {
+
+
+            //  bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.black));
+            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
+            bi.btnContinue.setEnabled(true);
+            bi.checkHousehold.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
+            bi.checkHousehold.setEnabled(false);
+
+            // bi.hhhead.setText(hhFound.getHeadhh());
+            //  Toast.makeText(this, hhFound.getHeadhh(), Toast.LENGTH_SHORT).show();
+
+            // REmoved BL_RANDOM functionality
+      /*  RandomHH hhFound = db.checkHousehold(bi.h103.getText().toString(), bi.h104.getText().toString());
         if (hhFound != null) {
             bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.black));
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
@@ -313,11 +329,11 @@ public class IdentificationActivity extends AppCompatActivity {
 
             bi.hhhead.setText(hhFound.getHeadhh());
             Toast.makeText(this, hhFound.getHeadhh(), Toast.LENGTH_SHORT).show();
-
+*/
 
         } else {
-            bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
-            bi.hhhead.setText(R.string.hh_not_found);
+            // bi.hhhead.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
+            //  bi.hhhead.setText(R.string.hh_not_found);
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
             bi.btnContinue.setEnabled(false);
 
@@ -384,4 +400,6 @@ public class IdentificationActivity extends AppCompatActivity {
 
         }
     }
+
+
 }

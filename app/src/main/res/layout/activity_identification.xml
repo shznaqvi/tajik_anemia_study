@@ -38,9 +38,22 @@
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ToolbarTheme"
+            app:title="IDENTIFICATION INFORMATION"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            app:titleTextAppearance="@style/Toolbar.TitleText">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="12dp"
+                android:text="IDENTIFICATION INFORMATION"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -52,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
 
                 <!-- h101  Input   -->
@@ -170,6 +184,10 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:maxLength="2"
+                                app:maxValue="20"
+                                app:minValue="1"
+                                app:type="range"
                                 android:hint="@string/h104"
                                 android:inputType="number" />
 
@@ -178,14 +196,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:background="@color/colorAccent"
-                                android:drawableEnd="@drawable/search"
+                                android:drawableEnd="@drawable/ic_check"
                                 android:drawablePadding="8dp"
                                 android:elevation="1dp"
                                 android:minWidth="56dp"
                                 android:onClick="checkHousehold"
                                 android:padding="8dp"
                                 android:radius="2dp"
-                                android:text="Check Household"
+                                android:text="Confirm"
                                 android:textColor="@color/colorPrimaryDark" />
 
                         </LinearLayout>
@@ -195,6 +213,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
                             android:background="@drawable/bottom"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
 
