@@ -229,12 +229,12 @@ public class IdentificationActivity extends AppCompatActivity {
             case 2:
                 if (hhExists()) {
                     saveDraftAnthro();
-                    if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                   /* if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
                         Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
-                    } else {
+                    } else {*/
                         finish();
                         startActivity(openIntent);
-                    }
+                    //   }
                 } else {
                     Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
                 }
@@ -243,12 +243,12 @@ public class IdentificationActivity extends AppCompatActivity {
             case 4:
                 if (hhExists()) {
                     saveDraftSamples();
-                    if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+                 /*   if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
                         Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
-                    } else {
+                    } else {*/
                         finish();
                         startActivity(openIntent);
-                    }
+                    //}
                 } else {
                     Toast.makeText(this, getString(R.string.info_hh_form_not_exist), Toast.LENGTH_LONG).show();
                 }

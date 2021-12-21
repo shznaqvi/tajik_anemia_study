@@ -1694,7 +1694,7 @@ if(anthroCheck && samplesCheck)*/
                     orderBy,
                     limit// The sort order
             );
-            int randomNum = (int) ((Math.random() * (c.getCount() - 1)) + 1);
+            int randomNum = (int) ((Math.random() * (c.getCount() - 0)) + 0);
             while (c.moveToNext()) {
                 if (c.getPosition() == randomNum) {
                     child = new Child().Hydrate(c);
