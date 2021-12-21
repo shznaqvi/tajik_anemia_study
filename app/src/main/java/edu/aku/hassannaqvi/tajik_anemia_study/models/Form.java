@@ -11935,6 +11935,12 @@ public class Form extends BaseObservable implements Observable {
                     + Integer.parseInt(this.h217t)
                     + Integer.parseInt(this.h219t)
             ));
+        }
+        if (!this.h211m.equals("")
+                && !this.h213m.equals("")
+                && !this.h215m.equals("")
+                && !this.h217m.equals("")
+                && !this.h219m.equals("")) {
             // Total Males
             setH209m(String.valueOf(Integer.parseInt(this.h211m)
                     + Integer.parseInt(this.h213m)
@@ -11942,6 +11948,12 @@ public class Form extends BaseObservable implements Observable {
                     + Integer.parseInt(this.h217m)
                     + Integer.parseInt(this.h219m)
             ));
+        }
+        if (!this.h211f.equals("")
+                && !this.h213f.equals("")
+                && !this.h215f.equals("")
+                && !this.h217f.equals("")
+                && !this.h219f.equals("")) {
             // Total Female
             setH209f(String.valueOf(Integer.parseInt(this.h211f)
                     + Integer.parseInt(this.h213f)

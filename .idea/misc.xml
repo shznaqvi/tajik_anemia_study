@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_identification.xml" value="0.26916666666666667" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_c3.xml" value="0.3325" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h2a.xml" value="0.3325" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h2b.xml" value="0.3325" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h2c.xml" value="0.3325" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h2d.xml" value="0.3325" />
+        <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h3b.xml" value="0.3325" />
         <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_h7.xml" value="0.3525" />
         <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_w1a.xml" value="0.3525" />
         <entry key="..\:/Android Office Work/tajik_anemia_study/app/src/main/res/layout/activity_section_w1b.xml" value="0.3525" />
@@ -15,7 +22,6 @@
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_alert_24.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_camera_lense.xml" value="0.34296875" />
-        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_check.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_check_circle.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_girl.xml" value="0.5875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/drawable/ic_menu_hamburger.xml" value="0.3421875" />
@@ -36,7 +42,7 @@
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_main.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_mwra_list.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_pregnancy_list.xml" value="0.56328125" />
-        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_anthro.xml" value="0.1" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_anthro.xml" value="0.5432756324900133" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_c1.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_c2.xml" value="0.1546875" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_c3.xml" value="0.56328125" />
@@ -52,7 +58,7 @@
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_h6.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_h7.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_hemo.xml" value="0.56328125" />
-        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_samples.xml" value="0.5503816793893129" />
+        <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_samples.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_w1a.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_w1b.xml" value="0.56328125" />
         <entry key="..\:/Android/Tajik_Anemia_Study/app/src/main/res/layout/activity_section_w3.xml" value="0.56328125" />
@@ -80,7 +86,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="15" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
