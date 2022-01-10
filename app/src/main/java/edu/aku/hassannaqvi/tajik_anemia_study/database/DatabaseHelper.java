@@ -1679,8 +1679,8 @@ if(anthroCheck && samplesCheck)*/
         String groupBy = null;
         String having = null;
 
-        String orderBy = ChildListTable.COLUMN_AGE + " ASC";
-        String limit = "1000";
+        String orderBy = "CAST(" + ChildListTable.COLUMN_AGE + " AS INTEGER) ASC";
+        String limit = "1";
 
         Child child = new Child();
         try {
