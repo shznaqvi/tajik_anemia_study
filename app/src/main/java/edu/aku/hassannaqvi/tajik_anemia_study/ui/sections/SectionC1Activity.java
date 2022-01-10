@@ -45,6 +45,8 @@ public class SectionC1Activity extends AppCompatActivity {
             }
         });
 
+        bi.indexName.setText(form.getC100Name());
+
     }
 
 

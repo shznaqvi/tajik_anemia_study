@@ -1963,8 +1963,8 @@
     <string name="c322a">Ҳа</string>
     <string name="c322b">Не</string>
     <string name="c323">Дар давоми шаш моҳи охир чанд рӯз ё моҳ ба (НОМ) сироп додп шуд?</string>
-    <string name="c323m">Рӯз </string>
-    <string name="c323d">Моҳ </string>
+    <string name="c323m"> Моҳ </string>
+    <string name="c323d"> Рӯз</string>
     <string name="moddtitle">МОДУЛ D: АНТРОПОМЕТРИЯ ВА САНҶИШ </string>
     <string name="instrc">Дастурамал: Аз миёни аъзои хонавода; кудакони то 5 сола, занони қобили таваллуд (15-49) барои ин қисм мувофиқ астанд</string>
     <string name="d101">Санаи ҷамъоварии мааълумот</string>

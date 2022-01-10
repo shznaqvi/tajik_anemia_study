@@ -43,6 +43,8 @@ public class SectionW1aActivity extends AppCompatActivity {
         form.setW100Name(MainApp.mwra.getH221());
         form.setWuid(MainApp.mwra.getUid());
 
+        bi.indexName.setText(form.getW100Name());
+
         setupSkips();
     }
 
