@@ -1679,8 +1679,9 @@ if(anthroCheck && samplesCheck)*/
         String groupBy = null;
         String having = null;
 
-        String orderBy = "CAST(" + ChildListTable.COLUMN_AGE + " AS INTEGER) ASC";
-        String limit = "1";
+        //String orderBy = "CAST(" + ChildListTable.COLUMN_AGE + " AS INTEGER) ASC";
+        String orderBy = null;
+        String limit = "1000";
 
         Child child = new Child();
         try {
@@ -2243,5 +2244,41 @@ if(anthroCheck && samplesCheck)*/
         db.close();
 
         return cCount > 3;
+    }
+
+    public Child getSelectedChildBYUID(String uid) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildListTable.COLUMN_UUID + "=? AND "
+                + ChildListTable.COLUMN_INDEX + "=?";
+
+        String[] whereArgs = {uid, "1"};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildListTable.COLUMN_ID + " ASC";
+
+        Child childByUID = new Child();
+        c = db.query(
+                ChildListTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            childByUID = new Child().Hydrate(c);
+        }
+
+        c.close();
+        db.close();
+
+        return childByUID;
     }
 }

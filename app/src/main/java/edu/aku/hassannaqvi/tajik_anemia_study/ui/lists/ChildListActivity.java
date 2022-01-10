@@ -177,7 +177,7 @@ public class ChildListActivity extends AppCompatActivity {
     public void btnContinue(View view) {
 
         try {
-            MainApp.child = db.getYoungestChildByMUID(MainApp.mwra.getUid());
+            MainApp.child = db.getSelectedChildBYUID(MainApp.form.getUid());
             form.setC100Name(MainApp.child.getH229());
             form.setCuid(MainApp.child.getUid());
         } catch (JSONException e) {
