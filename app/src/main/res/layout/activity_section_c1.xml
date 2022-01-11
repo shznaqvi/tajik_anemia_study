@@ -58,6 +58,14 @@
                     android:text="@string/titlec1" />
 
 
+                <TextView
+                    android:id="@+id/indexName"
+                    style="@style/Widget.AppCompat.TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name" />
+
+
                 <!-- c101  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVc101"
